@@ -1,13 +1,69 @@
-<!doctype html>
+
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>FutureTime</title>
-    <meta name="description" content="FutureTime participants directory and program overview." />
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FutureTime Participants</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="nav">
+  <div class="logo">FUTURE<span>TIME</span></div>
+  <nav>
+    <button onclick="showPage('participants')">Participants</button>
+    <button onclick="showPage('about')">About</button>
+  </nav>
+</header>
+
+<section id="participants-page" class="page">
+  <div class="hero">
+    <h1>Participants Directory</h1>
+    <p>Browse program participants</p>
+  </div>
+
+  <div class="controls">
+    <input id="searchInput" placeholder="Search participants..." oninput="renderParticipants()">
+    <select id="sectorFilter" onchange="renderParticipants()">
+      <option value="all">All sectors</option>
+      <option value="Central Government">Central Government</option>
+      <option value="Local Government">Local Government</option>
+      <option value="Health System">Health System</option>
+      <option value="Civil Society">Civil Society</option>
+      <option value="Academia & Research">Academia & Research</option>
+    </select>
+  </div>
+
+  <div id="participantsGrid" class="grid"></div>
+</section>
+
+<section id="about-page" class="page hidden">
+  <div class="hero">
+    <h1>FutureTime</h1>
+    <p>A leadership program for optimal aging</p>
+  </div>
+
+  <div class="about">
+    <h2>Program Objective</h2>
+    <p>
+      Future Time establishes a network of senior leaders from diverse sectors
+      working together to promote optimal aging in Israel.
+    </p>
+
+    <h2>Partners</h2>
+    <ul>
+      <li>Prime Minister's Office</li>
+      <li>Ministry of Welfare and Social Security</li>
+      <li>Ministry of Health</li>
+      <li>Ministry for Social Equality</li>
+      <li>National Insurance Institute</li>
+      <li>Local Government</li>
+      <li>JDC Israel</li>
+    </ul>
+  </div>
+</section>
+
+<script src="script.js"></script>
+</body>
 </html>
