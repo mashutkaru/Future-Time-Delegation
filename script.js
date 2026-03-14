@@ -96,24 +96,24 @@
 
     container.innerHTML = '<div style="min-height:100vh;background:#e5e7eb">' +
       '<div style="width:100%;overflow:hidden"><img src="banner.png" alt="Future Time - Leading Optimal Aging in Israel" style="width:100%;height:auto;display:block;vertical-align:top" /></div>' +
-      '<div style="max-width:1100px;margin:0 auto;padding:48px 32px 64px">' +
-        '<div style="background:#2a2d71;border-radius:20px;padding:40px 48px;color:white;box-shadow:0 4px 24px rgba(0,0,0,0.15);margin-bottom:24px">' +
-          '<div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:start">' +
+      '<div class="about-content">' +
+        '<div class="about-box" style="box-shadow:0 4px 24px rgba(0,0,0,0.15);margin-bottom:24px">' +
+          '<div class="about-grid">' +
             '<div style="min-width:0;flex:1"><div style="font-weight:900;font-size:18px;letter-spacing:0.08em;margin-bottom:20px;text-align:center">BACKGROUND</div>'+bgEn+'</div>' +
-            '<div style="min-width:0;flex:1;border-left:1px solid rgba(255,255,255,0.35);padding-left:24px"><div style="font-weight:900;font-size:18px;letter-spacing:0.08em;margin-bottom:20px;text-align:center">背景</div>'+bgJa+'</div>' +
+            '<div class="about-col-ja" style="min-width:0;flex:1;border-left:1px solid rgba(255,255,255,0.35);padding-left:24px"><div style="font-weight:900;font-size:18px;letter-spacing:0.08em;margin-bottom:20px;text-align:center">背景</div>'+bgJa+'</div>' +
           '</div>' +
         '</div>' +
-        '<div style="background:#2a2d71;border-radius:20px;padding:40px 48px;color:white;box-shadow:0 4px 24px rgba(0,0,0,0.15)">' +
-          '<div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:start;margin-bottom:28px">' +
+        '<div class="about-box" style="box-shadow:0 4px 24px rgba(0,0,0,0.15)">' +
+          '<div class="about-grid" style="margin-bottom:28px">' +
             '<div style="min-width:0;flex:1"><div style="font-weight:900;font-size:20px;letter-spacing:0.06em;margin-bottom:24px;text-align:center">OBJECTIVES &amp; GOALS</div><div style="font-weight:800;font-size:16px;margin-bottom:10px">Program Objective</div><p style="margin:0;font-size:14px;line-height:1.8;color:rgba(255,255,255,0.95)">To establish a network of <strong>30 senior leaders</strong> from diverse sectors, working together to promote optimal aging in Israel in the era of 100-year lives.</p></div>' +
-            '<div style="min-width:0;flex:1;border-left:1px solid rgba(255,255,255,0.35);padding-left:24px"><div style="font-weight:900;font-size:20px;letter-spacing:0.06em;margin-bottom:24px;text-align:center">目的及目標</div><div style="font-weight:800;font-size:16px;margin-bottom:10px">プログラムの目的</div><p style="margin:0;font-size:14px;line-height:1.8;color:rgba(255,255,255,0.95)">多様な分野で活躍する30名のリーダーによるネットワークを形成し、100年時代におけるイスラエルの最適な高齢化(Optimal Aging)の推進を目指します。</p></div>' +
+            '<div class="about-col-ja" style="min-width:0;flex:1;border-left:1px solid rgba(255,255,255,0.35);padding-left:24px"><div style="font-weight:900;font-size:20px;letter-spacing:0.06em;margin-bottom:24px;text-align:center">目的及目標</div><div style="font-weight:800;font-size:16px;margin-bottom:10px">プログラムの目的</div><p style="margin:0;font-size:14px;line-height:1.8;color:rgba(255,255,255,0.95)">多様な分野で活躍する30名のリーダーによるネットワークを形成し、100年時代におけるイスラエルの最適な高齢化(Optimal Aging)の推進を目指します。</p></div>' +
           '</div>' +
-          '<div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:start">' +
+          '<div class="about-grid">' +
             '<div style="min-width:0;flex:1"><div style="font-weight:800;font-size:16px;margin-bottom:12px">Program Goals</div>'+goalsEnHtml+'</div>' +
-            '<div style="min-width:0;flex:1;border-left:1px solid rgba(255,255,255,0.35);padding-left:24px"><div style="font-weight:800;font-size:16px;margin-bottom:12px">プログラムの目標</div>'+goalsJaHtml+'</div>' +
+            '<div class="about-col-ja" style="min-width:0;flex:1;border-left:1px solid rgba(255,255,255,0.35);padding-left:24px"><div style="font-weight:800;font-size:16px;margin-bottom:12px">プログラムの目標</div>'+goalsJaHtml+'</div>' +
           '</div>' +
         '</div>' +
-        '<section style="margin-top:40px;text-align:center">' +
+        '<section class="about-cta" style="margin-top:40px;text-align:center">' +
           '<button id="cta-participants" style="background:#fecf17;color:#2a2d71;border:none;border-radius:14px;padding:16px 40px;font-size:16px;font-weight:800;cursor:pointer;font-family:inherit;box-shadow:0 4px 18px rgba(0,0,0,0.2)">👥 Meet the 30 Participants →</button>' +
         '</section>' +
       '</div></div>';
@@ -138,21 +138,21 @@
     var hadasBioHtml = hadasPars.map(function(t){ return '<p style="'+pStyle+'">'+t+'</p>'; }).join('');
     var cardStyle = 'background:white;border-radius:16px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,0.08);max-width:560px';
     var photoStyle = 'width:100%;height:280px;object-fit:contain;object-position:center center';
-    container.innerHTML = '<div style="min-height:100vh;background:#e8ecf8;padding:48px 24px 64px">' +
-      '<div style="max-width:1200px;margin:0 auto">' +
+    container.innerHTML = '<div style="min-height:100vh;background:#e8ecf8">' +
+      '<div class="team-content">' +
         '<h1 style="font-size:36px;font-weight:800;color:#19258B;margin:0 0 48px;text-align:center">Meet the Team</h1>' +
-        '<div style="display:flex;flex-wrap:wrap;justify-content:center;gap:48px">' +
-          '<div style="'+cardStyle+'">' +
-            '<div style="padding:24px 24px 0;background:#f1f5f9"><img src="'+PHOTO_DIR+'Hadas_Kushelevich.png" alt="Dr. Hadas Kushelevich" style="'+photoStyle+';display:block" /></div>' +
-            '<div style="padding:28px 32px">' +
-              '<h2 style="margin:0 0 16px;font-size:24px;font-weight:800;color:#0f172a">Dr. Hadas Kushelevich</h2>' +
-              hadasBioHtml +
-            '</div></div>' +
-          '<div style="'+cardStyle+'">' +
-            '<div style="padding:24px 24px 0;background:#f1f5f9"><img src="'+PHOTO_DIR+'Masha_Robeen.png" alt="Masha Robeen" style="'+photoStyle+';display:block" /></div>' +
-            '<div style="padding:28px 32px">' +
+        '<div class="team-cards" style="display:flex;flex-wrap:wrap;justify-content:center;gap:48px">' +
+          '<div class="team-card team-card-masha" style="'+cardStyle+'">' +
+            '<div class="team-photo" style="padding:24px 24px 0;background:#f1f5f9"><img src="'+PHOTO_DIR+'Masha_Robeen.png" alt="Masha Robeen" style="'+photoStyle+';display:block" /></div>' +
+            '<div class="team-bio" style="padding:28px 32px">' +
               '<h2 style="margin:0 0 16px;font-size:24px;font-weight:800;color:#0f172a">Masha Robeen</h2>' +
               mashaBioHtml +
+            '</div></div>' +
+          '<div class="team-card team-card-hadas" style="'+cardStyle+'">' +
+            '<div class="team-photo" style="padding:24px 24px 0;background:#f1f5f9"><img src="'+PHOTO_DIR+'Hadas_Kushelevich.png" alt="Dr. Hadas Kushelevich" style="'+photoStyle+';display:block" /></div>' +
+            '<div class="team-bio" style="padding:28px 32px">' +
+              '<h2 style="margin:0 0 16px;font-size:24px;font-weight:800;color:#0f172a">Dr. Hadas Kushelevich</h2>' +
+              hadasBioHtml +
             '</div></div>' +
         '</div></div></div>';
   }
@@ -217,18 +217,18 @@
 
     if (!searchRow) {
       container.innerHTML = '<div style="min-height:100vh;background:#e8ecf8">' +
-        '<div style="background:#19258B;padding:28px 48px 48px;color:white;position:relative">' +
+        '<div class="participants-header-wrap" style="background:#19258B;padding:28px 48px 48px;color:white;position:relative">' +
           '<div style="max-width:1300px;margin:0 auto;display:flex;align-items:center;gap:12">' +
-            '<div><h1 style="margin:0;font-size:28;font-weight:800;display:flex;align-items:center;gap:18">Participants Directory <span style="font-size:28">👥</span></h1><p style="margin:0;opacity:0.7;font-size:15;margin-top:3">Browse and search all 30 program participants across sectors</p></div>' +
+            '<div><h1 style="margin:0;font-size:28px;font-weight:800;display:flex;align-items:center;gap:18px">Participants Directory <span style="font-size:28px">👥</span></h1><p style="margin:0;opacity:0.7;font-size:15px;margin-top:3px">Browse and search all 30 program participants across sectors</p></div>' +
           '</div>' +
-          '<div style="position:absolute;left:50%;transform:translateX(-50%);bottom:-30px;display:flex;gap:12px;width:100%;max-width:1100px;padding:0 24px;box-sizing:border-box;z-index:10" id="stats-bar">'+statsHtml+'</div>' +
+          '<div class="stats-bar-wrap" id="stats-bar" style="position:absolute;left:50%;transform:translateX(-50%);bottom:-30px;width:100%;max-width:1100px;padding:0 24px;box-sizing:border-box;z-index:10">'+statsHtml+'</div>' +
         '</div>' +
-        '<div style="max-width:1300px;margin:0 auto;padding:52px 48px 28px">' +
-          '<div class="search-row" dir="ltr" style="display:flex;align-items:center;justify-content:space-between;gap:16;flex-wrap:wrap;margin-top:12;margin-bottom:40;padding:16px 0"><input type="text" id="search-input" dir="ltr" autocomplete="off" placeholder="Search by name, org, role" style="flex:1;min-width:200px;max-width:420px;padding:14px 24px 14px 48px;border:1.5px solid #e2e8f0;border-radius:999px;font-size:14px;font-family:inherit;box-sizing:border-box;background:#f8fafc" /><span id="search-count" style="font-size:14px;color:#64748b;font-weight:600">'+filtered.length+' participant'+(filtered.length!==1?'s':'')+'</span></div>' +
-          '<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(265px,1fr));gap:0;margin-top:24;padding:16px 0" id="cards-container">' +
+        '<div class="participants-content">' +
+          '<div class="search-row" dir="ltr" style="display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-top:12px;margin-bottom:40px;padding:16px 0"><input type="text" id="search-input" dir="ltr" autocomplete="off" placeholder="Search by name, org, role" style="flex:1;min-width:200px;max-width:420px;padding:14px 24px 14px 48px;border:1.5px solid #e2e8f0;border-radius:999px;font-size:14px;font-family:inherit;box-sizing:border-box;background:#f8fafc" /><span id="search-count" style="font-size:14px;color:#64748b;font-weight:600">'+filtered.length+' participant'+(filtered.length!==1?'s':'')+'</span></div>' +
+          '<div class="cards-grid" style="margin-top:24px;padding:16px 0" id="cards-container">' +
             filtered.map(renderParticipantCard).join('') +
           '</div>' +
-          '<div class="participants-empty" style="display:none;text-align:center;padding:60px;color:#94a3b8"><div style="font-size:44;margin-bottom:12">🔍</div><div style="font-size:17;font-weight:700">No participants found</div></div>' +
+          '<div class="participants-empty" style="display:none;text-align:center;padding:60px;color:#94a3b8"><div style="font-size:44px;margin-bottom:12px">🔍</div><div style="font-size:17px;font-weight:700">No participants found</div></div>' +
         '</div></div>';
 
       var input = container.querySelector('#search-input');
@@ -239,7 +239,7 @@
         btn.onclick = function () { setActiveSector(btn.getAttribute('data-sector')); };
       });
     } else {
-      container.querySelector('#stats-bar').outerHTML = '<div style="position:absolute;left:50%;transform:translateX(-50%);bottom:-30px;display:flex;gap:12px;width:100%;max-width:1100px;padding:0 24px;box-sizing:border-box;z-index:10" id="stats-bar">'+statsHtml+'</div>';
+      container.querySelector('#stats-bar').outerHTML = '<div class="stats-bar-wrap" id="stats-bar" style="position:absolute;left:50%;transform:translateX(-50%);bottom:-30px;width:100%;max-width:1100px;padding:0 24px;box-sizing:border-box;z-index:10">'+statsHtml+'</div>';
       container.querySelector('#search-count').textContent = filtered.length + ' participant' + (filtered.length !== 1 ? 's' : '');
       cardsContainer = container.querySelector('#cards-container');
       cardsContainer.innerHTML = filtered.map(renderParticipantCard).join('');
