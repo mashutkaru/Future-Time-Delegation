@@ -1,0 +1,1 @@
+export default function ParticipantCard(){return null;}
