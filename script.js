@@ -155,6 +155,12 @@
               hadasBioHtml +
             '</div></div>' +
         '</div></div></div>';
+    var teamCards = container.querySelector('.team-cards');
+    var mashaCard = container.querySelector('.team-card-masha');
+    var hadasCard = container.querySelector('.team-card-hadas');
+    if (teamCards && mashaCard && hadasCard && hadasCard.previousElementSibling !== mashaCard) {
+      teamCards.insertBefore(mashaCard, hadasCard);
+    }
   }
 
   function sectorBadge(sector) {

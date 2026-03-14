@@ -58,6 +58,8 @@
     .stats-bar-wrap { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; }
     .cards-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(265px, 1fr)); gap: 0; }
     .team-content { max-width: 1200px; margin: 0 auto; padding: 48px 24px 64px; }
+    .team-card-masha { order: 1; }
+    .team-card-hadas { order: 2; }
     @media (max-width: 900px) {
       .about-content { padding: 20px 16px 40px !important; max-width: 100%; }
       #about-page .about-box, #about-page .about-grid > div { min-width: 0; }
@@ -82,8 +84,6 @@
       .team-content { padding: 28px 16px 48px !important; }
       .team-content h1 { font-size: 26px !important; margin-bottom: 28px !important; }
       .team-cards { gap: 28px !important; padding: 0 8px; display: flex !important; flex-direction: column !important; }
-      .team-card-masha { order: 1 !important; }
-      .team-card-hadas { order: 2 !important; }
       .team-card { max-width: 100% !important; }
       .team-card .team-photo { height: 240px !important; }
       .team-card .team-bio { padding: 24px 20px !important; }
@@ -112,6 +112,6 @@
     <div id="team-page"></div>
   </main>
 
-  <script src="script.js?v=2"></script>
+  <script src="script.js?v=3"></script>
 </body>
 </html>
