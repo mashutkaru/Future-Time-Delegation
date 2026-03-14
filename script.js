@@ -165,7 +165,6 @@
     var c = SC[p.sector] || { bg:"#334155", border:"#64748b", light:"#f1f5f9" };
     var img = PHOTO_DIR + p.key + '.png';
     var photoStyle = 'object-fit:cover;object-position:center center;';
-    if (p.key === 'Yehuda_Arie_Halali') photoStyle += 'transform:rotate(-90deg);';
     var hasPhotoPadding = (p.key === 'Roei_Rafael_Babai' || p.key === 'Avital_Simcha_Shlezinger');
     var needsPhotoMargin = (p.key === 'Ravit_Nakar_El-Ezra' || p.key === 'Adaya_Nissenholtz' || p.key === 'Lior_Zohar');
     var initial = p.nameEn.charAt(0);
@@ -177,7 +176,7 @@
     var roleHe = escapeHtml(p.roleHe);
     var email = escapeHtml(p.email);
     var photoImgStyle = photoStyle;
-    if (hasPhotoPadding) photoImgStyle = 'object-fit:contain;object-position:center center;' + (p.key === 'Yehuda_Arie_Halali' ? 'transform:rotate(-90deg);' : '');
+    if (hasPhotoPadding) photoImgStyle = 'object-fit:contain;object-position:center center;';
     var photoHtml = img
       ? (hasPhotoPadding ? '<div style="width:100%;height:100%;padding:4px;box-sizing:border-box;display:flex;align-items:center;justify-content:center;background:white;border:1px solid #bfdbfe;border-radius:8px"><img src="'+img+'" alt="'+nameEn+'" style="width:100%;height:100%;'+photoImgStyle+'" /></div>' : (needsPhotoMargin ? '<div style="width:100%;height:100%;padding:12px 0;box-sizing:border-box;display:flex;align-items:center;justify-content:center;background:#f8fafc"><img src="'+img+'" alt="'+nameEn+'" style="width:100%;height:100%;'+photoStyle+'" /></div>' : '<img src="'+img+'" alt="'+nameEn+'" style="width:100%;height:100%;'+photoStyle+'" />'))
       : '<div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;color:white;font-size:72px;font-weight:800;background:'+c.bg+'">'+initial+'</div>';

@@ -24,9 +24,11 @@
       content: ''; position: absolute; left: 0; right: 0; bottom: 0; height: 3px;
       background: var(--nav-purple);
     }
-    nav .logo { display: flex; align-items: center; gap: 12px; }
-    nav .logo svg { height: 48px; }
-    nav .nav-buttons { display: flex; gap: 8px; margin-left: auto; }
+    nav .logo { display: flex; align-items: center; flex: 1; }
+    nav .logo img { height: 48px; object-fit: contain; }
+    nav .nav-buttons { display: flex; gap: 8px; justify-content: center; flex: 2; }
+    nav .logo-right { display: flex; align-items: center; justify-content: flex-end; flex: 1; }
+    nav .logo-right img { height: 48px; object-fit: contain; }
     nav button {
       background: transparent; color: rgba(255,255,255,0.9); border: none;
       border-radius: 999px; padding: 10px 24px; font-weight: 500; font-size: 15px;
@@ -40,12 +42,13 @@
 </head>
 <body>
   <nav>
-    <div class="logo"><img src="og-image.png" alt="FutureTime" style="height:48px;display:block;object-fit:contain" /></div>
+    <div class="logo"><img src="og-image.png" alt="FutureTime" /></div>
     <div class="nav-buttons">
       <button data-page="about" class="nav-btn">About</button>
       <button data-page="participants" class="nav-btn">Participants</button>
       <button data-page="team" class="nav-btn">Meet the Team</button>
     </div>
+    <div class="logo-right"><img src="images/navbar-logo.png" alt="FutureTime" /></div>
   </nav>
 
   <main id="app">
