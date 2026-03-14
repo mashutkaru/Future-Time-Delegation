@@ -98,8 +98,10 @@
       .team-content h1 { font-size: 26px !important; margin-bottom: 28px !important; }
       .team-cards { gap: 28px !important; padding: 0 8px; display: flex !important; flex-direction: column !important; }
       .team-card { max-width: 100% !important; }
-      .team-card .team-photo { height: 240px !important; }
-      .team-card .team-bio { padding: 24px 20px !important; }
+      .team-card .team-name { padding: 20px 20px 24px !important; text-align: center !important; }
+      .team-card .team-photo { height: 240px !important; padding: 0 20px 24px !important; overflow: hidden !important; }
+      .team-card .team-photo img { width: 100% !important; height: 100% !important; max-height: 240px !important; object-fit: contain !important; }
+      .team-card .team-bio { padding: 0 20px 28px !important; }
       .team-card h2 { font-size: 20px !important; }
     }
     @media (min-width: 500px) and (max-width: 900px) {
@@ -109,6 +111,7 @@
     @media (min-width: 901px) {
       .participants-content { padding-top: 98px !important; }
       .team-cards { flex-direction: row !important; flex-wrap: nowrap !important; justify-content: center !important; }
+      .team-card .team-name { text-align: center !important; }
       .team-card-hadas { order: 1 !important; }
       .team-card-masha { order: 2 !important; }
     }
