@@ -290,5 +290,8 @@
     btn.onclick = function () { setPage(btn.getAttribute('data-page')); };
   });
 
+  document.querySelector('nav .logo').onclick = function () { setPage('about'); };
+  document.querySelector('nav .logo-right').onclick = function () { setPage('about'); };
+
   setPage('about');
 })();
