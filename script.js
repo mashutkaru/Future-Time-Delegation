@@ -3,6 +3,46 @@
 
   var PHOTO_DIR = 'photos/';
 
+  /** Exact filenames in photos/ (spaces & case as on disk). */
+  var PHOTO_FILES = {
+    Avishay_Cohen: 'AVISHAY COHEN .png',
+    Avital_Simcha_Shlezinger: 'AVITAL SIMCHA SHLEZINGER .png',
+    Gal_Gez_Nave: 'Gal gez nave .png',
+    Idit_Ayala_Reiss: 'Idit Ayala Reiss .png',
+    Jasmin_Vulej: 'JASMIN VULEJ.png',
+    Liat_Stark: 'Liat Stark .png',
+    Dalit_Cypel: 'dalit cypel .png',
+    Adaya_Nissenholtz: 'adaya nissenholtz .png',
+    'Ravit_Nakar_El-Ezra': 'ravit nakar el-ezra .png',
+    Ronit_Rozin: 'RONIT ROZIN.png',
+    Shirli_Reznizky_Kahan: 'Shirli Reznizky Kahan .png',
+    Omer_Ungar: 'OMER UNGAR.png',
+    Yael_Barkan_Dolev: 'YAEL BARKAN DOLEV.png',
+    Suaad_Ektelat: 'SUAAD EKTELAT .png',
+    Eden_Chen: 'EDEN CHEN.png',
+    Lior_Zohar: 'LIOR ZOHAR.png',
+    Rachela_Akuka: 'AKUKA RACHELA .png',
+    Shmuel_Springer: 'SHMUEL SPRINGER.png',
+    Galit_Segal: 'galit segal.png',
+    Netanel_Levi: 'Netanel Levi.png',
+    Meital_Weissman_Tsabari: 'Meital Weissman Tsabari .png',
+    Roei_Rafael_Babai: 'Roei Rafael Babai .png',
+    Michal_Schwartz: 'michal schwartz .png',
+    Galit_Groper: 'Galit Groper .png',
+    Valentina_Batia_Chai: 'Valentina batia chai .png',
+    'Nes-Ya_Strasburg': 'STRASBURG NES-YA .png',
+    Yehuda_Arie_Halali: 'YEHUDA ARIE HALALI .png',
+    Josef_Kaplan: 'kaplan josef .png',
+    Alon_Kalman: 'ALON KALMAN.png',
+    Liat_Sikron_Vazan: 'Liat Sikron Vazan .png'
+  };
+
+  function participantPhotoUrl(key) {
+    var name = PHOTO_FILES[key];
+    if (!name) return PHOTO_DIR + key + '.png';
+    return PHOTO_DIR + encodeURIComponent(name);
+  }
+
   const PARTICIPANTS = [
     { id:1,  key:"Avishay_Cohen",            nameEn:"Avishay Cohen",            nameHe:"אבישי כהן",            sector:"Central Government", org:"Ministry of Labor",                     orgHe:"משרד העבודה",                     role:"Director, Multi-Generational Employment Dept.", roleHe:"מנהל אגף תעסוקה רב-דורית",            email:"cohan.avishay@gmail.com" },
     { id:2,  key:"Avital_Simcha_Shlezinger", nameEn:"Avital Simcha Shlezinger", nameHe:"אביטל שמחה שלזינגר",  sector:"Central Government", org:"National Insurance Institute",          orgHe:"המוסד לביטוח לאומי",              role:"Head, Senior Citizen & Family Advisory Div.",  roleHe:"מנהלת אגף הייעוץ לאזרח הוותיק",       email:"avitals@nioi.gov.il" },
@@ -167,8 +207,8 @@
   }
   function renderParticipantCard(p) {
     var c = SC[p.sector] || { bg:"#334155", border:"#64748b", light:"#f1f5f9" };
-    var img = PHOTO_DIR + p.key + '.png';
-    var photoStyle = 'object-fit:contain;object-position:center center;';
+    var img = participantPhotoUrl(p.key);
+    var photoStyle = 'object-fit:contain;object-position:center center;max-width:100%;max-height:100%;width:auto;height:auto;display:block;';
     var initial = p.nameEn.charAt(0);
     var nameEn = escapeHtml(p.nameEn);
     var nameHe = escapeHtml(p.nameHe);
@@ -177,18 +217,16 @@
     var role = escapeHtml(p.role);
     var roleHe = escapeHtml(p.roleHe);
     var email = escapeHtml(p.email);
-    var photoHtml = img
-      ? '<div style="width:100%;height:100%;padding:8px;box-sizing:border-box;display:flex;align-items:center;justify-content:center;background:#fff"><img src="'+img+'" alt="'+nameEn+'" style="width:100%;height:100%;'+photoStyle+'" /></div>'
-      : '<div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;color:white;font-size:72px;font-weight:800;background:'+c.bg+'">'+initial+'</div>';
+    var photoHtml = '<div class="participant-photo-inner" style="width:100%;height:100%;min-height:0;flex:1;display:flex;align-items:center;justify-content:center;background:#fff;box-sizing:border-box;padding:0 2px"><img src="'+img+'" alt="'+nameEn+'" style="'+photoStyle+'" /></div>';
     return '<div class="participant-card" data-id="' + p.id + '" style="perspective:900px;cursor:pointer;height:420px;min-height:420px;margin:12px">' +
       '<div class="card-inner" style="position:relative;width:100%;height:100%;transform-style:preserve-3d;transition:transform 0.55s">' +
-        '<div class="card-front" style="position:absolute;top:0;left:0;right:0;bottom:0;backface-visibility:hidden;background:white;border-radius:14px;border:2.5px solid '+c.border+';overflow:hidden;display:flex;flex-direction:column;box-shadow:0 2px 12px rgba(0,0,0,0.08)">' +
-          '<div class="card-photo-wrap" style="width:100%;height:200px;min-height:200px;overflow:hidden;background:#fff;display:flex;align-items:center;justify-content:center">'+photoHtml+'</div>' +
-          '<div style="flex:1;padding:18px 16px 14px;min-height:0;background:'+(c.light||c.bg)+';color:'+(c.text||'#334155')+';display:flex;flex-direction:column;align-items:center;text-align:center;gap:8px">' +
+        '<div class="card-front" style="position:absolute;top:0;left:0;right:0;bottom:0;backface-visibility:hidden;background:white;border-radius:14px;border:2.5px solid '+c.border+';overflow:hidden;display:flex;flex-direction:column;height:100%;min-height:0;box-shadow:0 2px 12px rgba(0,0,0,0.08)">' +
+          '<div class="card-photo-wrap" style="flex:3 1 0;min-height:150px;min-width:0;overflow:hidden;background:#fff;display:flex;align-items:stretch;justify-content:center">'+photoHtml+'</div>' +
+          '<div style="flex:2 1 0;min-height:0;padding:12px 14px 10px;overflow:hidden;background:'+(c.light||c.bg)+';color:'+(c.text||'#334155')+';display:flex;flex-direction:column;align-items:center;text-align:center;gap:6px">' +
             '<div style="flex-shrink:0;display:flex;flex-direction:column;gap:8px"><div style="font-weight:800;font-size:16px;color:'+(c.text||'#0f172a')+'">'+nameEn+'</div><div style="font-family:Arial;direction:rtl;font-size:16px;color:'+(c.text||'#475569')+'">'+nameHe+'</div><div style="font-size:13px;font-weight:600;color:'+(c.text||'#334155')+'">'+org+'</div></div>' +
             '<div style="flex:1;display:flex;align-items:center;justify-content:center;min-height:0"><div style="background:'+c.bg+';color:white;font-size:14px;font-weight:700;padding:6px 14px;border-radius:20px">'+escapeHtml(p.sector)+'</div></div>' +
           '</div>' +
-          '<div style="text-align:center;padding:8px;font-size:10px;color:white;background:'+c.bg+'">TAP FOR DETAILS</div>' +
+          '<div style="flex-shrink:0;text-align:center;padding:8px;font-size:10px;color:white;background:'+c.bg+'">TAP FOR DETAILS</div>' +
         '</div>' +
         '<div class="card-back" style="position:absolute;top:0;left:0;right:0;bottom:0;backface-visibility:hidden;transform:rotateY(180deg);background:linear-gradient(160deg,'+c.bg+','+c.bg+'ee);border-radius:14px;padding:18px;color:white;display:flex;flex-direction:column;gap:10px">' +
           '<div style="display:flex;gap:12px;align-items:center"><div style="width:60px;height:60px;border-radius:6px;overflow:hidden;border:2px solid rgba(255,255,255,0.35);flex-shrink:0;background:rgba(255,255,255,0.1)">'+(img?'<img src="'+img+'" alt="" style="width:100%;height:100%;'+photoStyle+'" />':'<div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:24px;font-weight:800">'+initial+'</div>')+'</div><div><div style="font-weight:800;font-size:16px">'+nameEn+'</div><div style="font-family:Arial;direction:rtl;font-size:12px;opacity:0.75">'+nameHe+'</div></div></div>' +

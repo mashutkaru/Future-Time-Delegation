@@ -93,8 +93,11 @@
       .search-row #search-count { text-align: center; }
       .cards-grid { grid-template-columns: 1fr !important; gap: 16px !important; padding: 0 !important; margin-top: 0 !important; }
       .participant-card { height: 360px !important; min-height: 360px !important; margin: 0 !important; }
-      .participant-card .card-front > div:first-child { height: 45% !important; min-height: 140px !important; }
-      .participant-card .card-photo-wrap { margin-bottom: 8px !important; }
+      .participant-card .card-front { display: flex !important; flex-direction: column !important; height: 100% !important; min-height: 0 !important; }
+      .participant-card .card-photo-wrap { flex: 3 1 0 !important; min-height: 130px !important; height: auto !important; margin-bottom: 0 !important; }
+      .participant-card .card-photo-wrap .participant-photo-inner { min-height: 0 !important; }
+      .participant-card .card-front > div:nth-child(2) { flex: 2 1 0 !important; min-height: 0 !important; overflow: hidden !important; }
+      .participant-card .card-front > div:nth-child(3) { flex-shrink: 0 !important; }
       .team-content { padding: 28px 16px 48px !important; }
       .team-content h1 { font-size: 26px !important; margin-bottom: 28px !important; }
       .team-cards { gap: 28px !important; padding: 0 8px; display: flex !important; flex-direction: column !important; }
@@ -141,6 +144,6 @@
     <div id="team-page"></div>
   </main>
 
-  <script src="script.js?v=4"></script>
+  <script src="script.js?v=5"></script>
 </body>
 </html>
