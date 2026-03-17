@@ -168,9 +168,7 @@
   function renderParticipantCard(p) {
     var c = SC[p.sector] || { bg:"#334155", border:"#64748b", light:"#f1f5f9" };
     var img = PHOTO_DIR + p.key + '.png';
-    var photoStyle = 'object-fit:cover;object-position:center center;';
-    var hasPhotoPadding = (p.key === 'Roei_Rafael_Babai' || p.key === 'Avital_Simcha_Shlezinger');
-    var needsPhotoMargin = (p.key === 'Ravit_Nakar_El-Ezra' || p.key === 'Adaya_Nissenholtz' || p.key === 'Lior_Zohar');
+    var photoStyle = 'object-fit:contain;object-position:center center;';
     var initial = p.nameEn.charAt(0);
     var nameEn = escapeHtml(p.nameEn);
     var nameHe = escapeHtml(p.nameHe);
@@ -179,15 +177,13 @@
     var role = escapeHtml(p.role);
     var roleHe = escapeHtml(p.roleHe);
     var email = escapeHtml(p.email);
-    var photoImgStyle = photoStyle;
-    if (hasPhotoPadding) photoImgStyle = 'object-fit:contain;object-position:center center;';
     var photoHtml = img
-      ? (hasPhotoPadding ? '<div style="width:100%;height:100%;padding:4px;box-sizing:border-box;display:flex;align-items:center;justify-content:center;background:white;border:1px solid #bfdbfe;border-radius:8px"><img src="'+img+'" alt="'+nameEn+'" style="width:100%;height:100%;'+photoImgStyle+'" /></div>' : (needsPhotoMargin ? '<div style="width:100%;height:100%;padding:12px 0;box-sizing:border-box;display:flex;align-items:center;justify-content:center;background:#f8fafc"><img src="'+img+'" alt="'+nameEn+'" style="width:100%;height:100%;'+photoStyle+'" /></div>' : '<img src="'+img+'" alt="'+nameEn+'" style="width:100%;height:100%;'+photoStyle+'" />'))
+      ? '<div style="width:100%;height:100%;padding:8px;box-sizing:border-box;display:flex;align-items:center;justify-content:center;background:#fff"><img src="'+img+'" alt="'+nameEn+'" style="width:100%;height:100%;'+photoStyle+'" /></div>'
       : '<div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;color:white;font-size:72px;font-weight:800;background:'+c.bg+'">'+initial+'</div>';
     return '<div class="participant-card" data-id="' + p.id + '" style="perspective:900px;cursor:pointer;height:420px;min-height:420px;margin:12px">' +
       '<div class="card-inner" style="position:relative;width:100%;height:100%;transform-style:preserve-3d;transition:transform 0.55s">' +
         '<div class="card-front" style="position:absolute;top:0;left:0;right:0;bottom:0;backface-visibility:hidden;background:white;border-radius:14px;border:2.5px solid '+c.border+';overflow:hidden;display:flex;flex-direction:column;box-shadow:0 2px 12px rgba(0,0,0,0.08)">' +
-          '<div class="card-photo-wrap" style="width:100%;height:200px;min-height:200px;overflow:hidden;background:#f8fafc;display:flex;align-items:center;justify-content:center">'+photoHtml+'</div>' +
+          '<div class="card-photo-wrap" style="width:100%;height:200px;min-height:200px;overflow:hidden;background:#fff;display:flex;align-items:center;justify-content:center">'+photoHtml+'</div>' +
           '<div style="flex:1;padding:18px 16px 14px;min-height:0;background:'+(c.light||c.bg)+';color:'+(c.text||'#334155')+';display:flex;flex-direction:column;align-items:center;text-align:center;gap:8px">' +
             '<div style="flex-shrink:0;display:flex;flex-direction:column;gap:8px"><div style="font-weight:800;font-size:16px;color:'+(c.text||'#0f172a')+'">'+nameEn+'</div><div style="font-family:Arial;direction:rtl;font-size:16px;color:'+(c.text||'#475569')+'">'+nameHe+'</div><div style="font-size:13px;font-weight:600;color:'+(c.text||'#334155')+'">'+org+'</div></div>' +
             '<div style="flex:1;display:flex;align-items:center;justify-content:center;min-height:0"><div style="background:'+c.bg+';color:white;font-size:14px;font-weight:700;padding:6px 14px;border-radius:20px">'+escapeHtml(p.sector)+'</div></div>' +
