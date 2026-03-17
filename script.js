@@ -3,44 +3,9 @@
 
   var PHOTO_DIR = 'photos/';
 
-  /** Exact filenames in photos/ (spaces & case as on disk). */
-  var PHOTO_FILES = {
-    Avishay_Cohen: 'AVISHAY COHEN .png',
-    Avital_Simcha_Shlezinger: 'AVITAL SIMCHA SHLEZINGER .png',
-    Gal_Gez_Nave: 'Gal gez nave .png',
-    Idit_Ayala_Reiss: 'Idit Ayala Reiss .png',
-    Jasmin_Vulej: 'JASMIN VULEJ.png',
-    Liat_Stark: 'Liat Stark .png',
-    Dalit_Cypel: 'dalit cypel .png',
-    Adaya_Nissenholtz: 'adaya nissenholtz .png',
-    'Ravit_Nakar_El-Ezra': 'ravit nakar el-ezra .png',
-    Ronit_Rozin: 'RONIT ROZIN.png',
-    Shirli_Reznizky_Kahan: 'Shirli Reznizky Kahan .png',
-    Omer_Ungar: 'OMER UNGAR.png',
-    Yael_Barkan_Dolev: 'YAEL BARKAN DOLEV.png',
-    Suaad_Ektelat: 'SUAAD EKTELAT .png',
-    Eden_Chen: 'EDEN CHEN.png',
-    Lior_Zohar: 'LIOR ZOHAR.png',
-    Rachela_Akuka: 'Akuka_Rachela.png',
-    Shmuel_Springer: 'SHMUEL SPRINGER.png',
-    Galit_Segal: 'galit segal.png',
-    Netanel_Levi: 'Netanel Levi.png',
-    Meital_Weissman_Tsabari: 'Meital Weissman Tsabari .png',
-    Roei_Rafael_Babai: 'Roei Rafael Babai .png',
-    Michal_Schwartz: 'michal schwartz .png',
-    Galit_Groper: 'Galit Groper .png',
-    Valentina_Batia_Chai: 'Valentina batia chai .png',
-    'Nes-Ya_Strasburg': 'STRASBURG NES-YA .png',
-    Yehuda_Arie_Halali: 'YEHUDA ARIE HALALI .png',
-    Josef_Kaplan: 'kaplan josef .png',
-    Alon_Kalman: 'ALON KALMAN.png',
-    Liat_Sikron_Vazan: 'Liat Sikron Vazan .png'
-  };
-
+  /** Image URL: photos/{key}.png — filename must match participant key exactly. */
   function participantPhotoUrl(key) {
-    var name = PHOTO_FILES[key];
-    if (!name) return PHOTO_DIR + key + '.png';
-    return PHOTO_DIR + encodeURIComponent(name);
+    return PHOTO_DIR + key + '.png';
   }
 
   const PARTICIPANTS = [
