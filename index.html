@@ -71,6 +71,40 @@
     .stats-bar-wrap { display: grid !important; grid-template-columns: repeat(3, 1fr); gap: 8px; }
     .participant-card .card-front { gap: 0; }
     .participant-card .card-photo-wrap { margin-bottom: 4px; }
+    .akuka-photo-mob, .akuka-back-mob { display: none !important; }
+    @media (max-width: 900px) {
+      .akuka-photo-wrap { padding: 0 !important; align-items: stretch !important; justify-content: stretch !important; overflow: hidden !important; }
+      .akuka-photo-wrap .akuka-photo-dsk { display: none !important; }
+      .akuka-photo-wrap .akuka-photo-mob {
+        display: block !important; width: 100% !important; height: 100% !important;
+        max-width: none !important; max-height: none !important; object-fit: contain !important;
+        object-position: center center !important;
+      }
+      .participant-card[data-id="17"] .card-photo-wrap {
+        background: transparent !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        border-radius: 11px 11px 0 0 !important;
+        overflow: hidden !important;
+        align-self: stretch !important;
+        width: 100% !important;
+      }
+      .participant-card[data-id="17"] .akuka-photo-wrap {
+        background: transparent !important;
+        padding: 0 !important;
+        border-radius: 11px 11px 0 0 !important;
+        margin: 0 !important;
+      }
+      .participant-card[data-id="17"] .akuka-photo-mob {
+        object-fit: cover !important;
+        object-position: center center !important;
+      }
+      .akuka-back-dsk { display: none !important; }
+      .akuka-back-mob {
+        display: block !important; width: 100% !important; height: 100% !important;
+        object-fit: contain !important; object-position: center center !important;
+      }
+    }
     @media (max-width: 900px) {
       .about-content { padding: 20px 16px 40px !important; max-width: 100%; }
       #about-page .about-box, #about-page .about-grid > div { min-width: 0; }
@@ -92,9 +126,9 @@
       .search-row input { min-width: 0 !important; max-width: none !important; width: 100% !important; }
       .search-row #search-count { text-align: center; }
       .cards-grid { grid-template-columns: 1fr !important; gap: 16px !important; padding: 0 !important; margin-top: 0 !important; }
-      .participant-card { height: 360px !important; min-height: 360px !important; margin: 0 !important; }
+      .participant-card { height: 480px !important; min-height: 480px !important; margin: 0 !important; }
       .participant-card .card-front { display: flex !important; flex-direction: column !important; height: 100% !important; min-height: 0 !important; }
-      .participant-card .card-photo-wrap { flex: 3 1 0 !important; min-height: 130px !important; height: auto !important; margin-bottom: 0 !important; }
+      .participant-card .card-photo-wrap { flex: 5 1 0 !important; min-height: 200px !important; height: auto !important; margin-bottom: 0 !important; }
       .participant-card .card-photo-wrap .participant-photo-inner { min-height: 0 !important; }
       .participant-card .card-front > div:nth-child(2) { flex: 2 1 0 !important; min-height: 0 !important; overflow: hidden !important; }
       .participant-card .card-front > div:nth-child(3) { flex-shrink: 0 !important; }
@@ -110,7 +144,7 @@
     }
     @media (min-width: 500px) and (max-width: 900px) {
       .cards-grid { grid-template-columns: repeat(2, 1fr) !important; }
-      .participant-card { height: 380px !important; min-height: 380px !important; }
+      .participant-card { height: 460px !important; min-height: 460px !important; }
     }
     @media (min-width: 901px) {
       .participants-content { padding-top: 98px !important; }
@@ -118,6 +152,29 @@
       .team-card .team-name { text-align: center !important; }
       .team-card-hadas { order: 1 !important; }
       .team-card-masha { order: 2 !important; }
+      .participant-card[data-id="17"] .card-photo-wrap {
+        background: transparent !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        border-radius: 11px 11px 0 0 !important;
+        overflow: hidden !important;
+      }
+      .participant-card[data-id="17"] .akuka-photo-wrap {
+        padding: 0 !important;
+        background: transparent !important;
+        align-items: stretch !important;
+        justify-content: stretch !important;
+        overflow: hidden !important;
+        border-radius: 11px 11px 0 0 !important;
+      }
+      .participant-card[data-id="17"] .akuka-photo-dsk {
+        width: 100% !important;
+        height: 100% !important;
+        max-width: none !important;
+        max-height: none !important;
+        object-fit: cover !important;
+        object-position: center center !important;
+      }
     }
   </style>
 </head>
@@ -144,6 +201,6 @@
     <div id="team-page"></div>
   </main>
 
-  <script src="script.js?v=9"></script>
+  <script src="script.js?v=12"></script>
 </body>
 </html>

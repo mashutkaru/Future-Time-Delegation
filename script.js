@@ -2,7 +2,7 @@
   'use strict';
 
   var PHOTO_DIR = 'photos/';
-  var MOBILE_AKUKA_PHOTO = 'mobile%20assets/Akuka_Rachela.png';
+  var MOBILE_AKUKA_PHOTO = 'mobile%20assets/Rachela_Akuka.png';
 
   /** Optimized WebP (360px wide) for fast loading; filename = participant key. */
   function participantPhotoUrl(key) {
@@ -185,11 +185,14 @@
     var email = escapeHtml(p.email);
     var frontImg = '<img src="'+img+'" alt="'+nameEn+'" loading="lazy" decoding="async" style="'+photoStyle+'" />';
     if (p.key === 'Rachela_Akuka') {
-      frontImg = '<picture style="max-width:100%;max-height:100%;display:flex;align-items:center;justify-content:center"><source media="(max-width:900px)" srcset="'+MOBILE_AKUKA_PHOTO+'"/><img src="'+img+'" alt="'+nameEn+'" loading="lazy" decoding="async" style="'+photoStyle+'"/></picture>';
+      frontImg = '<img class="akuka-photo-dsk" src="'+img+'" alt="'+nameEn+'" loading="lazy" decoding="async" style="'+photoStyle+'" />' +
+        '<img class="akuka-photo-mob" src="'+MOBILE_AKUKA_PHOTO+'" alt="'+nameEn+'" loading="lazy" decoding="async" />';
     }
-    var photoHtml = '<div class="participant-photo-inner" style="width:100%;height:100%;min-height:0;flex:1;display:flex;align-items:center;justify-content:center;background:#fff;box-sizing:border-box;padding:0 2px">'+frontImg+'</div>';
+    var wrapClass = p.key === 'Rachela_Akuka' ? 'participant-photo-inner akuka-photo-wrap' : 'participant-photo-inner';
+    var photoHtml = '<div class="'+wrapClass+'" style="width:100%;height:100%;min-height:0;flex:1;display:flex;align-items:center;justify-content:center;background:#fff;box-sizing:border-box;padding:0 2px">'+frontImg+'</div>';
     var backImg = img ? (p.key === 'Rachela_Akuka'
-      ? '<picture style="width:100%;height:100%;display:block"><source media="(max-width:900px)" srcset="'+MOBILE_AKUKA_PHOTO+'"/><img src="'+img+'" alt="" loading="lazy" decoding="async" style="width:100%;height:100%;'+photoStyle+'"/></picture>'
+      ? '<img class="akuka-back-dsk" src="'+img+'" alt="" loading="lazy" decoding="async" style="width:100%;height:100%;'+photoStyle+'" />' +
+        '<img class="akuka-back-mob" src="'+MOBILE_AKUKA_PHOTO+'" alt="" loading="lazy" decoding="async" />'
       : '<img src="'+img+'" alt="" loading="lazy" decoding="async" style="width:100%;height:100%;'+photoStyle+'" />') : '';
     return '<div class="participant-card" data-id="' + p.id + '" style="perspective:900px;cursor:pointer;height:420px;min-height:420px;margin:12px">' +
       '<div class="card-inner" style="position:relative;width:100%;height:100%;transform-style:preserve-3d;transition:transform 0.55s">' +
