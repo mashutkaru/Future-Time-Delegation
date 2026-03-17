@@ -2,10 +2,11 @@
   'use strict';
 
   var PHOTO_DIR = 'photos/';
+  var MOBILE_AKUKA_PHOTO = 'mobile%20assets/Akuka_Rachela.png';
 
-  /** Image URL: photos/{key}.png — filename must match participant key exactly. */
+  /** Optimized WebP (360px wide) for fast loading; filename = participant key. */
   function participantPhotoUrl(key) {
-    return PHOTO_DIR + key + '.png';
+    return PHOTO_DIR + key + '.webp';
   }
 
   const PARTICIPANTS = [
@@ -182,7 +183,14 @@
     var role = escapeHtml(p.role);
     var roleHe = escapeHtml(p.roleHe);
     var email = escapeHtml(p.email);
-    var photoHtml = '<div class="participant-photo-inner" style="width:100%;height:100%;min-height:0;flex:1;display:flex;align-items:center;justify-content:center;background:#fff;box-sizing:border-box;padding:0 2px"><img src="'+img+'" alt="'+nameEn+'" style="'+photoStyle+'" /></div>';
+    var frontImg = '<img src="'+img+'" alt="'+nameEn+'" loading="lazy" decoding="async" style="'+photoStyle+'" />';
+    if (p.key === 'Rachela_Akuka') {
+      frontImg = '<picture style="max-width:100%;max-height:100%;display:flex;align-items:center;justify-content:center"><source media="(max-width:900px)" srcset="'+MOBILE_AKUKA_PHOTO+'"/><img src="'+img+'" alt="'+nameEn+'" loading="lazy" decoding="async" style="'+photoStyle+'"/></picture>';
+    }
+    var photoHtml = '<div class="participant-photo-inner" style="width:100%;height:100%;min-height:0;flex:1;display:flex;align-items:center;justify-content:center;background:#fff;box-sizing:border-box;padding:0 2px">'+frontImg+'</div>';
+    var backImg = img ? (p.key === 'Rachela_Akuka'
+      ? '<picture style="width:100%;height:100%;display:block"><source media="(max-width:900px)" srcset="'+MOBILE_AKUKA_PHOTO+'"/><img src="'+img+'" alt="" loading="lazy" decoding="async" style="width:100%;height:100%;'+photoStyle+'"/></picture>'
+      : '<img src="'+img+'" alt="" loading="lazy" decoding="async" style="width:100%;height:100%;'+photoStyle+'" />') : '';
     return '<div class="participant-card" data-id="' + p.id + '" style="perspective:900px;cursor:pointer;height:420px;min-height:420px;margin:12px">' +
       '<div class="card-inner" style="position:relative;width:100%;height:100%;transform-style:preserve-3d;transition:transform 0.55s">' +
         '<div class="card-front" style="position:absolute;top:0;left:0;right:0;bottom:0;backface-visibility:hidden;background:white;border-radius:14px;border:2.5px solid '+c.border+';overflow:hidden;display:flex;flex-direction:column;height:100%;min-height:0;box-shadow:0 2px 12px rgba(0,0,0,0.08)">' +
@@ -194,7 +202,7 @@
           '<div style="flex-shrink:0;text-align:center;padding:8px;font-size:10px;color:white;background:'+c.bg+'">TAP FOR DETAILS</div>' +
         '</div>' +
         '<div class="card-back" style="position:absolute;top:0;left:0;right:0;bottom:0;backface-visibility:hidden;transform:rotateY(180deg);background:linear-gradient(160deg,'+c.bg+','+c.bg+'ee);border-radius:14px;padding:18px;color:white;display:flex;flex-direction:column;gap:10px">' +
-          '<div style="display:flex;gap:12px;align-items:center"><div style="width:60px;height:60px;border-radius:6px;overflow:hidden;border:2px solid rgba(255,255,255,0.35);flex-shrink:0;background:rgba(255,255,255,0.1)">'+(img?'<img src="'+img+'" alt="" style="width:100%;height:100%;'+photoStyle+'" />':'<div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:24px;font-weight:800">'+initial+'</div>')+'</div><div><div style="font-weight:800;font-size:16px">'+nameEn+'</div><div style="font-family:Arial;direction:rtl;font-size:12px;opacity:0.75">'+nameHe+'</div></div></div>' +
+          '<div style="display:flex;gap:12px;align-items:center"><div style="width:60px;height:60px;border-radius:6px;overflow:hidden;border:2px solid rgba(255,255,255,0.35);flex-shrink:0;background:rgba(255,255,255,0.1)">'+(img?backImg:'<div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:24px;font-weight:800">'+initial+'</div>')+'</div><div><div style="font-weight:800;font-size:16px">'+nameEn+'</div><div style="font-family:Arial;direction:rtl;font-size:12px;opacity:0.75">'+nameHe+'</div></div></div>' +
           '<div style="height:1px;background:rgba(255,255,255,0.2)"></div>' +
           '<div style="flex:1;min-height:0"><div style="font-size:13.5px"><strong>'+org+'</strong><br/><span style="font-family:Arial;direction:rtl;font-size:11px;opacity:0.65">'+orgHe+'</span></div>' +
           '<div style="margin-top:8px;font-size:13.5px"><strong>'+role+'</strong><br/><span style="font-family:Arial;direction:rtl;font-size:11px;opacity:0.65">'+roleHe+'</span></div>' +
