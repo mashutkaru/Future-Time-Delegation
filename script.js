@@ -21,7 +21,7 @@
     Suaad_Ektelat: 'SUAAD EKTELAT .png',
     Eden_Chen: 'EDEN CHEN.png',
     Lior_Zohar: 'LIOR ZOHAR.png',
-    Rachela_Akuka: 'AKUKA RACHELA .png',
+    Rachela_Akuka: 'Akuka_Rachela.png',
     Shmuel_Springer: 'SHMUEL SPRINGER.png',
     Galit_Segal: 'galit segal.png',
     Netanel_Levi: 'Netanel Levi.png',
