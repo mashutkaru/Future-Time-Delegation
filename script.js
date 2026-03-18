@@ -234,10 +234,10 @@
     var isEmpty = container.querySelector('.participants-empty');
 
     if (!searchRow) {
-      container.innerHTML = '<div style="min-height:100vh;background:#e8ecf8">' +
-        '<div class="participants-header-wrap" style="background:#19258B;padding:28px 48px 48px;color:white;position:relative">' +
+      container.innerHTML = '<div style="min-height:100vh;background:#f6f7ff">' +
+        '<div class="participants-header-wrap" style="background:linear-gradient(180deg, #2a2d71 0%, #19258B 55%, #1b245c 100%);border:1px solid rgba(255,255,255,0.12);border-radius:18px;padding:28px 48px 48px;color:white;position:relative">' +
           '<div style="max-width:1300px;margin:0 auto;display:flex;align-items:center;gap:12">' +
-            '<div><h1 style="margin:0;font-size:28px;font-weight:800;display:flex;align-items:center;gap:18px">Participants Directory <span style="font-size:28px">👥</span></h1><p style="margin:0;opacity:0.7;font-size:15px;margin-top:3px">Browse and search all 30 program participants across sectors</p></div>' +
+            '<div><h1 style="margin:0;font-size:28px;font-weight:800;display:flex;align-items:center;gap:18px">Participants Directory <span style="font-size:28px">👥</span></h1><p style="margin:0;opacity:0.82;font-size:15px;margin-top:3px">Browse and search all 30 program participants across sectors</p></div>' +
           '</div>' +
           '<div class="stats-bar-wrap" id="stats-bar" style="position:absolute;left:50%;transform:translateX(-50%);bottom:-30px;width:100%;max-width:1100px;padding:0 24px;box-sizing:border-box;z-index:10">'+statsHtml+'</div>' +
         '</div>' +
