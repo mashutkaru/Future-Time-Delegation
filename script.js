@@ -235,11 +235,11 @@
 
     if (!searchRow) {
       container.innerHTML = '<div style="min-height:100vh;background:#e8ecf8">' +
-        '<div class="participants-header-wrap" style="background:#19258B;padding:28px 48px 48px;color:white;position:relative">' +
-          '<div style="max-width:1300px;margin:0 auto;display:flex;align-items:center;gap:12">' +
-          '<div><h1 style="margin:0;font-size:28px;font-weight:800;display:flex;align-items:center;gap:18px">Participants Directory <span style="font-size:28px">👥</span></h1><p style="margin:0;opacity:0.7;font-size:15px;margin-top:3px">Browse and search all 30 program participants across sectors</p></div>' +
+        '<div class="participants-header-wrap" style="background:rgba(36,42,98,0.9);padding:28px 48px 48px;color:white;position:relative">' +
+          '<div style="max-width:1204px;margin:0 auto;display:flex;align-items:flex-start;justify-content:flex-start;gap:28px">' +
+            '<div style="flex:1;min-width:0;text-align:left;display:flex;flex-direction:column;align-items:flex-start"><h1 style="margin:0;font-size:28px;font-weight:800;display:flex;align-items:center;gap:18px;justify-content:flex-start">Participants Directory <span style="font-size:28px">👥</span></h1><p style="margin:0;opacity:0.7;font-size:15px;margin-top:3px;max-width:520px;text-align:left">Browse and search all 30 program participants across sectors</p></div>' +
+            '<div class="stats-bar-wrap" id="stats-bar" style="flex:0 1 560px;max-width:560px;width:100%;display:grid;grid-template-columns:repeat(3, 1fr);gap:10px;justify-content:flex-end;margin-left:auto">'+statsHtml+'</div>' +
           '</div>' +
-          '<div class="stats-bar-wrap" id="stats-bar" style="position:absolute;left:50%;transform:translateX(-50%);bottom:-30px;width:100%;max-width:1100px;padding:0 24px;box-sizing:border-box;z-index:10">'+statsHtml+'</div>' +
         '</div>' +
         '<div class="participants-content">' +
           '<div class="search-row" dir="ltr" style="display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-top:12px;margin-bottom:12px;padding:8px 0"><input type="text" id="search-input" dir="ltr" autocomplete="off" placeholder="Search by name, org, role" style="flex:1;min-width:200px;max-width:420px;padding:14px 24px 14px 48px;border:1.5px solid #e2e8f0;border-radius:999px;font-size:14px;font-family:inherit;box-sizing:border-box;background:#f8fafc" /><span id="search-count" style="font-size:14px;color:#64748b;font-weight:600">'+filtered.length+' participant'+(filtered.length!==1?'s':'')+'</span></div>' +
@@ -257,7 +257,7 @@
         btn.onclick = function () { setActiveSector(btn.getAttribute('data-sector')); };
       });
     } else {
-      container.querySelector('#stats-bar').outerHTML = '<div class="stats-bar-wrap" id="stats-bar" style="position:absolute;left:50%;transform:translateX(-50%);bottom:-30px;width:100%;max-width:1100px;padding:0 24px;box-sizing:border-box;z-index:10">'+statsHtml+'</div>';
+      container.querySelector('#stats-bar').outerHTML = '<div class="stats-bar-wrap" id="stats-bar" style="flex:0 1 560px;max-width:560px;width:100%;display:grid;grid-template-columns:repeat(3, 1fr);gap:10px;justify-content:flex-end;margin-left:auto">'+statsHtml+'</div>';
       container.querySelector('#search-count').textContent = filtered.length + ' participant' + (filtered.length !== 1 ? 's' : '');
       cardsContainer = container.querySelector('#cards-container');
       cardsContainer.innerHTML = filtered.map(renderParticipantCard).join('');

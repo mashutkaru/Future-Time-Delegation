@@ -19,7 +19,7 @@
     * { box-sizing: border-box; }
     body { margin: 0; font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif; min-height: 100vh; overflow-x: hidden; }
     nav {
-      display: flex; align-items: center; padding: 12px 48px;
+      display: flex; align-items: center; padding: 10px 24px;
       background: var(--nav-bg); color: white;
       position: sticky; top: 0; z-index: 100;
     }
@@ -28,11 +28,11 @@
       background: var(--nav-purple);
     }
     nav .logo { display: flex; align-items: center; flex: 1; cursor: pointer; }
-    nav .logo img { height: 48px; object-fit: contain; }
+    nav .logo img { height: 48px; object-fit: contain; border-radius: 2px; display: block; }
     nav .logo .logo-mobile, nav .logo-right .logo-mobile { display: none; }
     nav .nav-buttons { display: flex; gap: 8px; justify-content: center; flex: 2; }
     nav .logo-right { display: flex; align-items: center; justify-content: flex-end; flex: 1; cursor: pointer; }
-    nav .logo-right img { height: 48px; object-fit: contain; }
+    nav .logo-right img { height: 48px; object-fit: contain; border-radius: 2px; display: block; }
     nav button {
       background: transparent; color: rgba(255,255,255,0.9); border: none;
       border-radius: 999px; padding: 10px 24px; font-weight: 500; font-size: 15px;
@@ -45,7 +45,7 @@
 
     /* Mobile / tablet responsive - applies below 900px */
     @media (max-width: 900px) {
-      nav { padding: 10px 12px !important; flex-wrap: nowrap; gap: 6px; justify-content: space-between; align-items: center; }
+      nav { padding: 8px 10px !important; flex-wrap: nowrap; gap: 6px; justify-content: space-between; align-items: center; }
       nav .logo { display: flex !important; flex: 0 0 auto; }
       nav .logo .logo-desktop { display: none !important; }
       nav .logo .logo-mobile { display: block !important; height: 36px; object-fit: contain; }
@@ -58,18 +58,21 @@
     .about-content { max-width: 1100px; margin: 0 auto; padding: 48px 32px 64px; }
     .about-box { background: #2a2d71; border-radius: 20px; padding: 40px 48px; color: white; }
     .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; align-items: start; }
-    .participants-content { max-width: 1300px; margin: 0 auto; padding: 52px 48px 28px; }
+    .participants-content { max-width: 1300px; margin: 0 auto; padding: 52px 48px 0px; }
     .stats-bar-wrap { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; }
     .cards-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(265px, 1fr)); gap: 0; }
     .team-content { max-width: 1200px; margin: 0 auto; padding: 48px 24px 64px; }
     .team-card-masha { order: 1; }
     .team-card-hadas { order: 2; }
     .team-card .team-photo { background: #fff !important; }
-    .participants-header-wrap { padding-bottom: 52px !important; }
-    .stats-bar-wrap { bottom: -90px !important; }
+    .participants-header-wrap { padding-bottom: 28px !important; }
+    .stats-bar-wrap { bottom: auto !important; }
     .sector-btn { overflow: visible; }
     .stats-bar-wrap { display: grid !important; grid-template-columns: repeat(3, 1fr); gap: 8px; }
     .participant-card .card-front { gap: 0; }
+    /* Sector stats buttons: make inner label text larger */
+    .stats-bar-wrap button > span:last-child { font-size: 15px !important; }
+    .stats-bar-wrap button > span:first-child span:last-child { font-size: 15px !important; }
     .participant-card .card-photo-wrap {
       margin-bottom: 0 !important;
       background: transparent !important;
@@ -122,7 +125,7 @@
       .participants-header-wrap h1 { font-size: 20px !important; flex-wrap: wrap; justify-content: center; }
       .participants-header-wrap p { font-size: 13px !important; text-align: center; }
       .participants-content { padding: 148px 16px 24px !important; }
-      .stats-bar-wrap { padding: 0 16px !important; gap: 8px !important; top: 100% !important; margin-top: 16px !important; bottom: auto !important; left: 50% !important; transform: translateX(-50%) !important; display: grid !important; grid-template-columns: repeat(3, 1fr) !important; }
+      .stats-bar-wrap { padding: 0 16px !important; gap: 8px !important; top: 100% !important; margin-top: 16px !important; bottom: auto !important; left: 50% !important; transform: translateX(-50%) !important; display: grid !important; grid-template-columns: repeat(3, 1fr) !important; position: absolute !important; }
       .stats-bar-wrap button { padding: 8px 6px !important; min-height: 58px; min-width: 0; flex-direction: column !important; }
       .stats-bar-wrap button > span:last-child { font-size: 10px !important; line-height: 1.15 !important; }
       .stats-bar-wrap button > span:first-child span:last-child { font-size: 12px !important; }
@@ -146,12 +149,18 @@
       .team-card .team-bio { padding: 0 20px 28px !important; }
       .team-card h2 { font-size: 20px !important; }
     }
+
+    @media (min-width: 901px) {
+      .stats-bar-wrap button { padding: 10px 12px !important; min-height: 56px !important; gap: 2px !important; }
+      .stats-bar-wrap button > span:last-child { font-size: 15px !important; }
+      .stats-bar-wrap button > span:first-child span:last-child { font-size: 15px !important; }
+    }
     @media (min-width: 500px) and (max-width: 900px) {
       .cards-grid { grid-template-columns: repeat(2, 1fr) !important; }
       .participant-card { height: 460px !important; min-height: 460px !important; }
     }
     @media (min-width: 901px) {
-      .participants-content { padding-top: 98px !important; }
+      .participants-content { padding-top: 28px !important; }
       .team-cards { flex-direction: row !important; flex-wrap: nowrap !important; justify-content: center !important; }
       .team-card .team-name { text-align: center !important; }
       .team-card-hadas { order: 1 !important; }
@@ -182,6 +191,6 @@
     <div id="team-page"></div>
   </main>
 
-  <script src="script.js?v=15"></script>
+  <script src="script.js?v=21"></script>
 </body>
 </html>
