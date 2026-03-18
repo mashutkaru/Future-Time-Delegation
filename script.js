@@ -61,9 +61,9 @@
     { key:"all",                 label:"All Sectors",        short:"Total",    icon:"👥" },
     { key:"Central Government",  label:"Central Government", short:"Central Government", icon:"🏛" },
     { key:"Local Government",    label:"Local Government",   short:"Local Government",   icon:"🏢" },
-    { key:"Health System",       label:"Health System",      short:"Health",   icon:"❤️" },
-    { key:"Civil Society",       label:"Civil Society",      short:"Civil",    icon:"🤝" },
-    { key:"Academia & Research", label:"Academia & Research", short:"Academia", icon:"🎓" },
+    { key:"Health System",       label:"Health System",      short:"Health System",   icon:"❤️" },
+    { key:"Civil Society",       label:"Civil Society",      short:"Civil Society",    icon:"🤝" },
+    { key:"Academia & Research", label:"Academia & Research", short:"Academia & Research", icon:"🎓" },
   ];
 
   var PRIMARY = '#19258B';
@@ -206,7 +206,7 @@
             '<div style="flex-shrink:0;display:flex;flex-direction:column;gap:8px"><div style="font-weight:800;font-size:16px;color:'+(c.text||'#0f172a')+'">'+nameEn+'</div><div style="font-family:Arial;direction:rtl;font-size:16px;color:'+(c.text||'#475569')+'">'+nameHe+'</div><div style="font-size:13px;font-weight:600;color:'+(c.text||'#334155')+'">'+org+'</div></div>' +
             '<div style="flex:1;display:flex;align-items:center;justify-content:center;min-height:0"><div style="background:'+c.bg+';color:white;font-size:14px;font-weight:700;padding:6px 14px;border-radius:20px">'+escapeHtml(p.sector)+'</div></div>' +
           '</div>' +
-          '<div style="flex-shrink:0;text-align:center;padding:8px;font-size:10px;color:white;background:'+c.bg+'">TAP FOR DETAILS</div>' +
+          '<div style="flex-shrink:0;text-align:center;padding:8px;font-size:10px;color:white;background:'+c.bg+'">View Details</div>' +
         '</div>' +
         '<div class="card-back" style="position:absolute;top:0;left:0;right:0;bottom:0;backface-visibility:hidden;transform:rotateY(180deg);background:linear-gradient(160deg,'+c.bg+','+c.bg+'ee);border-radius:14px;padding:18px;color:white;display:flex;flex-direction:column;gap:10px">' +
           '<div style="display:flex;gap:12px;align-items:center"><div class="participant-back-thumb" style="width:60px;height:60px;border-radius:6px;overflow:hidden;border:2px solid rgba(255,255,255,0.35);flex-shrink:0;background:rgba(255,255,255,0.1)">'+backImg+'</div><div><div style="font-weight:800;font-size:16px">'+nameEn+'</div><div style="font-family:Arial;direction:rtl;font-size:12px;opacity:0.75">'+nameHe+'</div></div></div>' +
@@ -237,12 +237,12 @@
       container.innerHTML = '<div style="min-height:100vh;background:#e8ecf8">' +
         '<div class="participants-header-wrap" style="background:rgba(36,42,98,0.9);padding:28px 48px 48px;color:white;position:relative">' +
           '<div style="max-width:1204px;margin:0 auto;display:flex;align-items:flex-start;justify-content:flex-start;gap:28px">' +
-            '<div style="flex:1;min-width:0;text-align:left;display:flex;flex-direction:column;align-items:flex-start"><h1 style="margin:0;font-size:28px;font-weight:800;display:flex;align-items:center;gap:18px;justify-content:flex-start">Participants Directory <span style="font-size:28px">👥</span></h1><p style="margin:0;opacity:0.7;font-size:15px;margin-top:3px;max-width:520px;text-align:left">Browse and search all 30 program participants across sectors</p></div>' +
-            '<div class="stats-bar-wrap" id="stats-bar" style="flex:0 1 560px;max-width:560px;width:100%;display:grid;grid-template-columns:repeat(3, 1fr);gap:10px;justify-content:flex-end;margin-left:auto">'+statsHtml+'</div>' +
+            '<div style="flex:1;min-width:0;text-align:left;display:flex;flex-direction:column;align-items:flex-start;gap:12px;padding:6px 12px 0 0"><h1 style="margin:0;font-size:28px;font-weight:800;display:flex;align-items:center;gap:10px;justify-content:flex-start;line-height:1.1">Program Participants</h1><p style="margin:0;opacity:0.7;font-size:15px;font-weight:800;line-height:1.35;max-width:580px;text-align:left">Choose participants by affiliation label</p><p style="margin:0;opacity:0.7;font-size:15px;font-weight:800;line-height:1.35;max-width:580px;text-align:left">Search and filter all program participants across sectors</p></div>' +
+            '<div class="stats-bar-wrap" id="stats-bar" style="flex:0 1 640px;max-width:640px;width:100%;display:grid;grid-template-columns:repeat(3, 1fr);gap:10px;justify-content:flex-end;margin-left:auto">'+statsHtml+'</div>' +
           '</div>' +
         '</div>' +
         '<div class="participants-content">' +
-          '<div class="search-row" dir="ltr" style="display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-top:12px;margin-bottom:12px;padding:8px 0"><input type="text" id="search-input" dir="ltr" autocomplete="off" placeholder="Search by name, org, role" style="flex:1;min-width:200px;max-width:420px;padding:14px 24px 14px 48px;border:1.5px solid #e2e8f0;border-radius:999px;font-size:14px;font-family:inherit;box-sizing:border-box;background:#f8fafc" /><span id="search-count" style="font-size:14px;color:#64748b;font-weight:600">'+filtered.length+' participant'+(filtered.length!==1?'s':'')+'</span></div>' +
+          '<div class="search-row" dir="ltr" style="display:flex;align-items:center;justify-content:flex-end;gap:8px;flex-wrap:wrap;margin-top:6px;margin-bottom:6px;padding:6px 0"><input type="text" id="search-input" dir="ltr" autocomplete="off" placeholder="Search by name, org, role" style="flex:0 1 420px;min-width:200px;max-width:420px;padding:14px 24px 14px 48px;border:1.5px solid #e2e8f0;border-radius:999px;font-size:14px;font-family:inherit;box-sizing:border-box;background:#f8fafc" /></div>' +
           '<div class="cards-grid" style="margin-top:4px;padding:4px 0" id="cards-container">' +
             filtered.map(renderParticipantCard).join('') +
           '</div>' +
@@ -257,8 +257,7 @@
         btn.onclick = function () { setActiveSector(btn.getAttribute('data-sector')); };
       });
     } else {
-      container.querySelector('#stats-bar').outerHTML = '<div class="stats-bar-wrap" id="stats-bar" style="flex:0 1 560px;max-width:560px;width:100%;display:grid;grid-template-columns:repeat(3, 1fr);gap:10px;justify-content:flex-end;margin-left:auto">'+statsHtml+'</div>';
-      container.querySelector('#search-count').textContent = filtered.length + ' participant' + (filtered.length !== 1 ? 's' : '');
+      container.querySelector('#stats-bar').outerHTML = '<div class="stats-bar-wrap" id="stats-bar" style="flex:0 1 640px;max-width:640px;width:100%;display:grid;grid-template-columns:repeat(3, 1fr);gap:10px;justify-content:flex-end;margin-left:auto">'+statsHtml+'</div>';
       cardsContainer = container.querySelector('#cards-container');
       cardsContainer.innerHTML = filtered.map(renderParticipantCard).join('');
       isEmpty = container.querySelector('.participants-empty');
