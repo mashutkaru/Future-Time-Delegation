@@ -2,11 +2,26 @@
   'use strict';
 
   var PHOTO_DIR = 'photos/';
-  var MOBILE_AKUKA_PHOTO = 'mobile%20assets/Rachela_Akuka.png';
+  /** Bump after replacing photos. Desktop 520×400, mobile 390×340 — wide art fills card (object-fit: cover). */
+  var PHOTO_VER = '20';
 
-  /** Optimized WebP (360px wide) for fast loading; filename = participant key. */
-  function participantPhotoUrl(key) {
-    return PHOTO_DIR + key + '.webp';
+  function participantPhotoUrlDesktop(key) {
+    return PHOTO_DIR + key + '.webp?v=' + PHOTO_VER;
+  }
+  function participantPhotoUrlMobile(key) {
+    return PHOTO_DIR + 'mobile/' + key + '.webp?v=' + PHOTO_VER;
+  }
+  function participantPictureFront(key, nameEn) {
+    return '<picture class="participant-picture">' +
+      '<source media="(max-width:900px)" srcset="' + participantPhotoUrlMobile(key) + '"/>' +
+      '<img src="' + participantPhotoUrlDesktop(key) + '" alt="' + nameEn + '" loading="lazy" decoding="async"/>' +
+      '</picture>';
+  }
+  function participantPictureBack(key) {
+    return '<picture class="participant-picture participant-picture--back">' +
+      '<source media="(max-width:900px)" srcset="' + participantPhotoUrlMobile(key) + '"/>' +
+      '<img src="' + participantPhotoUrlDesktop(key) + '" alt="" loading="lazy" decoding="async"/>' +
+      '</picture>';
   }
 
   const PARTICIPANTS = [
@@ -173,8 +188,6 @@
   }
   function renderParticipantCard(p) {
     var c = SC[p.sector] || { bg:"#334155", border:"#64748b", light:"#f1f5f9" };
-    var img = participantPhotoUrl(p.key);
-    var photoStyle = 'object-fit:contain;object-position:center center;max-width:100%;max-height:100%;width:auto;height:auto;display:block;';
     var initial = p.nameEn.charAt(0);
     var nameEn = escapeHtml(p.nameEn);
     var nameHe = escapeHtml(p.nameHe);
@@ -183,21 +196,12 @@
     var role = escapeHtml(p.role);
     var roleHe = escapeHtml(p.roleHe);
     var email = escapeHtml(p.email);
-    var frontImg = '<img src="'+img+'" alt="'+nameEn+'" loading="lazy" decoding="async" style="'+photoStyle+'" />';
-    if (p.key === 'Rachela_Akuka') {
-      frontImg = '<img class="akuka-photo-dsk" src="'+img+'" alt="'+nameEn+'" loading="lazy" decoding="async" style="'+photoStyle+'" />' +
-        '<img class="akuka-photo-mob" src="'+MOBILE_AKUKA_PHOTO+'" alt="'+nameEn+'" loading="lazy" decoding="async" />';
-    }
-    var wrapClass = p.key === 'Rachela_Akuka' ? 'participant-photo-inner akuka-photo-wrap' : 'participant-photo-inner';
-    var photoHtml = '<div class="'+wrapClass+'" style="width:100%;height:100%;min-height:0;flex:1;display:flex;align-items:center;justify-content:center;background:#fff;box-sizing:border-box;padding:0 2px">'+frontImg+'</div>';
-    var backImg = img ? (p.key === 'Rachela_Akuka'
-      ? '<img class="akuka-back-dsk" src="'+img+'" alt="" loading="lazy" decoding="async" style="width:100%;height:100%;'+photoStyle+'" />' +
-        '<img class="akuka-back-mob" src="'+MOBILE_AKUKA_PHOTO+'" alt="" loading="lazy" decoding="async" />'
-      : '<img src="'+img+'" alt="" loading="lazy" decoding="async" style="width:100%;height:100%;'+photoStyle+'" />') : '';
+    var photoHtml = '<div class="participant-photo-inner" style="width:100%;height:100%;min-height:0;flex:1;display:flex;box-sizing:border-box">' + participantPictureFront(p.key, nameEn) + '</div>';
+    var backImg = participantPictureBack(p.key);
     return '<div class="participant-card" data-id="' + p.id + '" style="perspective:900px;cursor:pointer;height:420px;min-height:420px;margin:12px">' +
       '<div class="card-inner" style="position:relative;width:100%;height:100%;transform-style:preserve-3d;transition:transform 0.55s">' +
         '<div class="card-front" style="position:absolute;top:0;left:0;right:0;bottom:0;backface-visibility:hidden;background:white;border-radius:14px;border:2.5px solid '+c.border+';overflow:hidden;display:flex;flex-direction:column;height:100%;min-height:0;box-shadow:0 2px 12px rgba(0,0,0,0.08)">' +
-          '<div class="card-photo-wrap" style="flex:3 1 0;min-height:150px;min-width:0;overflow:hidden;background:#fff;display:flex;align-items:stretch;justify-content:center">'+photoHtml+'</div>' +
+          '<div class="card-photo-wrap" style="flex:3 1 0;min-height:150px;min-width:0;overflow:hidden;display:flex;align-items:stretch;justify-content:stretch">'+photoHtml+'</div>' +
           '<div style="flex:2 1 0;min-height:0;padding:12px 14px 10px;overflow:hidden;background:'+(c.light||c.bg)+';color:'+(c.text||'#334155')+';display:flex;flex-direction:column;align-items:center;text-align:center;gap:6px">' +
             '<div style="flex-shrink:0;display:flex;flex-direction:column;gap:8px"><div style="font-weight:800;font-size:16px;color:'+(c.text||'#0f172a')+'">'+nameEn+'</div><div style="font-family:Arial;direction:rtl;font-size:16px;color:'+(c.text||'#475569')+'">'+nameHe+'</div><div style="font-size:13px;font-weight:600;color:'+(c.text||'#334155')+'">'+org+'</div></div>' +
             '<div style="flex:1;display:flex;align-items:center;justify-content:center;min-height:0"><div style="background:'+c.bg+';color:white;font-size:14px;font-weight:700;padding:6px 14px;border-radius:20px">'+escapeHtml(p.sector)+'</div></div>' +
@@ -205,7 +209,7 @@
           '<div style="flex-shrink:0;text-align:center;padding:8px;font-size:10px;color:white;background:'+c.bg+'">TAP FOR DETAILS</div>' +
         '</div>' +
         '<div class="card-back" style="position:absolute;top:0;left:0;right:0;bottom:0;backface-visibility:hidden;transform:rotateY(180deg);background:linear-gradient(160deg,'+c.bg+','+c.bg+'ee);border-radius:14px;padding:18px;color:white;display:flex;flex-direction:column;gap:10px">' +
-          '<div style="display:flex;gap:12px;align-items:center"><div style="width:60px;height:60px;border-radius:6px;overflow:hidden;border:2px solid rgba(255,255,255,0.35);flex-shrink:0;background:rgba(255,255,255,0.1)">'+(img?backImg:'<div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:24px;font-weight:800">'+initial+'</div>')+'</div><div><div style="font-weight:800;font-size:16px">'+nameEn+'</div><div style="font-family:Arial;direction:rtl;font-size:12px;opacity:0.75">'+nameHe+'</div></div></div>' +
+          '<div style="display:flex;gap:12px;align-items:center"><div class="participant-back-thumb" style="width:60px;height:60px;border-radius:6px;overflow:hidden;border:2px solid rgba(255,255,255,0.35);flex-shrink:0;background:rgba(255,255,255,0.1)">'+backImg+'</div><div><div style="font-weight:800;font-size:16px">'+nameEn+'</div><div style="font-family:Arial;direction:rtl;font-size:12px;opacity:0.75">'+nameHe+'</div></div></div>' +
           '<div style="height:1px;background:rgba(255,255,255,0.2)"></div>' +
           '<div style="flex:1;min-height:0"><div style="font-size:13.5px"><strong>'+org+'</strong><br/><span style="font-family:Arial;direction:rtl;font-size:11px;opacity:0.65">'+orgHe+'</span></div>' +
           '<div style="margin-top:8px;font-size:13.5px"><strong>'+role+'</strong><br/><span style="font-family:Arial;direction:rtl;font-size:11px;opacity:0.65">'+roleHe+'</span></div>' +
