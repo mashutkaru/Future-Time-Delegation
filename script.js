@@ -54,26 +54,27 @@
     { id:27, key:"Omer_Ungar",               nameEn:"Omer Ungar",               nameHe:"עומר אונגר",            sector:"Local Government",   org:"Ashdod Municipality",                  orgHe:"עיריית אשדוד",                    role:"Social Services Director",                     roleHe:"מנהל אגף שירותים חברתיים",            email:"omer@ashdod.muni.il" },
     { id:28, key:"Shirli_Reznizky_Kahan",    nameEn:"Shirli Reznizky Kahan",    nameHe:"שירלי רזניצקי כהן",    sector:"Academia & Research", org:"Myers JDC Brookdale Institute",        orgHe:"מכון מאיירס-ג'וינט-ברוקדייל",    role:"Senior Research Scholar and Aging Team Leader", roleHe:"חוקרת בכירה וראש צוות הזדקנות",    email:"shirlir@jdc.org" },
     { id:29, key:"Shmuel_Springer",          nameEn:"Shmuel Springer",          nameHe:"שמואל שפרינגר",         sector:"Academia & Research", org:"Ariel University",                      orgHe:"אוניברסיטת אריאל",                role:"Head Academic Community Partnership Unit",     roleHe:"ראש יחידת קשרי אקדמיה קהילה",       email:"shmuels@ariel.ac.il" },
+    { id:30, key:"Meital_Weissman_Tsabari",  nameEn:"Meital Weissman Tsabari",  nameHe:"מיטל וייסמן צברי",     sector:"Health System",      org:"Maccabi Healthcare",                   orgHe:"מכבי שירותי בריאות",              role:"National Senior Care Coordinator",             roleHe:"רכזת טיפול ארצי לקשישים",             email:"meital.weissman@maccabi.co.il" },
   ];
 
   const SECTORS = [
     { key:"all",                 label:"All Sectors",        short:"Total",    icon:"👥" },
+    { key:"Civil Society",       label:"Civil Society",      short:"Civil Society",    icon:"🤝" },
+    { key:"Health System",       label:"Health System",      short:"Health System",   icon:"❤️" },
     { key:"Central Government",  label:"Central Government", short:"Central Government", icon:"🏛" },
     { key:"Local Government",    label:"Local Government",   short:"Local Government",   icon:"🏢" },
-    { key:"Health System",       label:"Health System",      short:"Health System",   icon:"❤️" },
-    { key:"Civil Society",       label:"Civil Society",      short:"Civil Society",    icon:"🤝" },
     { key:"Academia & Research", label:"Academia & Research", short:"Academia & Research", icon:"🎓" },
   ];
 
   var PRIMARY = '#19258B';
   var ACCENT = { cyan:'#4BC0D9', green:'#7ED321', yellow:'#FFDE40', orange:'#FF6E7B' };
   const SC = {
-    "all":                 { bg:"#5b5484", light:"#C9C4E0", border:"#8b85a8", text:"#3d3a5c" },
-    "Central Government":  { bg:"#b3860b", light:"#FFF3CD", border:"#d4a84b", text:"#7c5a08" },
-    "Local Government":    { bg:"#be185d", light:"#FBEAF0", border:"#ec4899", text:"#9d174d" },
-    "Health System":       { bg:"#0d9488", light:"#D0F0E8", border:"#2dd4bf", text:"#0f766e" },
-    "Civil Society":       { bg:"#4a7c59", light:"#EAF3DE", border:"#6b9b6e", text:"#2d5a3d" },
-    "Academia & Research": { bg:"#7c3aed", light:"#f3e8ff", border:"#a78bfa", text:"#6d28d9" },
+    "all":                 { bg:"#5b5484", light:"#C0C8D5", border:"#8b92a8", text:"#3d3a5c" },
+    "Central Government":  { bg:"#6b6590", light:"#CFCBE1", border:"#8b85a8", text:"#3d3a5c" },
+    "Local Government":    { bg:"#8a7572", light:"#DACFCD", border:"#9a9090", text:"#3d3a5c" },
+    "Health System":       { bg:"#5783CB", light:"#C0C8D5", border:"#8ba86e", text:"#3d3a5c" },
+    "Civil Society":       { bg:"#5a7a4a", light:"#F0F3DE", border:"#9ba88e", text:"#3d3a5c" },
+    "Academia & Research": { bg:"#755EE6", light:"#F3E8FF", border:"#a78bfa", text:"#3d3a5c" },
   };
 
   function escapeHtml(str) {
@@ -227,7 +228,7 @@
     var statsHtml = SECTORS.map(function(s){
       var c = SC[s.key] || { bg:"#081679", border:"#3d4fcc", light:"#dde1f5", text:"#081679" };
       var isActive = activeSector === s.key;
-      return '<button data-sector="'+s.key+'" class="sector-btn" style="flex:1;min-width:0;background:'+(isActive?c.bg:(c.light||'white'))+';border:2px solid '+(isActive?c.border:(c.border||'#cbd5e1'))+';color:#3d3a5c;border-radius:999px;padding:8px 10px;cursor:pointer;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;overflow:visible"><span style="display:flex;align-items:center;gap:4px;flex-shrink:0"><span style="font-size:14px">'+s.icon+'</span><span style="font-weight:900;font-size:14px">'+(cnt[s.key]||0)+'</span></span><span style="font-size:10px;font-weight:600;line-height:1.2;text-align:center;word-break:break-word">'+s.short+'</span></button>';
+      return '<button data-sector="'+s.key+'" class="sector-btn" style="flex:1;min-width:0;background:'+(isActive?c.bg:'white')+';border:2px solid '+(isActive?c.border:(c.border||'#cbd5e1'))+';color:'+(isActive?'white':'#3d3a5c')+';border-radius:999px;padding:8px 10px;cursor:pointer;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;overflow:visible"><span style="display:flex;align-items:center;gap:4px;flex-shrink:0"><span style="font-size:14px">'+s.icon+'</span><span style="font-weight:900;font-size:14px">'+(cnt[s.key]||0)+'</span></span><span style="font-size:10px;font-weight:600;line-height:1.2;text-align:center;word-break:break-word">'+s.short+'</span></button>';
     }).join('');
 
     var searchRow = container.querySelector('.search-row');
