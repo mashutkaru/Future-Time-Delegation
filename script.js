@@ -112,6 +112,52 @@
 
     var bgEn = '<p style="margin:0 0 16px;font-size:14px;line-height:1.85;color:white">Preparing for an era in which people may live 100 years is one of the strategic challenges facing the State of Israel in the coming decades. It carries significant implications and opportunities across many fields and constitutes a true national mission.</p><p style="margin:0 0 16px;font-size:14px;line-height:1.85;color:white">Optimal preparation requires synergistic collaboration between systems and between people who share a common language, professional perspective, and a shared vision for the future. To address this need, <strong>&quot;Future Time&quot; (Zman Atid)</strong> was developed — a multi-system leadership program that brings together leaders who seek to drive change, think together, and act collaboratively around core challenges related to optimal aging, alongside organizational challenges concerning how systems operate and function.</p><p style="margin:0;font-size:14px;line-height:1.85;color:white"><strong>&quot;Future Time&quot;</strong> is part of the national program <strong>&quot;Atudot LeIsrael&quot; (Reserves for Israel)</strong>, a strategic initiative designed to build human capital reserves for Israel\'s public service sector. The program is the result of a collaboration between the Prime Minister\'s Office (Government and Society Division and the Atudot LeIsrael Division), the Ministry of Welfare and Social Security, the Ministry of Health, the Ministry for Social Equality, the Ministry of Finance, the National Insurance Institute, local government, and JDC Israel (Eshel and Elka).</p>';
     var bgJa = '<p style="margin:0 0 16px;font-size:14px;line-height:1.85;color:white">100年時代への備えは、今後数十年においてイスラエルが直面する最も重要な戦略的課題の一つである。この課題は、さまざまな分野において大きな意義と機会をもたらし、国家的使命として取り組むべきテーマである。</p><p style="margin:0 0 16px;font-size:14px;line-height:1.85;color:white">この課題に効果的に対応するためには、制度や組織、そして人々の間での分野横断的な連携が不可欠である。共通の言語、専門的な視点、そして未来に対する共有されたビジョンを持つリーダーたちによる協働が求められている。</p><p style="margin:0 0 16px;font-size:14px;line-height:1.85;color:white">そのために開発されたのが<strong>「זמן עתיד(Zman Atid / Future Time)」</strong>である。本プログラムは、制度や組織を横断したリーダーシッププログラムであり、変化を生み出すリーダーたちを結びつけ、最適な高齢化(Optimal Aging)に関する主要課題や制度・組織の運営に関わる課題について共に考え、協働して行動することを目的とする。</p><p style="margin:0 0 16px;font-size:14px;line-height:1.85;color:white">本プログラムは、イスラエルの公共サービス分野における人的資本の育成を目的とする国家戦略プログラムの一環として実施されている。</p><p style="margin:0;font-size:14px;line-height:1.85;color:white">この取り組みは、首相府(政府・社会局および 国家戦略プログラム部門)、社会福祉・社会保障省、保健省、社会的平等省、財務省、国民保険機構、地方自治体、および JDCイスラエル(Eshel・Elka) の協力により推進されている。</p>';
+
+    // Extra text block above the main "OBJECTIVES & GOALS" section.
+    // Populated from the text provided in the PDF at the path you shared.
+    var delegationEnHtml =
+      '<p style="margin:0 0 16px;font-size:14px;line-height:1.85;color:white">The Future Time Delegation is a multidisciplinary study program designed to explore Japan’s advanced and integrated approach to population aging - one of the most pressing global challenges of the 21st century.</p>' +
+      '<p style="margin:0 0 16px;font-size:14px;line-height:1.85;color:white">As a global leader in longevity and aging innovation, Japan offers a unique ecosystem where healthcare, welfare, community systems, governance, and technology operate in close integration to support healthy, independent, and dignified aging.</p>' +
+      '<p style="margin:0 0 16px;font-size:14px;line-height:1.85;color:white">By examining Japan’s holistic and systemic approach, the delegation seeks to generate actionable insights and strengthen Israel–Japan collaboration in addressing the challenges and opportunities of aging societies.</p>' +
+      '<p style="margin:0 0 8px;font-size:14px;line-height:1.85;color:white"><strong>The program is structured around four core pillars:</strong></p>' +
+      '<ul style="margin:0 0 16px 18px;padding:0;color:white;font-size:14px;line-height:1.85">' +
+        '<li style="margin:0 0 6px">Systemic infrastructure and policy frameworks</li>' +
+        '<li style="margin:0 0 6px">Prevention, dependency reduction, and care models</li>' +
+        '<li style="margin:0 0 6px">Community and multi-generational living</li>' +
+        '<li style="margin:0">Innovation, investment, and technology</li>' +
+      '</ul>' +
+      '<p style="margin:0 0 16px;font-size:14px;line-height:1.85;color:white">In addition to site visits and professional engagements in Japan, the program will include lectures and presentations from Israeli participants, enabling a two-way exchange of knowledge and experience. This mutual learning framework is designed to foster meaningful dialogue and identify opportunities for collaboration, adaptation, and joint initiatives.</p>' +
+      '<p style="margin:0 0 8px;font-size:14px;line-height:1.85;color:white"><strong>The delegation aims to engage with a wide range of institutions across the full continuum of services, including:</strong></p>' +
+      '<ul style="margin:0 0 8px 18px;padding:0;color:white;font-size:14px;line-height:1.85">' +
+        '<li style="margin:0 0 6px">Public and private healthcare and rehabilitation systems</li>' +
+        '<li style="margin:0 0 6px">Municipal and regional governance models</li>' +
+        '<li style="margin:0 0 6px">Welfare and community-based services</li>' +
+        '<li style="margin:0 0 6px">Multi-generational community centers</li>' +
+        '<li style="margin:0 0 6px">Government agencies and policy frameworks</li>' +
+        '<li style="margin:0">Innovation hubs, investment entities, and gerontechnology initiatives</li>' +
+      '</ul>';
+
+    var delegationJaHtml =
+      '<p style="margin:0 0 16px;font-size:14px;line-height:1.85;color:white">本視察団は、21世紀における最も重要なグローバル課題の一つである人口高齢化に対し、日本の先進的かつ統合的なアプローチを探求することを目的とした多分野横断型のスタディプログラムである。</p>' +
+      '<p style="margin:0 0 16px;font-size:14px;line-height:1.85;color:white">高齢化および長寿に関する分野において世界的リーダーである日本は、医療、福祉、地域社会、ガバナンス、テクノロジーが有機的に連携する独自のエコシステムを有しており、健康で自立した尊厳ある高齢期の実現を支えている。</p>' +
+      '<p style="margin:0 0 16px;font-size:14px;line-height:1.85;color:white">本視察団は、日本の包括的かつシステム的な取り組みを検証することにより、実践的な知見の創出と、高齢化社会における課題および機会への対応に向けた日イスラエル間の連携強化を目指すものである。</p>' +
+      '<p style="margin:0 0 8px;font-size:14px;line-height:1.85;color:white"><strong>本プログラムは、以下の4つの中核テーマに基づいて構成される：</strong></p>' +
+      '<ul style="margin:0 0 16px 18px;padding:0;color:white;font-size:14px;line-height:1.85">' +
+        '<li style="margin:0 0 6px">制度基盤および政策フレームワーク</li>' +
+        '<li style="margin:0 0 6px">予防・自立支援・ケアモデル</li>' +
+        '<li style="margin:0 0 6px">地域社会および多世代共生</li>' +
+        '<li style="margin:0">イノベーション・投資・テクノロジー</li>' +
+      '</ul>' +
+      '<p style="margin:0 0 16px;font-size:14px;line-height:1.85;color:white">本プログラムでは、日本における視察および専門家との交流に加え、イスラエル側参加者による講義・プレゼンテーションを実施し、双方向の知識および経験の共有を行う。この相互学習の枠組みを通じて、実質的な対話の促進と、協働・適応・共同イニシアティブの創出機会の特定を図る。</p>' +
+      '<p style="margin:0 0 8px;font-size:14px;line-height:1.85;color:white"><strong>視察団は、サービス提供の全体像を横断する多様な機関との連携を目指しており、主な訪問先は以下を想定している：</strong></p>' +
+      '<ul style="margin:0 0 8px 18px;padding:0;color:white;font-size:14px;line-height:1.85">' +
+        '<li style="margin:0 0 6px">医療およびリハビリテーション（公的・民間）</li>' +
+        '<li style="margin:0 0 6px">地方自治体および広域行政モデル</li>' +
+        '<li style="margin:0 0 6px">福祉サービスおよび地域支援体制</li>' +
+        '<li style="margin:0 0 6px">多世代共生型コミュニティセンター</li>' +
+        '<li style="margin:0 0 6px">政府機関および政策立案機関</li>' +
+        '<li style="margin:0">イノベーション拠点、投資機関、および高齢化関連テクノロジー分野</li>' +
+      '</ul>';
     var goalBoxStyle = 'background:rgba(255,255,255,0.1);border-radius:12px;padding:18px 20px;border-left:4px solid #FFD700;margin-bottom:12px';
     var goalsEnHtml = goals.map(function(g){ return '<div style="'+goalBoxStyle+'"><div style="font-weight:800;font-size:15px;color:white;margin-bottom:6px">'+g.titleEn+'</div><div style="font-size:13.5px;color:rgba(255,255,255,0.95);line-height:1.6">'+g.descEn+'</div></div>'; }).join('');
     var goalsJaHtml = goals.map(function(g){ return '<div style="'+goalBoxStyle+'"><div style="font-weight:800;font-size:15px;color:white;margin-bottom:6px">'+g.titleJa+'</div><div style="font-size:13.5px;color:rgba(255,255,255,0.95);line-height:1.6">'+g.descJa+'</div></div>'; }).join('');
@@ -122,6 +168,12 @@
         '<div style="background:white;width:100%;display:flex;justify-content:center"><div style="width:1200px;max-width:100%;height:50px;overflow:hidden"><img src="sponsorship.png" alt="Program partners and sponsors" style="width:100%;height:100%;object-fit:contain;display:block" /></div></div>' +
       '</div>' +
       '<div class="about-content">' +
+        '<div class="about-box" style="box-shadow:0 4px 24px rgba(0,0,0,0.15);margin-bottom:24px">' +
+          '<div class="about-grid">' +
+            '<div style="min-width:0;flex:1"><div style="font-weight:900;font-size:18px;letter-spacing:0.08em;margin-bottom:20px;text-align:center">DELEGATION OVERVIEW</div>'+delegationEnHtml+'</div>' +
+            '<div class="about-col-ja" style="min-width:0;flex:1;border-left:1px solid rgba(255,255,255,0.35);padding-left:24px"><div style="font-weight:900;font-size:18px;letter-spacing:0.08em;margin-bottom:20px;text-align:center">視察団概要</div>'+delegationJaHtml+'</div>' +
+          '</div>' +
+        '</div>' +
         '<div class="about-box" style="box-shadow:0 4px 24px rgba(0,0,0,0.15);margin-bottom:24px">' +
           '<div class="about-grid">' +
             '<div style="min-width:0;flex:1"><div style="font-weight:900;font-size:18px;letter-spacing:0.08em;margin-bottom:20px;text-align:center">BACKGROUND</div>'+bgEn+'</div>' +
