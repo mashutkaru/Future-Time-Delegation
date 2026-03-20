@@ -117,7 +117,10 @@
     var goalsJaHtml = goals.map(function(g){ return '<div style="'+goalBoxStyle+'"><div style="font-weight:800;font-size:15px;color:white;margin-bottom:6px">'+g.titleJa+'</div><div style="font-size:13.5px;color:rgba(255,255,255,0.95);line-height:1.6">'+g.descJa+'</div></div>'; }).join('');
 
     container.innerHTML = '<div style="min-height:100vh;background:#e5e7eb">' +
-      '<div style="width:100%;overflow:hidden"><img src="banner.png" alt="Future Time - Leading Optimal Aging in Israel" style="width:100%;height:auto;display:block;vertical-align:top" /></div>' +
+      '<div class="about-banner" style="background:#2a2d71;width:100%;overflow:hidden">' +
+        '<div style="padding:48px 24px;text-align:center"><div style="display:flex;align-items:center;justify-content:center;gap:14px"><img src="images/just_the_round_logo.png" alt="Future Time" style="height:54px;width:auto;display:block" /><h1 style="margin:0;color:white;font-size:32px;font-weight:800;letter-spacing:0.02em">Future Time Program</h1></div></div>' +
+        '<div style="background:white;width:100%;display:flex;justify-content:center"><div style="width:1200px;max-width:100%;height:50px;overflow:hidden"><img src="sponsorship.png" alt="Program partners and sponsors" style="width:100%;height:100%;object-fit:contain;display:block" /></div></div>' +
+      '</div>' +
       '<div class="about-content">' +
         '<div class="about-box" style="box-shadow:0 4px 24px rgba(0,0,0,0.15);margin-bottom:24px">' +
           '<div class="about-grid">' +
@@ -147,7 +150,8 @@
     var mashaPars = [
       "Masha Robeen is a gerontechnologist and product manager whose work sits at the intersection of aging research, healthcare innovation, and systems integration.",
       "She holds dual Master's degrees in Gerontology from the University of Haifa and Yokohama City University, Japan, and spent five years in Japan researching two interconnected dimensions of long-term care: the coping mechanisms of long-term care recipients, and home and environment adaptations for older adults and their caregivers.",
-      "Working alongside major caregiving organizations in both countries, she developed a research-grounded understanding of how policy frameworks, formal care systems, and cultural context shape aging outcomes. Back in Israel, Masha focuses on improving the transition from hospital to community-based rehabilitation. She collaborates with multidisciplinary healthcare teams to develop integrated models connecting medical care, rehabilitation services, and community support, with a track record of leading healthcare projects from concept to measurable impact.",
+      "Working alongside major caregiving organizations in both countries, she developed a research-grounded understanding of how policy frameworks, formal care systems, and cultural context shape aging outcomes.",
+      "Back in Israel, Masha focuses on improving the transition from hospital to community-based rehabilitation. She collaborates with multidisciplinary healthcare teams to develop integrated models connecting medical care, rehabilitation services, and community support, with a track record of leading healthcare projects from concept to measurable impact.",
       "Masha brings a cross-disciplinary approach to the complex challenges of rapidly aging societies, translating evidence into policy-relevant, human-centered solutions."
     ];
     var hadasPars = [
@@ -237,7 +241,7 @@
 
     if (!searchRow) {
       container.innerHTML = '<div style="min-height:100vh;background:#e8ecf8">' +
-        '<div class="participants-header-wrap" style="background:rgba(36,42,98,0.9);padding:28px 48px 48px;color:white;position:relative">' +
+        '<div class="participants-header-wrap" style="background:rgba(36,42,98,0.9);padding:28px 48px 24px;color:white;position:relative">' +
           '<div style="max-width:1204px;margin:0 auto;display:flex;align-items:flex-start;justify-content:flex-start;gap:28px">' +
             '<div style="flex:1;min-width:0;text-align:left;display:flex;flex-direction:column;align-items:flex-start;gap:12px;padding:6px 12px 0 0"><h1 style="margin:0;font-size:28px;font-weight:800;display:flex;align-items:center;gap:10px;justify-content:flex-start;line-height:1.1">Program Participants</h1><p style="margin:0;opacity:0.7;font-size:15px;font-weight:800;line-height:1.35;max-width:580px;text-align:left">Choose participants by affiliation label</p><p style="margin:0;opacity:0.7;font-size:15px;font-weight:800;line-height:1.35;max-width:580px;text-align:left">Search and filter all program participants across sectors</p></div>' +
             '<div class="stats-bar-wrap" id="stats-bar" style="flex:0 1 640px;max-width:640px;width:100%;display:grid;grid-template-columns:repeat(3, 1fr);gap:10px;justify-content:flex-end;margin-left:auto">'+statsHtml+'</div>' +
