@@ -92,12 +92,19 @@
     return c;
   }
 
+  var SECTOR_ORDER = ["Civil Society","Health System","Central Government","Local Government","Academia & Research"];
   function filterParticipants(activeSector, search) {
-    return PARTICIPANTS.filter(function (p) {
+    var list = PARTICIPANTS.filter(function (p) {
       const ms = activeSector === "all" || p.sector === activeSector;
       const q = search.toLowerCase();
       const mq = !q || p.nameEn.toLowerCase().indexOf(q) >= 0 || (p.nameJa || '').indexOf(q) >= 0 || p.nameHe.indexOf(q) >= 0 || p.org.toLowerCase().indexOf(q) >= 0 || p.role.toLowerCase().indexOf(q) >= 0;
       return ms && mq;
+    });
+    return list.sort(function (a, b) {
+      var ia = SECTOR_ORDER.indexOf(a.sector);
+      var ib = SECTOR_ORDER.indexOf(b.sector);
+      if (ia !== ib) return ia - ib;
+      return a.id - b.id;
     });
   }
 
