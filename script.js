@@ -3,7 +3,7 @@
 
   var PHOTO_DIR = 'photos/';
   /** Bump after replacing photos. Desktop 520×400, mobile 390×340 — wide art fills card (object-fit: cover). */
-  var PHOTO_VER = '20';
+  var PHOTO_VER = '24';
 
   function participantPhotoUrlDesktop(key) {
     return PHOTO_DIR + key + '.webp?v=' + PHOTO_VER;
@@ -43,26 +43,26 @@
     { id:16, key:"Josef_Kaplan",             nameEn:"Josef Kaplan",             nameJa:"カプラン・ヨセフ",                 nameHe:"יוסף קפלן",             sector:"Civil Society",      org:"Lev Ganim Senior Living",              orgHe:"לב גנים מגורים לגיל השלישי",     role:"CEO",                                          roleHe:'מנכ"ל',                               email:"kaplan@levganim.co.il" },
     { id:17, key:"Liat_Sikron_Vazan",        nameEn:"Liat Sikron Vazan",        nameJa:"ヴァザン・リアット・シクロン",       nameHe:"ליאת סיקרון וזאן",      sector:"Civil Society",      org:"JDC‑Eshel",                            orgHe:"ג'וינט ישראל – אשל",              role:"Head of Knowledge and Learning Center",        roleHe:"ראש מרכז ידע ולמידה",               email:"liats@jdc.org.il" },
     { id:18, key:"Yael_Barkan_Dolev",        nameEn:"Yael Barkan Dolev",        nameJa:"ドレヴ・ヤエル・バルカン",           nameHe:"יעל ברקן דולב",         sector:"Civil Society",      org:"Gil Oz Organization",                  orgHe:"עמותת גיל עוז",                   role:"CEO",                                          roleHe:"מנכ״לית",                             email:"yael@giloz.co.il" },
-    { id:19, key:"Adaya_Nissenholtz",        nameEn:"Adaya Nissenholtz",        nameJa:"ニッセンホルツ・アダヤ",             nameHe:"עדיה ניסנהולץ",        sector:"Health System",      org:"Clalit Health Services",               orgHe:"כללית שירותי בריאות",             role:"Regional Geriatrician",                        roleHe:"גריאטרית מחוזית",                   email:"adayani@clalit.org.il" },
-    { id:20, key:"Dalit_Cypel",              nameEn:"Dalit Cypel",              nameJa:"ツィペル・ダリット",               nameHe:"דלית ציפל",            sector:"Health System",      org:"Clalit Health Services",               orgHe:"כללית שירותי בריאות",             role:"Head of Geriatrics Field",                     roleHe:"ראש תחום גריאטריה",                 email:"dalitcy@gmail.com" },
-    { id:21, key:"Galit_Segal",              nameEn:"Galit Segal",              nameJa:"セガル・ガリット",                 nameHe:"גלית סגל",              sector:"Health System",      org:"Meuhedet HMO",                        orgHe:"קופת חולים מאוחדת",               role:"Chief Geriatric Physician",                    roleHe:"גריאטרית ראשית",                     email:"galit.s4@meuhedet.co.il" },
-    { id:22, key:"Netanel_Levi",             nameEn:"Netanel Levi",             nameJa:"レヴィ・ネタネル",                 nameHe:"נתנאל לוי",             sector:"Health System",      org:"Shoham Medical Center",                orgHe:"המרכז הרפואי שוהם",               role:"Head of Physical Therapy Department",          roleHe:"מנהל שירותי פיזיותרפיה",             email:"netanell@shoham.health.gov.il" },
-    { id:23, key:"Suaad_Ektelat",            nameEn:"Suaad Ektelat",            nameJa:"エクテラト・スアード",             nameHe:"סואעד אקטילאת",        sector:"Health System",      org:"Beer Yaakov–Ness Ziona Mental Health Center", orgHe:"מרכז לבריאות הנפש באר יעקב-נס ציונה", role:"Adult‑Gerontology Nurse Practitioner",  roleHe:"אחות מומחית גרונטולוגית",          email:"somaa.h84@gmail.com" },
+    { id:19, key:"Adaya_Nissenholtz",        nameEn:"Adaya Nissenholtz",        nameJa:"ニッセンホルツ・アダヤ",             nameHe:"עדיה ניסנהולץ",        sector:"Healthcare System",      org:"Clalit Health Services",               orgHe:"כללית שירותי בריאות",             role:"Regional Geriatrician",                        roleHe:"גריאטרית מחוזית",                   email:"adayani@clalit.org.il" },
+    { id:20, key:"Dalit_Cypel",              nameEn:"Dalit Cypel",              nameJa:"ツィペル・ダリット",               nameHe:"דלית ציפל",            sector:"Healthcare System",      org:"Clalit Health Services",               orgHe:"כללית שירותי בריאות",             role:"Head of Geriatrics Field",                     roleHe:"ראש תחום גריאטריה",                 email:"dalitcy@gmail.com" },
+    { id:21, key:"Galit_Segal",              nameEn:"Galit Segal",              nameJa:"セガル・ガリット",                 nameHe:"גלית סגל",              sector:"Healthcare System",      org:"Meuhedet HMO",                        orgHe:"קופת חולים מאוחדת",               role:"Chief Geriatric Physician",                    roleHe:"גריאטרית ראשית",                     email:"galit.s4@meuhedet.co.il" },
+    { id:22, key:"Netanel_Levi",             nameEn:"Netanel Levi",             nameJa:"レヴィ・ネタネル",                 nameHe:"נתנאל לוי",             sector:"Healthcare System",      org:"Shoham Medical Center",                orgHe:"המרכז הרפואי שוהם",               role:"Head of Physical Therapy Department",          roleHe:"מנהל שירותי פיזיותרפיה",             email:"netanell@shoham.health.gov.il" },
+    { id:23, key:"Suaad_Ektelat",            nameEn:"Suaad Ektelat",            nameJa:"エクテラト・スアード",             nameHe:"סואעד אקטילאת",        sector:"Healthcare System",      org:"Beer Yaakov–Ness Ziona", orgLine2:"Mental Health Center", orgHe:"מרכז לבריאות הנפש באר יעקב-נס ציונה", role:"Adult‑Gerontology Nurse Practitioner",  roleHe:"אחות מומחית גרונטולוגית",          email:"somaa.h84@gmail.com" },
     { id:24, key:"Galit_Groper",             nameEn:"Galit Groper",             nameJa:"グローパー・ガリット",             nameHe:"גלית גרופר",            sector:"Local Government",   org:"Emek Hefer Regional Council",          orgHe:"מועצה אזורית עמק חפר",            role:"Head of Social Services and Health Dept.",     roleHe:"מנהלת אגף רווחה ובריאות",            email:"galitgr@hefer.org.il" },
     { id:25, key:"Michal_Schwartz",          nameEn:"Michal Schwartz",          nameJa:"シュワルツ・ミハル",               nameHe:"מיכל שוורץ",            sector:"Local Government",   org:"Rishon LeZion Municipality",           orgHe:"עיריית ראשון לציון",             role:"Director Senior Citizens Dept.",               roleHe:"מנהלת אגף אזרחים ותיקים",             email:"micalsw@rishonlezion.muni.il" },
     { id:26, key:"Nes-Ya_Strasburg",         nameEn:"Nes-Ya Strasburg",         nameJa:"ストラスブルグ・ネスヤ",           nameHe:"נס-יה שטרסבורג",       sector:"Local Government",   org:"Southern Soreq Cluster",               orgHe:"מרחב שורק דרומי",                 role:"Optimal Aging Regional Director",             roleHe:"מנהלת אזורית להזדקנות מיטבית",      email:"nesyas2222@gmail.com" },
     { id:27, key:"Omer_Ungar",               nameEn:"Omer Ungar",               nameJa:"ウンガル・オメル",                 nameHe:"עומר אונגר",            sector:"Local Government",   org:"Ashdod Municipality",                  orgHe:"עיריית אשדוד",                    role:"Social Services Director",                     roleHe:"מנהל אגף שירותים חברתיים",            email:"omer@ashdod.muni.il" },
     { id:28, key:"Shirli_Reznizky_Kahan",    nameEn:"Shirli Reznizky Kahan",    nameJa:"カハン・シルリ",                   nameHe:"שירלי רזניצקי כהן",    sector:"Academia & Research", org:"Myers JDC Brookdale Institute",        orgHe:"מכון מאיירס-ג'וינט-ברוקדייל",    role:"Senior Research Scholar and Aging Team Leader", roleHe:"חוקרת בכירה וראש צוות הזדקנות",    email:"shirlir@jdc.org" },
     { id:29, key:"Shmuel_Springer",          nameEn:"Shmuel Springer",          nameJa:"スプリンガー・シュムエル",           nameHe:"שמואל שפרינגר",         sector:"Academia & Research", org:"Ariel University",                      orgHe:"אוניברסיטת אריאל",                role:"Head Academic Community Partnership Unit",     roleHe:"ראש יחידת קשרי אקדמיה קהילה",       email:"shmuels@ariel.ac.il" },
-    { id:30, key:"Meital_Weissman_Tsabari",  nameEn:"Meital Weissman Tsabari",  nameJa:"",                               nameHe:"מיטל וייסמן צברי",     sector:"Health System",      org:"Maccabi Healthcare",                   orgHe:"מכבי שירותי בריאות",              role:"National Senior Care Coordinator",             roleHe:"רכזת טיפול ארצי לקשישים",             email:"meital.weissman@maccabi.co.il" },
+    { id:30, key:"Meital_Weissman_Tsabari",  nameEn:"Meital Weissman Tsabari",  nameJa:"メイタル・ワイスマン・ツァバリ",     nameHe:"מיטל ויסמן צברי",     sector:"Central Government",   org:"Ministry of Social Affairs and Services",        orgHe:"משרד הרווחה והשירותים החברתיים",    role:"Head of knowledge management field, policy planning and strategy", roleHe:"מנהלת תחום, אגף תכנון מדיניות",     email:"meitalit80@gmail.com" },
   ];
 
   const SECTORS = [
     { key:"all",                 label:"All Sectors",        short:"Total",    icon:"👥" },
     { key:"Civil Society",       label:"Civil Society",      short:"Civil Society",    icon:"🤝" },
-    { key:"Health System",       label:"Health System",      short:"Health System",   icon:"❤️" },
-    { key:"Central Government",  label:"Central Government", short:"Central Government", icon:"🏛" },
+    { key:"Healthcare System",   label:"Healthcare System",  short:"Healthcare System", icon:"❤️" },
     { key:"Local Government",    label:"Local Government",   short:"Local Government",   icon:"🏢" },
+    { key:"Central Government",  label:"Central Government", short:"Central Government", icon:"🏛" },
     { key:"Academia & Research", label:"Academia & Research", short:"Academia & Research", icon:"🎓" },
   ];
 
@@ -72,7 +72,7 @@
     "all":                 { bg:"#5b5484", light:"#C0C8D5", border:"#8b92a8", text:"#3d3a5c" },
     "Central Government":  { bg:"#6b6590", light:"#CFCBE1", border:"#8b85a8", text:"#3d3a5c" },
     "Local Government":    { bg:"#8a7572", light:"#DACFCD", border:"#9a9090", text:"#3d3a5c" },
-    "Health System":       { bg:"#5783CB", light:"#C0C8D5", border:"#8ba86e", text:"#3d3a5c" },
+    "Healthcare System":       { bg:"#5783CB", light:"#C0C8D5", border:"#6b9bd4", text:"#3d3a5c" },
     "Civil Society":       { bg:"#5a7a4a", light:"#F0F3DE", border:"#9ba88e", text:"#3d3a5c" },
     "Academia & Research": { bg:"#755EE6", light:"#F3E8FF", border:"#a78bfa", text:"#3d3a5c" },
   };
@@ -92,12 +92,12 @@
     return c;
   }
 
-  var SECTOR_ORDER = ["Civil Society","Health System","Central Government","Local Government","Academia & Research"];
+  var SECTOR_ORDER = ["Civil Society","Healthcare System","Local Government","Central Government","Academia & Research"];
   function filterParticipants(activeSector, search) {
     var list = PARTICIPANTS.filter(function (p) {
       const ms = activeSector === "all" || p.sector === activeSector;
       const q = search.toLowerCase();
-      const mq = !q || p.nameEn.toLowerCase().indexOf(q) >= 0 || (p.nameJa || '').indexOf(q) >= 0 || p.nameHe.indexOf(q) >= 0 || p.org.toLowerCase().indexOf(q) >= 0 || p.role.toLowerCase().indexOf(q) >= 0;
+      const mq = !q || p.nameEn.toLowerCase().indexOf(q) >= 0 || (p.nameJa || '').indexOf(q) >= 0 || p.nameHe.indexOf(q) >= 0 || p.org.toLowerCase().indexOf(q) >= 0 || (p.orgLine2 || '').toLowerCase().indexOf(q) >= 0 || p.role.toLowerCase().indexOf(q) >= 0;
       return ms && mq;
     });
     return list.sort(function (a, b) {
@@ -260,6 +260,7 @@
     var nameJaHtml = nameJa ? '<div style="font-size:13px;color:'+(c.text||'#475569')+';opacity:0.9">'+nameJa+'</div>' : '';
     var nameJaBackHtml = nameJa ? '<div style="font-size:12px;opacity:0.82">'+nameJa+'</div>' : '';
     var org = escapeHtml(p.org);
+    var orgLine2 = (p.orgLine2 && p.orgLine2.trim()) ? '<br/>' + escapeHtml(p.orgLine2) : '';
     var orgHe = escapeHtml(p.orgHe);
     var role = escapeHtml(p.role);
     var roleHe = escapeHtml(p.roleHe);
@@ -271,7 +272,7 @@
         '<div class="card-front" style="position:absolute;top:0;left:0;right:0;bottom:0;backface-visibility:hidden;background:white;border-radius:14px;border:2.5px solid '+c.border+';overflow:hidden;display:flex;flex-direction:column;height:100%;min-height:0;box-shadow:0 2px 12px rgba(0,0,0,0.08)">' +
           '<div class="card-photo-wrap" style="flex:3 1 0;min-height:150px;min-width:0;overflow:hidden;display:flex;align-items:stretch;justify-content:stretch">'+photoHtml+'</div>' +
           '<div style="flex:2 1 0;min-height:0;padding:12px 14px 6px;overflow:hidden;background:'+(c.light||c.bg)+';color:'+(c.text||'#334155')+';display:flex;flex-direction:column;align-items:center;text-align:center;gap:4px">' +
-            '<div class="card-front-names" style="flex-shrink:0;display:flex;flex-direction:column;gap:6px"><div style="font-weight:800;font-size:16px;color:'+(c.text||'#0f172a')+'">'+nameEn+'</div>'+nameJaHtml+'<div style="font-family:Arial;direction:rtl;font-size:16px;color:'+(c.text||'#475569')+'">'+nameHe+'</div><div class="card-front-org" style="font-size:13px;font-weight:600;color:'+(c.text||'#334155')+';margin-top:6px">'+org+'</div></div>' +
+            '<div class="card-front-names" style="flex-shrink:0;display:flex;flex-direction:column;gap:6px"><div style="font-weight:800;font-size:16px;color:'+(c.text||'#0f172a')+'">'+nameEn+'</div>'+nameJaHtml+'<div style="font-family:Arial;direction:rtl;font-size:16px;color:'+(c.text||'#475569')+'">'+nameHe+'</div><div class="card-front-org" style="font-size:13px;font-weight:600;color:'+(c.text||'#334155')+';margin-top:4px">'+org+orgLine2+'</div></div>' +
             '<div class="card-front-label-wrap" style="display:flex;align-items:center;justify-content:center;min-height:0;margin-top:2px"><div style="background:'+c.bg+';color:white;font-size:14px;font-weight:700;padding:6px 14px;border-radius:20px">'+escapeHtml(p.sector)+'</div></div>' +
           '</div>' +
           '<div style="flex-shrink:0;text-align:center;padding:8px;font-size:10px;color:white;background:'+c.bg+'">View Details</div>' +
@@ -279,7 +280,7 @@
         '<div class="card-back" style="position:absolute;top:0;left:0;right:0;bottom:0;backface-visibility:hidden;transform:rotateY(180deg);background:linear-gradient(160deg,'+c.bg+','+c.bg+'ee);border-radius:14px;padding:18px;color:white;display:flex;flex-direction:column;gap:0;overflow:hidden">' +
           '<div class="card-back-upper" style="flex:1 1 33%;min-height:140px;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;padding:16px 0 20px;gap:12px"><div class="participant-back-thumb" style="width:140px;height:140px;min-width:140px;min-height:140px;border-radius:50%;overflow:hidden;border:3px solid rgba(255,255,255,0.5);flex-shrink:0;background:rgba(255,255,255,0.1);box-shadow:0 4px 12px rgba(0,0,0,0.2)">'+backImg+'</div><div style="text-align:center;display:flex;flex-direction:column;gap:6px"><div style="font-weight:800;font-size:17px">'+nameEn+'</div>'+nameJaBackHtml+'<div style="font-family:Arial;direction:rtl;font-size:13px;opacity:0.88">'+nameHe+'</div></div></div>' +
           '<div style="height:1px;background:rgba(255,255,255,0.25);flex-shrink:0"></div>' +
-          '<div style="flex:1;min-height:0;overflow-y:auto;padding:12px 0 8px"><div style="font-size:13px"><strong>'+org+'</strong><br/><span style="font-family:Arial;direction:rtl;font-size:11px;opacity:0.7">'+orgHe+'</span></div>' +
+          '<div style="flex:1;min-height:0;overflow-y:auto;padding:12px 0 8px"><div style="font-size:13px"><strong>'+org+orgLine2+'</strong><br/><span style="font-family:Arial;direction:rtl;font-size:11px;opacity:0.7">'+orgHe+'</span></div>' +
           '<div style="margin-top:8px;font-size:13px"><strong>'+role+'</strong><br/><span style="font-family:Arial;direction:rtl;font-size:11px;opacity:0.7">'+roleHe+'</span></div>' +
           '<div style="margin-top:8px"><a href="mailto:'+email+'" style="color:#a5b4fc" onclick="event.stopPropagation()">'+email+'</a></div></div>' +
           '<div style="text-align:center;font-size:10px;opacity:0.5;flex-shrink:0;padding-top:4px">TAP TO FLIP BACK</div>' +
