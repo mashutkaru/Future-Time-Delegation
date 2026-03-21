@@ -115,6 +115,8 @@
       object-fit: cover !important;
       object-position: center center !important;
     }
+    .participant-card .card-back-upper { flex: 1 1 33% !important; min-height: 140px !important; }
+    .participant-card .participant-back-thumb { width: 140px !important; height: 140px !important; min-width: 140px !important; min-height: 140px !important; }
     .about-banner h1 { font-family: 'Inter', sans-serif; }
     @media (max-width: 900px) {
       .about-banner h1 { font-size: 24px !important; }
@@ -144,6 +146,10 @@
       .participant-card .card-photo-wrap { flex: 5 1 0 !important; min-height: 200px !important; height: auto !important; margin-bottom: 0 !important; }
       .participant-card .card-photo-wrap .participant-photo-inner { min-height: 0 !important; }
       .participant-card .card-front > div:nth-child(2) { flex: 2 1 0 !important; min-height: 0 !important; overflow: hidden !important; }
+      .participant-card .card-front-names { gap: 4px !important; }
+      .participant-card .card-front-label-wrap { padding-bottom: 10px !important; margin-top: 8px !important; }
+      .participant-card .participant-back-thumb { width: 160px !important; height: 160px !important; min-width: 160px !important; min-height: 160px !important; }
+      .participant-card .card-back-upper { min-height: 160px !important; }
       .participant-card .card-front > div:nth-child(3) { flex-shrink: 0 !important; }
       .team-content { padding: 28px 16px 48px !important; }
       .team-content h1 { font-size: 26px !important; margin-bottom: 28px !important; }
@@ -157,6 +163,8 @@
     }
 
     @media (min-width: 901px) {
+      .participant-card .card-front > div:nth-child(2) { padding-bottom: 2px !important; }
+      .participant-card .card-front-org { margin-top: 10px !important; }
       .stats-bar-wrap button { padding: 10px 12px !important; min-height: 56px !important; gap: 6px !important; }
       .stats-bar-wrap button > span:last-child { font-size: 15px !important; }
       .stats-bar-wrap button > span:first-child span:last-child { font-size: 15px !important; }

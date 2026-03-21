@@ -133,7 +133,7 @@
         '<li style="margin:0 0 6px">Municipal and regional governance models</li>' +
         '<li style="margin:0 0 6px">Welfare and community-based services</li>' +
         '<li style="margin:0 0 6px">Multi-generational community centers</li>' +
-        '<li style="margin:0 0 6px">Government agencies and policy frameworks</li>' +
+        '<li style="margin:0 0 6px">Government agencies aand policy frameworks</li>' +
         '<li style="margin:0">Innovation hubs, investment entities, and gerontechnology initiatives</li>' +
       '</ul>';
 
@@ -264,18 +264,18 @@
         '<div class="card-front" style="position:absolute;top:0;left:0;right:0;bottom:0;backface-visibility:hidden;background:white;border-radius:14px;border:2.5px solid '+c.border+';overflow:hidden;display:flex;flex-direction:column;height:100%;min-height:0;box-shadow:0 2px 12px rgba(0,0,0,0.08)">' +
           '<div class="card-photo-wrap" style="flex:3 1 0;min-height:150px;min-width:0;overflow:hidden;display:flex;align-items:stretch;justify-content:stretch">'+photoHtml+'</div>' +
           '<div style="flex:2 1 0;min-height:0;padding:12px 14px 6px;overflow:hidden;background:'+(c.light||c.bg)+';color:'+(c.text||'#334155')+';display:flex;flex-direction:column;align-items:center;text-align:center;gap:4px">' +
-            '<div style="flex-shrink:0;display:flex;flex-direction:column;gap:6px"><div style="font-weight:800;font-size:16px;color:'+(c.text||'#0f172a')+'">'+nameEn+'</div>'+nameJaHtml+'<div style="font-family:Arial;direction:rtl;font-size:16px;color:'+(c.text||'#475569')+'">'+nameHe+'</div><div style="font-size:13px;font-weight:600;color:'+(c.text||'#334155')+';margin-top:6px">'+org+'</div></div>' +
-            '<div style="display:flex;align-items:center;justify-content:center;min-height:0;margin-top:2px"><div style="background:'+c.bg+';color:white;font-size:14px;font-weight:700;padding:6px 14px;border-radius:20px">'+escapeHtml(p.sector)+'</div></div>' +
+            '<div class="card-front-names" style="flex-shrink:0;display:flex;flex-direction:column;gap:6px"><div style="font-weight:800;font-size:16px;color:'+(c.text||'#0f172a')+'">'+nameEn+'</div>'+nameJaHtml+'<div style="font-family:Arial;direction:rtl;font-size:16px;color:'+(c.text||'#475569')+'">'+nameHe+'</div><div class="card-front-org" style="font-size:13px;font-weight:600;color:'+(c.text||'#334155')+';margin-top:6px">'+org+'</div></div>' +
+            '<div class="card-front-label-wrap" style="display:flex;align-items:center;justify-content:center;min-height:0;margin-top:2px"><div style="background:'+c.bg+';color:white;font-size:14px;font-weight:700;padding:6px 14px;border-radius:20px">'+escapeHtml(p.sector)+'</div></div>' +
           '</div>' +
           '<div style="flex-shrink:0;text-align:center;padding:8px;font-size:10px;color:white;background:'+c.bg+'">View Details</div>' +
         '</div>' +
-        '<div class="card-back" style="position:absolute;top:0;left:0;right:0;bottom:0;backface-visibility:hidden;transform:rotateY(180deg);background:linear-gradient(160deg,'+c.bg+','+c.bg+'ee);border-radius:14px;padding:18px;color:white;display:flex;flex-direction:column;gap:10px">' +
-          '<div style="display:flex;gap:12px;align-items:center"><div class="participant-back-thumb" style="width:60px;height:60px;border-radius:6px;overflow:hidden;border:2px solid rgba(255,255,255,0.35);flex-shrink:0;background:rgba(255,255,255,0.1)">'+backImg+'</div><div><div style="font-weight:800;font-size:16px">'+nameEn+'</div>'+nameJaBackHtml+'<div style="font-family:Arial;direction:rtl;font-size:12px;opacity:0.75">'+nameHe+'</div></div></div>' +
-          '<div style="height:1px;background:rgba(255,255,255,0.2)"></div>' +
-          '<div style="flex:1;min-height:0"><div style="font-size:13.5px"><strong>'+org+'</strong><br/><span style="font-family:Arial;direction:rtl;font-size:11px;opacity:0.65">'+orgHe+'</span></div>' +
-          '<div style="margin-top:8px;font-size:13.5px"><strong>'+role+'</strong><br/><span style="font-family:Arial;direction:rtl;font-size:11px;opacity:0.65">'+roleHe+'</span></div>' +
+        '<div class="card-back" style="position:absolute;top:0;left:0;right:0;bottom:0;backface-visibility:hidden;transform:rotateY(180deg);background:linear-gradient(160deg,'+c.bg+','+c.bg+'ee);border-radius:14px;padding:18px;color:white;display:flex;flex-direction:column;gap:0;overflow:hidden">' +
+          '<div class="card-back-upper" style="flex:1 1 33%;min-height:140px;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;padding:16px 0 20px;gap:12px"><div class="participant-back-thumb" style="width:140px;height:140px;min-width:140px;min-height:140px;border-radius:50%;overflow:hidden;border:3px solid rgba(255,255,255,0.5);flex-shrink:0;background:rgba(255,255,255,0.1);box-shadow:0 4px 12px rgba(0,0,0,0.2)">'+backImg+'</div><div style="text-align:center;display:flex;flex-direction:column;gap:6px"><div style="font-weight:800;font-size:17px">'+nameEn+'</div>'+nameJaBackHtml+'<div style="font-family:Arial;direction:rtl;font-size:13px;opacity:0.88">'+nameHe+'</div></div></div>' +
+          '<div style="height:1px;background:rgba(255,255,255,0.25);flex-shrink:0"></div>' +
+          '<div style="flex:1;min-height:0;overflow-y:auto;padding:12px 0 8px"><div style="font-size:13px"><strong>'+org+'</strong><br/><span style="font-family:Arial;direction:rtl;font-size:11px;opacity:0.7">'+orgHe+'</span></div>' +
+          '<div style="margin-top:8px;font-size:13px"><strong>'+role+'</strong><br/><span style="font-family:Arial;direction:rtl;font-size:11px;opacity:0.7">'+roleHe+'</span></div>' +
           '<div style="margin-top:8px"><a href="mailto:'+email+'" style="color:#a5b4fc" onclick="event.stopPropagation()">'+email+'</a></div></div>' +
-          '<div style="text-align:center;font-size:10px;opacity:0.4">TAP TO FLIP BACK</div>' +
+          '<div style="text-align:center;font-size:10px;opacity:0.5;flex-shrink:0;padding-top:4px">TAP TO FLIP BACK</div>' +
         '</div>' +
       '</div></div>';
   }
