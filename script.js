@@ -172,7 +172,6 @@
     container.innerHTML = '<div style="min-height:100vh;background:#e5e7eb">' +
       '<div class="about-banner" style="background:#2a2d71;width:100%;overflow:hidden">' +
         '<div style="padding:48px 24px;text-align:center"><div style="display:flex;align-items:center;justify-content:center;gap:14px"><img src="images/just_the_round_logo.png" alt="Future Time" style="height:54px;width:auto;display:block" /><h1 style="margin:0;color:white;font-size:32px;font-weight:800;letter-spacing:0.02em">Future Time Program</h1></div></div>' +
-        '<div style="background:white;width:100%;display:flex;justify-content:center"><div style="width:1200px;max-width:100%;height:50px;overflow:hidden"><img src="sponsorship.png" alt="Program partners and sponsors" style="width:100%;height:100%;object-fit:contain;display:block" /></div></div>' +
       '</div>' +
       '<div class="about-content">' +
         '<div class="about-box" style="box-shadow:0 4px 24px rgba(0,0,0,0.15);margin-bottom:24px">' +
