@@ -218,15 +218,39 @@
       "She teaches at leading universities in Japan and Israel, including Kyoto University, Doshisha University, Ritsumeikan University, and the University of Haifa. Alongside her academic work, she has led numerous cross-cultural initiatives connecting students, researchers, and professionals from different countries.",
       "Living in Japan for over a decade, Hadas engages with the country not only as a scholar but also through everyday life. Fluent in Japanese and deeply immersed in the culture, she continuously explores Japan's institutions, communities, traditions, arts, and landscapes. Her curiosity about the \"Land of the Rising Sun\" fuels her work and shapes the learning experiences she designs for others."
     ];
+    var hadasBarzilaiPars = [
+      "Hadas Barzilai directs the \"FutureTime\" program at Joint-ELKA, fostering cross-sector collaboration to improve the efficiency and effectiveness of systems and organizations, with the aim of enhancing quality of life for Israeli citizens.",
+      "In her previous roles at ELKA, Hadas contributed to developing the Regional Clusters Initiative. She worked closely with the Eastern Negev regional authorities cluster, establishing and leading a forum for local authority heads, a welfare forum, and a multi-sector leadership program. These efforts culminated in a strategic regional economic development plan for the Eastern Negev.",
+      "Before joining ELKA, Hadas founded and managed a nonprofit organization dedicated to advancing equality and social justice. Under her leadership, the organization increased public awareness of social rights, provided the tools needed to exercise those rights, and encouraged active civic engagement to influence decision-making processes affecting citizens' quality of life. She led the organization's southern branch for 17 years.",
+      "Hadas holds a Master of Social Work (Administration and Welfare Policy track) and a Bachelor of Social Work, both earned cum laude at Ben-Gurion University."
+    ];
+    var sigalPars = [
+      "Sigal Mautner Siebzehner is an organizational consultant and group facilitator with more than 20 years of experience in organizational, personal, and professional development. At ELKA, she has played a key role in designing and managing initiatives led by senior executives and experts from government ministries, local authorities, and civil society organizations.",
+      "Previously, Sigal directed the Women's Empowerment Unit at the Israel Association of Community Centers, overseeing leadership programs for thousands of women nationwide. She also served as Director of the \"Youth for Youth\" Association, managed the training department at MATI (Small Business Development Center), and worked as a senior organizational consultant in leading consulting firms.",
+      "In these roles, she guided senior management teams, led processes in organizations across multiple sectors, and developed training programs for managers and multi-professional teams. Over the years, Sigal has lectured and facilitated workshops in various academic contexts.",
+      "She holds an M.Sc. in Organizational Behavior from Tel Aviv University, is a certified trainer with a certificate in group facilitation from the Zippory Center, and has a certificate in psychotherapy studies from the Temurot School of Dynamic Psychotherapy at Bar-Ilan University."
+    ];
+    var yuvalPars = [
+      "Yuval Golani leads the operations and logistics of the \"FutureTime\" program. In her previous roles at ELKA, she worked with regional municipal clusters to build mechanisms and strengthen capacities for delivering high-quality social services, leading cross-sector collaborations with the Ministry of Health, the Ministry of Interior, and the Ministry of Welfare and Social Services.",
+      "Prior to that, Yuval served as Assistant Spokesperson in the Media, Communication and Advocacy Division at the Ministry of Energy and Infrastructure. Alongside her work, she actively volunteers in social organizations working to reduce social inequality.",
+      "Yuval holds a BA in Political Science and International Relations from the Hebrew University of Jerusalem."
+    ];
     var pStyle = 'margin:0 0 16px;font-size:15px;line-height:1.75;color:#475569';
     var mashaBioHtml = mashaPars.map(function(t){ return '<p style="'+pStyle+'">'+t+'</p>'; }).join('');
     var hadasBioHtml = hadasPars.map(function(t){ return '<p style="'+pStyle+'">'+t+'</p>'; }).join('');
+    var hadasBarzilaiBioHtml = hadasBarzilaiPars.map(function(t){ return '<p style="'+pStyle+'">'+t+'</p>'; }).join('');
+    var sigalBioHtml = sigalPars.map(function(t){ return '<p style="'+pStyle+'">'+t+'</p>'; }).join('');
+    var yuvalBioHtml = yuvalPars.map(function(t){ return '<p style="'+pStyle+'">'+t+'</p>'; }).join('');
     var cardStyle = 'background:white;border-radius:16px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,0.08);max-width:560px';
+    var newCardStyle = 'background:white;border-radius:16px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,0.08);width:100%;max-width:360px';
     var photoStyle = 'width:100%;height:280px;object-fit:contain;object-position:center center';
+    var sectionTitleStyle = 'margin:0 0 20px;text-align:center;font-size:24px;font-weight:800;color:#1e293b;letter-spacing:0.01em';
     container.innerHTML = '<div style="min-height:100vh;background:#e8ecf8">' +
       '<div class="team-content">' +
         '<h1 style="font-size:36px;font-weight:800;color:#19258B;margin:0 0 48px;text-align:center">Meet the Team</h1>' +
-        '<div class="team-cards" style="display:flex;flex-wrap:wrap;justify-content:center;gap:48px">' +
+        '<div class="team-section team-section-organizers" style="margin-bottom:44px">' +
+          '<h2 style="'+sectionTitleStyle+'">Delegation Organizers</h2>' +
+        '<div class="team-cards team-cards-main" style="display:flex;flex-wrap:wrap;justify-content:center;gap:48px">' +
           '<div class="team-card team-card-masha" style="'+cardStyle+'">' +
             '<div class="team-name" style="padding:24px 32px 12px"><h2 style="margin:0;font-size:24px;font-weight:800;color:#0f172a">Masha Robeen</h2></div>' +
             '<div class="team-photo" style="padding:0 24px 24px;background:#fff"><img src="'+PHOTO_DIR+'Masha_Robeen.png" alt="Masha Robeen" style="'+photoStyle+';display:block" /></div>' +
@@ -237,8 +261,27 @@
             '<div class="team-photo" style="padding:0 24px 24px;background:#fff"><img src="'+PHOTO_DIR+'Hadas_Kushelevich.png" alt="Dr. Hadas Kushelevich" style="'+photoStyle+';display:block" /></div>' +
             '<div class="team-bio" style="padding:0 32px 32px 28px">'+hadasBioHtml+'</div>' +
           '</div>' +
-        '</div></div></div>';
-    var teamCards = container.querySelector('.team-cards');
+        '</div></div>' +
+        '<div class="team-section team-section-program-team">' +
+          '<h2 style="'+sectionTitleStyle+'">Future Time Program Team</h2>' +
+        '<div class="team-cards team-cards-new" style="display:flex;flex-wrap:wrap;justify-content:center;gap:24px">' +
+          '<div class="team-card team-card-hadas-barzilai team-card-new" style="'+newCardStyle+'">' +
+            '<div class="team-name" style="padding:24px 24px 12px"><h2 style="margin:0;font-size:24px;font-weight:800;color:#0f172a">Hadas Barzilai</h2></div>' +
+            '<div class="team-photo" style="padding:0 20px 20px;background:#fff"><img src="'+PHOTO_DIR+'Hadas_Barzilai.jpg" alt="Hadas Barzilai" style="'+photoStyle+';display:block" /></div>' +
+            '<div class="team-bio" style="padding:0 24px 28px 24px"><p style="'+pStyle+';margin-bottom:8px"><strong>Director, \"FutureTime\" Program</strong><br/>Joint-ELKA</p>'+hadasBarzilaiBioHtml+'</div>' +
+          '</div>' +
+          '<div class="team-card team-card-sigal team-card-new" style="'+newCardStyle+'">' +
+            '<div class="team-name" style="padding:24px 24px 12px"><h2 style="margin:0;font-size:24px;font-weight:800;color:#0f172a">Sigal Mautner Siebzehner</h2></div>' +
+            '<div class="team-photo" style="padding:0 20px 20px;background:#fff"><img src="'+PHOTO_DIR+'Sigal_Mautner_Sievzehner.jpeg" alt="Sigal Mautner Siebzehner" style="'+photoStyle+';display:block" /></div>' +
+            '<div class="team-bio" style="padding:0 24px 28px 24px"><p style="'+pStyle+';margin-bottom:8px"><strong>Director, \"FutureTime\" Program</strong><br/>Joint-ELKA</p>'+sigalBioHtml+'</div>' +
+          '</div>' +
+          '<div class="team-card team-card-yuval team-card-new" style="'+newCardStyle+'">' +
+            '<div class="team-name" style="padding:24px 24px 12px"><h2 style="margin:0;font-size:24px;font-weight:800;color:#0f172a">Yuval Golani</h2></div>' +
+            '<div class="team-photo" style="padding:0 20px 20px;background:#fff"><img src="'+PHOTO_DIR+'Yuval_Golani.jpeg" alt="Yuval Golani" style="'+photoStyle+';display:block" /></div>' +
+            '<div class="team-bio" style="padding:0 24px 28px 24px"><p style="'+pStyle+';margin-bottom:8px"><strong>Coordinator, \"FutureTime\" Program</strong><br/>Joint-ELKA</p>'+yuvalBioHtml+'</div>' +
+          '</div>' +
+        '</div></div></div></div>';
+    var teamCards = container.querySelector('.team-cards-main');
     var mashaCard = container.querySelector('.team-card-masha');
     var hadasCard = container.querySelector('.team-card-hadas');
     if (teamCards && mashaCard && hadasCard && hadasCard.previousElementSibling !== mashaCard) {
