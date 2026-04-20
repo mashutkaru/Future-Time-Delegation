@@ -282,7 +282,7 @@
           '</div>' +
           '<div class="team-card team-card-yuval team-card-new" style="'+newCardStyle+'">' +
             '<div class="team-name" style="padding:24px 24px 12px"><h2 style="margin:0;font-size:24px;font-weight:800;color:#0f172a">Yuval Golani</h2></div>' +
-            '<div class="team-photo" style="padding:0 20px 20px;background:#fff"><img src="'+PHOTO_DIR+'Yuval_Golani.jpeg?v=2" alt="Yuval Golani" style="'+photoStyle+';display:block" /></div>' +
+            '<div class="team-photo" style="padding:0 20px 20px;background:#fff"><img src="'+PHOTO_DIR+'Yuval_Golani.jpeg?v=3" alt="Yuval Golani" style="'+photoStyle+';display:block" /></div>' +
             '<div class="team-bio" style="padding:0 24px 28px 24px"><p style="'+pStyle+';margin-bottom:8px"><strong>Coordinator, \"FutureTime\" Program</strong><br/>Joint-ELKA</p>'+yuvalBioHtml+'</div>' +
           '</div>' +
         '</div></div></div></div>';
