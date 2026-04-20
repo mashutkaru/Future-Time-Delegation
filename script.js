@@ -196,7 +196,12 @@
             '<div class="about-col-ja" style="min-width:0;flex:1;border-left:1px solid rgba(255,255,255,0.35);padding-left:24px"><div style="font-weight:800;font-size:16px;margin-bottom:12px">プログラムの目標</div>'+goalsJaHtml+'</div>' +
           '</div>' +
         '</div>' +
-        '<section class="about-cta" style="margin-top:40px;text-align:center">' +
+        '<section class="about-group-image" style="margin-top:36px">' +
+          '<div style="background:#2a2d71;border-radius:16px;padding:16px;box-shadow:0 4px 24px rgba(0,0,0,0.12)">' +
+            '<img src="'+PHOTO_DIR+'Group_image.jpeg" alt="Future Time group" style="width:100%;height:auto;display:block;border-radius:12px;object-fit:cover" loading="lazy" decoding="async"/>' +
+          '</div>' +
+        '</section>' +
+        '<section class="about-cta" style="margin-top:24px;text-align:center">' +
           '<button id="cta-participants" style="background:#fecf17;color:#2a2d71;border:none;border-radius:14px;padding:16px 40px;font-size:16px;font-weight:800;cursor:pointer;font-family:inherit;box-shadow:0 4px 18px rgba(0,0,0,0.2)">👥 Meet the 30 Participants →</button>' +
         '</section>' +
       '</div></div>';
@@ -277,7 +282,7 @@
           '</div>' +
           '<div class="team-card team-card-yuval team-card-new" style="'+newCardStyle+'">' +
             '<div class="team-name" style="padding:24px 24px 12px"><h2 style="margin:0;font-size:24px;font-weight:800;color:#0f172a">Yuval Golani</h2></div>' +
-            '<div class="team-photo" style="padding:0 20px 20px;background:#fff"><img src="'+PHOTO_DIR+'Yuval_Golani.jpeg" alt="Yuval Golani" style="'+photoStyle+';display:block" /></div>' +
+            '<div class="team-photo" style="padding:0 20px 20px;background:#fff"><img src="'+PHOTO_DIR+'Yuval_Golani.jpeg?v=2" alt="Yuval Golani" style="'+photoStyle+';display:block" /></div>' +
             '<div class="team-bio" style="padding:0 24px 28px 24px"><p style="'+pStyle+';margin-bottom:8px"><strong>Coordinator, \"FutureTime\" Program</strong><br/>Joint-ELKA</p>'+yuvalBioHtml+'</div>' +
           '</div>' +
         '</div></div></div></div>';
