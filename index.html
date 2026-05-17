@@ -75,6 +75,39 @@
     .participants-content { max-width: 1300px; margin: 0 auto; padding: 52px 48px 0px; }
     .stats-bar-wrap { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; }
     .cards-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(265px, 1fr)); gap: 0; }
+    .steering-section-box { padding: 32px 28px 28px !important; overflow: hidden; }
+    .steering-carousel { position: relative; }
+    .steering-carousel-track {
+      display: flex; gap: 16px; overflow-x: auto; scroll-snap-type: x mandatory;
+      scroll-behavior: smooth; -webkit-overflow-scrolling: touch;
+      padding: 4px 48px 12px; scrollbar-width: none;
+    }
+    .steering-carousel-track::-webkit-scrollbar { display: none; }
+    .steering-card.participant-card {
+      flex: 0 0 min(280px, 82vw); scroll-snap-align: center; margin: 0 !important;
+      height: 400px !important; min-height: 400px !important;
+    }
+    .steering-carousel-prev, .steering-carousel-next {
+      position: absolute; top: 50%; transform: translateY(-50%); z-index: 2;
+      width: 40px; height: 40px; border-radius: 50%; border: none;
+      background: rgba(255,255,255,0.95); color: var(--teal-dark);
+      font-size: 26px; line-height: 1; cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.18);
+    }
+    .steering-carousel-prev { left: 6px; }
+    .steering-carousel-next { right: 6px; }
+    .steering-swipe-hint {
+      margin: 0 0 10px; text-align: center; font-size: 13px; font-weight: 600;
+      color: rgba(255,255,255,0.8); letter-spacing: 0.04em;
+    }
+    .steering-card .card-photo-wrap {
+      min-height: 140px !important; overflow: hidden !important;
+    }
+    .steering-card .steering-photo-inner,
+    .steering-card .steering-photo-inner img { width: 100% !important; height: 100% !important; object-fit: cover !important; }
+    .all-participants-section { margin-top: 8px; }
+    .all-participants-title { font-family: 'Inter', sans-serif; }
     .team-page { min-height: 100vh; background: var(--teal-pale); }
     .team-content { max-width: 1100px; margin: 0 auto; padding: 48px 32px 64px; }
     .team-banner h1 { font-family: 'Inter', sans-serif; }
@@ -194,6 +227,11 @@
       .team-card .team-photo img { width: 100% !important; height: 100% !important; max-height: 240px !important; object-fit: contain !important; }
       .team-card .team-bio { padding: 0 20px 28px !important; }
       .team-card h2 { font-size: 20px !important; }
+      .steering-section-box { padding: 24px 16px 20px !important; border-radius: 16px !important; }
+      .steering-carousel-track { padding: 4px 8px 12px !important; gap: 12px !important; }
+      .steering-carousel-prev, .steering-carousel-next { display: none !important; }
+      .steering-card.participant-card { flex: 0 0 min(260px, 88vw) !important; height: 420px !important; min-height: 420px !important; }
+      .all-participants-title { font-size: 18px !important; }
     }
 
     @media (min-width: 901px) {
@@ -262,6 +300,6 @@
     <div id="team-page"></div>
   </main>
 
-  <script src="script.js?v=44"></script>
+  <script src="script.js?v=46"></script>
 </body>
 </html>
