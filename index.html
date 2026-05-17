@@ -16,7 +16,19 @@
   <meta property="og:url" content="https://mashutkaru.github.io/Future-Time-Delegation/" />
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap');
-    :root { --nav-yellow: #fecf17; --nav-purple: #8837be; --nav-bg: #2a2d71; }
+    :root {
+      --teal-dark: #3E788C;
+      --teal-mid: #4D8796;
+      --teal-soft: #7EA7B5;
+      --teal-pale: #CEDDE2;
+      --text-on-dark: #ffffff;
+      --text-on-light: #0E6478;
+      --nav-bg: #0E6478;
+      --nav-accent: var(--teal-soft);
+      --nav-highlight: var(--teal-pale);
+      --nav-purple: var(--teal-soft);
+      --nav-yellow: var(--teal-pale);
+    }
     * { box-sizing: border-box; }
     body { margin: 0; font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif; min-height: 100vh; overflow-x: hidden; }
     nav {
@@ -39,8 +51,8 @@
       border-radius: 999px; padding: 10px 24px; font-weight: 500; font-size: 15px;
       cursor: pointer; font-family: inherit; transition: all 0.2s;
     }
-    nav button:hover { background: var(--nav-yellow); color: var(--nav-bg); font-weight: 700; }
-    nav button.active { background: var(--nav-yellow); color: var(--nav-bg); font-weight: 800; }
+    nav button:hover { background: var(--nav-highlight); color: var(--text-on-light); font-weight: 700; }
+    nav button.active { background: var(--nav-highlight); color: var(--text-on-light); font-weight: 800; }
     #about-page, #participants-page, #team-page { display: none; }
     #about-page.active, #participants-page.active, #team-page.active { display: block; }
 
@@ -57,14 +69,24 @@
       nav button { padding: 8px 10px !important; font-size: 12px !important; min-height: 40px; }
     }
     .about-content { max-width: 1100px; margin: 0 auto; padding: 48px 32px 64px; }
-    .about-box { background: #2a2d71; border-radius: 20px; padding: 40px 48px; color: white; }
+    .about-box { background: var(--teal-dark); border-radius: 20px; padding: 40px 48px; color: var(--text-on-dark); }
     .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; align-items: start; }
     .participants-content { max-width: 1300px; margin: 0 auto; padding: 52px 48px 0px; }
     .stats-bar-wrap { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; }
     .cards-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(265px, 1fr)); gap: 0; }
+    .team-page { min-height: 100vh; background: var(--teal-pale); }
     .team-content { max-width: 1200px; margin: 0 auto; padding: 48px 24px 64px; }
-    .team-card-masha { order: 1; }
-    .team-card-hadas { order: 2; }
+    .team-content .team-title { font-size: 36px; font-weight: 800; color: var(--teal-dark); margin: 0 0 48px; text-align: center; }
+    .team-section { margin-bottom: 44px; }
+    .team-section-program-team { margin-bottom: 0; }
+    .team-section-title { margin: 0 0 20px; text-align: center; font-size: 24px; font-weight: 800; color: var(--teal-dark); letter-spacing: 0.01em; }
+    .team-cards { display: flex; flex-wrap: wrap; justify-content: center; align-items: stretch; }
+    .team-cards-main { gap: 48px; }
+    .team-cards-new { gap: 24px; }
+    .team-card { background: white; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08); }
+    .team-card-masha { order: 1; max-width: 560px; }
+    .team-card-hadas { order: 2; max-width: 560px; }
+    .team-card-new { width: 100%; max-width: 360px; }
     .team-card .team-photo { background: #fff !important; }
     .participants-header-wrap { padding-bottom: 28px !important; }
     /* Participants header typography */
@@ -153,9 +175,9 @@
       .participant-card .card-back-upper { min-height: 160px !important; }
       .participant-card .card-front > div:nth-child(3) { flex-shrink: 0 !important; }
       .team-content { padding: 28px 16px 48px !important; }
-      .team-content h1 { font-size: 26px !important; margin-bottom: 28px !important; }
+      .team-content h1, .team-title { font-size: 26px !important; margin-bottom: 28px !important; }
       .team-cards { gap: 28px !important; padding: 0 8px; display: flex !important; flex-direction: column !important; }
-      .team-card { max-width: 100% !important; }
+      .team-card, .team-card-masha, .team-card-hadas, .team-card-new { max-width: 100% !important; width: 100% !important; }
       .team-card .team-name { padding: 20px 20px 24px !important; text-align: center !important; }
       .team-card .team-photo { height: 240px !important; padding: 0 20px 24px !important; overflow: hidden !important; background: #fff !important; }
       .team-card .team-photo img { width: 100% !important; height: 100% !important; max-height: 240px !important; object-fit: contain !important; }
@@ -181,7 +203,7 @@
     @media (min-width: 901px) {
       .participants-content { padding-top: 28px !important; }
       .team-content { max-width: 1400px !important; }
-      .team-cards { flex-direction: row !important; flex-wrap: nowrap !important; justify-content: center !important; }
+      .team-cards-main { flex-direction: row !important; flex-wrap: nowrap !important; justify-content: center !important; }
       .team-card .team-name { text-align: center !important; }
       .team-cards-new {
         display: grid !important;
@@ -229,6 +251,6 @@
     <div id="team-page"></div>
   </main>
 
-  <script src="script.js?v=30"></script>
+  <script src="script.js?v=34"></script>
 </body>
 </html>

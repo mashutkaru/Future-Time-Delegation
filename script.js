@@ -65,13 +65,13 @@
     { key:"Academia & Research", label:"Academia & Research", short:"Academia & Research", icon:"🎓" },
   ];
 
-  var PRIMARY = '#19258B';
-  var ACCENT = { cyan:'#4BC0D9', green:'#7ED321', yellow:'#FFDE40', orange:'#FF6E7B' };
+  var P = { dark:'#3E788C', mid:'#4D8796', soft:'#7EA7B5', pale:'#CEDDE2', text:'#3E788C' };
+  var PRIMARY = P.dark;
   const SC = {
     "all":                 { bg:"#5b5484", light:"#C0C8D5", border:"#8b92a8", text:"#3d3a5c" },
     "Central Government":  { bg:"#6b6590", light:"#CFCBE1", border:"#8b85a8", text:"#3d3a5c" },
     "Local Government":    { bg:"#8a7572", light:"#DACFCD", border:"#9a9090", text:"#3d3a5c" },
-    "Healthcare System":       { bg:"#5783CB", light:"#C0C8D5", border:"#6b9bd4", text:"#3d3a5c" },
+    "Healthcare System":   { bg:"#5783CB", light:"#C0C8D5", border:"#6b9bd4", text:"#3d3a5c" },
     "Civil Society":       { bg:"#5a7a4a", light:"#F0F3DE", border:"#9ba88e", text:"#3d3a5c" },
     "Academia & Research": { bg:"#755EE6", light:"#F3E8FF", border:"#a78bfa", text:"#3d3a5c" },
   };
@@ -164,12 +164,12 @@
         '<li style="margin:0 0 6px">政府機関および政策立案機関</li>' +
         '<li style="margin:0">イノベーション拠点、投資機関、および高齢化関連テクノロジー分野</li>' +
       '</ul>';
-    var goalBoxStyle = 'background:rgba(255,255,255,0.1);border-radius:12px;padding:18px 20px;border-left:4px solid #FFD700;margin-bottom:12px';
+    var goalBoxStyle = 'background:rgba(255,255,255,0.1);border-radius:12px;padding:18px 20px;border-left:4px solid '+P.soft+';margin-bottom:12px';
     var goalsEnHtml = goals.map(function(g){ return '<div style="'+goalBoxStyle+'"><div style="font-weight:800;font-size:15px;color:white;margin-bottom:6px">'+g.titleEn+'</div><div style="font-size:13.5px;color:rgba(255,255,255,0.95);line-height:1.6">'+g.descEn+'</div></div>'; }).join('');
     var goalsJaHtml = goals.map(function(g){ return '<div style="'+goalBoxStyle+'"><div style="font-weight:800;font-size:15px;color:white;margin-bottom:6px">'+g.titleJa+'</div><div style="font-size:13.5px;color:rgba(255,255,255,0.95);line-height:1.6">'+g.descJa+'</div></div>'; }).join('');
 
-    container.innerHTML = '<div style="min-height:100vh;background:#e5e7eb">' +
-      '<div class="about-banner" style="background:#2a2d71;width:100%;overflow:hidden">' +
+    container.innerHTML = '<div style="min-height:100vh;background:'+P.pale+'">' +
+      '<div class="about-banner" style="background:'+P.dark+';width:100%;overflow:hidden">' +
         '<div style="padding:48px 24px;text-align:center"><div style="display:flex;align-items:center;justify-content:center;gap:14px"><img src="images/just_the_round_logo.png" alt="Future Time" style="height:54px;width:auto;display:block" /><h1 style="margin:0;color:white;font-size:32px;font-weight:800;letter-spacing:0.02em">Future Time Program</h1></div></div>' +
       '</div>' +
       '<div class="about-content">' +
@@ -196,12 +196,12 @@
           '</div>' +
         '</div>' +
         '<section class="about-group-image" style="margin-top:36px">' +
-          '<div style="background:#2a2d71;border-radius:16px;padding:16px;box-shadow:0 4px 24px rgba(0,0,0,0.12)">' +
+          '<div style="background:'+P.dark+';border-radius:16px;padding:16px;box-shadow:0 4px 24px rgba(0,0,0,0.12)">' +
             '<img src="'+PHOTO_DIR+'Group_image.jpeg" alt="Future Time group" style="width:100%;height:auto;display:block;border-radius:12px;object-fit:cover" loading="lazy" decoding="async"/>' +
           '</div>' +
         '</section>' +
         '<section class="about-cta" style="margin-top:24px;text-align:center">' +
-          '<button id="cta-participants" style="background:#fecf17;color:#2a2d71;border:none;border-radius:14px;padding:16px 40px;font-size:16px;font-weight:800;cursor:pointer;font-family:inherit;box-shadow:0 4px 18px rgba(0,0,0,0.2)">👥 Meet the 29 Participants →</button>' +
+          '<button id="cta-participants" style="background:'+P.pale+';color:'+P.dark+';border:none;border-radius:14px;padding:16px 40px;font-size:16px;font-weight:800;cursor:pointer;font-family:inherit;box-shadow:0 4px 18px rgba(0,0,0,0.2)">👥 Meet the 29 Participants →</button>' +
         '</section>' +
       '</div></div>';
 
@@ -245,54 +245,51 @@
       "Beyond her formal roles, Tal is an active community entrepreneur and a dedicated advocate for the inclusion of people with special needs.",
       "Tal holds a BA in Community Coordination from the Open University and Beit Berl College, and an MA in Mediation and Conflict Resolution from Tel Aviv University."
     ];
-    var pStyle = 'margin:0 0 16px;font-size:15px;line-height:1.75;color:#475569';
+    var pStyle = 'margin:0 0 16px;font-size:15px;line-height:1.75;color:'+P.mid+'';
     var mashaBioHtml = mashaPars.map(function(t){ return '<p style="'+pStyle+'">'+t+'</p>'; }).join('');
     var hadasBioHtml = hadasPars.map(function(t){ return '<p style="'+pStyle+'">'+t+'</p>'; }).join('');
     var hadasBarzilaiBioHtml = hadasBarzilaiPars.map(function(t){ return '<p style="'+pStyle+'">'+t+'</p>'; }).join('');
     var sigalBioHtml = sigalPars.map(function(t){ return '<p style="'+pStyle+'">'+t+'</p>'; }).join('');
     var yuvalBioHtml = yuvalPars.map(function(t){ return '<p style="'+pStyle+'">'+t+'</p>'; }).join('');
     var talBioHtml = talPars.map(function(t){ return '<p style="'+pStyle+'">'+t+'</p>'; }).join('');
-    var cardStyle = 'background:white;border-radius:16px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,0.08);max-width:560px';
-    var newCardStyle = 'background:white;border-radius:16px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,0.08);width:100%;max-width:360px';
     var photoStyle = 'width:100%;height:280px;object-fit:contain;object-position:center center';
-    var sectionTitleStyle = 'margin:0 0 20px;text-align:center;font-size:24px;font-weight:800;color:#1e293b;letter-spacing:0.01em';
-    container.innerHTML = '<div style="min-height:100vh;background:#e8ecf8">' +
+    container.innerHTML = '<div class="team-page">' +
       '<div class="team-content">' +
-        '<h1 style="font-size:36px;font-weight:800;color:#19258B;margin:0 0 48px;text-align:center">Meet the Team</h1>' +
-        '<div class="team-section team-section-organizers" style="margin-bottom:44px">' +
-          '<h2 style="'+sectionTitleStyle+'">Delegation Organizers</h2>' +
-        '<div class="team-cards team-cards-main" style="display:flex;flex-wrap:wrap;justify-content:center;gap:48px">' +
-          '<div class="team-card team-card-masha" style="'+cardStyle+'">' +
-            '<div class="team-name" style="padding:24px 32px 12px"><h2 style="margin:0;font-size:24px;font-weight:800;color:#0f172a">Masha Robeen</h2></div>' +
+        '<h1 class="team-title">Meet the Team</h1>' +
+        '<div class="team-section team-section-organizers">' +
+          '<h2 class="team-section-title">Delegation Organizers</h2>' +
+          '<div class="team-cards team-cards-main">' +
+          '<div class="team-card team-card-masha">' +
+            '<div class="team-name" style="padding:24px 32px 12px"><h2 style="margin:0;font-size:24px;font-weight:800;color:'+P.dark+'">Masha Robeen</h2></div>' +
             '<div class="team-photo" style="padding:0 24px 24px;background:#fff"><img src="'+PHOTO_DIR+'Masha_Robeen.png" alt="Masha Robeen" style="'+photoStyle+';display:block" /></div>' +
             '<div class="team-bio" style="padding:0 32px 32px 28px">'+mashaBioHtml+'</div>' +
           '</div>' +
-          '<div class="team-card team-card-hadas" style="'+cardStyle+'">' +
-            '<div class="team-name" style="padding:24px 32px 12px"><h2 style="margin:0;font-size:24px;font-weight:800;color:#0f172a">Dr. Hadas Kushelevich</h2></div>' +
+          '<div class="team-card team-card-hadas">' +
+            '<div class="team-name" style="padding:24px 32px 12px"><h2 style="margin:0;font-size:24px;font-weight:800;color:'+P.dark+'">Dr. Hadas Kushelevich</h2></div>' +
             '<div class="team-photo" style="padding:0 24px 24px;background:#fff"><img src="'+PHOTO_DIR+'Hadas_Kushelevich.png" alt="Dr. Hadas Kushelevich" style="'+photoStyle+';display:block" /></div>' +
             '<div class="team-bio" style="padding:0 32px 32px 28px">'+hadasBioHtml+'</div>' +
           '</div>' +
         '</div></div>' +
         '<div class="team-section team-section-program-team">' +
-          '<h2 style="'+sectionTitleStyle+'">Future Time Program Team</h2>' +
-        '<div class="team-cards team-cards-new" style="display:flex;flex-wrap:wrap;justify-content:center;gap:24px">' +
-          '<div class="team-card team-card-hadas-barzilai team-card-new" style="'+newCardStyle+'">' +
-            '<div class="team-name" style="padding:24px 24px 12px"><h2 style="margin:0;font-size:24px;font-weight:800;color:#0f172a">Hadas Barzilai</h2></div>' +
+          '<h2 class="team-section-title">Future Time Program Team</h2>' +
+        '<div class="team-cards team-cards-new">' +
+          '<div class="team-card team-card-hadas-barzilai team-card-new">' +
+            '<div class="team-name" style="padding:24px 24px 12px"><h2 style="margin:0;font-size:24px;font-weight:800;color:'+P.dark+'">Hadas Barzilai</h2></div>' +
             '<div class="team-photo" style="padding:0 20px 20px;background:#fff"><img src="'+PHOTO_DIR+'Hadas_Barzilai.jpg" alt="Hadas Barzilai" style="'+photoStyle+';display:block" /></div>' +
             '<div class="team-bio" style="padding:0 24px 28px 24px"><p style="'+pStyle+';margin-bottom:8px"><strong>Director, \"FutureTime\" Program</strong><br/>Joint-ELKA</p>'+hadasBarzilaiBioHtml+'</div>' +
           '</div>' +
-          '<div class="team-card team-card-sigal team-card-new" style="'+newCardStyle+'">' +
-            '<div class="team-name" style="padding:24px 24px 12px"><h2 style="margin:0;font-size:24px;font-weight:800;color:#0f172a">Sigal Mautner Siebzehner</h2></div>' +
+          '<div class="team-card team-card-sigal team-card-new">' +
+            '<div class="team-name" style="padding:24px 24px 12px"><h2 style="margin:0;font-size:24px;font-weight:800;color:'+P.dark+'">Sigal Mautner Siebzehner</h2></div>' +
             '<div class="team-photo" style="padding:0 20px 20px;background:#fff"><img src="'+PHOTO_DIR+'Sigal_Mautner_Sievzehner.jpeg" alt="Sigal Mautner Siebzehner" style="'+photoStyle+';display:block" /></div>' +
             '<div class="team-bio" style="padding:0 24px 28px 24px"><p style="'+pStyle+';margin-bottom:8px"><strong>Director, \"FutureTime\" Program</strong><br/>Joint-ELKA</p>'+sigalBioHtml+'</div>' +
           '</div>' +
-          '<div class="team-card team-card-yuval team-card-new" style="'+newCardStyle+'">' +
-            '<div class="team-name" style="padding:24px 24px 12px"><h2 style="margin:0;font-size:24px;font-weight:800;color:#0f172a">Yuval Golani</h2></div>' +
+          '<div class="team-card team-card-yuval team-card-new">' +
+            '<div class="team-name" style="padding:24px 24px 12px"><h2 style="margin:0;font-size:24px;font-weight:800;color:'+P.dark+'">Yuval Golani</h2></div>' +
             '<div class="team-photo" style="padding:0 20px 20px;background:#fff"><img src="'+PHOTO_DIR+'Yuval_Golani.jpeg?v=3" alt="Yuval Golani" style="'+photoStyle+';display:block" /></div>' +
             '<div class="team-bio" style="padding:0 24px 28px 24px"><p style="'+pStyle+';margin-bottom:8px"><strong>Coordinator, \"FutureTime\" Program</strong><br/>Joint-ELKA</p>'+yuvalBioHtml+'</div>' +
           '</div>' +
-          '<div class="team-card team-card-tal team-card-new" style="'+newCardStyle+'">' +
-            '<div class="team-name" style="padding:24px 24px 12px"><h2 style="margin:0;font-size:24px;font-weight:800;color:#0f172a">Tal Miles</h2></div>' +
+          '<div class="team-card team-card-tal team-card-new">' +
+            '<div class="team-name" style="padding:24px 24px 12px"><h2 style="margin:0;font-size:24px;font-weight:800;color:'+P.dark+'">Tal Miles</h2></div>' +
             '<div class="team-photo" style="padding:0 20px 20px;background:#fff"><img src="'+PHOTO_DIR+'Tal_Miles.png" alt="Tal Miles" style="'+photoStyle+';display:block" /></div>' +
             '<div class="team-bio" style="padding:0 24px 28px 24px"><p style="'+pStyle+';margin-bottom:8px"><strong>Director, National Public System Network Initiatives</strong><br/>Joint-ELKA</p>'+talBioHtml+'</div>' +
           '</div>' +
@@ -306,16 +303,16 @@
   }
 
   function sectorBadge(sector) {
-    var c = SC[sector] || { light:"#f1f5f9", text:"#475569", border:"#cbd5e1" };
+    var c = SC[sector] || { light:"#f1f5f9", text:"#3d3a5c", border:"#cbd5e1" };
     return '<span style="background:'+c.light+';color:'+c.text+';border:1.5px solid '+c.border+';font-size:11px;font-weight:700;padding:3px 10px;border-radius:20px">'+escapeHtml(sector)+'</span>';
   }
   function renderParticipantCard(p) {
-    var c = SC[p.sector] || { bg:"#334155", border:"#64748b", light:"#f1f5f9" };
+    var c = SC[p.sector] || { bg:"#334155", border:"#64748b", light:"#f1f5f9", text:"#3d3a5c" };
     var initial = p.nameEn.charAt(0);
     var nameEn = escapeHtml(p.nameEn);
     var nameJa = escapeHtml(p.nameJa || '');
     var nameHe = escapeHtml(p.nameHe);
-    var nameJaHtml = nameJa ? '<div style="font-size:13px;color:'+(c.text||'#475569')+';opacity:0.9">'+nameJa+'</div>' : '';
+    var nameJaHtml = nameJa ? '<div style="font-size:13px;color:'+(c.text||P.mid)+';opacity:0.9">'+nameJa+'</div>' : '';
     var nameJaBackHtml = nameJa ? '<div style="font-size:12px;opacity:0.82">'+nameJa+'</div>' : '';
     var org = escapeHtml(p.org);
     var orgLine2 = (p.orgLine2 && p.orgLine2.trim()) ? '<br/>' + escapeHtml(p.orgLine2) : '';
@@ -329,8 +326,8 @@
       '<div class="card-inner" style="position:relative;width:100%;height:100%;transform-style:preserve-3d;transition:transform 0.55s">' +
         '<div class="card-front" style="position:absolute;top:0;left:0;right:0;bottom:0;backface-visibility:hidden;background:white;border-radius:14px;border:2.5px solid '+c.border+';overflow:hidden;display:flex;flex-direction:column;height:100%;min-height:0;box-shadow:0 2px 12px rgba(0,0,0,0.08)">' +
           '<div class="card-photo-wrap" style="flex:3 1 0;min-height:150px;min-width:0;overflow:hidden;display:flex;align-items:stretch;justify-content:stretch">'+photoHtml+'</div>' +
-          '<div style="flex:2 1 0;min-height:0;padding:12px 14px 6px;overflow:hidden;background:'+(c.light||c.bg)+';color:'+(c.text||'#334155')+';display:flex;flex-direction:column;align-items:center;text-align:center;gap:4px">' +
-            '<div class="card-front-names" style="flex-shrink:0;display:flex;flex-direction:column;gap:6px"><div style="font-weight:800;font-size:16px;color:'+(c.text||'#0f172a')+'">'+nameEn+'</div>'+nameJaHtml+'<div style="font-family:Arial;direction:rtl;font-size:16px;color:'+(c.text||'#475569')+'">'+nameHe+'</div><div class="card-front-org" style="font-size:13px;font-weight:600;color:'+(c.text||'#334155')+';margin-top:4px">'+org+orgLine2+'</div></div>' +
+          '<div style="flex:2 1 0;min-height:0;padding:12px 14px 6px;overflow:hidden;background:'+P.pale+';color:'+(c.text||P.text)+';display:flex;flex-direction:column;align-items:center;text-align:center;gap:4px">' +
+            '<div class="card-front-names" style="flex-shrink:0;display:flex;flex-direction:column;gap:6px"><div style="font-weight:800;font-size:16px;color:'+(c.text||P.dark)+'">'+nameEn+'</div>'+nameJaHtml+'<div style="font-family:Arial;direction:rtl;font-size:16px;color:'+(c.text||P.mid)+'">'+nameHe+'</div><div class="card-front-org" style="font-size:13px;font-weight:600;color:'+(c.text||P.text)+';margin-top:4px">'+org+orgLine2+'</div></div>' +
             '<div class="card-front-label-wrap" style="display:flex;align-items:center;justify-content:center;min-height:0;margin-top:2px"><div style="background:'+c.bg+';color:white;font-size:14px;font-weight:700;padding:6px 14px;border-radius:20px">'+escapeHtml(p.sector)+'</div></div>' +
           '</div>' +
           '<div style="flex-shrink:0;text-align:center;padding:8px;font-size:10px;color:white;background:'+c.bg+'">View Details</div>' +
@@ -340,7 +337,7 @@
           '<div style="height:1px;background:rgba(255,255,255,0.25);flex-shrink:0"></div>' +
           '<div style="flex:1;min-height:0;overflow-y:auto;padding:12px 0 8px"><div style="font-size:13px"><strong>'+org+orgLine2+'</strong><br/><span style="font-family:Arial;direction:rtl;font-size:11px;opacity:0.7">'+orgHe+'</span></div>' +
           '<div style="margin-top:8px;font-size:13px"><strong>'+role+'</strong><br/><span style="font-family:Arial;direction:rtl;font-size:11px;opacity:0.7">'+roleHe+'</span></div>' +
-          '<div style="margin-top:8px"><a href="mailto:'+email+'" style="color:#a5b4fc" onclick="event.stopPropagation()">'+email+'</a></div></div>' +
+          '<div style="margin-top:8px"><a href="mailto:'+email+'" style="color:'+P.pale+'" onclick="event.stopPropagation()">'+email+'</a></div></div>' +
           '<div style="text-align:center;font-size:10px;opacity:0.5;flex-shrink:0;padding-top:4px">TAP TO FLIP BACK</div>' +
         '</div>' +
       '</div></div>';
@@ -351,9 +348,9 @@
     var filtered = filterParticipants(activeSector, search);
 
     var statsHtml = SECTORS.map(function(s){
-      var c = SC[s.key] || { bg:"#081679", border:"#3d4fcc", light:"#dde1f5", text:"#081679" };
+      var c = SC[s.key] || { bg:"#5b5484", border:"#8b92a8", light:"#C0C8D5", text:"#3d3a5c" };
       var isActive = activeSector === s.key;
-      return '<button data-sector="'+s.key+'" class="sector-btn" style="flex:1;min-width:0;background:'+(isActive?c.bg:'white')+';border:2px solid '+(isActive?c.border:(c.border||'#cbd5e1'))+';color:'+(isActive?'white':'#3d3a5c')+';border-radius:999px;padding:8px 10px;cursor:pointer;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;overflow:visible"><span style="display:flex;align-items:center;gap:4px;flex-shrink:0"><span style="font-size:14px">'+s.icon+'</span><span style="font-weight:900;font-size:14px">'+(cnt[s.key]||0)+'</span></span><span style="font-size:10px;font-weight:600;line-height:1.2;text-align:center;word-break:break-word">'+s.short+'</span></button>';
+      return '<button data-sector="'+s.key+'" class="sector-btn" style="flex:1;min-width:0;background:'+(isActive?c.bg:'white')+';border:2px solid '+(isActive?c.border:(c.border||P.soft))+';color:'+(isActive?'white':P.text)+';border-radius:999px;padding:8px 10px;cursor:pointer;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;overflow:visible"><span style="display:flex;align-items:center;gap:4px;flex-shrink:0"><span style="font-size:14px">'+s.icon+'</span><span style="font-weight:900;font-size:14px">'+(cnt[s.key]||0)+'</span></span><span style="font-size:10px;font-weight:600;line-height:1.2;text-align:center;word-break:break-word">'+s.short+'</span></button>';
     }).join('');
 
     var searchRow = container.querySelector('.search-row');
@@ -361,19 +358,19 @@
     var isEmpty = container.querySelector('.participants-empty');
 
     if (!searchRow) {
-      container.innerHTML = '<div style="min-height:100vh;background:#e8ecf8">' +
-        '<div class="participants-header-wrap" style="background:rgba(36,42,98,0.9);padding:28px 48px 24px;color:white;position:relative">' +
+      container.innerHTML = '<div style="min-height:100vh;background:'+P.pale+'">' +
+        '<div class="participants-header-wrap" style="background:'+P.dark+';padding:28px 48px 24px;color:white;position:relative">' +
           '<div style="max-width:1204px;margin:0 auto;display:flex;align-items:flex-start;justify-content:flex-start;gap:28px">' +
             '<div style="flex:1;min-width:0;text-align:left;display:flex;flex-direction:column;align-items:flex-start;gap:12px;padding:6px 12px 0 0"><h1 style="margin:0;font-size:28px;font-weight:800;display:flex;align-items:center;gap:10px;justify-content:flex-start;line-height:1.1">Program Participants</h1><p style="margin:0;opacity:0.7;font-size:15px;font-weight:800;line-height:1.35;max-width:580px;text-align:left">Choose participants by affiliation label</p><p style="margin:0;opacity:0.7;font-size:15px;font-weight:800;line-height:1.35;max-width:580px;text-align:left">Search and filter all program participants across sectors</p></div>' +
             '<div class="stats-bar-wrap" id="stats-bar" style="flex:0 1 640px;max-width:640px;width:100%;display:grid;grid-template-columns:repeat(3, 1fr);gap:10px;justify-content:flex-end;margin-left:auto">'+statsHtml+'</div>' +
           '</div>' +
         '</div>' +
         '<div class="participants-content">' +
-          '<div class="search-row" dir="ltr" style="display:flex;align-items:center;justify-content:flex-end;gap:8px;flex-wrap:wrap;margin-top:6px;margin-bottom:6px;padding:6px 0"><input type="text" id="search-input" dir="ltr" autocomplete="off" placeholder="Search by name, org, role" style="flex:0 1 420px;min-width:200px;max-width:420px;padding:14px 24px 14px 48px;border:1.5px solid #e2e8f0;border-radius:999px;font-size:14px;font-family:inherit;box-sizing:border-box;background:#f8fafc" /></div>' +
+          '<div class="search-row" dir="ltr" style="display:flex;align-items:center;justify-content:flex-end;gap:8px;flex-wrap:wrap;margin-top:6px;margin-bottom:6px;padding:6px 0"><input type="text" id="search-input" dir="ltr" autocomplete="off" placeholder="Search by name, org, role" style="flex:0 1 420px;min-width:200px;max-width:420px;padding:14px 24px 14px 48px;border:1.5px solid '+P.soft+';border-radius:999px;font-size:14px;font-family:inherit;box-sizing:border-box;background:white" /></div>' +
           '<div class="cards-grid" style="margin-top:4px;padding:4px 0" id="cards-container">' +
             filtered.map(renderParticipantCard).join('') +
           '</div>' +
-          '<div class="participants-empty" style="display:none;text-align:center;padding:60px;color:#94a3b8"><div style="font-size:44px;margin-bottom:12px">🔍</div><div style="font-size:17px;font-weight:700">No participants found</div></div>' +
+          '<div class="participants-empty" style="display:none;text-align:center;padding:60px;color:'+P.soft+'"><div style="font-size:44px;margin-bottom:12px">🔍</div><div style="font-size:17px;font-weight:700">No participants found</div></div>' +
         '</div></div>';
 
       var input = container.querySelector('#search-input');
