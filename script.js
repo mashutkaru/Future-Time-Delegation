@@ -278,7 +278,7 @@
           '</div>' +
           '<div class="team-card team-card-hadas">' +
             '<div class="team-name" style="padding:24px 32px 12px"><h2 style="margin:0;font-size:24px;font-weight:800;color:'+P.dark+'">Dr. Hadas Kushelevich</h2></div>' +
-            '<div class="team-photo" style="padding:0 24px 24px;background:#fff"><img src="'+PHOTO_DIR+'Hadas_Kushelevich.png" alt="Dr. Hadas Kushelevich" style="'+photoStyle+';display:block" /></div>' +
+            '<div class="team-photo" style="padding:0 24px 24px;background:#fff"><img src="'+PHOTO_DIR+'Hadas_Kushelevich.png?v=2" alt="Dr. Hadas Kushelevich" style="'+photoStyle+';display:block" /></div>' +
             '<div class="team-bio" style="padding:0 32px 32px 28px">'+hadasBioHtml+'</div>' +
           '</div>' +
         '</div></div>' +
@@ -311,6 +311,14 @@
     var hadasCard = container.querySelector('.team-card-hadas');
     if (teamCards && mashaCard && hadasCard && hadasCard.previousElementSibling !== mashaCard) {
       teamCards.insertBefore(mashaCard, hadasCard);
+    }
+    var programTeam = container.querySelector('.team-cards-new');
+    var yuvalCard = container.querySelector('.team-card-yuval');
+    var hadasBarzilaiCard = container.querySelector('.team-card-hadas-barzilai');
+    var talCard = container.querySelector('.team-card-tal');
+    if (programTeam && yuvalCard && hadasBarzilaiCard && talCard) {
+      programTeam.insertBefore(yuvalCard, programTeam.firstElementChild);
+      programTeam.insertBefore(hadasBarzilaiCard, talCard);
     }
   }
 
