@@ -311,12 +311,13 @@
       .participants-header-wrap > div { justify-content: center; text-align: center; gap: 6px !important; }
       .participants-header-wrap h1 { font-size: 18px !important; flex-wrap: wrap; justify-content: center; margin: 0 !important; }
       .participants-header-wrap p { font-size: 12px !important; text-align: center; margin: 0 !important; }
-      .participants-content { padding: 88px 16px 24px !important; }
-      .stats-bar-wrap { padding: 0 16px !important; gap: 6px !important; top: 100% !important; margin-top: 10px !important; bottom: auto !important; left: 50% !important; transform: translateX(-50%) !important; display: grid !important; grid-template-columns: repeat(3, 1fr) !important; position: absolute !important; }
+      /* stats-bar-wrap is absolute below header — reserve room so search is not covered */
+      .participants-content { padding: 124px 16px 24px !important; }
+      .stats-bar-wrap { padding: 0 16px !important; gap: 6px !important; top: 100% !important; margin-top: 10px !important; bottom: auto !important; left: 50% !important; transform: translateX(-50%) !important; display: grid !important; grid-template-columns: repeat(3, 1fr) !important; position: absolute !important; width: calc(100% - 32px) !important; max-width: 640px !important; box-sizing: border-box !important; }
       .stats-bar-wrap button { padding: 5px 4px !important; min-height: 40px; min-width: 0; flex-direction: column !important; gap: 2px !important; }
       .stats-bar-wrap button > span:last-child { font-size: 9px !important; line-height: 1.15 !important; }
       .stats-bar-wrap button > span:first-child span:last-child { font-size: 11px !important; }
-      .search-row { flex-direction: column !important; align-items: stretch !important; gap: 8px !important; margin-bottom: 8px !important; padding: 4px 0 !important; margin-top: 0 !important; }
+      .search-row { flex-direction: column !important; align-items: stretch !important; gap: 8px !important; margin-bottom: 8px !important; padding: 4px 0 !important; margin-top: 0 !important; position: relative !important; z-index: 1 !important; }
       .search-row input { flex: 0 0 auto !important; min-width: 0 !important; max-width: none !important; width: 100% !important; height: auto !important; }
       .search-row #search-count { text-align: center; }
       .cards-grid { grid-template-columns: 1fr !important; gap: 16px !important; padding: 0 !important; margin-top: 0 !important; }
@@ -487,8 +488,8 @@
 <body>
   <nav>
     <div class="logo">
-      <img src="og-image.png" class="logo-desktop" alt="FutureTime" />
-      <img src="images/mobile-logo-en.png" class="logo-mobile" alt="FutureTime" />
+      <img src="logo_english.png" class="logo-desktop" alt="FutureTime" />
+      <img src="logo_english.png" class="logo-mobile" alt="FutureTime" />
     </div>
     <div class="nav-buttons">
       <button data-page="about" class="nav-btn">About</button>
@@ -507,6 +508,6 @@
     <div id="team-page"></div>
   </main>
 
-  <script src="script.js?v=69"></script>
+  <script src="script.js?v=74"></script>
 </body>
 </html>
