@@ -46,7 +46,7 @@
     nav .logo .logo-mobile, nav .logo-right .logo-mobile { display: none; }
     nav .nav-buttons { display: flex; gap: 8px; justify-content: center; flex: 2; }
     nav .logo-right { display: flex; align-items: center; justify-content: flex-end; flex: 1; cursor: pointer; }
-    nav .logo-right img { height: 48px; object-fit: contain; border-radius: 2px; display: block; }
+    nav .logo-right img { height: 48px; object-fit: contain; object-position: center center; border-radius: 2px; display: block; transform: translateY(-4px); }
     nav button {
       background: transparent; color: rgba(255,255,255,0.9); border: none;
       border-radius: 999px; padding: 10px 24px; font-weight: 500; font-size: 15px;
@@ -65,7 +65,7 @@
       nav .logo .logo-mobile { display: block !important; height: 36px; object-fit: contain; }
       nav .logo-right { flex: 0 0 auto; }
       nav .logo-right .logo-desktop { display: none !important; }
-      nav .logo-right .logo-mobile { display: block !important; height: 36px; object-fit: contain; }
+      nav .logo-right .logo-mobile { display: block !important; height: 36px; object-fit: contain; transform: translateY(-3px); }
       nav .nav-buttons { flex: 1; justify-content: center; gap: 4px; min-width: 0; }
       nav button { padding: 8px 10px !important; font-size: 12px !important; min-height: 40px; }
     }
@@ -492,8 +492,8 @@
 <body>
   <nav>
     <div class="logo">
-      <img src="images/logo_english.png?v=2" class="logo-desktop" alt="FutureTime" />
-      <img src="images/logo_english.png?v=2" class="logo-mobile" alt="FutureTime" />
+      <img src="images/logo_english.png?v=4" class="logo-desktop" alt="FutureTime" />
+      <img src="images/logo_english.png?v=4" class="logo-mobile" alt="FutureTime" />
     </div>
     <div class="nav-buttons">
       <button data-page="about" class="nav-btn">About</button>
@@ -501,8 +501,8 @@
       <button data-page="team" class="nav-btn">Meet the Team</button>
     </div>
     <div class="logo-right">
-      <img src="images/navbar-logo.png?v=2" class="logo-desktop" alt="FutureTime" />
-      <img src="images/navbar-logo.png?v=2" class="logo-mobile" alt="FutureTime" />
+      <img src="images/לוגו זמן עתיד.png?v=1" class="logo-desktop" alt="FutureTime" />
+      <img src="images/לוגו זמן עתיד.png?v=1" class="logo-mobile" alt="FutureTime" />
     </div>
   </nav>
 
@@ -512,6 +512,6 @@
     <div id="team-page"></div>
   </main>
 
-  <script src="script.js?v=74"></script>
+  <script src="script.js?v=78"></script>
 </body>
 </html>

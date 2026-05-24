@@ -57,13 +57,13 @@
   ];
 
   const STEERING_COMMITTEE = [
-    { id:"sc1", key:"Yariv_Man", nameEn:"Yariv Man", nameJa:"ヤリヴ・マン", nameHe:"יריב מן", org:"Ministry of Welfare and Social Affairs", orgHe:"משרד הרווחה והביטחון החברתי", role:"Deputy Director General, Administration for Senior Citizens", roleHe:"סגן מנהל האגף לאזרחים ותיקים", email:"YarivM@molsa.gov.il", photo:"Yariv_Man.jpeg" },
+    { id:"sc1", key:"Yariv_Man", nameEn:"Yariv Man", nameJa:"ヤリヴ・マン", nameHe:"יריב מן", org:"Ministry of Welfare and Social Affairs", orgHe:"משרד הרווחה והביטחון החברתי", role:"Deputy Director General, Administration for Senior Citizens", roleHe:"סגן מנהל האגף לאזרחים ותיקים", email:"YarivM@molsa.gov.il", photo:"Yariv_Man.png" },
     { id:"sc2", key:"Hama_Israeli", nameEn:"Hama Israeli", nameJa:"ハマ・イスラエリ", nameHe:"חמא ישראלי", org:"Ministry of Welfare and Social Affairs", orgHe:"משרד הרווחה והביטחון החברתי", role:"Senior Division Manager, Housing Systems for Senior Citizens", roleHe:"מנהלת בכירה, מערכות דיור לאזרחים ותיקים", email:"hamai@molsa.gov.il", photo:"Hama_Israeli.png" },
     { id:"sc3", key:"Orit_Shachar", nameEn:"Orit Shahar", nameJa:"オリット・シャハル", nameHe:"אורית שחר", org:"JDC‑Eshel", orgHe:"ג'וינט ישראל – אשל", role:"Area Head Health and functioning for older adult", roleHe:"ראש תחום בריאות ותפקוד למבוגרים", email:"Orits@jdc.org", photo:"Orit_Shachar.jpg" },
     { id:"sc4", key:"Oriel_Chazum", nameEn:"Oriel Chazum", nameJa:"ウリエル・カズム", nameHe:"אוריאל כזום", org:"National Insurance Institute", orgHe:"המוסד לביטוח לאומי", role:"Deputy Director General of Subsistence Benefits, Employment, and Senior Citizens Pensions", roleHe:"סגן מנכ״ל תחום קצבאות קיום, תעסוקה ופנסיות לאזרחים ותיקים", email:"urielc@nioi.gov.il", photo:"Oriel_Chazum.jpg" },
   ];
   var STEERING_BADGE = "Steering Committee";
-  var STEERING_PHOTO_VER = 6;
+  var STEERING_PHOTO_VER = 7;
 
   const SECTORS = [
     { key:"all",                 label:"All Sectors",        short:"Total",    icon:"👥" },
@@ -144,11 +144,11 @@
       '<p style="margin:0 0 16px;font-size:14px;line-height:1.85;color:white">In addition to site visits and professional engagements in Japan, the program will include lectures and presentations from Israeli participants, enabling a two-way exchange of knowledge and experience. This mutual learning framework is designed to foster meaningful dialogue and identify opportunities for collaboration, adaptation, and joint initiatives.</p>' +
       '<p style="margin:0 0 8px;font-size:14px;line-height:1.85;color:white"><strong>The delegation aims to engage with a wide range of institutions across the full continuum of services, including:</strong></p>' +
       '<ul style="margin:0 0 8px 18px;padding:0;color:white;font-size:14px;line-height:1.85">' +
-        '<li style="margin:0 0 6px">Public and private healthcare and rehabilitation systems</li>' +
+        '<li style="margin:0 0 6px">Public day care and rehabilitation systems</li>' +
         '<li style="margin:0 0 6px">Municipal and regional governance models</li>' +
         '<li style="margin:0 0 6px">Welfare and community-based services</li>' +
         '<li style="margin:0 0 6px">Multi-generational community centers</li>' +
-        '<li style="margin:0 0 6px">Government agencies aand policy frameworks</li>' +
+        '<li style="margin:0 0 6px">Government agencies and policy frameworks</li>' +
         '<li style="margin:0">Innovation hubs, investment entities, and gerontechnology initiatives</li>' +
       '</ul>';
 
@@ -302,7 +302,7 @@
           '</div>' +
           '<div class="team-card team-card-tal team-card-new">' +
             '<div class="team-name" style="padding:24px 24px 12px"><h2 style="margin:0;font-size:24px;font-weight:800;color:'+P.dark+'">Tal Miles</h2></div>' +
-            '<div class="team-photo" style="padding:0 20px 20px;background:#fff"><img src="'+PHOTO_DIR+'Tal_Miles.png" alt="Tal Miles" style="'+photoStyle+';display:block" /></div>' +
+            '<div class="team-photo" style="padding:0 20px 20px;background:#fff"><img src="'+PHOTO_DIR+'Tal_Miles.png?v=2" alt="Tal Miles" style="'+photoStyle+';display:block" /></div>' +
             '<div class="team-bio" style="padding:0 24px 28px 24px"><p style="'+pStyle+';margin-bottom:8px"><strong>Director, National Public System Network Initiatives</strong><br/>Joint-ELKA</p>'+talBioHtml+'</div>' +
           '</div>' +
         '</div></div></div></div>';
