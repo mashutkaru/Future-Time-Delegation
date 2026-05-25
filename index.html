@@ -62,10 +62,8 @@
       nav { padding: 8px 10px !important; flex-wrap: nowrap; gap: 6px; justify-content: space-between; align-items: center; }
       nav .logo { display: flex !important; flex: 0 0 auto; }
       nav .logo .logo-desktop { display: none !important; }
-      nav .logo .logo-mobile { display: block !important; height: 50px; width: auto; max-width: 42vw; object-fit: contain; }
       nav .logo-right { flex: 0 0 auto; }
       nav .logo-right .logo-desktop { display: none !important; }
-      nav .logo-right .logo-mobile { display: block !important; height: 36px; object-fit: contain; transform: translateY(-3px); }
       nav .nav-buttons { flex: 1; justify-content: center; gap: 4px; min-width: 0; }
       nav button { padding: 8px 10px !important; font-size: 12px !important; min-height: 40px; }
     }
@@ -245,7 +243,6 @@
     .team-card-hadas { order: 2; max-width: 560px; }
     .team-card-new { width: 100%; max-width: 360px; }
     .team-card .team-photo { background: #fff !important; }
-    .participants-header-wrap { padding-bottom: 28px !important; }
     /* Participants header typography */
     .participants-header-wrap, .participants-header-wrap * { font-family: 'Inter', sans-serif !important; }
     .stats-bar-wrap { bottom: auto !important; }
@@ -297,9 +294,34 @@
     .participant-card .card-back-upper { flex: 1 1 33% !important; min-height: 140px !important; }
     .participant-card .participant-back-thumb { width: 140px !important; height: 140px !important; min-width: 140px !important; min-height: 140px !important; }
     .about-banner h1 { font-family: 'Inter', sans-serif; }
+    .about-banner > div:first-child,
+    .team-banner > div:first-child { padding: 32px 24px !important; }
+    .participants-header-wrap { padding: 12px 48px 12px !important; }
+    .participants-header-wrap > div > div:first-child { gap: 4px !important; padding-top: 8px !important; }
+    .participants-header-wrap .stats-bar-wrap { padding-top: 8px !important; padding-bottom: 8px !important; }
+    .participants-header-wrap > div > div:first-child h1 { margin: 0 !important; }
+    .participants-header-wrap > div > div:first-child p {
+      margin: 0 !important;
+      line-height: 1.2 !important;
+    }
+    .participants-header-wrap > div > div:first-child p + p {
+      margin-top: -4px !important;
+      padding-bottom: 6px !important;
+    }
     @media (max-width: 900px) {
+      nav .logo .logo-mobile,
+      nav .logo-right .logo-mobile {
+        display: block !important;
+        height: 32px !important;
+        width: auto !important;
+        max-width: 34vw !important;
+        object-fit: contain !important;
+        transform: none !important;
+      }
       .about-banner h1 { font-size: 24px !important; }
-      .about-banner > div:first-child { padding: 32px 16px !important; }
+      .about-banner > div:first-child,
+      .team-banner > div:first-child { padding: 18px 16px !important; }
+      .about-banner > div:first-child img { height: 32px !important; width: auto !important; }
       .about-content { padding: 20px 16px 40px !important; max-width: 100%; }
       #about-page .about-box, #about-page .about-grid > div { min-width: 0; }
       .about-box { padding: 24px 20px !important; }
@@ -307,17 +329,21 @@
       .about-grid { display: flex !important; flex-direction: column !important; gap: 24px !important; }
       .about-grid .about-col-ja { border-left: none !important; border-top: 1px solid rgba(255,255,255,0.35) !important; padding-left: 0 !important; padding-top: 24px !important; }
       .about-cta button { width: 100%; max-width: 280px; padding: 14px 20px !important; font-size: 15px !important; }
-      .participants-header-wrap { padding: 12px 16px 12px !important; }
-      .participants-header-wrap > div { justify-content: center; text-align: center; gap: 6px !important; }
+      .participants-header-wrap { padding: 4px 12px 4px !important; }
+      .participants-header-wrap > div > div:first-child { padding: 10px 0 0 0 !important; }
+      .participants-header-wrap > div > div:first-child p:nth-of-type(2) { display: none !important; }
+      .participants-header-wrap > div > div:first-child p:first-of-type { padding-bottom: 6px !important; }
+      .participants-header-wrap > div { justify-content: center; text-align: center; gap: 4px !important; }
       .participants-header-wrap h1 { font-size: 18px !important; flex-wrap: wrap; justify-content: center; margin: 0 !important; }
       .participants-header-wrap p { font-size: 12px !important; text-align: center; margin: 0 !important; }
       /* stats-bar-wrap is absolute below header — reserve room so search is not covered */
-      .participants-content { padding: 124px 16px 24px !important; }
-      .stats-bar-wrap { padding: 0 16px !important; gap: 6px !important; top: 100% !important; margin-top: 10px !important; bottom: auto !important; left: 50% !important; transform: translateX(-50%) !important; display: grid !important; grid-template-columns: repeat(3, 1fr) !important; position: absolute !important; width: calc(100% - 32px) !important; max-width: 640px !important; box-sizing: border-box !important; }
+      .participants-content { padding: 110px 16px 24px !important; }
+      .stats-bar-wrap { padding: 10px 16px 10px !important; gap: 6px !important; top: 100% !important; margin-top: 6px !important; bottom: auto !important; left: 50% !important; transform: translateX(-50%) !important; display: grid !important; grid-template-columns: repeat(3, 1fr) !important; position: absolute !important; width: calc(100% - 32px) !important; max-width: 640px !important; box-sizing: border-box !important; }
       .stats-bar-wrap button { padding: 5px 4px !important; min-height: 40px; min-width: 0; flex-direction: column !important; gap: 2px !important; }
       .stats-bar-wrap button > span:last-child { font-size: 9px !important; line-height: 1.15 !important; }
       .stats-bar-wrap button > span:first-child span:last-child { font-size: 11px !important; }
       .search-row { flex-direction: column !important; align-items: stretch !important; gap: 8px !important; margin-bottom: 8px !important; padding: 4px 0 !important; margin-top: 0 !important; position: relative !important; z-index: 1 !important; }
+      #search-input { margin-top: 10px !important; }
       .search-row input { flex: 0 0 auto !important; min-width: 0 !important; max-width: none !important; width: 100% !important; height: auto !important; }
       .search-row #search-count { text-align: center; }
       .cards-grid { grid-template-columns: 1fr !important; gap: 16px !important; padding: 0 !important; margin-top: 0 !important; }
@@ -512,6 +538,6 @@
     <div id="team-page"></div>
   </main>
 
-  <script src="script.js?v=83"></script>
+  <script src="script.js?v=84"></script>
 </body>
 </html>
