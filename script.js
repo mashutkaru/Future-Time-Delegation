@@ -512,7 +512,14 @@
 
   var state = { page: 'about', activeSector: 'all', search: '' };
 
+  function scrollToTop() {
+    window.scrollTo(0, 0);
+    document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0;
+  }
+
   function setPage(page) {
+    var pageChanged = state.page !== page;
     state.page = page;
     document.querySelectorAll('.nav-btn').forEach(function(b){ b.classList.toggle('active', b.getAttribute('data-page')===page); });
     document.getElementById('about-page').classList.toggle('active', page==='about');
@@ -521,6 +528,10 @@
     if (page === 'about') renderAboutPage(document.getElementById('about-page'), setPage);
     else if (page === 'participants') renderParticipantsPage(document.getElementById('participants-page'), state.activeSector, state.search, setActiveSector, setSearch);
     else if (page === 'team') renderMeetTheTeamPage(document.getElementById('team-page'), setPage);
+    if (pageChanged) {
+      scrollToTop();
+      requestAnimationFrame(scrollToTop);
+    }
   }
 
   function setActiveSector(s) {
