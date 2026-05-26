@@ -261,7 +261,6 @@
     var sigalBioHtml = sigalPars.map(function(t){ return '<p style="'+pStyle+'">'+t+'</p>'; }).join('');
     var yuvalBioHtml = yuvalPars.map(function(t){ return '<p style="'+pStyle+'">'+t+'</p>'; }).join('');
     var talBioHtml = talPars.map(function(t){ return '<p style="'+pStyle+'">'+t+'</p>'; }).join('');
-    var photoStyle = 'width:100%;height:280px;object-fit:contain;object-position:center center';
     var teamBoxStyle = 'box-shadow:0 4px 24px rgba(0,0,0,0.15);margin-bottom:24px';
     container.innerHTML = '<div style="min-height:100vh;background:'+P.pale+'">' +
       '<div class="about-banner team-banner" style="background:'+P.hero+';width:100%;overflow:hidden">' +
@@ -270,40 +269,40 @@
       '<div class="about-content team-content">' +
         '<div class="about-box team-section-box" style="'+teamBoxStyle+'">' +
           '<h2 class="team-section-title">Delegation Organizers</h2>' +
-          '<div class="team-cards team-cards-main">' +
+          '<div class="team-grid team-cards team-cards-main">' +
           '<div class="team-card team-card-masha">' +
-            '<div class="team-name" style="padding:24px 32px 12px"><h2 style="margin:0;font-size:24px;font-weight:800;color:'+P.dark+'">Masha Robeen</h2></div>' +
-            '<div class="team-photo" style="padding:0 24px 24px;background:#fff"><img src="'+PHOTO_DIR+'Masha_Robeen.png" alt="Masha Robeen" style="'+photoStyle+';display:block" /></div>' +
-            '<div class="team-bio" style="padding:0 32px 32px 28px">'+mashaBioHtml+'</div>' +
+            '<div class="team-name"><h2>Masha Robeen</h2></div>' +
+            '<div class="team-photo-wrap"><img src="'+PHOTO_DIR+'Masha_Robeen.png?v=3" alt="Masha Robeen"></div>' +
+            '<div class="team-bio">'+mashaBioHtml+'</div>' +
           '</div>' +
           '<div class="team-card team-card-hadas">' +
-            '<div class="team-name" style="padding:24px 32px 12px"><h2 style="margin:0;font-size:24px;font-weight:800;color:'+P.dark+'">Dr. Hadas Kushelevich</h2></div>' +
-            '<div class="team-photo" style="padding:0 24px 24px;background:#fff"><img src="'+PHOTO_DIR+'Hadas_Kushelevich.png?v=2" alt="Dr. Hadas Kushelevich" style="'+photoStyle+';display:block" /></div>' +
-            '<div class="team-bio" style="padding:0 32px 32px 28px">'+hadasBioHtml+'</div>' +
+            '<div class="team-name"><h2>Dr. Hadas Kushelevich</h2></div>' +
+            '<div class="team-photo-wrap"><img src="'+PHOTO_DIR+'Hadas_Kushelevich.png?v=2" alt="Dr. Hadas Kushelevich"></div>' +
+            '<div class="team-bio">'+hadasBioHtml+'</div>' +
           '</div>' +
         '</div></div>' +
         '<div class="about-box team-section-box" style="'+teamBoxStyle+'">' +
           '<h2 class="team-section-title">Future Time Program Team</h2>' +
-        '<div class="team-cards team-cards-new">' +
+        '<div class="team-grid team-cards team-cards-new">' +
           '<div class="team-card team-card-hadas-barzilai team-card-new">' +
-            '<div class="team-name" style="padding:24px 24px 12px"><h2 style="margin:0;font-size:24px;font-weight:800;color:'+P.dark+'">Hadas Barzilai</h2></div>' +
-            '<div class="team-photo" style="padding:0 20px 20px;background:#fff"><img src="'+PHOTO_DIR+'Hadas_Barzilai.jpg" alt="Hadas Barzilai" style="'+photoStyle+';display:block" /></div>' +
-            '<div class="team-bio" style="padding:0 24px 28px 24px"><p style="'+pStyle+';margin-bottom:8px"><strong>Director, \"FutureTime\" Program</strong><br/>Joint-ELKA</p>'+hadasBarzilaiBioHtml+'</div>' +
+            '<div class="team-name"><h2>Hadas Barzilai</h2></div>' +
+            '<div class="team-photo-wrap"><img src="'+PHOTO_DIR+'Hadas_Barzilai.jpg" alt="Hadas Barzilai"></div>' +
+            '<div class="team-bio"><p style="'+pStyle+';margin-bottom:8px"><strong>Director, \"FutureTime\" Program</strong><br/>Joint-ELKA</p>'+hadasBarzilaiBioHtml+'</div>' +
           '</div>' +
           '<div class="team-card team-card-sigal team-card-new">' +
-            '<div class="team-name" style="padding:24px 24px 12px"><h2 style="margin:0;font-size:24px;font-weight:800;color:'+P.dark+'">Sigal Mautner Siebzehner</h2></div>' +
-            '<div class="team-photo" style="padding:0 20px 20px;background:#fff"><img src="'+PHOTO_DIR+'Sigal_Mautner_Sievzehner.jpeg" alt="Sigal Mautner Siebzehner" style="'+photoStyle+';display:block" /></div>' +
-            '<div class="team-bio" style="padding:0 24px 28px 24px"><p style="'+pStyle+';margin-bottom:8px"><strong>Director, \"FutureTime\" Program</strong><br/>Joint-ELKA</p>'+sigalBioHtml+'</div>' +
+            '<div class="team-name"><h2>Sigal Mautner Siebzehner</h2></div>' +
+            '<div class="team-photo-wrap"><img src="'+PHOTO_DIR+'Sigal_Mautner_Sievzehner.jpeg" alt="Sigal Mautner Siebzehner"></div>' +
+            '<div class="team-bio"><p style="'+pStyle+';margin-bottom:8px"><strong>Director, \"FutureTime\" Program</strong><br/>Joint-ELKA</p>'+sigalBioHtml+'</div>' +
           '</div>' +
           '<div class="team-card team-card-yuval team-card-new">' +
-            '<div class="team-name" style="padding:24px 24px 12px"><h2 style="margin:0;font-size:24px;font-weight:800;color:'+P.dark+'">Yuval Golani</h2></div>' +
-            '<div class="team-photo" style="padding:0 20px 20px;background:#fff"><img src="'+PHOTO_DIR+'Yuval_Golani.jpeg?v=3" alt="Yuval Golani" style="'+photoStyle+';display:block" /></div>' +
-            '<div class="team-bio" style="padding:0 24px 28px 24px"><p style="'+pStyle+';margin-bottom:8px"><strong>Coordinator, \"FutureTime\" Program</strong><br/>Joint-ELKA</p>'+yuvalBioHtml+'</div>' +
+            '<div class="team-name"><h2>Yuval Golani</h2></div>' +
+            '<div class="team-photo-wrap"><img src="'+PHOTO_DIR+'Yuval_Golani.png?v=4" alt="Yuval Golani"></div>' +
+            '<div class="team-bio"><p style="'+pStyle+';margin-bottom:8px"><strong>Coordinator, \"FutureTime\" Program</strong><br/>Joint-ELKA</p>'+yuvalBioHtml+'</div>' +
           '</div>' +
           '<div class="team-card team-card-tal team-card-new">' +
-            '<div class="team-name" style="padding:24px 24px 12px"><h2 style="margin:0;font-size:24px;font-weight:800;color:'+P.dark+'">Tal Miles</h2></div>' +
-            '<div class="team-photo" style="padding:0 20px 20px;background:#fff"><img src="'+PHOTO_DIR+'Tal_Miles.png?v=2" alt="Tal Miles" style="'+photoStyle+';display:block" /></div>' +
-            '<div class="team-bio" style="padding:0 24px 28px 24px"><p style="'+pStyle+';margin-bottom:8px"><strong>Director, National Public System Network Initiatives</strong><br/>Joint-ELKA</p>'+talBioHtml+'</div>' +
+            '<div class="team-name"><h2>Tal Miles</h2></div>' +
+            '<div class="team-photo-wrap"><img src="'+PHOTO_DIR+'Tal_Miles.png?v=2" alt="Tal Miles"></div>' +
+            '<div class="team-bio"><p style="'+pStyle+';margin-bottom:8px"><strong>Director, National Public System Network Initiatives</strong><br/>Joint-ELKA</p>'+talBioHtml+'</div>' +
           '</div>' +
         '</div></div></div></div>';
     var teamCards = container.querySelector('.team-cards-main');

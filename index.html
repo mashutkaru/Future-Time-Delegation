@@ -222,7 +222,7 @@
     .all-participants-section { margin-top: 8px; }
     .all-participants-title { font-family: 'Inter', sans-serif; }
     .team-page { min-height: 100vh; background: var(--teal-pale); }
-    .team-content { max-width: 1100px; margin: 0 auto; padding: 48px 32px 64px; }
+    .team-content { max-width: 1440px; margin: 0 auto; padding: 48px 32px 64px; }
     .team-banner h1 { font-family: 'Inter', sans-serif; }
     .about-box .team-section-title {
       margin: 0 0 28px;
@@ -235,14 +235,63 @@
     }
     .about-box.team-section-box { margin-bottom: 24px; }
     .about-box.team-section-box:last-child { margin-bottom: 0; }
-    .team-cards { display: flex; flex-wrap: wrap; justify-content: center; align-items: stretch; }
-    .team-cards-main { gap: 48px; }
-    .team-cards-new { gap: 24px; }
-    .team-card { background: white; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08); }
-    .team-card-masha { order: 1; max-width: 560px; }
-    .team-card-hadas { order: 2; max-width: 560px; }
-    .team-card-new { width: 100%; max-width: 360px; }
-    .team-card .team-photo { background: #fff !important; }
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 28px;
+      width: 100%;
+    }
+    .team-card {
+      background: #ffffff;
+      border-radius: 16px;
+      padding: 28px;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    }
+    .team-card-masha { order: 1; }
+    .team-card-hadas { order: 2; }
+    .team-card .team-name {
+      text-align: center;
+      margin-bottom: 24px;
+      flex-shrink: 0;
+      min-height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .team-card .team-name h2 {
+      margin: 0;
+      font-size: 24px;
+      font-weight: 800;
+      color: var(--text-on-light);
+      line-height: 1.25;
+    }
+    .team-photo-wrap {
+      width: 100%;
+      height: 280px;
+      min-height: 280px;
+      max-height: 280px;
+      flex: 0 0 280px;
+      overflow: hidden;
+      border-radius: 10px;
+      margin-bottom: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .team-photo-wrap img {
+      max-width: 100%;
+      max-height: 100%;
+      width: auto;
+      height: auto;
+      display: block;
+      object-fit: contain;
+      object-position: center;
+      border-radius: 10px;
+    }
+    .team-card .team-bio { flex: 1 1 auto; }
     /* Participants header typography */
     .participants-header-wrap, .participants-header-wrap * { font-family: 'Inter', sans-serif !important; }
     .stats-bar-wrap { bottom: auto !important; }
@@ -362,16 +411,20 @@
       .team-banner h1 { font-size: 24px !important; }
       .about-box .team-section-title { font-size: 16px !important; margin-bottom: 20px !important; }
       .about-box.team-section-box { padding: 28px 20px 36px !important; border-radius: 16px !important; }
-      .team-cards { gap: 28px !important; padding: 0 8px; display: flex !important; flex-direction: column !important; }
+      .team-grid { grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)) !important; gap: 28px !important; }
       .team-cards-new .team-card-tal { order: 1 !important; }
       .team-cards-new .team-card-hadas-barzilai { order: 2 !important; }
       .team-cards-new .team-card-sigal { order: 3 !important; }
       .team-cards-new .team-card-yuval { order: 4 !important; }
-      .team-card, .team-card-masha, .team-card-hadas, .team-card-new { max-width: 100% !important; width: 100% !important; }
-      .team-card .team-name { padding: 20px 20px 24px !important; text-align: center !important; }
-      .team-card .team-photo { height: 240px !important; padding: 0 20px 24px !important; overflow: hidden !important; background: #fff !important; }
-      .team-card .team-photo img { width: 100% !important; height: 100% !important; max-height: 240px !important; object-fit: contain !important; }
-      .team-card .team-bio { padding: 0 20px 28px !important; }
+      .team-card { padding: 24px !important; }
+      .team-card .team-name { margin-bottom: 20px !important; }
+      .team-photo-wrap {
+        height: 320px !important;
+        min-height: 320px !important;
+        max-height: 320px !important;
+        flex: 0 0 320px !important;
+        margin-bottom: 20px !important;
+      }
       .team-card h2 { font-size: 20px !important; }
       .steering-section-box { padding: 24px 16px 20px !important; border-radius: 16px !important; }
       .steering-carousel-track { padding: 4px 40px 12px !important; gap: 12px !important; }
@@ -489,29 +542,19 @@
         margin-bottom: 4px !important;
         padding-bottom: 0 !important;
       }
-      .team-content { max-width: 1400px !important; }
-      .team-cards-main { flex-direction: row !important; flex-wrap: nowrap !important; justify-content: center !important; }
-      .team-card .team-name { text-align: center !important; }
-      .team-cards-new {
-        display: grid !important;
-        grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
-        gap: 16px !important;
-        flex-wrap: unset !important;
-        justify-content: stretch !important;
-        align-items: stretch !important;
-      }
-      .team-card-new {
-        flex: unset !important;
-        max-width: none !important;
-        width: 100% !important;
-      }
       .team-card-new .team-name h2 { font-size: 20px !important; }
       .team-card-new .team-bio p { font-size: 14px !important; line-height: 1.65 !important; }
       .team-card-hadas { order: 1 !important; }
       .team-card-masha { order: 2 !important; }
     }
-    @media (min-width: 901px) and (max-width: 1100px) {
-      .team-cards-new { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
+    @media (max-width: 600px) {
+      .team-grid { grid-template-columns: 1fr !important; }
+      .team-photo-wrap {
+        height: 300px !important;
+        min-height: 300px !important;
+        max-height: 300px !important;
+        flex: 0 0 300px !important;
+      }
     }
   </style>
 </head>
@@ -538,6 +581,6 @@
     <div id="team-page"></div>
   </main>
 
-  <script src="script.js?v=85"></script>
+  <script src="script.js?v=92"></script>
 </body>
 </html>
