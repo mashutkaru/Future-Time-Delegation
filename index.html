@@ -59,13 +59,86 @@
 
     /* Mobile / tablet responsive - applies below 900px */
     @media (max-width: 900px) {
-      nav { padding: 8px 10px !important; flex-wrap: nowrap; gap: 6px; justify-content: space-between; align-items: center; }
-      nav .logo { display: flex !important; flex: 0 0 auto; }
+      nav {
+        padding: 8px 12px 8px 10px !important;
+        flex-wrap: nowrap;
+        gap: 0;
+        justify-content: flex-start;
+        align-items: center;
+      }
+      nav .logo { display: flex !important; flex: 0 0 auto; margin-right: 2px; }
       nav .logo .logo-desktop { display: none !important; }
-      nav .logo-right { flex: 0 0 auto; }
-      nav .logo-right .logo-desktop { display: none !important; }
-      nav .nav-buttons { flex: 1; justify-content: center; gap: 4px; min-width: 0; }
-      nav button { padding: 8px 10px !important; font-size: 12px !important; min-height: 40px; }
+      nav .logo-right { display: none !important; }
+      nav .nav-buttons {
+        flex: 1 1 auto;
+        display: flex !important;
+        justify-content: flex-start !important;
+        align-items: center !important;
+        gap: 8px !important;
+        min-width: 0;
+        width: auto;
+        padding: 0 0 0 8px;
+        margin: 0;
+      }
+      nav button {
+        flex: 0 0 84px !important;
+        width: 84px !important;
+        min-width: 84px !important;
+        max-width: 84px !important;
+        border-radius: 16px / 11px !important;
+        padding: 6px 4px !important;
+        font-size: 10px !important;
+        line-height: 1.15 !important;
+        height: 42px !important;
+        min-height: 42px !important;
+        max-height: 42px !important;
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        text-align: center;
+        white-space: normal;
+        transition: background 0.2s ease, color 0.2s ease, border-radius 0.2s ease, transform 0.12s ease, box-shadow 0.12s ease;
+      }
+      nav button.active {
+        border-radius: 999px !important;
+        background: var(--nav-highlight) !important;
+        color: var(--text-on-light) !important;
+        font-weight: 800 !important;
+        width: 84px !important;
+        min-width: 84px !important;
+        max-width: 84px !important;
+        height: 42px !important;
+        min-height: 42px !important;
+        max-height: 42px !important;
+        padding: 6px 4px !important;
+        box-shadow: 0 2px 0 rgba(0, 0, 0, 0.18);
+      }
+      nav button:active {
+        border-radius: 999px !important;
+        width: 84px !important;
+        min-width: 84px !important;
+        max-width: 84px !important;
+        height: 42px !important;
+        min-height: 42px !important;
+        max-height: 42px !important;
+        transform: scale(0.96);
+        box-shadow: 0 1px 0 rgba(0, 0, 0, 0.12);
+      }
+      nav button.active:active {
+        background: var(--nav-highlight) !important;
+        transform: scale(0.96);
+      }
+    }
+    @media (max-width: 380px) {
+      nav button,
+      nav button.active,
+      nav button:active {
+        flex: 0 0 76px !important;
+        width: 76px !important;
+        min-width: 76px !important;
+        max-width: 76px !important;
+        font-size: 9px !important;
+      }
     }
     .about-content { max-width: 1100px; margin: 0 auto; padding: 48px 32px 64px; }
     .about-box { background: var(--teal-dark); border-radius: 20px; padding: 40px 48px; color: var(--text-on-dark); }
@@ -322,6 +395,20 @@
       left: 0;
       right: 0;
       transform: rotateY(180deg);
+      z-index: 1;
+      pointer-events: none;
+    }
+    .team-bio-flip-front {
+      z-index: 2;
+      pointer-events: auto;
+    }
+    .team-bio-flip.is-flipped .team-bio-flip-front {
+      z-index: 1;
+      pointer-events: none;
+    }
+    .team-bio-flip.is-flipped .team-bio-flip-back {
+      z-index: 2;
+      pointer-events: auto;
     }
     .team-bio-flip-front h3 {
       margin: 0 0 14px;
@@ -340,7 +427,7 @@
       align-self: center;
       padding: 10px 18px;
       border-radius: 999px;
-      border: 2px solid var(--teal-hero);
+      border: none;
       background: var(--teal-pale);
       font-size: 13px;
       font-weight: 800;
@@ -348,11 +435,24 @@
       letter-spacing: 0.06em;
       text-transform: uppercase;
       flex-shrink: 0;
-      transition: background 0.2s, border-color 0.2s;
+      box-shadow:
+        0 4px 0 var(--teal-dark),
+        0 6px 14px rgba(33, 79, 99, 0.28);
+      transition: background 0.2s, box-shadow 0.15s ease, transform 0.15s ease;
     }
     .team-bio-flip-hint:hover {
       background: #ffffff;
-      border-color: var(--teal-dark);
+      box-shadow:
+        0 3px 0 var(--teal-dark),
+        0 5px 12px rgba(33, 79, 99, 0.34);
+      transform: translateY(1px);
+    }
+    .team-bio-flip-hint:active {
+      background: #ffffff;
+      box-shadow:
+        0 1px 0 var(--teal-dark),
+        0 2px 6px rgba(33, 79, 99, 0.2);
+      transform: translateY(3px);
     }
     .team-bio-flip-hint-arrow {
       font-size: 16px;
@@ -398,6 +498,54 @@
     }
     .team-card-masha .team-card-logo img {
       transform: translateY(-8px);
+    }
+    /* Masha & Hadas organizer cards: scroll long bios inside flip area */
+    .team-cards-main .team-card {
+      min-height: 0;
+    }
+    .team-cards-main .team-bio-flip {
+      flex: 1 1 auto;
+      min-height: 0;
+      width: 100%;
+      overflow: hidden;
+      cursor: default;
+    }
+    .team-cards-main .team-bio-flip-inner {
+      position: relative;
+      width: 100%;
+      min-height: 220px;
+      max-height: 420px;
+      height: 420px;
+    }
+    .team-cards-main .team-bio-flip-face {
+      position: absolute;
+      inset: 0;
+      max-height: none;
+      overflow-y: auto;
+      overflow-x: hidden;
+      -webkit-overflow-scrolling: touch;
+      overscroll-behavior: contain;
+    }
+    .team-cards-main .team-bio-flip-front {
+      position: absolute;
+      z-index: 2;
+      pointer-events: auto;
+    }
+    .team-cards-main .team-bio-flip-back {
+      z-index: 1;
+      pointer-events: none;
+    }
+    .team-cards-main .team-bio-flip.is-flipped .team-bio-flip-front {
+      z-index: 1;
+      pointer-events: none;
+    }
+    .team-cards-main .team-bio-flip.is-flipped .team-bio-flip-back {
+      z-index: 2;
+      pointer-events: auto;
+    }
+    .team-cards-main .team-bio-flip-hint {
+      cursor: pointer;
+      margin-top: auto;
     }
     /* Participants header typography */
     .participants-header-wrap, .participants-header-wrap * { font-family: 'Inter', sans-serif !important; }
@@ -471,8 +619,7 @@
       padding-bottom: 6px !important;
     }
     @media (max-width: 900px) {
-      nav .logo .logo-mobile,
-      nav .logo-right .logo-mobile {
+      nav .logo .logo-mobile {
         display: block !important;
         height: 32px !important;
         width: auto !important;
@@ -538,6 +685,11 @@
         margin-bottom: 20px !important;
       }
       .team-card h2 { font-size: 20px !important; }
+      .team-cards-main .team-bio-flip-inner {
+        min-height: 200px !important;
+        max-height: min(340px, 45vh) !important;
+        height: min(340px, 45vh) !important;
+      }
       .steering-section-box { padding: 24px 16px 20px !important; border-radius: 16px !important; }
       .steering-carousel-track { padding: 4px 40px 12px !important; gap: 12px !important; }
       .steering-carousel-prev, .steering-carousel-next { width: 32px !important; height: 32px !important; font-size: 20px !important; }
@@ -693,6 +845,6 @@
     <div id="team-page"></div>
   </main>
 
-  <script src="script.js?v=109"></script>
+  <script src="script.js?v=110"></script>
 </body>
 </html>

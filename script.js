@@ -260,7 +260,7 @@
     var pStyle = 'margin:0 0 16px;font-size:15px;line-height:1.75;color:'+P.mid+'';
     var mashaBioHtml = mashaPars.map(function(t){ return '<p style="'+pStyle+'">'+t+'</p>'; }).join('');
     var mashaJaPars = [
-      'ロビーン・マーシャ氏は、老年学（ジェロントロジー）、ヘルスケア・イノベーション、そして医療・介護システムの統合を専門とするジェロンテクノロジストおよびプロダクトマネージャーです。',
+      'ルービン・マーシャ氏は、老年学（ジェロントロジー）、ヘルスケア・イノベーション、そして医療・介護システムの統合を専門とするジェロンテクノロジストおよびプロダクトマネージャーです。',
       'イスラエルのハイファ大学および日本の横浜市立大学にて老年学の修士号を取得しています。日本には5年間滞在し、長期介護を必要とする高齢者の生活適応プロセスや、高齢者および介護者を支える住環境・生活環境の改善に関する研究に従事しました。',
       '日本とイスラエルの主要な介護・福祉関連機関との協働を通じて、政策制度、フォーマルケアの仕組み、そして文化的背景が高齢者の生活の質やケアの成果にどのような影響を与えるのかについて、実践と研究の両面から知見を深めてきました。',
       '現在はイスラエルにおいて、病院から地域リハビリテーションへの円滑な移行を支援する取り組みに注力しています。医師、看護師、リハビリ専門職など多職種の医療チームと連携しながら、医療、リハビリテーション、地域支援を結ぶ統合的なケアモデルの開発に携わり、数多くのヘルスケアプロジェクトを企画立案から実装、成果創出まで主導してきました。',
@@ -291,7 +291,7 @@
         '</div>' +
       '</div>';
     }
-    var mashaBioFlipHtml = buildTeamBioFlipHtml('masha-bio-flip', 'ロビーン・マーシャ', mashaJaBioHtml, mashaBioHtml);
+    var mashaBioFlipHtml = buildTeamBioFlipHtml('masha-bio-flip', 'ルービン・マーシャ', mashaJaBioHtml, mashaBioHtml);
     var hadasBioFlipHtml = buildTeamBioFlipHtml('hadas-bio-flip', 'クシェレビチ・ハダス博士', hadasJaBioHtml, hadasBioHtml);
     var hadasBarzilaiBioHtml = hadasBarzilaiPars.map(function(t){ return '<p style="'+pStyle+'">'+t+'</p>'; }).join('');
     var hadasBarzilaiJaBioHtml = hadasBarzilaiJaPars.map(function(t){ return '<p style="'+jaPStyle+'">'+t+'</p>'; }).join('');
@@ -312,7 +312,7 @@
           '<div class="team-grid team-cards team-cards-main">' +
           '<div class="team-card team-card-masha">' +
             '<div class="team-name"><h2>Masha Robeen</h2></div>' +
-            '<div class="team-photo-wrap"><img src="'+PHOTO_DIR+'Masha_Robeen.png?v=3" alt="Masha Robeen"></div>' +
+            '<div class="team-photo-wrap"><img src="'+PHOTO_DIR+'Masha_Robeen.png?v=4" alt="Masha Robeen"></div>' +
             mashaBioFlipHtml +
             '<div class="team-card-logo"><img src="images/JIAT_logo.png?v=2" alt="Japan Israel Aging Tech Association (JIAT)"></div>' +
           '</div>' +
@@ -378,7 +378,16 @@
         var flipped = flipEl.classList.toggle('is-flipped');
         updateFlipHint(flipped);
       }
-      flipEl.onclick = toggleBioFlip;
+      flipEl.onclick = function (e) {
+        if (e.target.closest('.team-bio-flip-face')) return;
+        toggleBioFlip();
+      };
+      if (hint) {
+        hint.onclick = function (e) {
+          e.stopPropagation();
+          toggleBioFlip();
+        };
+      }
       flipEl.onkeydown = function (e) {
         if (e.key === 'Enter' || e.key === ' ') {
           e.preventDefault();
