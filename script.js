@@ -211,7 +211,7 @@
   function renderMeetTheTeamPage(container, setPage) {
     var mashaPars = [
       "Masha Robeen is a gerontechnologist and product manager whose work sits at the intersection of aging research, healthcare innovation, and systems integration.",
-      "She holds dual Master's degrees in Gerontology from the University of Haifa and Yokohama City University, Japan, and spent five years in Japan researching two interconnected dimensions of long-term care: the coping mechanisms of long-term care recipients, and home and environment adaptations for older adults and their caregivers.",
+      "She holds dual Master's degrees in Gerontology from the University of Haifa and Yokohama National University, Japan, and spent five years in Japan researching two interconnected dimensions of long-term care: the coping mechanisms of long-term care recipients, and home and environment adaptations for older adults and their caregivers.",
       "Working alongside major caregiving organizations in both countries, she developed a research-grounded understanding of how policy frameworks, formal care systems, and cultural context shape aging outcomes.",
       "Back in Israel, Masha focuses on improving the transition from hospital to community-based rehabilitation. She collaborates with multidisciplinary healthcare teams to develop integrated models connecting medical care, rehabilitation services, and community support, with a track record of leading healthcare projects from concept to measurable impact.",
       "Masha brings a cross-disciplinary approach to the complex challenges of rapidly aging societies, translating evidence into policy-relevant, human-centered solutions."
@@ -261,7 +261,7 @@
     var mashaBioHtml = mashaPars.map(function(t){ return '<p style="'+pStyle+'">'+t+'</p>'; }).join('');
     var mashaJaPars = [
       'ルービン・マーシャ氏は、老年学（ジェロントロジー）、ヘルスケア・イノベーション、そして医療・介護システムの統合を専門とするジェロンテクノロジストおよびプロダクトマネージャーです。',
-      'イスラエルのハイファ大学および日本の横浜市立大学にて老年学の修士号を取得しています。日本には5年間滞在し、長期介護を必要とする高齢者の生活適応プロセスや、高齢者および介護者を支える住環境・生活環境の改善に関する研究に従事しました。',
+      'イスラエルのハイファ大学および日本の横浜国立大学にて老年学の修士号を取得しています。日本には5年間滞在し、長期介護を必要とする高齢者の生活適応プロセスや、高齢者および介護者を支える住環境・生活環境の改善に関する研究に従事しました。',
       '日本とイスラエルの主要な介護・福祉関連機関との協働を通じて、政策制度、フォーマルケアの仕組み、そして文化的背景が高齢者の生活の質やケアの成果にどのような影響を与えるのかについて、実践と研究の両面から知見を深めてきました。',
       '現在はイスラエルにおいて、病院から地域リハビリテーションへの円滑な移行を支援する取り組みに注力しています。医師、看護師、リハビリ専門職など多職種の医療チームと連携しながら、医療、リハビリテーション、地域支援を結ぶ統合的なケアモデルの開発に携わり、数多くのヘルスケアプロジェクトを企画立案から実装、成果創出まで主導してきました。',
       '急速に高齢化が進む社会が直面する複雑な課題に対し、マーシャ氏は学際的な視点からアプローチし、研究成果や実証データを政策や実践につながる人間中心のソリューションへと転換することを目指しています。'
