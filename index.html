@@ -239,7 +239,7 @@
       box-sizing: border-box;
     }
     .steering-card .card-info .card-front-names {
-      flex: 0 1 auto;
+      flex: 1 1 auto;
       min-height: 0;
       width: 100%;
       overflow-y: visible;
@@ -247,27 +247,137 @@
       margin-bottom: 0;
       display: flex;
       flex-direction: column;
+      gap: 0;
+      align-items: center;
+    }
+    .steering-card .card-front-name-block {
+      flex: 0 0 auto;
+    }
+    .card-front-name-block {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      align-items: center;
+      margin-top: 4px;
+    }
+    .card-front-org-block {
+      width: 100%;
+      flex: 1 1 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      margin-top: 16px;
+      padding: 14px 0 12px;
+      border-top: 1px solid rgba(33, 79, 99, 0.22);
+      min-height: 52px;
+    }
+    .participant-card .card-front-org {
+      margin: 0;
+      font-size: 14px;
+      font-weight: 600;
+      line-height: 1.45;
+      text-align: center;
+    }
+    .card-front-info {
+      flex: 1 1 auto;
+      min-height: 0;
+      padding: 12px 14px 8px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      box-sizing: border-box;
+    }
+    .participant-card .card-front-names {
+      flex: 1 1 auto;
+      min-height: 0;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
       gap: 4px;
       align-items: center;
     }
-    .steering-card .card-info .card-org {
-      margin-bottom: 0;
+    .participant-card .card-front-name-block {
+      flex: 0 0 auto;
+    }
+    .card-front-footer {
+      flex: 0 0 auto;
+      flex-shrink: 0;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 14px 14px;
+      box-sizing: border-box;
+      background: var(--teal-pale);
+    }
+    .card-front-label-wrap {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .participant-card .view-details {
+      flex: 0 0 auto;
+      flex-shrink: 0;
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      padding: 8px;
+      font-size: 10px;
+      line-height: 1.2;
+      color: #fff;
+    }
+    .steering-card .card-front-org-block {
+      flex: 0 1 auto;
+      min-height: 0;
+      margin-top: 16px;
+      padding: 14px 0 4px;
+      border-top: 1px solid rgba(33, 79, 99, 0.22);
+      justify-content: flex-start;
+      gap: 8px;
+    }
+    .steering-card .card-front-footer {
+      flex: 0 0 auto;
+      padding: 4px 14px 10px;
     }
     .steering-card .card-front-label-wrap {
-      flex-shrink: 0;
-      margin-top: auto;
-      margin-bottom: 4px;
-      padding: 0;
       position: relative;
       z-index: 1;
     }
     .steering-card .card-front-org {
+      font-size: 12px !important;
+      font-weight: 600;
       line-height: 1.4;
     }
+    .steering-card .card-org,
     .steering-card .card-info .card-org {
+      margin-bottom: 0;
+      font-size: 14px;
       line-height: 1.4;
       font-weight: 700;
       color: var(--teal-dark);
+    }
+    .steering-card[data-steering-id="sc1"] .card-org,
+    .steering-card[data-steering-id="sc2"] .card-org,
+    .steering-card[data-steering-id="sc4"] .card-org {
+      margin-top: 8px;
+    }
+    .steering-card[data-steering-id="sc1"] .card-front-org-block,
+    .steering-card[data-steering-id="sc2"] .card-front-org-block,
+    .steering-card[data-steering-id="sc4"] .card-front-org-block {
+      padding-bottom: 0;
+    }
+    .steering-card[data-steering-id="sc1"] .card-front-footer,
+    .steering-card[data-steering-id="sc2"] .card-front-footer,
+    .steering-card[data-steering-id="sc4"] .card-front-footer {
+      padding-top: 2px;
     }
     .steering-card .view-details {
       flex: 0 0 auto;
@@ -612,6 +722,7 @@
     .participants-header-wrap > div > div:first-child h1 { margin: 0 !important; }
     .participants-header-wrap > div > div:first-child p {
       margin: 0 !important;
+      font-size: 14px !important;
       line-height: 1.2 !important;
     }
     .participants-header-wrap > div > div:first-child p + p {
@@ -639,12 +750,12 @@
       .about-grid .about-col-ja { border-left: none !important; border-top: 1px solid rgba(255,255,255,0.35) !important; padding-left: 0 !important; padding-top: 24px !important; }
       .about-cta button { width: 100%; max-width: 280px; padding: 14px 20px !important; font-size: 15px !important; }
       .participants-header-wrap { padding: 4px 12px 4px !important; }
-      .participants-header-wrap > div > div:first-child { padding: 10px 0 0 0 !important; }
+      .participants-header-wrap > div > div:first-child { gap: 4px !important; padding: 10px 0 0 0 !important; }
       .participants-header-wrap > div > div:first-child p:nth-of-type(2) { display: none !important; }
       .participants-header-wrap > div > div:first-child p:first-of-type { padding-bottom: 6px !important; }
       .participants-header-wrap > div { justify-content: center; text-align: center; gap: 4px !important; }
       .participants-header-wrap h1 { font-size: 18px !important; flex-wrap: wrap; justify-content: center; margin: 0 !important; }
-      .participants-header-wrap p { font-size: 12px !important; text-align: center; margin: 0 !important; }
+      .participants-header-wrap p { font-size: 14px !important; text-align: center; margin: 0 !important; }
       /* stats-bar-wrap is absolute below header — reserve room so search is not covered */
       .participants-content { padding: 110px 16px 24px !important; }
       .stats-bar-wrap { padding: 10px 16px 10px !important; gap: 6px !important; top: 100% !important; margin-top: 6px !important; bottom: auto !important; left: 50% !important; transform: translateX(-50%) !important; display: grid !important; grid-template-columns: repeat(3, 1fr) !important; position: absolute !important; width: calc(100% - 32px) !important; max-width: 640px !important; box-sizing: border-box !important; }
@@ -656,16 +767,28 @@
       .search-row input { flex: 0 0 auto !important; min-width: 0 !important; max-width: none !important; width: 100% !important; height: auto !important; }
       .search-row #search-count { text-align: center; }
       .cards-grid { grid-template-columns: 1fr !important; gap: 16px !important; padding: 0 !important; margin-top: 0 !important; }
-      .participant-card { height: 480px !important; min-height: 480px !important; margin: 0 !important; }
+      .participant-card { height: 530px !important; min-height: 530px !important; margin: 0 !important; }
       .participant-card .card-front { display: flex !important; flex-direction: column !important; height: 100% !important; min-height: 0 !important; }
       #cards-container .participant-card .card-photo-wrap { flex: 0 0 auto !important; aspect-ratio: 272 / 230 !important; min-height: 0 !important; margin-bottom: 0 !important; }
-      .participant-card .card-front > div:nth-child(2) { flex: 2 1 0 !important; min-height: 0 !important; overflow: hidden !important; }
+      .participant-card .card-front-info { flex: 1 1 auto !important; min-height: 0 !important; overflow: hidden !important; }
       .participant-card .card-front-names { gap: 4px !important; }
-      .participant-card .card-front-org { margin-top: 2px !important; padding-bottom: 8px !important; }
-      .participant-card .card-front-label-wrap { padding-bottom: 16px !important; margin-top: 4px !important; }
+      .participant-card .card-front-org-block {
+        flex: 1 1 auto !important;
+        min-height: 52px !important;
+        justify-content: center !important;
+        margin-top: 16px !important;
+        padding: 14px 0 12px !important;
+      }
+      .participant-card .card-front-org {
+        font-size: 14px !important;
+      }
+      .participant-card .card-front-footer {
+        flex: 0 0 auto !important;
+        padding: 14px 14px 16px !important;
+      }
+      .participant-card .view-details { flex: 0 0 auto !important; }
       .participant-card .participant-back-thumb { width: 160px !important; height: 160px !important; min-width: 160px !important; min-height: 160px !important; }
       .participant-card .card-back-upper { min-height: 160px !important; }
-      .participant-card .card-front > div:nth-child(3) { flex-shrink: 0 !important; }
       .team-content { padding: 28px 16px 48px !important; }
       .team-banner h1 { font-size: 24px !important; }
       .about-box .team-section-title { font-size: 16px !important; margin-bottom: 20px !important; }
@@ -726,25 +849,61 @@
         object-fit: cover !important;
         object-position: center top !important;
       }
-      .steering-card.participant-card .card-front > div:nth-child(2) {
-        flex: 1 1 auto !important;
-        min-height: 0 !important;
-        max-height: none !important;
+      .steering-card .card-info {
         display: flex !important;
         flex-direction: column !important;
       }
-      .steering-card.participant-card .card-front-label-wrap {
-        margin-top: auto !important;
-        margin-bottom: 4px !important;
+      .steering-card .card-front-org {
+        font-size: 12px !important;
+      }
+      .steering-card .card-front-org-block {
+        flex: 0 1 auto !important;
+        min-height: 0 !important;
+        justify-content: flex-start !important;
+        gap: 8px !important;
+        margin-top: 16px !important;
+        padding: 14px 0 4px !important;
+      }
+      .steering-card .card-front-footer {
+        flex: 0 0 auto !important;
+        padding: 4px 14px 10px !important;
+      }
+      .steering-card[data-steering-id="sc1"] .card-org,
+      .steering-card[data-steering-id="sc2"] .card-org,
+      .steering-card[data-steering-id="sc4"] .card-org {
+        margin-top: 8px !important;
+      }
+      .steering-card[data-steering-id="sc1"] .card-front-org-block,
+      .steering-card[data-steering-id="sc2"] .card-front-org-block,
+      .steering-card[data-steering-id="sc4"] .card-front-org-block {
         padding-bottom: 0 !important;
+      }
+      .steering-card[data-steering-id="sc1"] .card-front-footer,
+      .steering-card[data-steering-id="sc2"] .card-front-footer,
+      .steering-card[data-steering-id="sc4"] .card-front-footer {
+        padding-top: 2px !important;
       }
       .all-participants-title,
       .steering-section-heading { font-size: 18px !important; }
     }
 
     @media (min-width: 901px) {
-      .participant-card .card-front > div:nth-child(2) { padding-bottom: 2px !important; }
-      .participant-card .card-front-org { margin-top: 4px !important; }
+      .participants-header-wrap > div > div:first-child { gap: 12px !important; }
+      .participants-header-wrap > div > div:first-child p + p { margin-top: 0 !important; }
+      .participant-card .card-front-info { padding-bottom: 0 !important; }
+      .participant-card .card-front-org-block {
+        flex: 1 1 auto !important;
+        min-height: 52px !important;
+        justify-content: center !important;
+        margin-top: 16px !important;
+        padding: 14px 0 12px !important;
+      }
+      .participant-card .card-front-org {
+        font-size: 14px !important;
+      }
+      .participant-card .card-front-footer {
+        padding: 12px 14px 14px !important;
+      }
       .stats-bar-wrap button { padding: 10px 12px !important; min-height: 56px !important; gap: 6px !important; }
       .stats-bar-wrap button > span:last-child { font-size: 15px !important; }
       .stats-bar-wrap button > span:first-child span:last-child { font-size: 15px !important; }
@@ -758,7 +917,7 @@
     }
     @media (min-width: 500px) and (max-width: 900px) {
       .cards-grid { grid-template-columns: repeat(2, 1fr) !important; }
-      .participant-card { height: 460px !important; min-height: 460px !important; }
+      .participant-card { height: 500px !important; min-height: 500px !important; }
       .steering-card.participant-card { height: auto !important; min-height: 0 !important; }
     }
     @media (min-width: 901px) {
@@ -794,17 +953,39 @@
         object-fit: cover !important;
         object-position: center top !important;
       }
-      .steering-card.participant-card .card-front > div:nth-child(2) {
-        flex: 1 1 auto !important;
-        min-height: 0 !important;
-        max-height: none !important;
+      .steering-card .card-info {
         display: flex !important;
         flex-direction: column !important;
       }
-      .steering-card.participant-card .card-front-label-wrap {
-        margin-top: auto !important;
-        margin-bottom: 4px !important;
+      .steering-card .card-front-org {
+        font-size: 12px !important;
+      }
+      .steering-card .card-front-org-block {
+        flex: 0 1 auto !important;
+        min-height: 0 !important;
+        justify-content: flex-start !important;
+        gap: 8px !important;
+        margin-top: 16px !important;
+        padding: 14px 0 4px !important;
+      }
+      .steering-card .card-front-footer {
+        flex: 0 0 auto !important;
+        padding: 4px 14px 10px !important;
+      }
+      .steering-card[data-steering-id="sc1"] .card-org,
+      .steering-card[data-steering-id="sc2"] .card-org,
+      .steering-card[data-steering-id="sc4"] .card-org {
+        margin-top: 8px !important;
+      }
+      .steering-card[data-steering-id="sc1"] .card-front-org-block,
+      .steering-card[data-steering-id="sc2"] .card-front-org-block,
+      .steering-card[data-steering-id="sc4"] .card-front-org-block {
         padding-bottom: 0 !important;
+      }
+      .steering-card[data-steering-id="sc1"] .card-front-footer,
+      .steering-card[data-steering-id="sc2"] .card-front-footer,
+      .steering-card[data-steering-id="sc4"] .card-front-footer {
+        padding-top: 2px !important;
       }
       .team-card-new .team-name h2 { font-size: 20px !important; }
       .team-card-new .team-bio p { font-size: 14px !important; line-height: 1.65 !important; }
@@ -845,6 +1026,6 @@
     <div id="team-page"></div>
   </main>
 
-  <script src="script.js?v=110"></script>
+  <script src="script.js?v=114"></script>
 </body>
 </html>

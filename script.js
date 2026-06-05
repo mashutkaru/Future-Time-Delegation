@@ -418,7 +418,6 @@
     var nameHe = escapeHtml(m.nameHe || '');
     var nameJaHtml = nameJa ? '<div style="font-size:13px;color:'+P.mid+';opacity:0.9">'+nameJa+'</div>' : '';
     var nameJaBackHtml = nameJa ? '<div style="font-size:12px;opacity:0.82">'+nameJa+'</div>' : '';
-    var nameHeHtml = nameHe ? '<div style="font-family:Arial;direction:rtl;font-size:16px;color:'+P.mid+'">'+nameHe+'</div>' : '';
     var org = escapeHtml(m.org);
     var orgHe = escapeHtml(m.orgHe || '');
     var role = escapeHtml(m.role);
@@ -430,11 +429,17 @@
         '<div class="card-front" style="background:white;border-radius:14px;border:2.5px solid '+c.border+';overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,0.08)">' +
           '<div class="card-photo-wrap">'+photoInner+'</div>' +
           '<div class="card-info">' +
-            '<div class="card-front-names" style="display:flex;flex-direction:column;gap:4px"><div style="font-weight:800;font-size:16px;color:'+P.dark+'">'+nameEn+'</div>'+nameJaHtml+nameHeHtml+
-            '<div class="card-front-org" style="font-size:12px;font-weight:600;color:'+P.text+';margin-top:2px">'+role+'</div>' +
-            '<div class="card-org" style="font-size:12px;margin:0">'+org+'</div></div>' +
-            '<div class="card-front-label-wrap"><div style="background:'+c.bg+';color:white;font-size:12px;font-weight:700;padding:6px 12px;border-radius:20px">'+STEERING_BADGE+'</div></div>' +
+            '<div class="card-front-names" style="display:flex;flex-direction:column;gap:4px">' +
+              '<div class="card-front-name-block" style="display:flex;flex-direction:column;gap:4px">' +
+                '<div style="font-weight:800;font-size:16px;color:'+P.dark+'">'+nameEn+'</div>'+nameJaHtml +
+              '</div>' +
+              '<div class="card-front-org-block">' +
+                '<div class="card-front-org" style="font-weight:600;color:'+P.text+'">'+role+'</div>' +
+                '<div class="card-org">'+org+'</div>' +
+              '</div>' +
+            '</div>' +
           '</div>' +
+          '<div class="card-front-footer" style="background:'+P.pale+'"><div class="card-front-label-wrap"><div style="background:'+c.bg+';color:white;font-size:12px;font-weight:700;padding:6px 12px;border-radius:20px">'+STEERING_BADGE+'</div></div></div>' +
           '<div class="view-details">View Details</div>' +
         '</div>' +
         '<div class="card-back" style="position:absolute;inset:0;backface-visibility:hidden;transform:rotateY(180deg);background:linear-gradient(160deg,'+c.bg+','+c.bg+'ee);border-radius:14px;padding:18px;color:white;display:flex;flex-direction:column;overflow:hidden">' +
@@ -487,15 +492,22 @@
     var email = escapeHtml(p.email);
     var photoHtml = '<div class="participant-photo-inner">' + participantPictureFront(p.key, nameEn) + '</div>';
     var backImg = participantPictureBack(p.key);
-    return '<div class="participant-card" data-id="' + p.id + '" data-sector="' + escapeHtml(p.sector) + '" style="perspective:900px;cursor:pointer;height:420px;min-height:420px;margin:12px">' +
+    return '<div class="participant-card" data-id="' + p.id + '" data-sector="' + escapeHtml(p.sector) + '" style="perspective:900px;cursor:pointer;height:460px;min-height:460px;margin:12px">' +
       '<div class="card-inner" style="position:relative;width:100%;height:100%;transform-style:preserve-3d;transition:transform 0.55s">' +
         '<div class="card-front" style="position:absolute;top:0;left:0;right:0;bottom:0;backface-visibility:hidden;background:white;border-radius:14px;border:2.5px solid '+c.border+';overflow:hidden;display:flex;flex-direction:column;height:100%;min-height:0;box-shadow:0 2px 12px rgba(0,0,0,0.08)">' +
           '<div class="card-photo-wrap">'+photoHtml+'</div>' +
-          '<div style="flex:2 1 0;min-height:0;padding:12px 14px 6px;overflow:hidden;background:'+P.pale+';color:'+(c.text||P.text)+';display:flex;flex-direction:column;align-items:center;text-align:center;gap:4px">' +
-            '<div class="card-front-names" style="flex-shrink:0;display:flex;flex-direction:column;gap:4px"><div style="font-weight:800;font-size:16px;color:'+(c.text||P.dark)+'">'+nameEn+'</div>'+nameJaHtml+'<div style="font-family:Arial;direction:rtl;font-size:16px;color:'+(c.text||P.mid)+'">'+nameHe+'</div><div class="card-front-org" style="font-size:13px;font-weight:600;color:'+(c.text||P.text)+';margin-top:4px">'+org+orgLine2+'</div></div>' +
-            '<div class="card-front-label-wrap" style="display:flex;align-items:center;justify-content:center;min-height:0;margin-top:2px"><div style="background:'+c.bg+';color:white;font-size:14px;font-weight:700;padding:6px 14px;border-radius:20px">'+escapeHtml(p.sector)+'</div></div>' +
+          '<div class="card-front-info" style="background:'+P.pale+';color:'+(c.text||P.text)+'">' +
+            '<div class="card-front-names">' +
+              '<div class="card-front-name-block">' +
+                '<div style="font-weight:800;font-size:16px;color:'+(c.text||P.dark)+'">'+nameEn+'</div>'+nameJaHtml +
+              '</div>' +
+              '<div class="card-front-org-block">' +
+                '<div class="card-front-org" style="font-weight:600;color:'+(c.text||P.text)+'">'+org+orgLine2+'</div>' +
+              '</div>' +
+            '</div>' +
           '</div>' +
-          '<div style="flex-shrink:0;text-align:center;padding:8px;font-size:10px;color:white;background:'+c.bg+'">View Details</div>' +
+          '<div class="card-front-footer" style="background:'+P.pale+'"><div class="card-front-label-wrap"><div style="background:'+c.bg+';color:white;font-size:14px;font-weight:700;padding:6px 14px;border-radius:20px">'+escapeHtml(p.sector)+'</div></div></div>' +
+          '<div class="view-details" style="background:'+c.bg+'">View Details</div>' +
         '</div>' +
         '<div class="card-back" style="position:absolute;top:0;left:0;right:0;bottom:0;backface-visibility:hidden;transform:rotateY(180deg);background:linear-gradient(160deg,'+c.bg+','+c.bg+'ee);border-radius:14px;padding:18px;color:white;display:flex;flex-direction:column;gap:0;overflow:hidden">' +
           '<div class="card-back-upper" style="flex:1 1 33%;min-height:140px;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;padding:16px 0 20px;gap:12px"><div class="participant-back-thumb" style="width:140px;height:140px;min-width:140px;min-height:140px;border-radius:50%;overflow:hidden;border:3px solid rgba(255,255,255,0.5);flex-shrink:0;background:rgba(255,255,255,0.1);box-shadow:0 4px 12px rgba(0,0,0,0.2)">'+backImg+'</div><div style="text-align:center;display:flex;flex-direction:column;gap:6px"><div style="font-weight:800;font-size:17px">'+nameEn+'</div>'+nameJaBackHtml+'<div style="font-family:Arial;direction:rtl;font-size:13px;opacity:0.88">'+nameHe+'</div></div></div>' +
@@ -545,7 +557,7 @@
       container.innerHTML = '<div style="min-height:100vh;background:'+P.pale+'">' +
         '<div class="participants-header-wrap" style="background:'+P.hero+';padding:28px 48px 24px;color:white;position:relative">' +
           '<div style="max-width:1204px;margin:0 auto;display:flex;align-items:flex-start;justify-content:flex-start;gap:28px">' +
-            '<div style="flex:1;min-width:0;text-align:left;display:flex;flex-direction:column;align-items:flex-start;gap:12px;padding:6px 12px 0 0"><h1 style="margin:0;font-size:28px;font-weight:800;display:flex;align-items:center;gap:10px;justify-content:flex-start;line-height:1.1">Program Participants</h1><p style="margin:0;opacity:0.7;font-size:15px;font-weight:800;line-height:1.35;max-width:580px;text-align:left">Choose participants by affiliation label</p><p style="margin:0;opacity:0.7;font-size:15px;font-weight:800;line-height:1.35;max-width:580px;text-align:left">Search and filter all program participants across sectors</p></div>' +
+            '<div style="flex:1;min-width:0;text-align:left;display:flex;flex-direction:column;align-items:flex-start;gap:12px;padding:6px 12px 0 0"><h1 style="margin:0;font-size:28px;font-weight:800;display:flex;align-items:center;gap:10px;justify-content:flex-start;line-height:1.1">Program Participants</h1><p style="margin:0;opacity:0.7;font-size:14px;font-weight:800;line-height:1.35;max-width:580px;text-align:left">Choose participants by affiliation label</p><p style="margin:0;opacity:0.7;font-size:14px;font-weight:800;line-height:1.35;max-width:580px;text-align:left">Search and filter all program participants across sectors</p></div>' +
             '<div class="stats-bar-wrap" id="stats-bar" style="flex:0 1 640px;max-width:640px;width:100%;display:grid;grid-template-columns:repeat(3, 1fr);gap:10px;justify-content:flex-end;margin-left:auto">'+statsHtml+'</div>' +
           '</div>' +
         '</div>' +
@@ -559,10 +571,6 @@
           '</div></section>' +
           '<div class="participants-empty" style="display:none;text-align:center;padding:60px;color:'+P.soft+'"><div style="font-size:44px;margin-bottom:12px">🔍</div><div style="font-size:17px;font-weight:700">No participants found</div></div>' +
         '</div></div>';
-
-      var input = container.querySelector('#search-input');
-      input.value = search;
-      input.oninput = function () { setSearch(this.value); };
 
       container.querySelectorAll('[data-sector]').forEach(function(btn){
         btn.onclick = function () { setActiveSector(btn.getAttribute('data-sector')); };
@@ -580,6 +588,8 @@
       btn.onclick = function () { setActiveSector(btn.getAttribute('data-sector')); };
     });
 
+    bindSearchInput(container, search, setSearch);
+
     container.querySelectorAll('.participant-card').forEach(function(el){
       el.onclick = function () {
         var inner = el.querySelector('.card-inner');
@@ -590,6 +600,7 @@
   }
 
   var state = { page: 'about', activeSector: 'all', search: '' };
+  var searchScrollTimer = null;
 
   function isMobileViewport() {
     return window.matchMedia('(max-width: 900px)').matches;
@@ -603,6 +614,42 @@
       if (header) offset += header.offsetHeight;
     }
     return offset + 8;
+  }
+
+  function bindSearchInput(container, search, setSearch) {
+    var input = container.querySelector('#search-input');
+    if (!input) return;
+    input.value = search;
+    input.oninput = function () { setSearch(this.value); };
+  }
+
+  function scrollToParticipantCard(card) {
+    if (!card) return;
+    requestAnimationFrame(function () {
+      requestAnimationFrame(function () {
+        var y = card.getBoundingClientRect().top + window.pageYOffset - participantsScrollOffset();
+        window.scrollTo({ top: Math.max(0, y), behavior: 'smooth' });
+      });
+    });
+  }
+
+  function scrollParticipantsAfterSearch(search, filtered) {
+    if (searchScrollTimer) {
+      clearTimeout(searchScrollTimer);
+      searchScrollTimer = null;
+    }
+    if (state.page !== 'participants') return;
+    var q = (search || '').trim();
+    if (!q || !filtered.length) return;
+
+    var firstId = String(filtered[0].id);
+    searchScrollTimer = setTimeout(function () {
+      searchScrollTimer = null;
+      var page = document.getElementById('participants-page');
+      if (!page) return;
+      var card = page.querySelector('#cards-container .participant-card[data-id="' + firstId + '"]');
+      scrollToParticipantCard(card);
+    }, 1000);
   }
 
   function scrollParticipantsAfterSector(sector) {
@@ -624,8 +671,7 @@
           }
         }
         if (!card) return;
-        var y = card.getBoundingClientRect().top + window.pageYOffset - participantsScrollOffset();
-        window.scrollTo({ top: Math.max(0, y), behavior: 'smooth' });
+        scrollToParticipantCard(card);
       });
     });
   }
@@ -660,7 +706,9 @@
 
   function setSearch(s) {
     state.search = s;
+    var filtered = filterParticipants(state.activeSector, state.search);
     renderParticipantsPage(document.getElementById('participants-page'), state.activeSector, state.search, setActiveSector, setSearch);
+    scrollParticipantsAfterSearch(s, filtered);
   }
 
   document.querySelectorAll('.nav-btn').forEach(function(btn){
