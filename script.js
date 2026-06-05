@@ -210,10 +210,11 @@
 
   function renderMeetTheTeamPage(container, setPage) {
     var mashaPars = [
-      "Masha Robeen is a gerontechnologist and product manager whose work sits at the intersection of aging research, healthcare innovation, and systems integration.",
-      "She holds dual Master's degrees in Gerontology from the University of Haifa and Yokohama National University, Japan, and spent five years in Japan researching two interconnected dimensions of long-term care: the coping mechanisms of long-term care recipients, and home and environment adaptations for older adults and their caregivers.",
-      "Working alongside major caregiving organizations in both countries, she developed a research-grounded understanding of how policy frameworks, formal care systems, and cultural context shape aging outcomes.",
-      "Back in Israel, Masha focuses on improving the transition from hospital to community-based rehabilitation. She collaborates with multidisciplinary healthcare teams to develop integrated models connecting medical care, rehabilitation services, and community support, with a track record of leading healthcare projects from concept to measurable impact.",
+      "Masha Robeen is a gerontechnologist and product manager whose work sits at the intersection of aging research, healthcare innovation, and healthcare and long-term care systems integration.",
+      "She holds a Master's degree in Gerontology from the University of Haifa and a Master's degree in Innovation Management and Environmental Sciences from the Graduate School of Environment and Information Sciences at Yokohama National University, Japan. She spent five years in Japan researching two interconnected dimensions of long-term care: the coping mechanisms of long-term care recipients, and home and environment adaptations for older adults and their caregivers.",
+      "Working alongside major caregiving organizations in both Japan and Israel, she developed a research-grounded understanding of how policy frameworks, formal care systems, and cultural context shape aging outcomes.",
+      "Back in Israel, Masha focuses on improving the transition from hospital to community-based rehabilitation. She collaborates with multidisciplinary teams to develop integrated models connecting medical care, rehabilitation services, and community support.",
+      "Masha has led multiple healthcare and digital health projects from early concept through implementation and measurable adoption. Her work combines product strategy, multidisciplinary project leadership, implementation planning, and data-driven evaluation to turn healthcare needs into scalable services and practical care models.",
       "Masha brings a cross-disciplinary approach to the complex challenges of rapidly aging societies, translating evidence into policy-relevant, human-centered solutions."
     ];
     var hadasPars = [
@@ -261,9 +262,10 @@
     var mashaBioHtml = mashaPars.map(function(t){ return '<p style="'+pStyle+'">'+t+'</p>'; }).join('');
     var mashaJaPars = [
       'ルービン・マーシャ氏は、老年学（ジェロントロジー）、ヘルスケア・イノベーション、そして医療・介護システムの統合を専門とするジェロンテクノロジストおよびプロダクトマネージャーです。',
-      'イスラエルのハイファ大学および日本の横浜国立大学にて老年学の修士号を取得しています。日本には5年間滞在し、長期介護を必要とする高齢者の生活適応プロセスや、高齢者および介護者を支える住環境・生活環境の改善に関する研究に従事しました。',
+      'イスラエルのハイファ大学にて老年学の修士号を取得し、日本の横浜国立大学大学院環境情報学府にて、イノベーション・マネジメントおよび環境科学分野の修士号を取得しています。日本には5年間滞在し、長期介護を必要とする高齢者の生活適応プロセスや、高齢者および介護者を支える住環境・生活環境の改善に関する研究に従事しました。',
       '日本とイスラエルの主要な介護・福祉関連機関との協働を通じて、政策制度、フォーマルケアの仕組み、そして文化的背景が高齢者の生活の質やケアの成果にどのような影響を与えるのかについて、実践と研究の両面から知見を深めてきました。',
-      '現在はイスラエルにおいて、病院から地域リハビリテーションへの円滑な移行を支援する取り組みに注力しています。医師、看護師、リハビリ専門職など多職種の医療チームと連携しながら、医療、リハビリテーション、地域支援を結ぶ統合的なケアモデルの開発に携わり、数多くのヘルスケアプロジェクトを企画立案から実装、成果創出まで主導してきました。',
+      '現在はイスラエルにおいて、病院から地域リハビリテーションへの円滑な移行を支援する取り組みに注力しています。医師、看護師、リハビリ専門職などの多職種チームと連携しながら、医療、リハビリテーション、地域支援を結ぶ統合的なケアモデルの開発に携わっています。',
+      'マーシャ氏は、複数のヘルスケアおよびデジタルヘルス関連プロジェクトを、構想段階から実装、利用促進、成果創出まで主導してきました。その活動は、プロダクト戦略、多職種連携によるプロジェクト推進、実装計画、データに基づく評価を組み合わせ、現場の医療・介護ニーズを拡張可能なサービスや実践的なケアモデルへと転換するものです。',
       '急速に高齢化が進む社会が直面する複雑な課題に対し、マーシャ氏は学際的な視点からアプローチし、研究成果や実証データを政策や実践につながる人間中心のソリューションへと転換することを目指しています。'
     ];
     var hadasBioHtml = hadasPars.map(function(t){ return '<p style="'+pStyle+'">'+t+'</p>'; }).join('');
@@ -296,11 +298,30 @@
     var hadasBarzilaiBioHtml = hadasBarzilaiPars.map(function(t){ return '<p style="'+pStyle+'">'+t+'</p>'; }).join('');
     var hadasBarzilaiJaBioHtml = hadasBarzilaiJaPars.map(function(t){ return '<p style="'+jaPStyle+'">'+t+'</p>'; }).join('');
     var hadasBarzilaiBioFlipHtml = buildTeamBioFlipHtml('hadas-barzilai-bio-flip', 'バルジライ・ハダス', hadasBarzilaiJaBioHtml, hadasBarzilaiBioHtml);
+    var sigalJaPars = [
+      'シガル・マウトナー・シーブツェナー氏は、組織コンサルタントおよびグループ・ファシリテーターとして、組織・個人・職業能力の開発において20年以上の経験を有しています。ELKAでは、政府省庁、地方自治体、市民社会組織の高官や専門家が主導するイニシアティブの企画・運営において中心的な役割を担ってきました。',
+      '以前は、イスラエル・コミュニティ・センター協会の女性エンパワーメント部門を統括し、全国の数千人の女性を対象としたリーダーシップ・プログラムを監督しました。また、「ユース・フォー・ユース」協会の理事長、MATI（中小企業開発センター）研修部門の管理者、大手コンサルティング会社でのシニア組織コンサルタントなどを歴任しています。',
+      'これらの役割において、上級管理チームへの助言、多分野にわたる組織プロセスの主導、管理者および多職種チーム向け研修プログラムの開発を行ってきました。長年にわたり、さまざまな学術的文脈で講義やワークショップのファシリテーションも担当しています。',
+      'テルアビブ大学にて組織行動学の修士号を取得。ジポリ・センターのグループ・ファシリテーション修了証、バル・イラン大学テムロット動的心理療法スクールの心理療法研究修了証を保有しています。'
+    ];
+    var yuvalJaPars = [
+      'ユヴァル・ゴラニ氏は、「FutureTime」プログラムの運営およびロジスティクスを統括しています。以前のELKAでの役割においては、地域自治体クラスターと連携し、質の高い社会サービスを提供するための仕組みづくりと能力強化に取り組み、厚生労働省、内務省、福祉省などとの分野横断的な協働を主導してきました。',
+      'それ以前は、エネルギー・インフラ省メディア・コミュニケーション・アドボカシー部門で広報補佐官を務めました。業務と並行して、社会的不平等の解消に取り組む社会組織への積極的なボランティア活動も続けています。',
+      'ユヴァル氏は、エルサレム・ヘブライ大学にて政治学・国際関係学の学士号を取得しています。'
+    ];
     var sigalBioHtml = sigalPars.map(function(t){ return '<p style="'+pStyle+'">'+t+'</p>'; }).join('');
+    var sigalJaBioHtml = sigalJaPars.map(function(t){ return '<p style="'+jaPStyle+'">'+t+'</p>'; }).join('');
     var yuvalBioHtml = yuvalPars.map(function(t){ return '<p style="'+pStyle+'">'+t+'</p>'; }).join('');
+    var yuvalJaBioHtml = yuvalJaPars.map(function(t){ return '<p style="'+jaPStyle+'">'+t+'</p>'; }).join('');
     var talBioHtml = talPars.map(function(t){ return '<p style="'+pStyle+'">'+t+'</p>'; }).join('');
     var talJaBioHtml = talJaPars.map(function(t){ return '<p style="'+jaPStyle+'">'+t+'</p>'; }).join('');
     var talBioFlipHtml = buildTeamBioFlipHtml('tal-bio-flip', 'マイルズ・タル', talJaBioHtml, talBioHtml);
+    var sigalBioFlipHtml = buildTeamBioFlipHtml('sigal-bio-flip', 'マウトナー・シーブツェナー・シガル', sigalJaBioHtml, sigalBioHtml);
+    var yuvalBioFlipHtml = buildTeamBioFlipHtml('yuval-bio-flip', 'ゴラニ・ユヴァル', yuvalJaBioHtml, yuvalBioHtml);
+    var roleStyle = pStyle+';margin:0 0 12px';
+    function teamRoleHtml(title) {
+      return '<p class="team-role" style="'+roleStyle+'"><strong>'+title+'</strong><br/>Joint-ELKA</p>';
+    }
     var teamBoxStyle = 'box-shadow:0 4px 24px rgba(0,0,0,0.15);margin-bottom:24px';
     container.innerHTML = '<div style="min-height:100vh;background:'+P.pale+'">' +
       '<div class="about-banner team-banner" style="background:'+P.hero+';width:100%;overflow:hidden">' +
@@ -329,22 +350,22 @@
           '<div class="team-card team-card-hadas-barzilai team-card-new">' +
             '<div class="team-name"><h2>Hadas Barzilai</h2></div>' +
             '<div class="team-photo-wrap"><img src="'+PHOTO_DIR+'Hadas_Barzilai.jpg" alt="Hadas Barzilai"></div>' +
-            '<p style="'+pStyle+';margin:0 0 12px"><strong>Director, \"FutureTime\" Program</strong><br/>Joint-ELKA</p>'+hadasBarzilaiBioFlipHtml +
+            teamRoleHtml('Director, \"FutureTime\" Program')+hadasBarzilaiBioFlipHtml +
           '</div>' +
           '<div class="team-card team-card-sigal team-card-new">' +
             '<div class="team-name"><h2>Sigal Mautner Siebzehner</h2></div>' +
             '<div class="team-photo-wrap"><img src="'+PHOTO_DIR+'Sigal_Mautner_Sievzehner.jpeg" alt="Sigal Mautner Siebzehner"></div>' +
-            '<div class="team-bio"><p style="'+pStyle+';margin-bottom:8px"><strong>Director, \"FutureTime\" Program</strong><br/>Joint-ELKA</p>'+sigalBioHtml+'</div>' +
+            teamRoleHtml('Director, \"FutureTime\" Program')+sigalBioFlipHtml +
           '</div>' +
           '<div class="team-card team-card-yuval team-card-new">' +
             '<div class="team-name"><h2>Yuval Golani</h2></div>' +
             '<div class="team-photo-wrap"><img src="'+PHOTO_DIR+'Yuval_Golani.png?v=4" alt="Yuval Golani"></div>' +
-            '<div class="team-bio"><p style="'+pStyle+';margin-bottom:8px"><strong>Coordinator, \"FutureTime\" Program</strong><br/>Joint-ELKA</p>'+yuvalBioHtml+'</div>' +
+            teamRoleHtml('Coordinator, \"FutureTime\" Program')+yuvalBioFlipHtml +
           '</div>' +
           '<div class="team-card team-card-tal team-card-new">' +
             '<div class="team-name"><h2>Tal Miles</h2></div>' +
             '<div class="team-photo-wrap"><img src="'+PHOTO_DIR+'Tal_Miles.png?v=2" alt="Tal Miles"></div>' +
-            '<p style="'+pStyle+';margin:0 0 12px"><strong>Director, National Public System Network Initiatives</strong><br/>Joint-ELKA</p>'+talBioFlipHtml +
+            teamRoleHtml('Director, National Public System Network Initiatives')+talBioFlipHtml +
           '</div>' +
         '</div></div></div></div>';
     var teamCards = container.querySelector('.team-cards-main');
@@ -399,6 +420,8 @@
     bindTeamBioFlip(container.querySelector('#hadas-bio-flip'));
     bindTeamBioFlip(container.querySelector('#tal-bio-flip'));
     bindTeamBioFlip(container.querySelector('#hadas-barzilai-bio-flip'));
+    bindTeamBioFlip(container.querySelector('#sigal-bio-flip'));
+    bindTeamBioFlip(container.querySelector('#yuval-bio-flip'));
   }
 
   function steeringPhotoHtml(m) {

@@ -529,7 +529,7 @@
       line-height: 1.35;
     }
     .team-bio-flip-hint {
-      margin-top: 14px;
+      margin-top: 0;
       display: inline-flex;
       align-items: center;
       justify-content: center;
@@ -576,6 +576,7 @@
       display: flex;
       flex-direction: column;
       align-items: center;
+      gap: 0;
     }
     .team-card-logo {
       margin-top: auto;
@@ -619,13 +620,17 @@
       width: 100%;
       overflow: hidden;
       cursor: default;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
     .team-cards-main .team-bio-flip-inner {
       position: relative;
       width: 100%;
-      min-height: 220px;
-      max-height: 420px;
-      height: 420px;
+      flex: 0 0 auto;
+      min-height: 520px;
+      max-height: none;
+      height: 520px;
     }
     .team-cards-main .team-bio-flip-face {
       position: absolute;
@@ -635,6 +640,8 @@
       overflow-x: hidden;
       -webkit-overflow-scrolling: touch;
       overscroll-behavior: contain;
+      padding-bottom: 0;
+      box-sizing: border-box;
     }
     .team-cards-main .team-bio-flip-front {
       position: absolute;
@@ -655,7 +662,47 @@
     }
     .team-cards-main .team-bio-flip-hint {
       cursor: pointer;
+      margin-top: 0;
+      flex-shrink: 0;
+    }
+    /* Future Time Program Team: equal card heights, hint buttons aligned at bottom */
+    .team-cards-new {
+      align-items: stretch;
+    }
+    .team-cards-new .team-card-new {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      min-height: 720px;
+    }
+    .team-cards-new .team-role {
+      flex-shrink: 0;
+    }
+    .team-cards-new .team-bio-flip {
+      flex: 1 1 auto;
+      min-height: 0;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0;
+      cursor: default;
+    }
+    .team-cards-new .team-bio-flip-inner {
+      flex: 1 1 auto;
+      min-height: 240px;
+      width: 100%;
+    }
+    .team-cards-new .team-bio-flip-face {
+      max-height: none;
+      overflow-y: auto;
+      overflow-x: hidden;
+      -webkit-overflow-scrolling: touch;
+    }
+    .team-cards-new .team-bio-flip-hint {
       margin-top: auto;
+      flex-shrink: 0;
+      cursor: pointer;
     }
     /* Participants header typography */
     .participants-header-wrap, .participants-header-wrap * { font-family: 'Inter', sans-serif !important; }
@@ -808,10 +855,21 @@
         margin-bottom: 20px !important;
       }
       .team-card h2 { font-size: 20px !important; }
+      .team-cards-main .team-bio-flip {
+        gap: 0 !important;
+      }
       .team-cards-main .team-bio-flip-inner {
-        min-height: 200px !important;
-        max-height: min(340px, 45vh) !important;
-        height: min(340px, 45vh) !important;
+        min-height: 480px !important;
+        height: 480px !important;
+      }
+      .team-cards-main .team-bio-flip-hint {
+        margin-top: 0 !important;
+      }
+      .team-cards-new .team-card-new {
+        min-height: 680px !important;
+      }
+      .team-cards-new .team-bio-flip-inner {
+        min-height: 220px !important;
       }
       .steering-section-box { padding: 24px 16px 20px !important; border-radius: 16px !important; }
       .steering-carousel-track { padding: 4px 40px 12px !important; gap: 12px !important; }
@@ -888,6 +946,33 @@
     }
 
     @media (min-width: 901px) {
+      .team-cards-main .team-bio-flip {
+        overflow: visible !important;
+        gap: 0 !important;
+      }
+      .team-cards-main .team-bio-flip-inner {
+        flex: 0 0 auto !important;
+        max-height: none !important;
+        min-height: 740px !important;
+        height: 740px !important;
+      }
+      .team-cards-main .team-bio-flip-face {
+        overflow-y: visible !important;
+        overflow-x: hidden !important;
+        padding-bottom: 0 !important;
+      }
+      .team-cards-main .team-bio-flip-hint {
+        margin-top: 0 !important;
+      }
+      .team-cards-new .team-card-new {
+        min-height: 780px !important;
+      }
+      .team-cards-new .team-bio-flip-inner {
+        min-height: 300px !important;
+      }
+      .team-cards-new .team-bio-flip-face {
+        overflow-y: visible !important;
+      }
       .participants-header-wrap > div > div:first-child { gap: 12px !important; }
       .participants-header-wrap > div > div:first-child p + p { margin-top: 0 !important; }
       .participant-card .card-front-info { padding-bottom: 0 !important; }
@@ -1026,6 +1111,6 @@
     <div id="team-page"></div>
   </main>
 
-  <script src="script.js?v=114"></script>
+  <script src="script.js?v=116"></script>
 </body>
 </html>
