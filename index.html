@@ -545,24 +545,16 @@
       letter-spacing: 0.06em;
       text-transform: uppercase;
       flex-shrink: 0;
-      box-shadow:
-        0 4px 0 var(--teal-dark),
-        0 6px 14px rgba(33, 79, 99, 0.28);
-      transition: background 0.2s, box-shadow 0.15s ease, transform 0.15s ease;
+      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.2);
+      transition: background 0.2s, box-shadow 0.2s ease;
     }
     .team-bio-flip-hint:hover {
       background: #ffffff;
-      box-shadow:
-        0 3px 0 var(--teal-dark),
-        0 5px 12px rgba(33, 79, 99, 0.34);
-      transform: translateY(1px);
+      box-shadow: 0 6px 22px rgba(0, 0, 0, 0.22);
     }
     .team-bio-flip-hint:active {
       background: #ffffff;
-      box-shadow:
-        0 1px 0 var(--teal-dark),
-        0 2px 6px rgba(33, 79, 99, 0.2);
-      transform: translateY(3px);
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.16);
     }
     .team-bio-flip-hint-arrow {
       font-size: 16px;
@@ -615,10 +607,10 @@
       min-height: 0;
     }
     .team-cards-main .team-bio-flip {
-      flex: 1 1 auto;
+      flex: 0 0 auto;
       min-height: 0;
       width: 100%;
-      overflow: hidden;
+      overflow: visible;
       cursor: default;
       display: flex;
       flex-direction: column;
@@ -628,27 +620,35 @@
       position: relative;
       width: 100%;
       flex: 0 0 auto;
-      min-height: 520px;
+      height: auto;
+      min-height: 0;
       max-height: none;
-      height: 520px;
+      display: grid;
+      transform-style: preserve-3d;
+      transition: transform 0.55s ease;
     }
     .team-cards-main .team-bio-flip-face {
-      position: absolute;
-      inset: 0;
+      grid-area: 1 / 1;
+      position: relative;
+      width: 100%;
+      inset: auto;
       max-height: none;
-      overflow-y: auto;
+      overflow: visible;
       overflow-x: hidden;
-      -webkit-overflow-scrolling: touch;
-      overscroll-behavior: contain;
       padding-bottom: 0;
       box-sizing: border-box;
+      backface-visibility: hidden;
+      -webkit-backface-visibility: hidden;
     }
     .team-cards-main .team-bio-flip-front {
-      position: absolute;
       z-index: 2;
       pointer-events: auto;
     }
     .team-cards-main .team-bio-flip-back {
+      top: auto;
+      left: auto;
+      right: auto;
+      transform: rotateY(180deg);
       z-index: 1;
       pointer-events: none;
     }
@@ -858,9 +858,15 @@
       .team-cards-main .team-bio-flip {
         gap: 0 !important;
       }
+      .team-cards-main .team-bio-flip {
+        overflow: visible !important;
+      }
       .team-cards-main .team-bio-flip-inner {
-        min-height: 480px !important;
-        height: 480px !important;
+        height: auto !important;
+        min-height: 0 !important;
+      }
+      .team-cards-main .team-bio-flip-face {
+        overflow: visible !important;
       }
       .team-cards-main .team-bio-flip-hint {
         margin-top: 0 !important;
@@ -953,11 +959,11 @@
       .team-cards-main .team-bio-flip-inner {
         flex: 0 0 auto !important;
         max-height: none !important;
-        min-height: 740px !important;
-        height: 740px !important;
+        height: auto !important;
+        min-height: 0 !important;
       }
       .team-cards-main .team-bio-flip-face {
-        overflow-y: visible !important;
+        overflow: visible !important;
         overflow-x: hidden !important;
         padding-bottom: 0 !important;
       }
@@ -1111,6 +1117,6 @@
     <div id="team-page"></div>
   </main>
 
-  <script src="script.js?v=116"></script>
+  <script src="script.js?v=120"></script>
 </body>
 </html>

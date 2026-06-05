@@ -16,45 +16,90 @@
   }
 
   const PARTICIPANTS = [
-    { id:1,  key:"Avishay_Cohen",            nameEn:"Avishay Cohen",            nameJa:"コーヘン・アヴィシャイ",             nameHe:"אבישי כהן",            sector:"Central Government", org:"Ministry of Labor",                     orgHe:"משרד העבודה",                     role:"Director, Multi-Generational Employment Dept.", roleHe:"מנהל אגף תעסוקה רב-דורית",            email:"cohan.avishay@gmail.com" },
-    { id:2,  key:"Avital_Simcha_Shlezinger", nameEn:"Avital Simcha Shlezinger", nameJa:"シュレジンガー・アヴィタル・シムハ", nameHe:"אביטל שמחה שלזינגר",  sector:"Central Government", org:"National Insurance Institute",          orgHe:"המוסד לביטוח לאומי",              role:"Head, Senior Citizen & Family Advisory Div.",  roleHe:"מנהלת אגף הייעוץ לאזרח הוותיק",       email:"avitals@nioi.gov.il" },
+    { id:1,  key:"Avishay_Cohen",            nameEn:"Avishay Cohen",            nameJa:"コーヘン・アヴィシャイ",             nameHe:"אבישי כהן",            sector:"Central Government", org:"Ministry of Labor",                     orgHe:"משרד העבודה",                     role:"Director, Multi- Generational Employment Department", roleHe:"מנהל אגף תעסוקה רב-דורית",            email:"cohan.avishay@gmail.com" },
+    { id:2,  key:"Avital_Simcha_Shlezinger", nameEn:"Avital Simcha Shlezinger", nameJa:"シュレジンガー・アヴィタル・シムハ", nameHe:"אביטל שמחה שלזינגר",  sector:"Central Government", org:"National Insurance Institute",          orgHe:"המוסד לביטוח לאומי",              role:"Director of Senior Citizen and Family Advisory Division",  roleHe:"מנהלת אגף הייעוץ לאזרח הוותיק",       email:"avitals@nioi.gov.il" },
     { id:4,  key:"Idit_Ayala_Reiss",         nameEn:"Idit Ayala Reiss",         nameJa:"ライス・イディット・アヤラ",         nameHe:"עדית אילה ריס",       sector:"Central Government", org:"Ministry of Justice",                  orgHe:"משרד המשפטים",                    role:"Adv., Office of Legal Counsel and Legislative Affairs", roleHe:"עו״ד ייעוץ וחקיקה",                 email:"iditna@justice.gov.il" },
     { id:5,  key:"Jasmin_Vulej",             nameEn:"Jasmin Vulej",             nameJa:"ヴレイ・ジャスミン",               nameHe:"יסמין וולך",         sector:"Central Government", org:"The Ministry of Welfare and Social Affairs",            orgHe:"משרד הרווחה",                     role:"Head of Model Development Unit",               roleHe:"מנהלת יחידת פיתוח מודלים",           email:"jasminv@molsa.gov.il" },
     { id:6,  key:"Liat_Stark",               nameEn:"Liat Stark",               nameJa:"スターク・リアット",               nameHe:"ליאת שטרק",            sector:"Central Government", org:"Ministry of Justice",                  orgHe:"משרד המשפטים",                    role:"District Director, Guardian General",          roleHe:"מנהלת מחוז ירושלים אפוטרופוס כללי",  email:"liatsta@justice.gov.il" },
-    { id:7,  key:"Lior_Zohar",               nameEn:"Lior Zohar",               nameJa:"ゾハル・リオール",                 nameHe:"ליאור זוהר",            sector:"Central Government", org:"Ministry of Finance",                  orgHe:"משרד האוצר",                      role:"Head of Strategy and Pension Consultation Dept.", roleHe:"מנהלת תחום אסטרטגיה וייעוץ פנסיוני", email:"liork@mof.gov.il" },
-    { id:8,  key:"Rachela_Akuka",            nameEn:"Rachela Akuka",            nameJa:"アクカ・ラヘラ",                   nameHe:"רחלה אקוקה",            sector:"Central Government", org:"Ministry of Finance",                  orgHe:"משרד האוצר",                      role:"Manager of individual Taxation Department", roleHe:"מנהלת מחלקת שומה",                   email:"akuka720@gmail.com" },
+    { id:7,  key:"Lior_Zohar",               nameEn:"Lior Zohar",               nameJa:"ゾハル・リオール",                 nameHe:"ליאור זוהר",            sector:"Central Government", org:"Ministry of Finance",                  orgHe:"משרד האוצר",                      role:"Head of Strategy and Pension Consultation Deptartment", roleHe:"מנהלת תחום אסטרטגיה וייעוץ פנסיוני", email:"liork@mof.gov.il" },
+    { id:8,  key:"Rachela_Akuka",            nameEn:"Rachela Akuka",            nameJa:"アクカ・ラヘラ",                   nameHe:"רחלה אקוקה",            sector:"Central Government", org:"Ministry of Finance",                  orgHe:"משרד האוצר",                      role:"Manger of indivdual Taxation Department", roleHe:"מנהלת מחלקת שומה",                   email:"akuka720@gmail.com" },
     { id:9,  key:"Ravit_Nakar_El-Ezra",      nameEn:"Ravit Nakar El-Ezra",      nameJa:"ナカル・エルエズラ・ラヴィット",     nameHe:"רוית נקר אל-עזרה",    sector:"Central Government", org:"The Ministry of Welfare and Social Affairs", orgHe:"משרד הרווחה והביטחון החברתי",    role:"Senior Manager, Budgeting and Pricing, Senior Citizens Administration", roleHe:"מנהלת בכירה תקצוב ותמחור אגף אזרחים ותיקים", email:"ravitn@molsa.gov.il" },
-    { id:10, key:"Roei_Rafael_Babai",        nameEn:"Roei Rafael Babai",        nameJa:"ババイ・ロエイ・ラファエル",         nameHe:"רועי רפאל בבאי",       sector:"Central Government", org:"Ministry of Finance",                  orgHe:"משרד האוצר",                      role:"National Social Insurance Referent, Budget Dept.", roleHe:"רפרנט ביטוח לאומי, אגף התקציבים", email:"roeib@mof.gov.il" },
+    { id:10, key:"Roei_Rafael_Babai",        nameEn:"Roei Rafael Babai",        nameJa:"ババイ・ロエイ・ラファエル",         nameHe:"רועי רפאל בבאי",       sector:"Central Government", org:"Ministry of Finance",                  orgHe:"משרד האוצר",                      role:"Referent, National Social Insurance, Budget Department", roleHe:"רפרנט ביטוח לאומי, אגף התקציבים", email:"roeib@mof.gov.il" },
     { id:11, key:"Ronit_Rozin",              nameEn:"Ronit Rozin",              nameJa:"ロジン・ロニット",                 nameHe:"רונית רוזין",           sector:"Central Government", org:"Prime Minister Office",                orgHe:"משרד ראש הממשלה",                 role:"CEO Holocaust Survivors Rights Authority",   roleHe:"מנכ״לית הרשות לניצולי שואה",         email:"ronitro@hsa.gov.il" },
     { id:12, key:"Valentina_Batia_Chai",     nameEn:"Valentina Batia Chai",     nameJa:"ハイ・ヴァレンティナ・バティア",     nameHe:"ולנטינה בתיה חי",       sector:"Central Government", org:"National Insurance Institute",          orgHe:"המוסד לביטוח לאומי",              role:"Branch Manager",                             roleHe:"מנהלת סניף עפולה רבתי",                           email:"valic1110@gmail.com" },
-    { id:13, key:"Yehuda_Arie_Halali",       nameEn:"Yehuda Arie Halali",       nameJa:"ハラリ・イェフダ・アリエ",           nameHe:"יהודה אריה הללי",      sector:"Central Government", org:"Ministry for Social Equality and the Advancement of the Status of Women", orgHe:"המשרד לשוויון חברתי וקידום מעמד האישה", role:"Senior Citizens Call Center Department Manager", roleHe:"מנהל תחום מוקד אזרחים ותיקים, המשרד לשוויון חברתי וקידום מעמד האישה", email:"yehudah@mse.gov.il" },
+    { id:13, key:"Yehuda_Arie_Halali",       nameEn:"Yehuda Arie Halali",       nameJa:"ハラリ・イェフダ・アリエ",           nameHe:"יהודה אריה הללי",      sector:"Central Government", org:"Ministry for Social Equality and the Advancement of the Status of Women", orgHe:"המשרד לשוויון חברתי וקידום מעמד האישה", role:"Manager, Senior Citizens Call Center Department", roleHe:"מנהל תחום מוקד אזרחים ותיקים, המשרד לשוויון חברתי וקידום מעמד האישה", email:"yehudah@mse.gov.il" },
     { id:14, key:"Alon_Kalman",              nameEn:"Alon Kalman",              nameJa:"カルマン・アロン",                 nameHe:"אלון קלמן",             sector:"Civil Society",      org:"Gil‑Ad Geriatric Center",              orgHe:"מרכז גריאטרי גיל-עד",             role:"CEO",                                          roleHe:'מנכ"ל',                               email:"alon.k@giladc.co.il" },
-    { id:15, key:"Eden_Chen",                nameEn:"Eden Chen",                nameJa:"チェン・エデン",                   nameHe:"עדן חן",                sector:"Civil Society",      org:"Yesodot Letzmicha Dror NGO",           orgHe:"יסודות לתמיכה דרור עמותה",       role:"Director Dror Senior Community Network",       roleHe:"מנהלת רשת קהילות דרור",               email:"eden-c@drorzikna.org.il" },
+    { id:15, key:"Eden_Chen",                nameEn:"Eden Chen",                nameJa:"チェン・エデン",                   nameHe:"עדן חן",                sector:"Civil Society",      org:"Yesodot Letzmicha Dror NGO",           orgHe:"יסודות לתמיכה דרור עמותה",       role:"Director, Dror Senior Community Network",       roleHe:"מנהלת רשת קהילות דרור",               email:"eden-c@drorzikna.org.il" },
     { id:16, key:"Josef_Kaplan",             nameEn:"Josef Kaplan",             nameJa:"カプラン・ヨセフ",                 nameHe:"יוסף קפלן",             sector:"Civil Society",      org:"Lev Ganim Senior Living", orgBack:"Lev Ganim – Independent Senior Living Community", orgHe:"לב גנים מגורים לגיל השלישי", role:"CEO", roleHe:'מנכ"ל', email:"kaplan@levganim.co.il" },
     { id:17, key:"Liat_Sikron_Vazan",        nameEn:"Liat Sikron Vazan",        nameJa:"ヴァザン・リアット・シクロン",       nameHe:"ליאת סיקרון וזאן",      sector:"Civil Society",      org:"JDC‑Eshel",                            orgHe:"ג'וינט ישראל – אשל",              role:"Head of Knowledge and Learning Center",        roleHe:"ראש מרכז ידע ולמידה",               email:"liats@jdc.org.il" },
     { id:18, key:"Yael_Barkan_Dolev",        nameEn:"Yael Barkan Dolev",        nameJa:"ドレヴ・ヤエル・バルカン",           nameHe:"יעל ברקן דולב",         sector:"Civil Society",      org:"Gil Oz Organization",                  orgHe:"עמותת גיל עוז",                   role:"CEO",                                          roleHe:"מנכ״לית",                             email:"yael@giloz.co.il" },
     { id:19, key:"Adaya_Nissenholtz",        nameEn:"Adaya Nissenholtz",        nameJa:"ニッセンホルツ・アダヤ",             nameHe:"עדיה ניסנהולץ",        sector:"Healthcare System",      org:"Clalit Health Services",               orgHe:"כללית שירותי בריאות",             role:"Regional Geriatrician",                        roleHe:"גריאטרית מחוזית",                   email:"adayani@clalit.org.il" },
-    { id:20, key:"Dalit_Cypel",              nameEn:"Dalit Cypel",              nameJa:"ツィペル・ダリット",               nameHe:"דלית ציפל",            sector:"Healthcare System",      org:"Clalit Health Services",               orgHe:"כללית שירותי בריאות",             role:"Head of Geriatrics Field, Nursing Division", roleHe:"ראש תחום גריאטריה",                 email:"dalitcy@gmail.com" },
+    { id:20, key:"Dalit_Cypel",              nameEn:"Dalit Cypel",              nameJa:"ツィペル・ダリット",               nameHe:"דלית ציפל",            sector:"Healthcare System",      org:"Clalit Health Services",               orgHe:"כללית שירותי בריאות",             role:"Head of Geriatrics Field", roleHe:"ראש תחום גריאטריה",                 email:"dalitcy@gmail.com" },
     { id:21, key:"Galit_Segal",              nameEn:"Galit Segal",              nameJa:"セガル・ガリット",                 nameHe:"גלית סגל",              sector:"Healthcare System",      org:"Meuhedet HMO",                        orgHe:"קופת חולים מאוחדת",               role:"Chief Geriatric Physician",                    roleHe:"גריאטרית ראשית",                     email:"galit.s4@meuhedet.co.il" },
     { id:22, key:"Netanel_Levi",             nameEn:"Netanel Levi",             nameJa:"レヴィ・ネタネル",                 nameHe:"נתנאל לוי",             sector:"Healthcare System",      org:"Shoham Medical Center",                orgHe:"המרכז הרפואי שוהם",               role:"Head of Physical Therapy Department",          roleHe:"מנהל שירותי פיזיותרפיה",             email:"netanell@shoham.health.gov.il" },
     { id:23, key:"Suaad_Ektelat",            nameEn:"Suaad Ektelat",            nameJa:"エクテラト・スアード",             nameHe:"סועאד אכתילאת",        sector:"Healthcare System",      org:"Beer Yaakov–Ness Ziona", orgLine2:"Mental Health Center", orgHe:"מרכז לבריאות הנפש באר יעקב-נס ציונה", role:"Adult‑Gerontology Nurse Practitioner",  roleHe:"אחות מומחית גרונטולוגית",          email:"somaa.h84@gmail.com" },
-    { id:24, key:"Galit_Groper",             nameEn:"Galit Groper",             nameJa:"グローパー・ガリット",             nameHe:"גלית גרופר",            sector:"Local Government",   org:"Emek Hefer Regional Council",          orgHe:"מועצה אזורית עמק חפר",            role:"Head of Social Services and Health Dept.",     roleHe:"מנהלת אגף רווחה ובריאות",            email:"galitgr@hefer.org.il" },
-    { id:25, key:"Michal_Schwartz",          nameEn:"Michal Schwartz",          nameJa:"シュワルツ・ミハル",               nameHe:"מיכל שוורץ",            sector:"Local Government",   org:"Rishon LeZion Municipality",           orgHe:"עיריית ראשון לציון",             role:"Director Senior Citizens Dept.",               roleHe:"מנהלת אגף אזרחים ותיקים",             email:"micalsw@rishonlezion.muni.il" },
+    { id:24, key:"Galit_Groper",             nameEn:"Galit Groper",             nameJa:"グローパー・ガリット",             nameHe:"גלית גרופר",            sector:"Local Government",   org:"Emek Hefer Regional Council",          orgHe:"מועצה אזורית עמק חפר",            role:"Head of Social Services and Health Department",     roleHe:"מנהלת אגף רווחה ובריאות",            email:"galitgr@hefer.org.il" },
+    { id:25, key:"Michal_Schwartz",          nameEn:"Michal Schwartz",          nameJa:"シュワルツ・ミハル",               nameHe:"מיכל שוורץ",            sector:"Local Government",   org:"Rishon LeZion Municipality",           orgHe:"עיריית ראשון לציון",             role:"Director, Senior Citizens Department",               roleHe:"מנהלת אגף אזרחים ותיקים",             email:"micalsw@rishonlezion.muni.il" },
     { id:26, key:"Nes-Ya_Strasburg",         nameEn:"Nes-Ya Strasburg",         nameJa:"ストラスブルグ・ネスヤ",           nameHe:"נס-יה שטרסבורג",       sector:"Local Government",   org:"Southern Soreq Cluster",               orgHe:"מרחב שורק דרומי",                 role:"Optimal Aging Regional Director",             roleHe:"מנהלת אזורית להזדקנות מיטבית",      email:"nesyas2222@gmail.com" },
-    { id:27, key:"Omer_Ungar",               nameEn:"Omer Ungar",               nameJa:"ウンガル・オメル",                 nameHe:"עומר אונגר",            sector:"Local Government",   org:"Ashdod Municipality",                  orgHe:"עיריית אשדוד",                    role:"Social Services Director",                     roleHe:"מנהל אגף שירותים חברתיים",            email:"omer@ashdod.muni.il" },
+    { id:27, key:"Omer_Ungar",               nameEn:"Omer Ungar",               nameJa:"ウンガル・オメル",                 nameHe:"עומר אונגר",            sector:"Local Government",   org:"Ashdod Municipality",                  orgHe:"עיריית אשדוד",                    role:"Director, Social Services",                     roleHe:"מנהל אגף שירותים חברתיים",            email:"omer@ashdod.muni.il" },
     { id:28, key:"Shirli_Reznizky_Kahan",    nameEn:"Shirli Reznizky Kahan",    nameJa:"カハン・シルリ",                   nameHe:"שירלי רזניצקי קהאן",    sector:"Academia & Research", org:"Myers JDC Brookdale Institute",        orgHe:"מכון מאיירס-ג'וינט-ברוקדייל",    role:"Senior Research Scholar and Aging Team Leader", roleHe:"חוקרת בכירה וראש צוות הזדקנות",    email:"shirlir@jdc.org" },
     { id:29, key:"Shmuel_Springer",          nameEn:"Shmuel Springer",          nameJa:"スプリンガー・シュムエル",           nameHe:"שמואל שפרינגר",         sector:"Academia & Research", org:"Ariel University",                      orgHe:"אוניברסיטת אריאל",                role:"Head Academic Community Partnership Unit",     roleHe:"ראש יחידת קשרי אקדמיה קהילה",       email:"shmuels@ariel.ac.il" },
-    { id:30, key:"Meital_Weissman_Tsabari",  nameEn:"Meital Weissman Tsabari",  nameJa:"メイタル・ワイスマン・ツァバリ",     nameHe:"מיטל ויסמן צברי",     sector:"Central Government",   org:"The Ministry of Welfare and Social Affairs",        orgHe:"משרד הרווחה והשירותים החברתיים",    role:"Head of knowledge management field, policy planning and strategy", roleHe:"מנהלת תחום, אגף תכנון מדיניות",     email:"meitalit80@gmail.com" },
+    { id:30, key:"Meital_Weissman_Tsabari",  nameEn:"Meital Weissman Tsabari",  nameJa:"メイタル・ワイスマン・ツァバリ",     nameHe:"מיטל ויסמן צברי",     sector:"Central Government",   org:"The Ministry of Welfare and Social Affairs",        orgHe:"משרד הרווחה והשירותים החברתיים",    role:"Head of Knowledge Management Field, Policy Planning and Strategy Department", roleHe:"מנהלת תחום, אגף תכנון מדיניות",     email:"meitalit80@gmail.com" },
   ];
 
   const STEERING_COMMITTEE = [
-    { id:"sc1", key:"Yariv_Man", nameEn:"Yariv Man", nameJa:"ヤリヴ・マン", nameHe:"יריב מן", org:"Ministry of Welfare and Social Affairs", orgHe:"משרד הרווחה והביטחון החברתי", role:"Deputy Director General, Administration for Senior Citizens", roleHe:"סגן מנהל האגף לאזרחים ותיקים", email:"YarivM@molsa.gov.il", photo:"Yariv_Man.png" },
-    { id:"sc2", key:"Hama_Israeli", nameEn:"Hama Israeli-Smitzer", nameJa:"ハマ・イスラエリ", nameHe:"חמה ישראלי", org:"Ministry of Welfare and Social Affairs", orgHe:"משרד הרווחה והביטחון החברתי", role:"Senior Division Manager, Housing Systems for Senior Citizens", roleHe:"מנהלת בכירה, מערכות דיור לאזרחים ותיקים", email:"hamai@molsa.gov.il", photo:"Hama_Israeli.png" },
-    { id:"sc3", key:"Oriel_Chazum", nameEn:"Oriel Chazum", nameJa:"ウリエル・カズム", nameHe:"אוריאל כזום", org:"National Insurance Institute", orgHe:"המוסד לביטוח לאומי", role:"Deputy Director General of Subsistence Benefits, Employment, and Senior Citizens Pensions", roleHe:"סגן מנכ״ל תחום קצבאות קיום, תעסוקה ופנסיות לאזרחים ותיקים", email:"urielc@nioi.gov.il", photo:"Oriel_Chazum.jpeg" },
-    { id:"sc4", key:"Orit_Shachar", nameEn:"Orit Shahar", nameJa:"オリット・シャハル", nameHe:"אורית שחר", org:"JDC‑Eshel", orgHe:"ג'וינט ישראל – אשל", role:"Area Head – Health and Nursing Care for Older Adults", roleHe:"ראש תחום בריאות ותפקוד למבוגרים", email:"Orits@jdc.org", photo:"Orit_Shachar.jpg" },
+    { id:"sc1", key:"Yariv_Man", nameEn:"Yariv Man", nameJa:"マン・ヤリヴ", nameHe:"יריב מן", org:"Ministry of Welfare and Social Affairs", orgHe:"משרד הרווחה והביטחון החברתי", role:"Deputy Director General, Administration for Senior Citizens", roleHe:"סגן מנהל האגף לאזרחים ותיקים", email:"YarivM@molsa.gov.il", photo:"Yariv_Man.png" },
+    { id:"sc2", key:"Hama_Israeli", nameEn:"Hama Israeli-Smitzer", nameJa:"イスラエリ＝スミッツァー・ハマ", nameHe:"חמה ישראלי", org:"Ministry of Welfare and Social Affairs", orgHe:"משרד הרווחה והביטחון החברתי", role:"Senior Division Manager, Housing Systems for Senior Citizens", roleHe:"מנהלת בכירה, מערכות דיור לאזרחים ותיקים", email:"hamai@molsa.gov.il", photo:"Hama_Israeli.png" },
+    { id:"sc3", key:"Oriel_Chazum", nameEn:"Oriel Chazum", nameJa:"カズム・ウリエル", nameHe:"אוריאל כזום", org:"National Insurance Institute", orgHe:"המוסד לביטוח לאומי", role:"Deputy Director General of Subsistence Benefits, Employment, and Senior Citizens Pensions", roleHe:"סגן מנכ״ל תחום קצבאות קיום, תעסוקה ופנסיות לאזרחים ותיקים", email:"urielc@nioi.gov.il", photo:"Oriel_Chazum.jpeg" },
+    { id:"sc4", key:"Orit_Shachar", nameEn:"Orit Shahar", nameJa:"シャハル・オリット", nameHe:"אורית שחר", org:"JDC‑Eshel", orgHe:"ג'וינט ישראל – אשל", role:"Area Head – Health and Nursing Care for Older Adults", roleHe:"ראש תחום בריאות ותפקוד למבוגרים", email:"Orits@jdc.org", photo:"Orit_Shachar.jpg" },
   ];
   var STEERING_BADGE = "Steering Committee";
   var STEERING_PHOTO_VER = 10;
+
+  /** Japanese affiliation/title for card backs (from Members tab). Keys match participant `key`. */
+  var MEMBER_JA_BACK = {
+    "Yariv_Man": { orgJa:"福祉社会保障省", roleJa:"高齢者行政局 副局長" },
+    "Hama_Israeli": { orgJa:"福祉社会保障省", roleJa:"高齢者住宅制度部 上席部長長" },
+    "Oriel_Chazum": { orgJa:"国家保険院", roleJa:"生計保障給付・雇用・高齢者年金担当次長" },
+    "Orit_Shachar": { orgJa:"JDC-エシェル（イスラエル高齢者支援機関）", roleJa:"高齢者の健康・看護ケア分野責任者" },
+    "Avishay_Cohen": { orgJa:"労働省 多世代雇用課", roleJa:"課長" },
+    "Avital_Simcha_Shlezinger": { orgJa:"国家保険院 高齢者・家族支援相談部", roleJa:"部長" },
+    "Idit_Ayala_Reiss": { orgJa:"司法省 法務・法制室", roleJa:"顧問" },
+    "Jasmin_Vulej": { orgJa:"社会福祉保障省 モデル開発室", roleJa:"室長" },
+    "Liat_Stark": { orgJa:"司法省 後見人総局", roleJa:"地区部長" },
+    "Lior_Zohar": { orgJa:"財務省 戦略・年金相談課", roleJa:"課長" },
+    "Rachela_Akuka": { orgJa:"財務省 戦略・税務庁 個人課税課", roleJa:"課長" },
+    "Ravit_Nakar_El-Ezra": { orgJa:"福祉社会保障省 高齢者行政局 予算・料金担当", roleJa:"上席課長" },
+    "Roei_Rafael_Babai": { orgJa:"財務省 国家社会保険・予算課", roleJa:"担当官" },
+    "Ronit_Rozin": { orgJa:"ホロコースト生存者権利機関", roleJa:"所長" },
+    "Valentina_Batia_Chai": { orgJa:"国家保険院", roleJa:"支部長" },
+    "Yehuda_Arie_Halali": { orgJa:"社会平等・女性地位向上省 高齢者コールセンター課", roleJa:"課長" },
+    "Meital_Weissman_Tsabari": { orgJa:"福祉社会保障省 政策企画・戦略部", roleJa:"知識管理分野責任者" },
+    "Alon_Kalman": { orgJa:"Gil-Ad高齢者医療センター", roleJa:"CEO" },
+    "Eden_Chen": { orgJa:"イェソドット・レツミハ・ドロール（NGO）", roleJa:"ドロール高齢者コミュニティ・ネットワーク ディレクター" },
+    "Josef_Kaplan": { orgJa:"レヴ・ガニム・シニアリビング", roleJa:"CEO" },
+    "Liat_Sikron_Vazan": { orgJa:"JDC-エシェル（イスラエル高齢者支援機関）", roleJa:"ナレッジ・ラーニングセンター長" },
+    "Yael_Barkan_Dolev": { orgJa:"ギル・オズ・オーガニゼーション", roleJa:"CEO" },
+    "Adaya_Nissenholtz": { orgJa:"クラリット・ヘルスサービス（国内最大医療保険・医療提供機関）", roleJa:"地域老年科医" },
+    "Dalit_Cypel": { orgJa:"クラリット・ヘルスサービス（国内最大医療保険・医療提供機関）", roleJa:"老年医学分野長" },
+    "Galit_Segal": { orgJa:"メウヘデットHMO（国内の医療保険組織）", roleJa:"主任老年科医" },
+    "Netanel_Levi": { orgJa:"ショハム・メディカルセンター", roleJa:"理学療法部門長" },
+    "Suaad_Ektelat": { orgJa:"ビール・ヤアコブ＝ネス・ツィオナ精神医療センター", roleJa:"成人・老年看護ナースプラクティショナー（診療看護師）" },
+    "Galit_Groper": { orgJa:"エメク・ヘフェル地域評議会 社会サービス・保健課", roleJa:"課長" },
+    "Michal_Schwartz": { orgJa:"リション・レジオン市 高齢者課", roleJa:"課長" },
+    "Nes-Ya_Strasburg": { orgJa:"南ソレク・クラスター", roleJa:"最適加齢担当地域ディレクター" },
+    "Omer_Ungar": { orgJa:"アシュドッド市 社会サービス部", roleJa:"部長" },
+    "Shirli_Reznizky_Kahan": { orgJa:"マイヤーズJDCブルックデール研究所", roleJa:"上席研究員兼高齢化研究チームリーダー" },
+    "Shmuel_Springer": { orgJa:"アリエル大学 学術・地域連携部門", roleJa:"統括責任者" }
+  };
+
+  function memberJaBack(key) {
+    return MEMBER_JA_BACK[key] || { orgJa: '', roleJa: '' };
+  }
+  function backJaSubHtml(text) {
+    if (!text) return '';
+    return '<br/><span style="font-size:11px;opacity:0.85;line-height:1.45">'+escapeHtml(text)+'</span>';
+  }
 
   const SECTORS = [
     { key:"all",                 label:"All Sectors",        short:"Total",    icon:"👥" },
@@ -442,9 +487,10 @@
     var nameJaHtml = nameJa ? '<div style="font-size:13px;color:'+P.mid+';opacity:0.9">'+nameJa+'</div>' : '';
     var nameJaBackHtml = nameJa ? '<div style="font-size:12px;opacity:0.82">'+nameJa+'</div>' : '';
     var org = escapeHtml(m.org);
-    var orgHe = escapeHtml(m.orgHe || '');
     var role = escapeHtml(m.role);
-    var roleHe = escapeHtml(m.roleHe || '');
+    var jaBack = memberJaBack(m.key);
+    var orgJaBackHtml = backJaSubHtml(jaBack.orgJa);
+    var roleJaBackHtml = backJaSubHtml(jaBack.roleJa);
     var email = escapeHtml(m.email);
     var photoInner = '<div class="steering-photo-inner">'+steeringPhotoHtml(m)+'</div>';
     return '<div class="steering-card participant-card" data-steering-id="'+m.id+'" style="perspective:900px;cursor:pointer">' +
@@ -468,8 +514,8 @@
         '<div class="card-back" style="position:absolute;inset:0;backface-visibility:hidden;transform:rotateY(180deg);background:linear-gradient(160deg,'+c.bg+','+c.bg+'ee);border-radius:14px;padding:18px;color:white;display:flex;flex-direction:column;overflow:hidden">' +
           '<div style="text-align:center;padding:12px 0 8px"><div style="font-weight:800;font-size:17px">'+nameEn+'</div>'+nameJaBackHtml+(nameHe ? '<div style="font-family:Arial;direction:rtl;font-size:13px;opacity:0.88">'+nameHe+'</div>' : '')+'</div>' +
           '<div style="height:1px;background:rgba(255,255,255,0.25)"></div>' +
-          '<div style="flex:1;min-height:0;overflow-y:auto;padding:12px 0 8px;font-size:13px"><div><strong>'+org+'</strong><br/><span style="font-family:Arial;direction:rtl;font-size:11px;opacity:0.7">'+orgHe+'</span></div>' +
-          '<div style="margin-top:8px"><strong>'+role+'</strong><br/><span style="font-family:Arial;direction:rtl;font-size:11px;opacity:0.7">'+roleHe+'</span></div>' +
+          '<div style="flex:1;min-height:0;overflow-y:auto;padding:12px 0 8px;font-size:13px"><div><strong>'+org+'</strong>'+orgJaBackHtml+'</div>' +
+          '<div style="margin-top:8px"><strong>'+role+'</strong>'+roleJaBackHtml+'</div>' +
           '<div style="margin-top:8px"><a href="mailto:'+email+'" style="color:'+P.pale+'" onclick="event.stopPropagation()">'+email+'</a></div></div>' +
           '<div style="text-align:center;font-size:10px;opacity:0.5;padding-top:4px">TAP TO FLIP BACK</div>' +
         '</div>' +
@@ -509,9 +555,10 @@
     var org = escapeHtml(p.org);
     var orgBack = escapeHtml(p.orgBack || p.org);
     var orgLine2 = (p.orgLine2 && p.orgLine2.trim()) ? '<br/>' + escapeHtml(p.orgLine2) : '';
-    var orgHe = escapeHtml(p.orgHe);
     var role = escapeHtml(p.role);
-    var roleHe = escapeHtml(p.roleHe);
+    var jaBack = memberJaBack(p.key);
+    var orgJaBackHtml = backJaSubHtml(jaBack.orgJa);
+    var roleJaBackHtml = backJaSubHtml(jaBack.roleJa);
     var email = escapeHtml(p.email);
     var photoHtml = '<div class="participant-photo-inner">' + participantPictureFront(p.key, nameEn) + '</div>';
     var backImg = participantPictureBack(p.key);
@@ -535,8 +582,8 @@
         '<div class="card-back" style="position:absolute;top:0;left:0;right:0;bottom:0;backface-visibility:hidden;transform:rotateY(180deg);background:linear-gradient(160deg,'+c.bg+','+c.bg+'ee);border-radius:14px;padding:18px;color:white;display:flex;flex-direction:column;gap:0;overflow:hidden">' +
           '<div class="card-back-upper" style="flex:1 1 33%;min-height:140px;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;padding:16px 0 20px;gap:12px"><div class="participant-back-thumb" style="width:140px;height:140px;min-width:140px;min-height:140px;border-radius:50%;overflow:hidden;border:3px solid rgba(255,255,255,0.5);flex-shrink:0;background:rgba(255,255,255,0.1);box-shadow:0 4px 12px rgba(0,0,0,0.2)">'+backImg+'</div><div style="text-align:center;display:flex;flex-direction:column;gap:6px"><div style="font-weight:800;font-size:17px">'+nameEn+'</div>'+nameJaBackHtml+'<div style="font-family:Arial;direction:rtl;font-size:13px;opacity:0.88">'+nameHe+'</div></div></div>' +
           '<div style="height:1px;background:rgba(255,255,255,0.25);flex-shrink:0"></div>' +
-          '<div style="flex:1;min-height:0;overflow-y:auto;padding:12px 0 8px"><div style="font-size:13px"><strong>'+orgBack+orgLine2+'</strong><br/><span style="font-family:Arial;direction:rtl;font-size:11px;opacity:0.7">'+orgHe+'</span></div>' +
-          '<div style="margin-top:8px;font-size:13px"><strong>'+role+'</strong><br/><span style="font-family:Arial;direction:rtl;font-size:11px;opacity:0.7">'+roleHe+'</span></div>' +
+          '<div style="flex:1;min-height:0;overflow-y:auto;padding:12px 0 8px"><div style="font-size:13px"><strong>'+orgBack+orgLine2+'</strong>'+orgJaBackHtml+'</div>' +
+          '<div style="margin-top:8px;font-size:13px"><strong>'+role+'</strong>'+roleJaBackHtml+'</div>' +
           '<div style="margin-top:8px"><a href="mailto:'+email+'" style="color:'+P.pale+'" onclick="event.stopPropagation()">'+email+'</a></div></div>' +
           '<div style="text-align:center;font-size:10px;opacity:0.5;flex-shrink:0;padding-top:4px">TAP TO FLIP BACK</div>' +
         '</div>' +
