@@ -52,9 +52,56 @@
     { id:"sc2", key:"Hama_Israeli", nameEn:"Hama Israeli-Smitzer", nameJa:"イスラエリ＝スミッツァー・ハマ", nameHe:"חמה ישראלי", org:"Ministry of Welfare and Social Affairs", orgHe:"משרד הרווחה והביטחון החברתי", role:"Senior Division Manager, Housing Systems for Senior Citizens", roleHe:"מנהלת בכירה, מערכות דיור לאזרחים ותיקים", email:"hamai@molsa.gov.il", photo:"Hama_Israeli.png" },
     { id:"sc3", key:"Oriel_Chazum", nameEn:"Oriel Chazum", nameJa:"カズム・ウリエル", nameHe:"אוריאל כזום", org:"National Insurance Institute", orgHe:"המוסד לביטוח לאומי", role:"Deputy Director General of Subsistence Benefits, Employment, and Senior Citizens Pensions", roleHe:"סגן מנכ״ל תחום קצבאות קיום, תעסוקה ופנסיות לאזרחים ותיקים", email:"urielc@nioi.gov.il", photo:"Oriel_Chazum.jpeg" },
     { id:"sc4", key:"Orit_Shachar", nameEn:"Orit Shahar", nameJa:"シャハル・オリット", nameHe:"אורית שחר", org:"JDC‑Eshel", orgHe:"ג'וינט ישראל – אשל", role:"Area Head – Health and Nursing Care for Older Adults", roleHe:"ראש תחום בריאות ותפקוד למבוגרים", email:"Orits@jdc.org", photo:"Orit_Shachar.jpg" },
+    { id:"sc5", key:"Efrat_Gil", nameEn:"Efrat Gil", nameJa:"ギル・エフラット", nameHe:"אפרת גיל", org:"Ministry of Health", orgHe:"משרד הבריאות", role:"Head of Geriatric division", roleHe:"ראש מחלקת גריאטריה", email:"efrat.gil@moh.gov.il", photo:"Efrat_Gil.png" },
+    { id:"sc6", key:"Yafit_Bar", nameEn:"Yafit Bar", nameJa:"バル・ヤフィット", nameHe:"יפעת בר", org:"Ministry for Social Equality and the Advancement of the Status of Women", orgHe:"המשרד לשוויון חברתי וקידום מעמד האישה", role:"Director of Employment and Rights for Seniors", roleHe:"מנהלת תחום תעסוקה וזכויות לאזרחים ותיקים", email:"YAFITBA@mse.gov.il", photo:"Yafit_Bar.png" },
   ];
   var STEERING_BADGE = "Steering Committee";
-  var STEERING_PHOTO_VER = 10;
+  var STEERING_PHOTO_VER = 11;
+
+  var STEERING_BIOS = {
+    "Yariv_Man": [
+      "Yariv Man is Deputy Director General at the Ministry of Welfare and Social Affairs, where he heads the Administration for Senior Citizens. He is committed to promoting reforms aimed at adapting the welfare system to the needs of a continuously growing older population, while delegating planning and budgeting authority to local municipalities.",
+      "Previously, he served as Senior Director in the Department for the Socio-Economic Advancement of the Bedouin Society. Yariv holds an M.A. in Political Science, an M.A. in Public Policy, and a B.A. in Geography, all from the Hebrew University. He lives in Jerusalem with his wife and three sons."
+    ],
+    "Hama_Israeli": [
+      "Hama Israeli-Smitzer serves as Director of the Senior Housing Systems Division at the Israeli Ministry of Welfare and Social Affairs, leading national policy, regulation, and development of housing services for older adults, including nursing homes and assisted living facilities. She also serves as Acting Director of the Strategy and Population Aging Preparedness Division, overseeing strategic planning, research, digitization, and cross-government collaborations on aging policy.",
+      "In her previous role, she was responsible for the Ministry\u2019s out-of-home care systems, including residential facilities for children and youth and shelters for women affected by domestic violence. Hama is an expert in the development of welfare and housing services, with extensive experience in leading large-scale government programs, regulation, and multidisciplinary partnerships. She holds a Master\u2019s degree in Clinical Social Work from the Hebrew University of Jerusalem."
+    ],
+    "Oriel_Chazum": [
+      "Oriel Chazum serves as Deputy Director General of Subsistence Benefits, Employment, and Senior Citizens Pensions at the National Insurance Institute. He holds an M.A. in Public Policy from the Hebrew University.",
+      "He is a partner in formulating and promoting policy for benefit recipients and is responsible for providing services and ensuring access to rights in three main areas:",
+      "<strong>Employment Benefits:</strong> Oriel oversees the administration and processing of income-replacement benefits, ensuring financial support for individuals during career transitions or periods of unemployment.",
+      "<strong>Subsistence Allowances:</strong> He manages vital welfare programs designed to guarantee basic living conditions for vulnerable populations. This area focuses on reducing socioeconomic gaps and providing a reliable financial foundation for low-income individuals and their families, ensuring that they receive the support they need.",
+      "<strong>Senior Citizens:</strong> Oriel leads national initiatives to enhance the holistic well-being and economic security of older adults through two main departments. The first is Counseling for Senior Citizens and Their Families, a nationwide network that provides emotional, social, and community-based support for older adults and their families. The second is Third-Age Dependents Pensions, a vital financial safety net designed to significantly reduce poverty rates among older adults, ensure economic independence, and provide sustainable economic support for a dignified standard of living."
+    ],
+    "Orit_Shachar": [
+      "Orit Shahar is Area Head of Health and Functioning for Older Adults at JDC-Israel, Eshel. She holds an M.A. in Public Policy from the Hebrew University.",
+      "She works to advance optimal aging in Israel by initiating large-scale, measurable initiatives designed to help shape healthy aging in the country.",
+      "Her work focuses on two main areas:",
+      "<strong>Health and Functioning:</strong> This area aims to reduce functional decline and improve self-management and health literacy among pre-frail older adults within Israel\u2019s healthcare system, including hospitals and HMOs. In partnership with the Ministry of Health, Orit operates a program designed to decrease functional decline among hospitalized older adults by integrating age-friendly practices that encourage walking and delirium screening.",
+      "<strong>Formal Caregivers:</strong> In partnership with the National Insurance Institute, Orit promotes an active and healthy approach for older adults receiving home care. This includes developing a new skilled caregiver role and a career ladder designed to transform the knowledge and skills of the formal caregiving sector, helping it become more certified and oriented toward healthy aging.",
+      "Orit has extensive experience in developing social services, leading multi-partner collaborations, training professionals, and conducting applied research."
+    ],
+    "Efrat_Gil": [
+      "Dr. Efrat Gil is a specialist in internal medicine, geriatrics, and medical management. She currently serves as Head of the Geriatrics Division at the Ministry of Health.",
+      "She worked for many years as a specialist in internal medicine and geriatrics at Bnei Zion Hospital, where she established the hospital\u2019s geriatrics unit. Following that, she managed the geriatric department in the Haifa and Western Galilee district of Clalit Health Services and later served as Deputy Director of Emek Hospital.",
+      "Throughout her career, Efrat has been deeply involved in education and training. She has served as Head of the Geriatrics Department at the Faculty of Medicine at the Technion and as a member of the Israeli Geriatric Association Committee."
+    ],
+    "Yafit_Bar": [
+      "Yafit Bar serves as Director of the Employment and Rights Utilization Department for Senior Citizens at the Ministry for Social Equality and the Advancement of the Status of Women.",
+      "She is a public sector executive with over 10 years of leadership experience, building on a prior background as a small business manager in the private sector. She leads national policy, strategic initiatives, and program development for older adults aged 60 and above across two core areas: senior employment and proactive rights utilization.",
+      "<strong>Senior Employment and Adapting to an Aging Labor Market:</strong> Yafit is responsible for driving strategic initiatives, legislation, and efforts to shift employer perceptions in the era of the \u201c100-Year Lifespan.\u201d She oversees national career development, training, and guidance programs, including the flagship \u201cVatikim Ba\u2019avoda\u201d program. She also leads government initiatives to establish dedicated civil service positions for older adults, advance financial readiness for retirement, and develop the \u201cOrganizational Readiness Certification for 100 Years of Life\u201d for employers.",
+      "<strong>Rights Utilization:</strong> Yafit leads the national framework for senior citizens\u2019 rights utilization, which includes a dedicated service hotline, community lectures, and professional training. She also directs an innovative healthcare rights initiative in hospitals, powered by senior volunteers who provide vital information and guidance to hospitalized older adults and their families."
+    ]
+  };
+
+  function steeringBioHtml(key) {
+    var paras = STEERING_BIOS[key];
+    if (!paras || !paras.length) return '';
+    return paras.map(function (t) {
+      return '<p style="margin:0 0 10px;font-size:12px;line-height:1.55;opacity:0.95">'+t+'</p>';
+    }).join('');
+  }
 
   /** Japanese affiliation/title for card backs (from Members tab). Keys match participant `key`. */
   var MEMBER_JA_BACK = {
@@ -62,6 +109,8 @@
     "Hama_Israeli": { orgJa:"福祉社会保障省", roleJa:"高齢者住宅制度部 上席部長長" },
     "Oriel_Chazum": { orgJa:"国家保険院", roleJa:"生計保障給付・雇用・高齢者年金担当次長" },
     "Orit_Shachar": { orgJa:"JDC-エシェル（イスラエル高齢者支援機関）", roleJa:"高齢者の健康・看護ケア分野責任者" },
+    "Efrat_Gil": { orgJa:"保健省", roleJa:"老年医学部門長" },
+    "Yafit_Bar": { orgJa:"社会平等・女性の地位向上省", roleJa:"高齢者雇用・権利担当ディレクター" },
     "Avishay_Cohen": { orgJa:"労働省 多世代雇用課", roleJa:"課長" },
     "Avital_Simcha_Shlezinger": { orgJa:"国家保険院 高齢者・家族支援相談部", roleJa:"部長" },
     "Idit_Ayala_Reiss": { orgJa:"司法省 法務・法制室", roleJa:"顧問" },
@@ -492,6 +541,7 @@
     var orgJaBackHtml = backJaSubHtml(jaBack.orgJa);
     var roleJaBackHtml = backJaSubHtml(jaBack.roleJa);
     var email = escapeHtml(m.email);
+    var bioHtml = steeringBioHtml(m.key);
     var photoInner = '<div class="steering-photo-inner">'+steeringPhotoHtml(m)+'</div>';
     return '<div class="steering-card participant-card" data-steering-id="'+m.id+'" style="perspective:900px;cursor:pointer">' +
       '<div class="card-inner" style="transition:transform 0.55s">' +
@@ -514,9 +564,10 @@
         '<div class="card-back" style="position:absolute;inset:0;backface-visibility:hidden;transform:rotateY(180deg);background:linear-gradient(160deg,'+c.bg+','+c.bg+'ee);border-radius:14px;padding:18px;color:white;display:flex;flex-direction:column;overflow:hidden">' +
           '<div style="text-align:center;padding:12px 0 8px"><div style="font-weight:800;font-size:17px">'+nameEn+'</div>'+nameJaBackHtml+(nameHe ? '<div style="font-family:Arial;direction:rtl;font-size:13px;opacity:0.88">'+nameHe+'</div>' : '')+'</div>' +
           '<div style="height:1px;background:rgba(255,255,255,0.25)"></div>' +
-          '<div style="flex:1;min-height:0;overflow-y:auto;padding:12px 0 8px;font-size:13px"><div><strong>'+org+'</strong>'+orgJaBackHtml+'</div>' +
+          '<div class="steering-card-back-body" style="flex:1;min-height:0;overflow-y:auto;-webkit-overflow-scrolling:touch;padding:12px 0 8px;font-size:13px"><div><strong>'+org+'</strong>'+orgJaBackHtml+'</div>' +
           '<div style="margin-top:8px"><strong>'+role+'</strong>'+roleJaBackHtml+'</div>' +
-          '<div style="margin-top:8px"><a href="mailto:'+email+'" style="color:'+P.pale+'" onclick="event.stopPropagation()">'+email+'</a></div></div>' +
+          (m.email ? '<div style="margin-top:8px"><a href="mailto:'+email+'" style="color:'+P.pale+'" onclick="event.stopPropagation()">'+email+'</a></div>' : '') +
+          (bioHtml ? '<div style="margin-top:12px;padding-top:10px;border-top:1px solid rgba(255,255,255,0.2)">'+bioHtml+'</div>' : '') + '</div>' +
           '<div style="text-align:center;font-size:10px;opacity:0.5;padding-top:4px">TAP TO FLIP BACK</div>' +
         '</div>' +
       '</div></div>';
