@@ -55,6 +55,68 @@
     { id:"sc5", key:"Efrat_Gil", nameEn:"Efrat Gil", nameJa:"ギル・エフラット", nameHe:"אפרת גיל", org:"Ministry of Health", orgHe:"משרד הבריאות", role:"Head of Geriatric division", roleHe:"ראש מחלקת גריאטריה", email:"efrat.gil@moh.gov.il", photo:"Efrat_Gil.png" },
     { id:"sc6", key:"Yafit_Bar", nameEn:"Yafit Bar", nameJa:"バル・ヤフィット", nameHe:"יפעת בר", org:"Ministry for Social Equality and the Advancement of the Status of Women", orgHe:"המשרד לשוויון חברתי וקידום מעמד האישה", role:"Director of Employment and Rights for Seniors", roleHe:"מנהלת תחום תעסוקה וזכויות לאזרחים ותיקים", email:"YAFITBA@mse.gov.il", photo:"Yafit_Bar.png" },
   ];
+
+  var PROGRAM_TEAM_BADGE = "Future Time Program Team";
+  var PROGRAM_PHOTO_VER = 1;
+
+  const PROGRAM_TEAM = [
+    { id:"pt1", key:"Yuval_Golani", nameEn:"Yuval Golani", nameJa:"ゴラニ・ユヴァル", jaTitle:"ゴラニ・ユヴァル", org:"Joint-ELKA", orgJa:"Joint-ELKA（JDC-ELKA）", role:"Coordinator, \"FutureTime\" Program", roleJa:"FutureTimeプログラム コーディネーター", photo:"Yuval_Golani.png", photoVer:4,
+      bioEn:[
+        "Yuval Golani leads the operations and logistics of the \"FutureTime\" program. In her previous roles at ELKA, she worked with regional municipal clusters to build mechanisms and strengthen capacities for delivering high-quality social services, leading cross-sector collaborations with the Ministry of Health, the Ministry of Interior, and the Ministry of Welfare and Social Services.",
+        "Prior to that, Yuval served as Assistant Spokesperson in the Media, Communication and Advocacy Division at the Ministry of Energy and Infrastructure. Alongside her work, she actively volunteers in social organizations working to reduce social inequality.",
+        "Yuval holds a BA in Political Science and International Relations from the Hebrew University of Jerusalem."
+      ],
+      bioJa:[
+        "ユヴァル・ゴラニ氏は、「FutureTime」プログラムの運営およびロジスティクスを統括しています。以前のELKAでの役割においては、地域自治体クラスターと連携し、質の高い社会サービスを提供するための仕組みづくりと能力強化に取り組み、厚生労働省、内務省、福祉省などとの分野横断的な協働を主導してきました。",
+        "それ以前は、エネルギー・インフラ省メディア・コミュニケーション・アドボカシー部門で広報補佐官を務めました。業務と並行して、社会的不平等の解消に取り組む社会組織への積極的なボランティア活動も続けています。",
+        "ユヴァル氏は、エルサレム・ヘブライ大学にて政治学・国際関係学の学士号を取得しています。"
+      ]
+    },
+    { id:"pt2", key:"Sigal_Mautner", nameEn:"Sigal Mautner Siebzehner", nameJa:"マウトナー・シーブツェナー・シガル", jaTitle:"マウトナー・シーブツェナー・シガル", org:"Joint-ELKA", orgJa:"Joint-ELKA（JDC-ELKA）", role:"Director, \"FutureTime\" Program", roleJa:"FutureTimeプログラム ディレクター", photo:"Sigal_Mautner_Sievzehner.jpeg",
+      bioEn:[
+        "Sigal Mautner Siebzehner is an organizational consultant and group facilitator with more than 20 years of experience in organizational, personal, and professional development. At ELKA, she has played a key role in designing and managing initiatives led by senior executives and experts from government ministries, local authorities, and civil society organizations.",
+        "Previously, Sigal directed the Women's Empowerment Unit at the Israel Association of Community Centers, overseeing leadership programs for thousands of women nationwide. She also served as Director of the \"Youth for Youth\" Association, managed the training department at MATI (Small Business Development Center), and worked as a senior organizational consultant in leading consulting firms.",
+        "In these roles, she guided senior management teams, led processes in organizations across multiple sectors, and developed training programs for managers and multi-professional teams. Over the years, Sigal has lectured and facilitated workshops in various academic contexts.",
+        "She holds an M.Sc. in Organizational Behavior from Tel Aviv University, is a certified trainer with a certificate in group facilitation from the Zippory Center, and has a certificate in psychotherapy studies from the Temurot School of Dynamic Psychotherapy at Bar-Ilan University."
+      ],
+      bioJa:[
+        "シガル・マウトナー・シーブツェナー氏は、組織コンサルタントおよびグループ・ファシリテーターとして、組織・個人・職業能力の開発において20年以上の経験を有しています。ELKAでは、政府省庁、地方自治体、市民社会組織の高官や専門家が主導するイニシアティブの企画・運営において中心的な役割を担ってきました。",
+        "以前は、イスラエル・コミュニティ・センター協会の女性エンパワーメント部門を統括し、全国の数千人の女性を対象としたリーダーシップ・プログラムを監督しました。また、「ユース・フォー・ユース」協会の理事長、MATI（中小企業開発センター）研修部門の管理者、大手コンサルティング会社でのシニア組織コンサルタントなどを歴任しています。",
+        "これらの役割において、上級管理チームへの助言、多分野にわたる組織プロセスの主導、管理者および多職種チーム向け研修プログラムの開発を行ってきました。長年にわたり、さまざまな学術的文脈で講義やワークショップのファシリテーションも担当しています。",
+        "テルアビブ大学にて組織行動学の修士号を取得。ジポリ・センターのグループ・ファシリテーション修了証、バル・イラン大学テムロット動的心理療法スクールの心理療法研究修了証を保有しています。"
+      ]
+    },
+    { id:"pt3", key:"Hadas_Barzilai", nameEn:"Hadas Barzilai", nameJa:"バルジライ・ハダス", jaTitle:"バルジライ・ハダス", org:"Joint-ELKA", orgJa:"Joint-ELKA（JDC-ELKA）", role:"Director, \"FutureTime\" Program", roleJa:"FutureTimeプログラム ディレクター", photo:"Hadas_Barzilai.jpg",
+      bioEn:[
+        "Hadas Barzilai directs the \"FutureTime\" program at Joint-ELKA, fostering cross-sector collaboration to improve the efficiency and effectiveness of systems and organizations, with the aim of enhancing quality of life for Israeli citizens.",
+        "In her previous roles at ELKA, Hadas contributed to developing the Regional Clusters Initiative. She worked closely with the Eastern Negev regional authorities cluster, establishing and leading a forum for local authority heads, a welfare forum, and a multi-sector leadership program. These efforts culminated in a strategic regional economic development plan for the Eastern Negev.",
+        "Before joining ELKA, Hadas founded and managed a nonprofit organization dedicated to advancing equality and social justice. Under her leadership, the organization increased public awareness of social rights, provided the tools needed to exercise those rights, and encouraged active civic engagement to influence decision-making processes affecting citizens' quality of life. She led the organization's southern branch for 17 years.",
+        "Hadas holds a Master of Social Work (Administration and Welfare Policy track) and a Bachelor of Social Work, both earned cum laude at Ben-Gurion University."
+      ],
+      bioJa:[
+        "バルジライ・ハダス氏は、Joint-ELKA（JDC-ELKA）において「FutureTime」プログラムのディレクターを務めています。分野横断的な協働を推進し、制度や組織の効率と有効性を高めることで、イスラエル国民の生活の質の向上を目指しています。",
+        "以前はELKAにおいて、地域クラスター・イニシアティブの開発に貢献しました。東ネゲブ地域自治体クラスターと密接に連携し、地方自治体首長のフォーラム、福祉フォーラム、多分野リーダーシップ・プログラムの設立と運営を主導しました。これらの取り組みは、東ネゲブにおける戦略的な地域経済発展計画の策定につながりました。",
+        "ELKA入社以前は、平等と社会正義の推進に取り組む非営利団体を設立・運営しました。同氏のリーダーシップの下、組織は社会権利に関する市民の認識を高め、権利を行使するために必要な手段を提供し、市民の生活の質に影響を与える意思決定プロセスへの積極的な市民参加を促進しました。同組織の南部支部を17年間率いていました。",
+        "ベン・グリオン大学にて、社会福祉学修士号（行政・福祉政策コース）および社会福祉学学士号を、いずれも最優等（cum laude）で取得しています。"
+      ]
+    },
+    { id:"pt4", key:"Tal_Miles", nameEn:"Tal Miles", nameJa:"マイルズ・タル", jaTitle:"マイルズ・タル", org:"Joint-ELKA", orgJa:"Joint-ELKA（JDC-ELKA）", role:"Director, National Public System Network Initiatives", roleJa:"全国公共システム・ネットワーク・イニシアティブ ディレクター", photo:"Tal_Miles.png", photoVer:2,
+      bioEn:[
+        "Tal Miles is the Director of National Public System Network Initiatives at JDC Elka, where she leads large-scale collaborations and cross-sector partnerships to strengthen public systems and address complex societal challenges. Working closely with leaders across central and local government, civil society, and professional networks, she designs and implements initiatives that translate collaboration into meaningful, lasting change in the public sector.",
+        "Prior to this role, Tal served as CEO of the Israel Green Building Council, where she led national efforts to advance sustainable urban development. Partnering with government decision-makers, municipalities, industry, and civil society, she promoted policies and practices that integrate environmental, social, and economic sustainability. Earlier, she held senior leadership positions at the Council, including VP of Operations and Training.",
+        "Beyond her formal roles, Tal is an active community entrepreneur and a dedicated advocate for the inclusion of people with special needs.",
+        "Tal holds a BA in Community Coordination from the Open University and Beit Berl College, and an MA in Mediation and Conflict Resolution from Tel Aviv University."
+      ],
+      bioJa:[
+        "マイルズ・タル氏は、JDC-ELKA（イスラエル・エルカ）において、全国公共システム・ネットワーク・イニシアティブ担当ディレクターを務めています。中央政府、地方自治体、市民社会組織、専門家ネットワークなど、多様な主体との連携を通じて、大規模な協働プロジェクトや分野横断的なパートナーシップを推進し、公共システムの強化と複雑な社会課題の解決に取り組んでいます。",
+        "現職に就く以前は、イスラエル・グリーンビルディング協会の最高経営責任者（CEO）を務め、持続可能な都市開発の推進に向けた全国的な取り組みを主導しました。政府機関、自治体、産業界、市民社会との連携を通じて、環境・社会・経済の持続可能性を統合した政策や実践の普及に尽力しました。また、それ以前には同協会において事業運営・研修担当副代表（VP of Operations and Training）などの要職を歴任しています。",
+        "職務以外でも、地域社会に根ざしたコミュニティ活動や社会起業に積極的に取り組むとともに、特別な支援を必要とする人々の包摂と社会参加の推進にも力を注いでいます。",
+        "オープン大学およびベイト・ベルル・カレッジにてコミュニティ・コーディネーションの学士号を取得し、テルアビブ大学にて調停・紛争解決学の修士号を取得しています。"
+      ]
+    }
+  ];
+  var PROGRAM_TEAM_ORDER = ['pt4', 'pt3', 'pt2', 'pt1'];
+
   var STEERING_BADGE = "Steering Committee";
   var STEERING_PHOTO_VER = 11;
 
@@ -101,6 +163,117 @@
     return paras.map(function (t) {
       return '<p style="margin:0 0 10px;font-size:12px;line-height:1.55;opacity:0.95">'+t+'</p>';
     }).join('');
+  }
+
+  function cardBioParaHtml(text) {
+    return '<p style="margin:0 0 8px;font-size:11px;line-height:1.55;opacity:0.95">'+text+'</p>';
+  }
+
+  function buildCardBackBioFlipHtml(flipId, jaTitle, bioJaPars, bioEnPars) {
+    var jaHtml = (bioJaPars || []).map(cardBioParaHtml).join('');
+    var enHtml = (bioEnPars || []).map(cardBioParaHtml).join('');
+    var titleHtml = jaTitle ? '<div style="font-weight:800;font-size:13px;margin:0 0 8px;text-align:center">'+escapeHtml(jaTitle)+'</div>' : '';
+    return '<div class="card-bio-flip" id="'+flipId+'" role="group" aria-label="Biography language toggle">' +
+      '<div class="card-bio-flip-scroll">' +
+        '<div class="card-bio-flip-inner">' +
+          '<div class="card-bio-flip-face card-bio-flip-front" lang="ja">'+titleHtml+jaHtml+'</div>' +
+          '<div class="card-bio-flip-face card-bio-flip-back" lang="en">'+enHtml+'</div>' +
+        '</div>' +
+      '</div>' +
+      '<button type="button" class="card-bio-flip-hint" data-hint-front="English" data-hint-back="日本語">' +
+        '<span class="card-bio-flip-hint-label">English</span><span class="card-bio-flip-hint-arrow" aria-hidden="true">→</span>' +
+      '</button>' +
+    '</div>';
+  }
+
+  function buildStaffCarouselSection(title, members, sectionClass) {
+    var boxStyle = 'box-shadow:0 4px 24px rgba(0,0,0,0.12);margin-bottom:32px';
+    var cardsHtml = members.map(renderSteeringCard).join('');
+    return '<section class="steering-section '+sectionClass+'">' +
+      '<h2 class="all-participants-title steering-section-heading">'+title+'</h2>' +
+      '<div class="about-box steering-section-box" style="'+boxStyle+'">' +
+        '<div class="steering-carousel">' +
+          '<button type="button" class="steering-carousel-prev" aria-label="Previous">&lt;</button>' +
+          '<button type="button" class="steering-carousel-next" aria-label="Next">&gt;</button>' +
+          '<div class="steering-carousel-track">'+cardsHtml+'</div>' +
+        '</div>' +
+      '</div>' +
+    '</section>';
+  }
+
+  function setCardFlipped(inner, flipped) {
+    if (!inner) return;
+    inner.classList.toggle('is-card-flipped', flipped);
+    inner.style.transform = flipped ? 'rotateY(180deg)' : 'rotateY(0deg)';
+  }
+
+  function bindCardBioFlips(container) {
+    container.querySelectorAll('.card-bio-flip').forEach(function (flipEl) {
+      if (flipEl.getAttribute('data-bound') === '1') return;
+      flipEl.setAttribute('data-bound', '1');
+      var hint = flipEl.querySelector('.card-bio-flip-hint');
+      function updateFlipHint(flipped) {
+        if (!hint) return;
+        var label = hint.querySelector('.card-bio-flip-hint-label');
+        var arrow = hint.querySelector('.card-bio-flip-hint-arrow');
+        if (label && arrow) {
+          label.textContent = flipped ? hint.getAttribute('data-hint-back') : hint.getAttribute('data-hint-front');
+          arrow.textContent = flipped ? '←' : '→';
+          hint.classList.toggle('is-flipped', flipped);
+        }
+      }
+      function toggleBioFlip(e) {
+        if (e) {
+          e.preventDefault();
+          e.stopPropagation();
+        }
+        var flipped = flipEl.classList.toggle('is-flipped');
+        updateFlipHint(flipped);
+      }
+      if (hint) {
+        hint.addEventListener('click', function (e) {
+          e.preventDefault();
+          e.stopPropagation();
+          toggleBioFlip();
+        });
+      }
+    });
+  }
+
+  function bindStaffCardFlips(container) {
+    container.querySelectorAll('.steering-card.participant-card').forEach(function (el) {
+      if (el.getAttribute('data-flip-bound') === '1') return;
+      el.setAttribute('data-flip-bound', '1');
+      var inner = el.querySelector('.card-inner');
+      var front = el.querySelector('.card-front');
+      var back = el.querySelector('.card-back');
+      function flipToBack(e) {
+        if (e) e.stopPropagation();
+        setCardFlipped(inner, true);
+      }
+      function flipToFront(e) {
+        if (e.target.closest('.card-bio-flip, a[href^="mailto:"]')) return;
+        if (e) e.stopPropagation();
+        setCardFlipped(inner, false);
+      }
+      if (front) {
+        front.addEventListener('click', flipToBack);
+      }
+      if (back) {
+        back.addEventListener('click', flipToFront);
+      }
+    });
+  }
+
+  function bindParticipantCardFlips(container) {
+    container.querySelectorAll('#cards-container .participant-card').forEach(function (el) {
+      el.onclick = function () {
+        var inner = el.querySelector('.card-inner');
+        if (!inner) return;
+        var flipped = inner.classList.contains('is-card-flipped');
+        setCardFlipped(inner, !flipped);
+      };
+    });
   }
 
   /** Japanese affiliation/title for card backs (from Members tab). Keys match participant `key`. */
@@ -317,41 +490,6 @@
       "She teaches at leading universities in Japan and Israel, including Kyoto University, Doshisha University, Ritsumeikan University, and the University of Haifa. Alongside her academic work, she has led numerous cross-cultural initiatives connecting students, researchers, and professionals from different countries.",
       "In addition to her academic work, Dr. Kushelevich serves as Chairperson of the Israel–Japan Academic and Cultural Relations Association (<a href=\"https://www.japan-israel.org/\" target=\"_blank\" rel=\"noopener noreferrer\">IJAC</a>), a non-profit organization dedicated to strengthening academic, cultural, and professional ties between Israel and Japan. Through IJAC, she promotes international collaboration among universities, researchers, students, policymakers, businesses, and civil society organizations. The association develops initiatives in education, research, policy dialogue, cultural exchange, and innovation, fostering mutual understanding and creating new opportunities for cooperation between the two countries."
     ];
-    var hadasBarzilaiPars = [
-      "Hadas Barzilai directs the \"FutureTime\" program at Joint-ELKA, fostering cross-sector collaboration to improve the efficiency and effectiveness of systems and organizations, with the aim of enhancing quality of life for Israeli citizens.",
-      "In her previous roles at ELKA, Hadas contributed to developing the Regional Clusters Initiative. She worked closely with the Eastern Negev regional authorities cluster, establishing and leading a forum for local authority heads, a welfare forum, and a multi-sector leadership program. These efforts culminated in a strategic regional economic development plan for the Eastern Negev.",
-      "Before joining ELKA, Hadas founded and managed a nonprofit organization dedicated to advancing equality and social justice. Under her leadership, the organization increased public awareness of social rights, provided the tools needed to exercise those rights, and encouraged active civic engagement to influence decision-making processes affecting citizens' quality of life. She led the organization's southern branch for 17 years.",
-      "Hadas holds a Master of Social Work (Administration and Welfare Policy track) and a Bachelor of Social Work, both earned cum laude at Ben-Gurion University."
-    ];
-    var hadasBarzilaiJaPars = [
-      'バルジライ・ハダス氏は、Joint-ELKA（JDC-ELKA）において「FutureTime」プログラムのディレクターを務めています。分野横断的な協働を推進し、制度や組織の効率と有効性を高めることで、イスラエル国民の生活の質の向上を目指しています。',
-      '以前はELKAにおいて、地域クラスター・イニシアティブの開発に貢献しました。東ネゲブ地域自治体クラスターと密接に連携し、地方自治体首長のフォーラム、福祉フォーラム、多分野リーダーシップ・プログラムの設立と運営を主導しました。これらの取り組みは、東ネゲブにおける戦略的な地域経済発展計画の策定につながりました。',
-      'ELKA入社以前は、平等と社会正義の推進に取り組む非営利団体を設立・運営しました。同氏のリーダーシップの下、組織は社会権利に関する市民の認識を高め、権利を行使するために必要な手段を提供し、市民の生活の質に影響を与える意思決定プロセスへの積極的な市民参加を促進しました。同組織の南部支部を17年間率いていました。',
-      'ベン・グリオン大学にて、社会福祉学修士号（行政・福祉政策コース）および社会福祉学学士号を、いずれも最優等（cum laude）で取得しています。'
-    ];
-    var sigalPars = [
-      "Sigal Mautner Siebzehner is an organizational consultant and group facilitator with more than 20 years of experience in organizational, personal, and professional development. At ELKA, she has played a key role in designing and managing initiatives led by senior executives and experts from government ministries, local authorities, and civil society organizations.",
-      "Previously, Sigal directed the Women's Empowerment Unit at the Israel Association of Community Centers, overseeing leadership programs for thousands of women nationwide. She also served as Director of the \"Youth for Youth\" Association, managed the training department at MATI (Small Business Development Center), and worked as a senior organizational consultant in leading consulting firms.",
-      "In these roles, she guided senior management teams, led processes in organizations across multiple sectors, and developed training programs for managers and multi-professional teams. Over the years, Sigal has lectured and facilitated workshops in various academic contexts.",
-      "She holds an M.Sc. in Organizational Behavior from Tel Aviv University, is a certified trainer with a certificate in group facilitation from the Zippory Center, and has a certificate in psychotherapy studies from the Temurot School of Dynamic Psychotherapy at Bar-Ilan University."
-    ];
-    var yuvalPars = [
-      "Yuval Golani leads the operations and logistics of the \"FutureTime\" program. In her previous roles at ELKA, she worked with regional municipal clusters to build mechanisms and strengthen capacities for delivering high-quality social services, leading cross-sector collaborations with the Ministry of Health, the Ministry of Interior, and the Ministry of Welfare and Social Services.",
-      "Prior to that, Yuval served as Assistant Spokesperson in the Media, Communication and Advocacy Division at the Ministry of Energy and Infrastructure. Alongside her work, she actively volunteers in social organizations working to reduce social inequality.",
-      "Yuval holds a BA in Political Science and International Relations from the Hebrew University of Jerusalem."
-    ];
-    var talPars = [
-      "Tal Miles is the Director of National Public System Network Initiatives at JDC Elka, where she leads large-scale collaborations and cross-sector partnerships to strengthen public systems and address complex societal challenges. Working closely with leaders across central and local government, civil society, and professional networks, she designs and implements initiatives that translate collaboration into meaningful, lasting change in the public sector.",
-      "Prior to this role, Tal served as CEO of the Israel Green Building Council, where she led national efforts to advance sustainable urban development. Partnering with government decision-makers, municipalities, industry, and civil society, she promoted policies and practices that integrate environmental, social, and economic sustainability. Earlier, she held senior leadership positions at the Council, including VP of Operations and Training.",
-      "Beyond her formal roles, Tal is an active community entrepreneur and a dedicated advocate for the inclusion of people with special needs.",
-      "Tal holds a BA in Community Coordination from the Open University and Beit Berl College, and an MA in Mediation and Conflict Resolution from Tel Aviv University."
-    ];
-    var talJaPars = [
-      'マイルズ・タル氏は、JDC-ELKA（イスラエル・エルカ）において、全国公共システム・ネットワーク・イニシアティブ担当ディレクターを務めています。中央政府、地方自治体、市民社会組織、専門家ネットワークなど、多様な主体との連携を通じて、大規模な協働プロジェクトや分野横断的なパートナーシップを推進し、公共システムの強化と複雑な社会課題の解決に取り組んでいます。特に、組織間の協働を実効性のある政策や取り組みへと発展させ、持続的な社会変革につなげることを専門としています。',
-      '現職に就く以前は、イスラエル・グリーンビルディング協会の最高経営責任者（CEO）を務め、持続可能な都市開発の推進に向けた全国的な取り組みを主導しました。政府機関、自治体、産業界、市民社会との連携を通じて、環境・社会・経済の持続可能性を統合した政策や実践の普及に尽力しました。また、それ以前には同協会において事業運営・研修担当副代表（VP of Operations and Training）などの要職を歴任しています。',
-      '職務以外でも、地域社会に根ざしたコミュニティ活動や社会起業に積極的に取り組むとともに、特別な支援を必要とする人々の包摂と社会参加の推進にも力を注いでいます。',
-      'オープン大学およびベイト・ベルル・カレッジにてコミュニティ・コーディネーションの学士号を取得し、テルアビブ大学にて調停・紛争解決学の修士号を取得しています。'
-    ];
     var pStyle = 'margin:0 0 16px;font-size:15px;line-height:1.75;color:'+P.mid+'';
     var mashaBioHtml = mashaPars.map(function(t){ return '<p style="'+pStyle+'">'+t+'</p>'; }).join('');
     var mashaJaPars = [
@@ -389,33 +527,6 @@
     }
     var mashaBioFlipHtml = buildTeamBioFlipHtml('masha-bio-flip', 'ルービン・マーシャ', mashaJaBioHtml, mashaBioHtml);
     var hadasBioFlipHtml = buildTeamBioFlipHtml('hadas-bio-flip', 'クシェレビチ・ハダス博士', hadasJaBioHtml, hadasBioHtml);
-    var hadasBarzilaiBioHtml = hadasBarzilaiPars.map(function(t){ return '<p style="'+pStyle+'">'+t+'</p>'; }).join('');
-    var hadasBarzilaiJaBioHtml = hadasBarzilaiJaPars.map(function(t){ return '<p style="'+jaPStyle+'">'+t+'</p>'; }).join('');
-    var hadasBarzilaiBioFlipHtml = buildTeamBioFlipHtml('hadas-barzilai-bio-flip', 'バルジライ・ハダス', hadasBarzilaiJaBioHtml, hadasBarzilaiBioHtml);
-    var sigalJaPars = [
-      'シガル・マウトナー・シーブツェナー氏は、組織コンサルタントおよびグループ・ファシリテーターとして、組織・個人・職業能力の開発において20年以上の経験を有しています。ELKAでは、政府省庁、地方自治体、市民社会組織の高官や専門家が主導するイニシアティブの企画・運営において中心的な役割を担ってきました。',
-      '以前は、イスラエル・コミュニティ・センター協会の女性エンパワーメント部門を統括し、全国の数千人の女性を対象としたリーダーシップ・プログラムを監督しました。また、「ユース・フォー・ユース」協会の理事長、MATI（中小企業開発センター）研修部門の管理者、大手コンサルティング会社でのシニア組織コンサルタントなどを歴任しています。',
-      'これらの役割において、上級管理チームへの助言、多分野にわたる組織プロセスの主導、管理者および多職種チーム向け研修プログラムの開発を行ってきました。長年にわたり、さまざまな学術的文脈で講義やワークショップのファシリテーションも担当しています。',
-      'テルアビブ大学にて組織行動学の修士号を取得。ジポリ・センターのグループ・ファシリテーション修了証、バル・イラン大学テムロット動的心理療法スクールの心理療法研究修了証を保有しています。'
-    ];
-    var yuvalJaPars = [
-      'ユヴァル・ゴラニ氏は、「FutureTime」プログラムの運営およびロジスティクスを統括しています。以前のELKAでの役割においては、地域自治体クラスターと連携し、質の高い社会サービスを提供するための仕組みづくりと能力強化に取り組み、厚生労働省、内務省、福祉省などとの分野横断的な協働を主導してきました。',
-      'それ以前は、エネルギー・インフラ省メディア・コミュニケーション・アドボカシー部門で広報補佐官を務めました。業務と並行して、社会的不平等の解消に取り組む社会組織への積極的なボランティア活動も続けています。',
-      'ユヴァル氏は、エルサレム・ヘブライ大学にて政治学・国際関係学の学士号を取得しています。'
-    ];
-    var sigalBioHtml = sigalPars.map(function(t){ return '<p style="'+pStyle+'">'+t+'</p>'; }).join('');
-    var sigalJaBioHtml = sigalJaPars.map(function(t){ return '<p style="'+jaPStyle+'">'+t+'</p>'; }).join('');
-    var yuvalBioHtml = yuvalPars.map(function(t){ return '<p style="'+pStyle+'">'+t+'</p>'; }).join('');
-    var yuvalJaBioHtml = yuvalJaPars.map(function(t){ return '<p style="'+jaPStyle+'">'+t+'</p>'; }).join('');
-    var talBioHtml = talPars.map(function(t){ return '<p style="'+pStyle+'">'+t+'</p>'; }).join('');
-    var talJaBioHtml = talJaPars.map(function(t){ return '<p style="'+jaPStyle+'">'+t+'</p>'; }).join('');
-    var talBioFlipHtml = buildTeamBioFlipHtml('tal-bio-flip', 'マイルズ・タル', talJaBioHtml, talBioHtml);
-    var sigalBioFlipHtml = buildTeamBioFlipHtml('sigal-bio-flip', 'マウトナー・シーブツェナー・シガル', sigalJaBioHtml, sigalBioHtml);
-    var yuvalBioFlipHtml = buildTeamBioFlipHtml('yuval-bio-flip', 'ゴラニ・ユヴァル', yuvalJaBioHtml, yuvalBioHtml);
-    var roleStyle = pStyle+';margin:0 0 12px';
-    function teamRoleHtml(title) {
-      return '<p class="team-role" style="'+roleStyle+'"><strong>'+title+'</strong><br/>Joint-ELKA</p>';
-    }
     var teamBoxStyle = 'box-shadow:0 4px 24px rgba(0,0,0,0.15);margin-bottom:24px';
     container.innerHTML = '<div style="min-height:100vh;background:'+P.pale+'">' +
       '<div class="about-banner team-banner" style="background:'+P.hero+';width:100%;overflow:hidden">' +
@@ -437,44 +548,12 @@
             hadasBioFlipHtml +
             '<div class="team-card-logo"><img src="images/IJAC_logo.png?v=2" alt="International Journal of Arts and Commerce (IJAC)"></div>' +
           '</div>' +
-        '</div></div>' +
-        '<div class="about-box team-section-box" style="'+teamBoxStyle+'">' +
-          '<h2 class="team-section-title">Future Time Program Team</h2>' +
-        '<div class="team-grid team-cards team-cards-new">' +
-          '<div class="team-card team-card-hadas-barzilai team-card-new">' +
-            '<div class="team-name"><h2>Hadas Barzilai</h2></div>' +
-            '<div class="team-photo-wrap"><img src="'+PHOTO_DIR+'Hadas_Barzilai.jpg" alt="Hadas Barzilai"></div>' +
-            teamRoleHtml('Director, \"FutureTime\" Program')+hadasBarzilaiBioFlipHtml +
-          '</div>' +
-          '<div class="team-card team-card-sigal team-card-new">' +
-            '<div class="team-name"><h2>Sigal Mautner Siebzehner</h2></div>' +
-            '<div class="team-photo-wrap"><img src="'+PHOTO_DIR+'Sigal_Mautner_Sievzehner.jpeg" alt="Sigal Mautner Siebzehner"></div>' +
-            teamRoleHtml('Director, \"FutureTime\" Program')+sigalBioFlipHtml +
-          '</div>' +
-          '<div class="team-card team-card-yuval team-card-new">' +
-            '<div class="team-name"><h2>Yuval Golani</h2></div>' +
-            '<div class="team-photo-wrap"><img src="'+PHOTO_DIR+'Yuval_Golani.png?v=4" alt="Yuval Golani"></div>' +
-            teamRoleHtml('Coordinator, \"FutureTime\" Program')+yuvalBioFlipHtml +
-          '</div>' +
-          '<div class="team-card team-card-tal team-card-new">' +
-            '<div class="team-name"><h2>Tal Miles</h2></div>' +
-            '<div class="team-photo-wrap"><img src="'+PHOTO_DIR+'Tal_Miles.png?v=2" alt="Tal Miles"></div>' +
-            teamRoleHtml('Director, National Public System Network Initiatives')+talBioFlipHtml +
-          '</div>' +
         '</div></div></div></div>';
     var teamCards = container.querySelector('.team-cards-main');
     var mashaCard = container.querySelector('.team-card-masha');
     var hadasCard = container.querySelector('.team-card-hadas');
     if (teamCards && mashaCard && hadasCard && hadasCard.previousElementSibling !== mashaCard) {
       teamCards.insertBefore(mashaCard, hadasCard);
-    }
-    var programTeam = container.querySelector('.team-cards-new');
-    var yuvalCard = container.querySelector('.team-card-yuval');
-    var hadasBarzilaiCard = container.querySelector('.team-card-hadas-barzilai');
-    var talCard = container.querySelector('.team-card-tal');
-    if (programTeam && yuvalCard && hadasBarzilaiCard && talCard) {
-      programTeam.insertBefore(yuvalCard, programTeam.firstElementChild);
-      programTeam.insertBefore(hadasBarzilaiCard, talCard);
     }
     function bindTeamBioFlip(flipEl) {
       if (!flipEl) return;
@@ -512,16 +591,13 @@
     }
     bindTeamBioFlip(container.querySelector('#masha-bio-flip'));
     bindTeamBioFlip(container.querySelector('#hadas-bio-flip'));
-    bindTeamBioFlip(container.querySelector('#tal-bio-flip'));
-    bindTeamBioFlip(container.querySelector('#hadas-barzilai-bio-flip'));
-    bindTeamBioFlip(container.querySelector('#sigal-bio-flip'));
-    bindTeamBioFlip(container.querySelector('#yuval-bio-flip'));
   }
 
   function steeringPhotoHtml(m) {
     var nameEn = escapeHtml(m.nameEn);
     if (m.photo) {
-      var photoSrc = PHOTO_DIR + m.photo + '?v=' + (m.photoVer != null ? m.photoVer : STEERING_PHOTO_VER);
+      var ver = m.photoVer != null ? m.photoVer : ((m.bioEn && m.bioJa) ? PROGRAM_PHOTO_VER : STEERING_PHOTO_VER);
+      var photoSrc = PHOTO_DIR + m.photo + '?v=' + ver;
       return '<img src="'+photoSrc+'" alt="'+nameEn+'" loading="lazy" decoding="async"/>';
     }
     var initials = m.nameEn.split(/\s+/).map(function (w) { return w.charAt(0); }).join('').slice(0, 2).toUpperCase();
@@ -530,6 +606,7 @@
 
   function renderSteeringCard(m) {
     var c = { bg:P.hero, border:P.hero, light:P.pale, text:'#ffffff' };
+    var badge = m.badge || STEERING_BADGE;
     var nameEn = escapeHtml(m.nameEn);
     var nameJa = escapeHtml(m.nameJa || '');
     var nameHe = escapeHtml(m.nameHe || '');
@@ -538,12 +615,31 @@
     var org = escapeHtml(m.org);
     var role = escapeHtml(m.role);
     var jaBack = memberJaBack(m.key);
-    var orgJaBackHtml = backJaSubHtml(jaBack.orgJa);
-    var roleJaBackHtml = backJaSubHtml(jaBack.roleJa);
-    var email = escapeHtml(m.email);
+    var orgJaBackHtml = backJaSubHtml(m.orgJa || jaBack.orgJa);
+    var roleJaBackHtml = backJaSubHtml(m.roleJa || jaBack.roleJa);
+    var email = escapeHtml(m.email || '');
     var bioHtml = steeringBioHtml(m.key);
+    var bioFlipHtml = (m.bioEn && m.bioJa) ? buildCardBackBioFlipHtml('card-bio-'+m.id, m.jaTitle || m.nameJa, m.bioJa, m.bioEn) : '';
+    var backContentHtml;
+    if (m.bioEn && m.bioJa) {
+      backContentHtml =
+        '<div class="steering-card-back-meta" style="flex-shrink:0;padding:6px 0 2px;font-size:13px"><div><strong>'+org+'</strong>'+orgJaBackHtml+'</div>' +
+        '<div style="margin-top:6px"><strong>'+role+'</strong>'+roleJaBackHtml+'</div>' +
+        (m.email ? '<div style="margin-top:6px"><a href="mailto:'+email+'" style="color:'+P.pale+'" onclick="event.stopPropagation()">'+email+'</a></div>' : '') +
+        '</div>' +
+        '<div class="steering-card-back-bio" style="flex:1;min-height:0;display:flex;flex-direction:column;margin-top:8px;padding-top:8px;border-top:1px solid rgba(255,255,255,0.2)">'+bioFlipHtml+'</div>';
+    } else {
+      var bioBackHtml = bioHtml ? '<div style="margin-top:12px;padding-top:10px;border-top:1px solid rgba(255,255,255,0.2)">'+bioHtml+'</div>' : '';
+      backContentHtml =
+        '<div class="steering-card-back-body" style="flex:1;min-height:0;overflow-y:auto;-webkit-overflow-scrolling:touch;padding:12px 0 8px;font-size:13px"><div><strong>'+org+'</strong>'+orgJaBackHtml+'</div>' +
+        '<div style="margin-top:8px"><strong>'+role+'</strong>'+roleJaBackHtml+'</div>' +
+        (m.email ? '<div style="margin-top:8px"><a href="mailto:'+email+'" style="color:'+P.pale+'" onclick="event.stopPropagation()">'+email+'</a></div>' : '') +
+        bioBackHtml + '</div>';
+    }
+    var cardAttrs = 'class="steering-card participant-card" data-staff-id="'+m.id+'"';
+    if (m.id.indexOf('sc') === 0) cardAttrs += ' data-steering-id="'+m.id+'"';
     var photoInner = '<div class="steering-photo-inner">'+steeringPhotoHtml(m)+'</div>';
-    return '<div class="steering-card participant-card" data-steering-id="'+m.id+'" style="perspective:900px;cursor:pointer">' +
+    return '<div '+cardAttrs+' style="perspective:900px;cursor:pointer">' +
       '<div class="card-inner" style="transition:transform 0.55s">' +
         '<div class="card-front" style="background:white;border-radius:14px;border:2.5px solid '+c.border+';overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,0.08)">' +
           '<div class="card-photo-wrap">'+photoInner+'</div>' +
@@ -558,37 +654,39 @@
               '</div>' +
             '</div>' +
           '</div>' +
-          '<div class="card-front-footer" style="background:'+P.pale+'"><div class="card-front-label-wrap"><div style="background:'+c.bg+';color:white;font-size:12px;font-weight:700;padding:6px 12px;border-radius:20px">'+STEERING_BADGE+'</div></div></div>' +
+          '<div class="card-front-footer" style="background:'+P.pale+'"><div class="card-front-label-wrap"><div style="background:'+c.bg+';color:white;font-size:12px;font-weight:700;padding:6px 12px;border-radius:20px">'+badge+'</div></div></div>' +
           '<div class="view-details">View Details</div>' +
         '</div>' +
         '<div class="card-back" style="position:absolute;inset:0;backface-visibility:hidden;transform:rotateY(180deg);background:linear-gradient(160deg,'+c.bg+','+c.bg+'ee);border-radius:14px;padding:18px;color:white;display:flex;flex-direction:column;overflow:hidden">' +
-          '<div style="text-align:center;padding:12px 0 8px"><div style="font-weight:800;font-size:17px">'+nameEn+'</div>'+nameJaBackHtml+(nameHe ? '<div style="font-family:Arial;direction:rtl;font-size:13px;opacity:0.88">'+nameHe+'</div>' : '')+'</div>' +
-          '<div style="height:1px;background:rgba(255,255,255,0.25)"></div>' +
-          '<div class="steering-card-back-body" style="flex:1;min-height:0;overflow-y:auto;-webkit-overflow-scrolling:touch;padding:12px 0 8px;font-size:13px"><div><strong>'+org+'</strong>'+orgJaBackHtml+'</div>' +
-          '<div style="margin-top:8px"><strong>'+role+'</strong>'+roleJaBackHtml+'</div>' +
-          (m.email ? '<div style="margin-top:8px"><a href="mailto:'+email+'" style="color:'+P.pale+'" onclick="event.stopPropagation()">'+email+'</a></div>' : '') +
-          (bioHtml ? '<div style="margin-top:12px;padding-top:10px;border-top:1px solid rgba(255,255,255,0.2)">'+bioHtml+'</div>' : '') + '</div>' +
-          '<div style="text-align:center;font-size:10px;opacity:0.5;padding-top:4px">TAP TO FLIP BACK</div>' +
+          '<div style="text-align:center;padding:10px 0 6px;flex-shrink:0"><div style="font-weight:800;font-size:17px">'+nameEn+'</div>'+nameJaBackHtml+(nameHe ? '<div style="font-family:Arial;direction:rtl;font-size:13px;opacity:0.88">'+nameHe+'</div>' : '')+'</div>' +
+          '<div style="height:1px;background:rgba(255,255,255,0.25);flex-shrink:0"></div>' +
+          backContentHtml +
+          '<div style="text-align:center;font-size:10px;opacity:0.5;padding-top:4px;flex-shrink:0">TAP TO FLIP BACK</div>' +
         '</div>' +
       '</div></div>';
   }
 
 
+  function initStaffCarousels(container) {
+    container.querySelectorAll('.steering-carousel').forEach(function (carousel) {
+      if (carousel.getAttribute('data-ready') === '1') return;
+      carousel.setAttribute('data-ready', '1');
+      var track = carousel.querySelector('.steering-carousel-track');
+      var prev = carousel.querySelector('.steering-carousel-prev');
+      var next = carousel.querySelector('.steering-carousel-next');
+      if (!track || !prev || !next) return;
+      function scrollStep(dir) {
+        var card = track.querySelector('.steering-card');
+        var amount = card ? card.offsetWidth + 16 : 296;
+        track.scrollBy({ left: dir * amount, behavior: 'smooth' });
+      }
+      prev.addEventListener('click', function (e) { e.stopPropagation(); scrollStep(-1); });
+      next.addEventListener('click', function (e) { e.stopPropagation(); scrollStep(1); });
+    });
+  }
+
   function initSteeringCarousel(container) {
-    var carousel = container.querySelector('.steering-carousel');
-    if (!carousel || carousel.getAttribute('data-ready') === '1') return;
-    carousel.setAttribute('data-ready', '1');
-    var track = carousel.querySelector('.steering-carousel-track');
-    var prev = carousel.querySelector('.steering-carousel-prev');
-    var next = carousel.querySelector('.steering-carousel-next');
-    if (!track || !prev || !next) return;
-    function scrollStep(dir) {
-      var card = track.querySelector('.steering-card');
-      var amount = card ? card.offsetWidth + 16 : 296;
-      track.scrollBy({ left: dir * amount, behavior: 'smooth' });
-    }
-    prev.addEventListener('click', function () { scrollStep(-1); });
-    next.addEventListener('click', function () { scrollStep(1); });
+    initStaffCarousels(container);
   }
 
   function sectorBadge(sector) {
@@ -656,19 +754,12 @@
       return '<button data-sector="'+s.key+'" class="sector-btn" style="flex:1;min-width:0;background:'+btnBg+';border:'+btnBorderW+' solid '+btnBorder+';color:'+btnColor+';border-radius:999px;padding:8px 10px;cursor:pointer;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;overflow:visible;'+btnShadow+'"><span style="display:flex;align-items:center;gap:4px;flex-shrink:0"><span style="font-size:14px">'+s.icon+'</span><span style="font-weight:900;font-size:14px">'+(cnt[s.key]||0)+'</span></span><span style="font-size:10px;font-weight:600;line-height:1.2;text-align:center;word-break:break-word">'+s.short+'</span></button>';
     }).join('');
 
-    var steeringBoxStyle = 'box-shadow:0 4px 24px rgba(0,0,0,0.12);margin-bottom:32px';
-    var steeringCardsHtml = STEERING_COMMITTEE.map(renderSteeringCard).join('');
-    var steeringSectionHtml =
-      '<section class="steering-section">' +
-        '<h2 class="all-participants-title steering-section-heading">Steering Committee</h2>' +
-        '<div class="about-box steering-section-box" style="'+steeringBoxStyle+'">' +
-          '<div class="steering-carousel">' +
-            '<button type="button" class="steering-carousel-prev" aria-label="Previous steering committee member">&lt;</button>' +
-            '<button type="button" class="steering-carousel-next" aria-label="Next steering committee member">&gt;</button>' +
-            '<div class="steering-carousel-track">'+steeringCardsHtml+'</div>' +
-          '</div>' +
-        '</div>' +
-      '</section>';
+    var steeringSectionHtml = buildStaffCarouselSection('Steering Committee', STEERING_COMMITTEE, 'steering-section-main');
+    var programTeamMembers = PROGRAM_TEAM_ORDER.map(function (id) {
+      var member = PROGRAM_TEAM.filter(function (m) { return m.id === id; })[0];
+      return Object.assign({}, member, { badge: PROGRAM_TEAM_BADGE });
+    });
+    var programTeamSectionHtml = buildStaffCarouselSection('Future Time Program Team', programTeamMembers, 'program-team-section');
 
     var searchRow = container.querySelector('.search-row');
     var cardsContainer = container.querySelector('#cards-container');
@@ -685,6 +776,7 @@
         '<div class="participants-content">' +
           '<div class="search-row" dir="ltr" style="display:flex;align-items:center;justify-content:flex-end;gap:8px;flex-wrap:wrap;margin-top:0;margin-bottom:6px;padding:4px 0"><input type="text" id="search-input" dir="ltr" autocomplete="off" placeholder="Search by name, org, role" style="flex:0 1 420px;min-width:200px;max-width:420px;padding:14px 24px 14px 48px;border:1.5px solid '+P.soft+';border-radius:999px;font-size:14px;font-family:inherit;box-sizing:border-box;background:white" /></div>' +
           steeringSectionHtml +
+          programTeamSectionHtml +
           '<section class="all-participants-section">' +
           '<h2 class="all-participants-title" style="margin:0 0 16px;font-size:22px;font-weight:800;color:'+P.dark+'">All Participants</h2>' +
           '<div class="cards-grid" style="margin-top:4px;padding:4px 0" id="cards-container">' +
@@ -697,6 +789,9 @@
         btn.onclick = function () { setActiveSector(btn.getAttribute('data-sector')); };
       });
       initSteeringCarousel(container);
+      bindCardBioFlips(container);
+      bindStaffCardFlips(container);
+      bindParticipantCardFlips(container);
     } else {
       container.querySelector('#stats-bar').outerHTML = '<div class="stats-bar-wrap" id="stats-bar" style="flex:0 1 640px;max-width:640px;width:100%;display:grid;grid-template-columns:repeat(3, 1fr);gap:10px;justify-content:flex-end;margin-left:auto">'+statsHtml+'</div>';
       cardsContainer = container.querySelector('#cards-container');
@@ -711,13 +806,10 @@
 
     bindSearchInput(container, search, setSearch);
 
-    container.querySelectorAll('.participant-card').forEach(function(el){
-      el.onclick = function () {
-        var inner = el.querySelector('.card-inner');
-        inner.style.transform = inner.style.transform === 'rotateY(180deg)' ? 'rotateY(0deg)' : 'rotateY(180deg)';
-      };
-    });
+    bindStaffCardFlips(container);
+    bindParticipantCardFlips(container);
     initSteeringCarousel(container);
+    bindCardBioFlips(container);
   }
 
   var state = { page: 'about', activeSector: 'all', search: '' };

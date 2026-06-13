@@ -199,6 +199,16 @@
       position: absolute !important;
       inset: 0 !important;
       backface-visibility: hidden;
+      pointer-events: none;
+    }
+    .steering-card .card-front {
+      pointer-events: auto;
+    }
+    .steering-card .card-inner.is-card-flipped .card-front {
+      pointer-events: none;
+    }
+    .steering-card .card-inner.is-card-flipped .card-back {
+      pointer-events: auto;
     }
     .steering-card .card-photo-wrap {
       width: 100%;
@@ -423,6 +433,98 @@
     }
     .steering-carousel-prev { left: 6px; }
     .steering-carousel-next { right: 6px; }
+    .program-team-section { margin-bottom: 28px; }
+    .steering-card .steering-card-back-bio {
+      flex: 1 1 auto;
+      min-height: 0;
+      width: 100%;
+    }
+    .steering-card .card-bio-flip {
+      perspective: 900px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      height: 100%;
+      min-height: 0;
+      flex: 1 1 auto;
+      cursor: default;
+    }
+    .steering-card .card-bio-flip-scroll {
+      flex: 1 1 auto;
+      min-height: 0;
+      width: 100%;
+      overflow: hidden;
+    }
+    .steering-card .card-bio-flip-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      min-height: 0;
+      transform-style: preserve-3d;
+      transition: transform 0.55s ease;
+    }
+    .steering-card .card-bio-flip.is-flipped .card-bio-flip-inner {
+      transform: rotateY(180deg);
+    }
+    .steering-card .card-bio-flip-face {
+      position: absolute;
+      inset: 0;
+      overflow-y: auto;
+      overflow-x: hidden;
+      -webkit-overflow-scrolling: touch;
+      backface-visibility: hidden;
+      -webkit-backface-visibility: hidden;
+      padding: 0 2px;
+      box-sizing: border-box;
+    }
+    .steering-card .card-bio-flip-front {
+      z-index: 2;
+      pointer-events: auto;
+    }
+    .steering-card .card-bio-flip-back {
+      transform: rotateY(180deg);
+      z-index: 1;
+      pointer-events: none;
+    }
+    .steering-card .card-bio-flip.is-flipped .card-bio-flip-front {
+      z-index: 1;
+      pointer-events: none;
+    }
+    .steering-card .card-bio-flip.is-flipped .card-bio-flip-back {
+      z-index: 2;
+      pointer-events: auto;
+    }
+    .steering-card .card-bio-flip-hint {
+      margin-top: auto;
+      flex-shrink: 0;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      border: none;
+      background: rgba(255, 255, 255, 0.18);
+      font-size: 11px;
+      font-weight: 800;
+      color: #fff;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      cursor: pointer;
+      font-family: inherit;
+      position: relative;
+      z-index: 3;
+      box-shadow: 0 3px 0 rgba(0, 0, 0, 0.22), 0 4px 10px rgba(0, 0, 0, 0.15);
+      transition: background 0.2s ease, transform 0.12s ease, box-shadow 0.12s ease;
+    }
+    .steering-card .card-bio-flip-hint:hover {
+      background: rgba(255, 255, 255, 0.28);
+    }
+    .steering-card .card-bio-flip-hint:active {
+      transform: translateY(2px);
+      box-shadow: 0 1px 0 rgba(0, 0, 0, 0.18);
+    }
     .all-participants-section { margin-top: 8px; }
     .all-participants-title { font-family: 'Inter', sans-serif; }
     .team-page { min-height: 100vh; background: var(--teal-pale); }
@@ -1166,6 +1268,6 @@
     <div id="team-page"></div>
   </main>
 
-  <script src="script.js?v=123"></script>
+  <script src="script.js?v=127"></script>
 </body>
 </html>
