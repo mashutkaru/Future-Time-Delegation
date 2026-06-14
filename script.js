@@ -118,7 +118,7 @@
   var PROGRAM_TEAM_ORDER = ['pt4', 'pt3', 'pt2', 'pt1'];
 
   var STEERING_BADGE = "Steering Committee";
-  var STEERING_PHOTO_VER = 11;
+  var STEERING_PHOTO_VER = 12;
 
   var STEERING_BIOS = {
     "Yariv_Man": [
