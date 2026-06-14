@@ -3,7 +3,7 @@
 
   var PHOTO_DIR = 'photos/';
   /** Bump after replacing photos. Card photo area is 272×230; PNGs are portrait (~232×276). */
-  var PHOTO_VER = '33';
+  var PHOTO_VER = '38';
 
   function participantPhotoUrl(key) {
     return PHOTO_DIR + key + '.png?v=' + PHOTO_VER;
