@@ -3,7 +3,7 @@
 
   var PHOTO_DIR = 'photos/';
   /** Bump after replacing photos. Card photo area is 272×230; PNGs are portrait (~232×276). */
-  var PHOTO_VER = '40';
+  var PHOTO_VER = '41';
 
   function participantPhotoUrl(key) {
     return PHOTO_DIR + key + '.png?v=' + PHOTO_VER;
@@ -57,7 +57,7 @@
   ];
 
   var PROGRAM_TEAM_BADGE = "Future Time Program Team";
-  var PROGRAM_PHOTO_VER = 1;
+  var PROGRAM_PHOTO_VER = 2;
 
   const PROGRAM_TEAM = [
     { id:"pt1", key:"Yuval_Golani", nameEn:"Yuval Golani", nameJa:"ゴラニ・ユヴァル", jaTitle:"ゴラニ・ユヴァル", org:"Joint-ELKA", orgJa:"Joint-ELKA（JDC-ELKA）", role:"Coordinator, \"FutureTime\" Program", roleJa:"FutureTimeプログラム コーディネーター", photo:"Yuval_Golani.png", photoVer:4,
@@ -100,7 +100,7 @@
         "ベン・グリオン大学にて、社会福祉学修士号（行政・福祉政策コース）および社会福祉学学士号を、いずれも最優等（cum laude）で取得しています。"
       ]
     },
-    { id:"pt4", key:"Tal_Miles", nameEn:"Tal Miles", nameJa:"マイルズ・タル", jaTitle:"マイルズ・タル", org:"Joint-ELKA", orgJa:"Joint-ELKA（JDC-ELKA）", role:"Director, National Public System Network Initiatives", roleJa:"全国公共システム・ネットワーク・イニシアティブ ディレクター", photo:"Tal_Miles.png", photoVer:3,
+    { id:"pt4", key:"Tal_Miles", nameEn:"Tal Miles", nameJa:"マイルズ・タル", jaTitle:"マイルズ・タル", org:"Joint-ELKA", orgJa:"Joint-ELKA（JDC-ELKA）", role:"Director, National Public System Network Initiatives", roleJa:"全国公共システム・ネットワーク・イニシアティブ ディレクター", photo:"Tal_Miles.png", photoVer:4,
       bioEn:[
         "Tal Miles is the Director of National Public System Network Initiatives at JDC Elka, where she leads large-scale collaborations and cross-sector partnerships to strengthen public systems and address complex societal challenges. Working closely with leaders across central and local government, civil society, and professional networks, she designs and implements initiatives that translate collaboration into meaningful, lasting change in the public sector.",
         "Prior to this role, Tal served as CEO of the Israel Green Building Council, where she led national efforts to advance sustainable urban development. Partnering with government decision-makers, municipalities, industry, and civil society, she promoted policies and practices that integrate environmental, social, and economic sustainability. Earlier, she held senior leadership positions at the Council, including VP of Operations and Training.",
@@ -118,7 +118,7 @@
   var PROGRAM_TEAM_ORDER = ['pt4', 'pt3', 'pt2', 'pt1'];
 
   var STEERING_BADGE = "Steering Committee";
-  var STEERING_PHOTO_VER = 12;
+  var STEERING_PHOTO_VER = 13;
 
   var STEERING_BIOS = {
     "Yariv_Man": [
@@ -538,13 +538,13 @@
           '<div class="team-grid team-cards team-cards-main">' +
           '<div class="team-card team-card-masha">' +
             '<div class="team-name"><h2>Masha Robeen</h2></div>' +
-            '<div class="team-photo-wrap"><img src="'+PHOTO_DIR+'Masha_Robeen.png?v=4" alt="Masha Robeen"></div>' +
+            '<div class="team-photo-wrap"><img src="'+PHOTO_DIR+'Masha_Robeen.png?v=5" alt="Masha Robeen"></div>' +
             mashaBioFlipHtml +
             '<div class="team-card-logo"><img src="images/JIAT_logo.png?v=2" alt="Japan Israel Aging Tech Association (JIAT)"></div>' +
           '</div>' +
           '<div class="team-card team-card-hadas">' +
             '<div class="team-name"><h2>Dr. Hadas Kushelevich</h2></div>' +
-            '<div class="team-photo-wrap"><img src="'+PHOTO_DIR+'Hadas_Kushelevich.png?v=2" alt="Dr. Hadas Kushelevich"></div>' +
+            '<div class="team-photo-wrap"><img src="'+PHOTO_DIR+'Hadas_Kushelevich.png?v=3" alt="Dr. Hadas Kushelevich"></div>' +
             hadasBioFlipHtml +
             '<div class="team-card-logo"><img src="images/IJAC_logo.png?v=2" alt="International Journal of Arts and Commerce (IJAC)"></div>' +
           '</div>' +
