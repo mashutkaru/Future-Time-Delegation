@@ -836,7 +836,7 @@
     /* Sector stats buttons: make inner label text larger */
     .stats-bar-wrap button > span:last-child { font-size: 15px !important; }
     .stats-bar-wrap button > span:first-child span:last-child { font-size: 15px !important; }
-    /* Participant photos: 272×230 — box keeps same shape, image fills it edge to edge */
+    /* Participant photos: fill card photo area — no top/bottom letterboxing */
     #cards-container .participant-card .card-photo-wrap {
       flex: 0 0 auto;
       width: 100%;
@@ -844,7 +844,7 @@
       min-height: 0;
       min-width: 0;
       margin-bottom: 0 !important;
-      background: #ffffff !important;
+      background: #BEBEBE !important;
       padding: 0 !important;
       border-radius: 11px 11px 0 0 !important;
       overflow: hidden !important;
@@ -866,7 +866,7 @@
       display: block !important;
       width: 100% !important;
       height: 100% !important;
-      object-fit: fill !important;
+      object-fit: cover !important;
       object-position: center center !important;
     }
     #cards-container .participant-card .participant-back-thumb {
@@ -1268,6 +1268,6 @@
     <div id="team-page"></div>
   </main>
 
-  <script src="script.js?v=127"></script>
+  <script src="script.js?v=133"></script>
 </body>
 </html>

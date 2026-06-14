@@ -2,14 +2,14 @@
   'use strict';
 
   var PHOTO_DIR = 'photos/';
-  /** Bump after replacing photos. PNGs are 272×230; card photo area matches that ratio. */
-  var PHOTO_VER = '28';
+  /** Bump after replacing photos. Card photo area is 272×230; PNGs are portrait (~232×276). */
+  var PHOTO_VER = '33';
 
   function participantPhotoUrl(key) {
     return PHOTO_DIR + key + '.png?v=' + PHOTO_VER;
   }
   function participantPictureFront(key, nameEn) {
-    return '<img class="participant-picture" width="272" height="230" src="' + participantPhotoUrl(key) + '" alt="' + escapeHtml(nameEn) + '" loading="lazy" decoding="async"/>';
+    return '<img class="participant-picture" src="' + participantPhotoUrl(key) + '" alt="' + escapeHtml(nameEn) + '" loading="lazy" decoding="async"/>';
   }
   function participantPictureBack(key) {
     return '<img class="participant-picture participant-picture--back" src="' + participantPhotoUrl(key) + '" alt="" loading="lazy" decoding="async"/>';
