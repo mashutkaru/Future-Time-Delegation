@@ -100,7 +100,7 @@
         "ベン・グリオン大学にて、社会福祉学修士号（行政・福祉政策コース）および社会福祉学学士号を、いずれも最優等（cum laude）で取得しています。"
       ]
     },
-    { id:"pt4", key:"Tal_Miles", nameEn:"Tal Miles", nameJa:"マイルズ・タル", jaTitle:"マイルズ・タル", org:"Joint-ELKA", orgJa:"Joint-ELKA（JDC-ELKA）", role:"Director, National Public System Network Initiatives", roleJa:"全国公共システム・ネットワーク・イニシアティブ ディレクター", photo:"Tal_Miles.png", photoVer:2,
+    { id:"pt4", key:"Tal_Miles", nameEn:"Tal Miles", nameJa:"マイルズ・タル", jaTitle:"マイルズ・タル", org:"Joint-ELKA", orgJa:"Joint-ELKA（JDC-ELKA）", role:"Director, National Public System Network Initiatives", roleJa:"全国公共システム・ネットワーク・イニシアティブ ディレクター", photo:"Tal_Miles.png", photoVer:3,
       bioEn:[
         "Tal Miles is the Director of National Public System Network Initiatives at JDC Elka, where she leads large-scale collaborations and cross-sector partnerships to strengthen public systems and address complex societal challenges. Working closely with leaders across central and local government, civil society, and professional networks, she designs and implements initiatives that translate collaboration into meaningful, lasting change in the public sector.",
         "Prior to this role, Tal served as CEO of the Israel Green Building Council, where she led national efforts to advance sustainable urban development. Partnering with government decision-makers, municipalities, industry, and civil society, she promoted policies and practices that integrate environmental, social, and economic sustainability. Earlier, she held senior leadership positions at the Council, including VP of Operations and Training.",
