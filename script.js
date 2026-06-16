@@ -3,7 +3,7 @@
 
   var PHOTO_DIR = 'photos/';
   /** Bump after replacing photos. Card photo area is 272×230; PNGs are portrait (~232×276). */
-  var PHOTO_VER = '41';
+  var PHOTO_VER = '43';
 
   function participantPhotoUrl(key) {
     return PHOTO_DIR + key + '.png?v=' + PHOTO_VER;
@@ -464,7 +464,7 @@
         '</div>' +
         '<section class="about-group-image" style="margin-top:36px">' +
           '<div style="background:'+P.dark+';border-radius:16px;padding:16px;box-shadow:0 4px 24px rgba(0,0,0,0.12)">' +
-            '<img src="'+PHOTO_DIR+'Group_image.jpeg" alt="Future Time group" style="width:100%;height:auto;display:block;border-radius:12px;object-fit:cover" loading="lazy" decoding="async"/>' +
+            '<img src="'+PHOTO_DIR+'Group_image.jpeg?v=2" alt="Future Time group" style="width:100%;height:auto;display:block;border-radius:12px;object-fit:cover" loading="lazy" decoding="async"/>' +
           '</div>' +
         '</section>' +
         '<section class="about-cta" style="margin-top:24px;text-align:center">' +
