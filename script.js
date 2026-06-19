@@ -117,6 +117,64 @@
   ];
   var PROGRAM_TEAM_ORDER = ['pt4', 'pt3', 'pt2', 'pt1'];
 
+  var DIALOGUE_GOVERNMENT_DETAIL = {
+    venue: "First Members\u2019 Office Building, House of Representatives",
+    duration: '08:30\u201311:30',
+    overviewTitle: 'Policy Dialogue Session Overview',
+    overview: 'This session is intended as a platform for comparative policy dialogue and mutual learning between Japanese and Israeli participants on the challenges and opportunities of a super-aging society.',
+    sessions: [
+      { time: '08:30\u201308:40', title: 'Opening Remarks and Introduction (10 min)', lines: ['Israeli Side:'] },
+      { time: '08:40\u201309:10', title: 'Keynote lecture (30 min)', lines: ['Proposed Theme:', '\u201cPolicy Design and Governance Challenges in a Super-Aging Society\u201d'] },
+      {
+        time: '09:15\u201309:55',
+        title: 'Panel 1: Governance, Policy Coordination, and Workforce Challenges (40 min)',
+        lines: [
+          'Japan\u2013Israel Comparative Policy Dialogue',
+          'Japanese Side (Proposed):',
+          '\u2022 Council for Measures for a Declining Birthrate and Aging Society / Cabinet Office (TBC)',
+          '\u2022 Ministry of Economy, Trade and Industry (METI)',
+          'Commerce and Service Industry Policy Group'
+        ]
+      },
+      { time: '09:55\u201310:05', title: 'Coffee Break (10 min)' },
+      {
+        time: '10:10\u201310:45',
+        title: 'Panel 2: Prevention, Independence Support, and Care Models (35 min)',
+        lines: [
+          'Japan\u2013Israel Comparative Policy Dialogue',
+          'Japanese Side (Proposed):',
+          '\u2022 Ministry of Health, Labour and Welfare (MHLW)',
+          'Long-Term Care Insurance Bureau',
+          'Community Development Promotion Office',
+          'Topics:',
+          '\u2022 Preventive Care',
+          '\u2022 Long-Term Care and Elderly Welfare',
+          '\u2022 Community-Based Support Systems'
+        ]
+      },
+      { time: '10:50\u201311:25', title: 'Q&A and a Panel Session' }
+    ]
+  };
+
+  var DAY_PROGRAM = [
+    { id: 'july-13', dayNum: 7, weekday: 'MON', dateLabel: '13.7', title: 'Monday, July 13', blocks: [] },
+    {
+      id: 'july-14', dayNum: 8, weekday: 'TUE', dateLabel: '14.7', title: 'Tuesday, July 14',
+      blocks: [
+        { time: '08:00\u201308:30', location: 'Parliament House', topic: 'Entry process' },
+        { time: '08:30\u201311:30', location: 'Dialogue with government officials', topic: 'Policy discussion', detail: DIALOGUE_GOVERNMENT_DETAIL },
+        { time: '12:00\u201313:15', location: 'Lunch', topic: 'TBC' },
+        { time: '14:30\u201316:30', location: 'Zenkou Research Institute (Care Tech Lab)', topic: 'Geriatrics, rehabilitation & innovation' },
+        { time: '17:45\u201322:00', location: 'Final Event', topic: 'Resilient Community Care and Wellbeing for Prolonged Crisis in Aging Societies, Vol. 2 \u2014 SivanS Lab, Tokyo', note: 'Bus extra hours available' }
+      ]
+    },
+    { id: 'july-15', dayNum: 9, weekday: 'WED', dateLabel: '15.7', title: 'Wednesday, July 15', blocks: [] },
+    { id: 'july-16', dayNum: 10, weekday: 'THU', dateLabel: '16.7', title: 'Thursday, July 16', blocks: [] },
+    { id: 'july-17', dayNum: 11, weekday: 'FRI', dateLabel: '17.7', title: 'Friday, July 17', blocks: [] },
+    { id: 'july-18', dayNum: 12, weekday: 'SAT', dateLabel: '18.7', title: 'Saturday, July 18', blocks: [] },
+    { id: 'july-19', dayNum: 13, weekday: 'SUN', dateLabel: '19.7', title: 'Sunday, July 19', blocks: [] }
+  ];
+
   var STEERING_BADGE = "Steering Committee";
   var STEERING_PHOTO_VER = 13;
 
@@ -372,6 +430,102 @@
       if (ia !== ib) return ia - ib;
       return a.id - b.id;
     });
+  }
+
+  function renderProgramSessionLines(lines) {
+    if (!lines || !lines.length) return '';
+    return '<div class="program-session-lines">' + lines.map(function (line) {
+      return '<div class="program-session-line">' + escapeHtml(line) + '</div>';
+    }).join('') + '</div>';
+  }
+
+  function renderProgramSessionDetail(detail) {
+    if (!detail) return '';
+    var sessionsHtml = (detail.sessions || []).map(function (session) {
+      return '<div class="program-session-block">' +
+        '<div class="program-session-time">' + escapeHtml(session.time) + '</div>' +
+        '<div class="program-session-body">' +
+          '<div class="program-session-title">' + escapeHtml(session.title) + '</div>' +
+          renderProgramSessionLines(session.lines) +
+        '</div>' +
+      '</div>';
+    }).join('');
+    return '<div class="program-block-detail">' +
+      '<div class="program-detail-meta">' +
+        '<div><span class="program-detail-label">Proposed Venue:</span> ' + escapeHtml(detail.venue) + '</div>' +
+        '<div><span class="program-detail-label">Duration:</span> ' + escapeHtml(detail.duration) + '</div>' +
+      '</div>' +
+      '<div class="program-detail-overview">' +
+        '<div class="program-detail-overview-title">' + escapeHtml(detail.overviewTitle) + '</div>' +
+        '<p>' + escapeHtml(detail.overview) + '</p>' +
+      '</div>' +
+      '<div class="program-session-list">' + sessionsHtml + '</div>' +
+    '</div>';
+  }
+
+  function renderDayProgramBlocks(day) {
+    if (!day.blocks || !day.blocks.length) {
+      return '<div class="day-program-empty">Schedule for this day will be published soon.</div>';
+    }
+    return day.blocks.map(function (block) {
+      return '<article class="day-program-block">' +
+        '<div class="day-program-block-time">' + escapeHtml(block.time) + '</div>' +
+        '<div class="day-program-block-body">' +
+          '<div class="day-program-block-location">' + escapeHtml(block.location) + '</div>' +
+          '<div class="day-program-block-topic">' + escapeHtml(block.topic) + '</div>' +
+          (block.note ? '<div class="day-program-block-note">' + escapeHtml(block.note) + '</div>' : '') +
+          renderProgramSessionDetail(block.detail) +
+        '</div>' +
+      '</article>';
+    }).join('');
+  }
+
+  function renderDayProgramDateStrip(selectedId) {
+    return DAY_PROGRAM.map(function (day) {
+      var active = day.id === selectedId ? ' is-active' : '';
+      return '<button type="button" class="day-program-date-btn' + active + '" data-program-day="' + day.id + '">' +
+        '<span class="day-program-date-weekday">' + escapeHtml(day.weekday) + '</span>' +
+        '<span class="day-program-date-label">' + escapeHtml(day.dateLabel) + '</span>' +
+      '</button>';
+    }).join('');
+  }
+
+  function getDayProgramById(dayId) {
+    for (var i = 0; i < DAY_PROGRAM.length; i++) {
+      if (DAY_PROGRAM[i].id === dayId) return DAY_PROGRAM[i];
+    }
+    return DAY_PROGRAM[0];
+  }
+
+  function bindDayProgramControls(container, setProgramDay) {
+    container.querySelectorAll('[data-program-day]').forEach(function (btn) {
+      btn.onclick = function () { setProgramDay(btn.getAttribute('data-program-day')); };
+    });
+  }
+
+  function renderProgramPage(container, selectedDayId, setProgramDay) {
+    var day = getDayProgramById(selectedDayId || 'july-14');
+    container.innerHTML = '<div class="day-program-page">' +
+      '<div class="day-program-date-strip-wrap">' +
+        '<div class="day-program-date-strip">' + renderDayProgramDateStrip(day.id) + '</div>' +
+      '</div>' +
+      '<div class="day-program-layout">' +
+        '<aside class="day-program-sidebar">' +
+          '<div class="day-program-sidebar-day">DAY ' + day.dayNum + '</div>' +
+          '<div class="day-program-sidebar-tabs">' +
+            '<button type="button" class="day-program-sidebar-tab is-active">Schedule</button>' +
+            '<button type="button" class="day-program-sidebar-tab" disabled>Overview</button>' +
+            '<button type="button" class="day-program-sidebar-tab" disabled>Useful Info</button>' +
+            '<button type="button" class="day-program-sidebar-tab" disabled>Day City Guide</button>' +
+          '</div>' +
+        '</aside>' +
+        '<section class="day-program-main">' +
+          '<h1 class="day-program-main-title">' + escapeHtml(day.title) + '</h1>' +
+          '<div class="day-program-blocks">' + renderDayProgramBlocks(day) + '</div>' +
+        '</section>' +
+      '</div>' +
+    '</div>';
+    bindDayProgramControls(container, setProgramDay);
   }
 
   function renderAboutPage(container, setPage) {
@@ -812,7 +966,7 @@
     bindCardBioFlips(container);
   }
 
-  var state = { page: 'about', activeSector: 'all', search: '' };
+  var state = { page: 'about', activeSector: 'all', search: '', programDay: 'july-14' };
   var searchScrollTimer = null;
 
   function isMobileViewport() {
@@ -902,9 +1056,11 @@
     document.getElementById('about-page').classList.toggle('active', page==='about');
     document.getElementById('participants-page').classList.toggle('active', page==='participants');
     document.getElementById('team-page').classList.toggle('active', page==='team');
+    document.getElementById('program-page').classList.toggle('active', page==='program');
     if (page === 'about') renderAboutPage(document.getElementById('about-page'), setPage);
     else if (page === 'participants') renderParticipantsPage(document.getElementById('participants-page'), state.activeSector, state.search, setActiveSector, setSearch);
     else if (page === 'team') renderMeetTheTeamPage(document.getElementById('team-page'), setPage);
+    else if (page === 'program') renderProgramPage(document.getElementById('program-page'), state.programDay, setProgramDay);
     if (pageChanged) {
       scrollToTop();
       requestAnimationFrame(scrollToTop);
@@ -915,6 +1071,11 @@
     state.activeSector = s;
     renderParticipantsPage(document.getElementById('participants-page'), state.activeSector, state.search, setActiveSector, setSearch);
     scrollParticipantsAfterSector(s);
+  }
+
+  function setProgramDay(dayId) {
+    state.programDay = dayId;
+    renderProgramPage(document.getElementById('program-page'), state.programDay, setProgramDay);
   }
 
   function setSearch(s) {

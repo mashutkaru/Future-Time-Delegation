@@ -54,8 +54,230 @@
     }
     nav button:hover { background: var(--nav-highlight); color: var(--text-on-light); font-weight: 700; }
     nav button.active { background: var(--nav-highlight); color: var(--text-on-light); font-weight: 800; }
-    #about-page, #participants-page, #team-page { display: none; }
-    #about-page.active, #participants-page.active, #team-page.active { display: block; }
+    #about-page, #participants-page, #team-page, #program-page { display: none; }
+    #about-page.active, #participants-page.active, #team-page.active, #program-page.active { display: block; }
+    .day-program-page {
+      min-height: calc(100vh - 72px);
+      background: #f4f7f8;
+      font-family: 'Inter', sans-serif;
+    }
+    .day-program-date-strip-wrap {
+      background: white;
+      border-bottom: 1px solid rgba(33, 79, 99, 0.12);
+      padding: 14px 20px;
+      overflow-x: auto;
+    }
+    .day-program-date-strip {
+      display: flex;
+      gap: 10px;
+      min-width: max-content;
+      max-width: 1204px;
+      margin: 0 auto;
+    }
+    .day-program-date-btn {
+      min-width: 88px;
+      border: 1.5px solid rgba(33, 79, 99, 0.14);
+      background: white;
+      border-radius: 14px;
+      padding: 10px 12px;
+      cursor: pointer;
+      font-family: inherit;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+      color: var(--teal-dark);
+      transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+    }
+    .day-program-date-btn.is-active {
+      background: var(--teal-hero);
+      border-color: var(--teal-hero);
+      color: white;
+    }
+    .day-program-date-weekday {
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.06em;
+    }
+    .day-program-date-label {
+      font-size: 18px;
+      font-weight: 800;
+      line-height: 1;
+    }
+    .day-program-layout {
+      max-width: 1204px;
+      margin: 0 auto;
+      padding: 24px 20px 48px;
+      display: grid;
+      grid-template-columns: 220px minmax(0, 1fr);
+      gap: 24px;
+      align-items: start;
+    }
+    .day-program-sidebar {
+      background: white;
+      border-radius: 16px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+      padding: 20px 16px;
+      position: sticky;
+      top: 88px;
+    }
+    .day-program-sidebar-day {
+      font-size: 28px;
+      font-weight: 800;
+      color: var(--teal-dark);
+      margin-bottom: 18px;
+    }
+    .day-program-sidebar-tabs {
+      display: grid;
+      gap: 8px;
+    }
+    .day-program-sidebar-tab {
+      border: none;
+      background: transparent;
+      text-align: left;
+      padding: 10px 12px;
+      border-radius: 10px;
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--teal-mid);
+      font-family: inherit;
+      cursor: default;
+    }
+    .day-program-sidebar-tab.is-active {
+      background: var(--teal-pale);
+      color: var(--teal-dark);
+    }
+    .day-program-sidebar-tab:disabled {
+      opacity: 0.45;
+    }
+    .day-program-main-title {
+      margin: 0 0 18px;
+      font-size: 24px;
+      font-weight: 800;
+      color: var(--teal-dark);
+    }
+    .day-program-blocks {
+      display: grid;
+      gap: 14px;
+    }
+    .day-program-block {
+      display: grid;
+      grid-template-columns: 130px minmax(0, 1fr);
+      gap: 16px;
+      background: white;
+      border-radius: 16px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+      padding: 18px 20px;
+      align-items: start;
+    }
+    .day-program-block-time {
+      font-size: 14px;
+      font-weight: 800;
+      color: var(--teal-hero);
+      line-height: 1.4;
+    }
+    .day-program-block-location {
+      font-size: 16px;
+      font-weight: 800;
+      color: var(--teal-dark);
+      line-height: 1.45;
+      margin-bottom: 6px;
+    }
+    .day-program-block-topic {
+      font-size: 14px;
+      line-height: 1.6;
+      color: var(--text-on-light);
+    }
+    .day-program-block-note {
+      margin-top: 8px;
+      font-size: 13px;
+      line-height: 1.5;
+      color: var(--teal-mid);
+      font-weight: 600;
+    }
+    .day-program-empty {
+      background: white;
+      border-radius: 16px;
+      padding: 28px;
+      color: var(--teal-mid);
+      font-weight: 600;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    }
+    .program-block-detail {
+      margin-top: 16px;
+      background: var(--teal-pale);
+      border-radius: 14px;
+      padding: 16px 18px;
+      border-left: 4px solid var(--teal-hero);
+    }
+    .program-detail-meta {
+      display: grid;
+      gap: 8px;
+      font-size: 14px;
+      line-height: 1.6;
+      color: var(--text-on-light);
+      margin-bottom: 16px;
+    }
+    .program-detail-label { font-weight: 800; }
+    .program-detail-overview-title {
+      font-size: 15px;
+      font-weight: 800;
+      color: var(--teal-dark);
+      margin-bottom: 8px;
+    }
+    .program-detail-overview p {
+      margin: 0 0 16px;
+      font-size: 14px;
+      line-height: 1.75;
+      color: var(--text-on-light);
+    }
+    .program-session-list { display: grid; gap: 12px; }
+    .program-session-block {
+      display: grid;
+      grid-template-columns: 118px minmax(0, 1fr);
+      gap: 12px;
+      align-items: start;
+      background: rgba(255, 255, 255, 0.72);
+      border-radius: 12px;
+      padding: 12px 14px;
+    }
+    .program-session-time {
+      font-size: 12px;
+      font-weight: 800;
+      color: var(--teal-hero);
+      line-height: 1.4;
+    }
+    .program-session-title {
+      font-size: 13px;
+      font-weight: 800;
+      color: var(--teal-dark);
+      line-height: 1.5;
+      margin-bottom: 6px;
+    }
+    .program-session-lines { display: grid; gap: 4px; }
+    .program-session-line {
+      font-size: 13px;
+      line-height: 1.55;
+      color: var(--text-on-light);
+      white-space: pre-wrap;
+    }
+    @media (max-width: 900px) {
+      .day-program-layout {
+        grid-template-columns: 1fr;
+        padding: 16px 12px 40px;
+      }
+      .day-program-sidebar {
+        position: static;
+      }
+      .day-program-block,
+      .program-session-block {
+        grid-template-columns: 1fr;
+        gap: 8px;
+      }
+      .day-program-date-btn {
+        min-width: 76px;
+      }
+    }
 
     /* Mobile / tablet responsive - applies below 900px */
     @media (max-width: 900px) {
@@ -1253,6 +1475,7 @@
     </div>
     <div class="nav-buttons">
       <button data-page="about" class="nav-btn">About</button>
+      <button data-page="program" class="nav-btn">Day Program</button>
       <button data-page="participants" class="nav-btn">Participants</button>
       <button data-page="team" class="nav-btn">Meet the Team</button>
     </div>
@@ -1264,10 +1487,11 @@
 
   <main id="app">
     <div id="about-page" class="active"></div>
+    <div id="program-page"></div>
     <div id="participants-page"></div>
     <div id="team-page"></div>
   </main>
 
-  <script src="script.js?v=147"></script>
+  <script src="script.js?v=149"></script>
 </body>
 </html>
