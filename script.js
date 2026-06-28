@@ -538,7 +538,7 @@
           '<div class="team-grid team-cards team-cards-main">' +
           '<div class="team-card team-card-masha">' +
             '<div class="team-name"><h2>Masha Robeen</h2></div>' +
-            '<div class="team-photo-wrap"><img src="'+PHOTO_DIR+'Masha_Robeen.png?v=5" alt="Masha Robeen"></div>' +
+            '<div class="team-photo-wrap"><img src="'+PHOTO_DIR+'Masha_Robeen.png?v=6" alt="Masha Robeen"></div>' +
             mashaBioFlipHtml +
             '<div class="team-card-logo"><img src="images/JIAT_logo.png?v=2" alt="Japan Israel Aging Tech Association (JIAT)"></div>' +
           '</div>' +
