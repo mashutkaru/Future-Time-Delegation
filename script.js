@@ -18,7 +18,6 @@
   const PARTICIPANTS = [
     { id:1,  key:"Avishay_Cohen",            nameEn:"Avishay Cohen",            nameJa:"コーヘン・アヴィシャイ",             nameHe:"אבישי כהן",            sector:"Central Government", org:"Ministry of Labor",                     orgHe:"משרד העבודה",                     role:"Director, Multi- Generational Employment Department", roleHe:"מנהל אגף תעסוקה רב-דורית",            email:"cohan.avishay@gmail.com" },
     { id:2,  key:"Avital_Simcha_Shlezinger", nameEn:"Avital Simcha Shlezinger", nameJa:"シュレジンガー・アヴィタル・シムハ", nameHe:"אביטל שמחה שלזינגר",  sector:"Central Government", org:"National Insurance Institute",          orgHe:"המוסד לביטוח לאומי",              role:"Director of Senior Citizen and Family Advisory Division",  roleHe:"מנהלת אגף הייעוץ לאזרח הוותיק",       email:"avitals@nioi.gov.il" },
-    { id:4,  key:"Idit_Ayala_Reiss",         nameEn:"Idit Ayala Reiss",         nameJa:"ライス・イディット・アヤラ",         nameHe:"עדית אילה ריס",       sector:"Central Government", org:"Ministry of Justice",                  orgHe:"משרד המשפטים",                    role:"Adv., Office of Legal Counsel and Legislative Affairs", roleHe:"עו״ד ייעוץ וחקיקה",                 email:"iditna@justice.gov.il" },
     { id:5,  key:"Jasmin_Vulej",             nameEn:"Jasmin Vulej",             nameJa:"ヴレイ・ジャスミン",               nameHe:"יסמין וולך",         sector:"Central Government", org:"The Ministry of Welfare and Social Affairs",            orgHe:"משרד הרווחה",                     role:"Director of Model Development, Senior Citizens Administration",               roleHe:"מנהלת יחידת פיתוח מודלים",           email:"jasminv@molsa.gov.il" },
     { id:6,  key:"Liat_Stark",               nameEn:"Liat Stark",               nameJa:"スターク・リアット",               nameHe:"ליאת שטרק",            sector:"Central Government", org:"Ministry of Justice",                  orgHe:"משרד המשפטים",                    role:"District Director, Guardian General",          roleHe:"מנהלת מחוז ירושלים אפוטרופוס כללי",  email:"liatsta@justice.gov.il" },
     { id:7,  key:"Lior_Zohar",               nameEn:"Lior Zohar",               nameJa:"ゾハル・リオール",                 nameHe:"ליאור זהר",            sector:"Central Government", org:"Ministry of Finance",                  orgHe:"משרד האוצר",                      role:"Head of Pension Strategy & Advisory Department, Long-Term Savings Division", roleHe:"מנהלת תחום אסטרטגיה וייעוץ פנסיוני", email:"liork@mof.gov.il" },
@@ -53,7 +52,8 @@
     { id:"sc5", key:"Efrat_Gil", nameEn:"Dr. Efrat Gil", nameJa:"ギル・エフラット", nameHe:"אפרת גיל", org:"Ministry of Health", orgHe:"משרד הבריאות", role:"Head of Geriatric division", roleHe:"ראש מחלקת גריאטריה", email:"efrat.gil@moh.gov.il", photo:"Efrat_Gil.png" },
     { id:"sc6", key:"Yafit_Bar", nameEn:"Yafit Bar", nameJa:"バル・ヤフィット", nameHe:"יפית בר", org:"Ministry for Social Equality and the Advancement of the Status of Women", orgHe:"המשרד לשוויון חברתי וקידום מעמד האישה", role:"Director of Employment and Rights for Seniors", roleHe:"מנהלת תחום תעסוקה וזכויות לאזרחים ותיקים", email:"YAFITBA@mse.gov.il", photo:"Yafit_Bar.png" },
     { id:"sc2", key:"Hama_Israeli", nameEn:"Hama Israeli-Smitzer", nameJa:"イスラエリ＝スミッツァー・ハマ", nameHe:"חמה ישראלי-שמייסר", org:"Ministry of Welfare and Social Affairs", orgHe:"משרד הרווחה והביטחון החברתי", role:"Senior Division Manager, Housing Systems for Senior Citizens", roleHe:"מנהלת בכירה, מערכות דיור לאזרחים ותיקים", email:"hamai@molsa.gov.il", photo:"Hama_Israeli.png" },
-    { id:"sc4", key:"Orit_Shachar", nameEn:"Orit Shahar", nameJa:"シャハル・オリット", nameHe:"אורית שחר", org:"JDC‑Eshel", orgHe:"ג'וינט ישראל – אשל", role:"Area Head – Health and Nursing Care for Older Adults", roleHe:"ראש תחום בריאות ותפקוד למבוגרים", email:"Orits@jdc.org", photo:"Orit_Shachar.jpg" },
+    { id:"sc4", key:"Orit_Shachar", nameEn:"Orit Shahar", nameJa:"シャハル・オリット", nameHe:"אורית שחר", org:"JDC‑Eshel", orgHe:"ג'וינט ישראל – אשל", role:"Director, Health and Functionality", roleHe:"ראש תחום בריאות ותפקוד למבוגרים", email:"Orits@jdc.org", photo:"Orit_Shachar.jpg" },
+    { id:"sc7", key:"Amir_Ben_Guy", nameEn:"Amir Ben-Guy", nameJa:"ベン・ガイ・アミル", nameHe:"אמיר בין גיא", org:"Ministry for Social Equality and the Advancement of the Status of Women", orgJa:"社会平等・女性の地位向上省", role:"Director of Employment and Rights for Seniors", roleJa:"高齢者雇用・権利担当ディレクター", email:"amirb@nioi.gov.il", photo:"Amir_Ben_Guy.png" },
   ];
 
   var PROGRAM_TEAM_BADGE = "Future Time Program Team";
@@ -154,6 +154,12 @@
       "She is a public sector executive with over 10 years of leadership experience, building on a prior background as a small business manager in the private sector. She leads national policy, strategic initiatives, and program development for older adults aged 60 and above across two core areas: senior employment and proactive rights utilization.",
       "<strong>Senior Employment and Adapting to an Aging Labor Market:</strong> Yafit is responsible for driving strategic initiatives, legislation, and efforts to shift employer perceptions in the era of the \u201c100-Year Lifespan.\u201d She oversees national career development, training, and guidance programs, including the flagship \u201cVatikim Ba\u2019avoda\u201d program. She also leads government initiatives to establish dedicated civil service positions for older adults, advance financial readiness for retirement, and develop the \u201cOrganizational Readiness Certification for 100 Years of Life\u201d for employers.",
       "<strong>Rights Utilization:</strong> Yafit leads the national framework for senior citizens\u2019 rights utilization, which includes a dedicated service hotline, community lectures, and professional training. She also directs an innovative healthcare rights initiative in hospitals, powered by senior volunteers who provide vital information and guidance to hospitalized older adults and their families."
+    ],
+    "Amir_Ben_Guy": [
+      "Amir Ben-Guy is a board-certified accountant (CPA Israel) and serves as a deputy financial controller at the National Insurance Institute.",
+      "In this role, he works in finance, including the definition of work processes in accordance with relevant law changes.",
+      "He is also a partner in cross-over operations and automated interfaces with other departments in the National Insurance Institute.",
+      "He is responsible for the approval of financial transactions and financial commitments and is an approved signatory for the Institute."
     ]
   };
 
@@ -286,7 +292,6 @@
     "Yafit_Bar": { orgJa:"社会平等・女性の地位向上省", roleJa:"高齢者雇用・権利担当ディレクター" },
     "Avishay_Cohen": { orgJa:"労働省 多世代雇用課", roleJa:"課長" },
     "Avital_Simcha_Shlezinger": { orgJa:"国家保険院 高齢者・家族支援相談部", roleJa:"部長" },
-    "Idit_Ayala_Reiss": { orgJa:"司法省 法務・法制室", roleJa:"顧問" },
     "Jasmin_Vulej": { orgJa:"社会福祉保障省 モデル開発室", roleJa:"室長" },
     "Liat_Stark": { orgJa:"司法省 後見人総局", roleJa:"地区部長" },
     "Lior_Zohar": { orgJa:"財務省 戦略・年金相談課", roleJa:"課長" },
