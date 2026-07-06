@@ -53,7 +53,7 @@
     { id:"sc6", key:"Yafit_Bar", nameEn:"Yafit Bar", nameJa:"バル・ヤフィット", nameHe:"יפית בר", org:"Ministry for Social Equality and the Advancement of the Status of Women", orgHe:"המשרד לשוויון חברתי וקידום מעמד האישה", role:"Director of Employment and Rights for Seniors", roleHe:"מנהלת תחום תעסוקה וזכויות לאזרחים ותיקים", email:"YAFITBA@mse.gov.il", photo:"Yafit_Bar.png" },
     { id:"sc2", key:"Hama_Israeli", nameEn:"Hama Israeli-Smitzer", nameJa:"イスラエリ＝スミッツァー・ハマ", nameHe:"חמה ישראלי-שמייסר", org:"Ministry of Welfare and Social Affairs", orgHe:"משרד הרווחה והביטחון החברתי", role:"Senior Division Manager, Housing Systems for Senior Citizens", roleHe:"מנהלת בכירה, מערכות דיור לאזרחים ותיקים", email:"hamai@molsa.gov.il", photo:"Hama_Israeli.png" },
     { id:"sc4", key:"Orit_Shachar", nameEn:"Orit Shahar", nameJa:"シャハル・オリット", nameHe:"אורית שחר", org:"JDC‑Eshel", orgHe:"ג'וינט ישראל – אשל", role:"Director, Health and Functionality", roleHe:"ראש תחום בריאות ותפקוד למבוגרים", email:"Orits@jdc.org", photo:"Orit_Shachar.jpg" },
-    { id:"sc7", key:"Amir_Ben_Guy", nameEn:"Amir Ben-Guy", nameJa:"ベン・ガイ・アミル", nameHe:"אמיר בין גיא", org:"Ministry for Social Equality and the Advancement of the Status of Women", orgJa:"社会平等・女性の地位向上省", role:"Director of Employment and Rights for Seniors", roleJa:"高齢者雇用・権利担当ディレクター", email:"amirb@nioi.gov.il", photo:"Amir_Ben_Guy.png" },
+    { id:"sc7", key:"Amir_Ben_Guy", nameEn:"Amir Ben-Guy", nameJa:"ベン・ガイ・アミル", nameHe:"אמיר בין גיא", org:"National Insurance Institute", orgJa:"国民保険機構", role:"Deputy Accountant General", roleJa:"副会計検査長", email:"amirb@nioi.gov.il", photo:"Amir_Ben_Guy.png" },
   ];
 
   var PROGRAM_TEAM_BADGE = "Future Time Program Team";
