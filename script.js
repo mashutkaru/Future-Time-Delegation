@@ -930,7 +930,11 @@
   }
 
   document.querySelectorAll('.nav-btn').forEach(function(btn){
-    btn.onclick = function () { setPage(btn.getAttribute('data-page')); };
+    btn.onclick = function () {
+      var href = btn.getAttribute('data-href');
+      if (href) { window.open(href, '_blank', 'noopener'); return; }
+      setPage(btn.getAttribute('data-page'));
+    };
   });
 
   document.querySelector('nav .logo').onclick = function () { setPage('about'); };
