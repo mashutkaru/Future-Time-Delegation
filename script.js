@@ -513,8 +513,9 @@
           buildAboutSectionFlipHtml('about-objectives-flip', objectivesSectionEn, objectivesSectionJa) +
         '</div>' +
         '<section class="about-group-image" style="margin-top:36px">' +
-          '<div style="background:'+P.dark+';border-radius:16px;padding:16px;box-shadow:0 4px 24px rgba(0,0,0,0.12)">' +
-            '<img src="'+PHOTO_DIR+'Group_image.jpeg?v=2" alt="Future Time group" style="width:100%;height:auto;display:block;border-radius:12px;object-fit:cover" loading="lazy" decoding="async"/>' +
+          '<div style="background:'+P.dark+';border-radius:16px;padding:16px;box-shadow:0 4px 24px rgba(0,0,0,0.12);display:flex;flex-direction:column;gap:16px">' +
+            '<img src="'+PHOTO_DIR+'Group_image_1.jpeg?v=1" alt="Future Time group" style="width:100%;height:auto;display:block;border-radius:12px;object-fit:cover" loading="lazy" decoding="async"/>' +
+            '<img src="'+PHOTO_DIR+'Group_image_2.jpeg?v=1" alt="Future Time group" style="width:100%;height:auto;display:block;border-radius:12px;object-fit:cover" loading="lazy" decoding="async"/>' +
           '</div>' +
         '</section>' +
         '<section class="about-cta" style="margin-top:24px;text-align:center">' +
@@ -949,7 +950,13 @@
   function setPage(page) {
     var pageChanged = state.page !== page;
     state.page = page;
-    document.querySelectorAll('.nav-btn').forEach(function(b){ b.classList.toggle('active', b.getAttribute('data-page')===page); });
+    document.querySelectorAll('.nav-btn').forEach(function(b){
+      var isCurrent = b.getAttribute('data-page') === page;
+      b.classList.toggle('active', isCurrent);
+      if (isCurrent) {
+        try { b.scrollIntoView({ inline: 'nearest', block: 'nearest', behavior: 'smooth' }); } catch (e) {}
+      }
+    });
     document.getElementById('about-page').classList.toggle('active', page==='about');
     document.getElementById('participants-page').classList.toggle('active', page==='participants');
     document.getElementById('team-page').classList.toggle('active', page==='team');
@@ -975,60 +982,16 @@
     scrollParticipantsAfterSearch(s, filtered);
   }
 
-  var navEl = document.querySelector('nav');
-  var navToggle = document.querySelector('.nav-toggle');
-
-  function closeNavMenu() {
-    if (!navEl) return;
-    navEl.classList.remove('nav-open');
-    if (navToggle) {
-      navToggle.setAttribute('aria-expanded', 'false');
-      navToggle.setAttribute('aria-label', 'Open menu');
-    }
-  }
-
-  function toggleNavMenu() {
-    if (!navEl) return;
-    var isOpen = navEl.classList.toggle('nav-open');
-    if (navToggle) {
-      navToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-      navToggle.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
-    }
-  }
-
-  if (navToggle) {
-    navToggle.onclick = function (e) {
-      e.stopPropagation();
-      toggleNavMenu();
-    };
-  }
-
   document.querySelectorAll('.nav-btn').forEach(function(btn){
     btn.onclick = function () {
-      closeNavMenu();
+      btn.blur();
       var href = btn.getAttribute('data-href');
       if (href) { window.open(href, '_blank', 'noopener'); return; }
       setPage(btn.getAttribute('data-page'));
     };
   });
 
-  document.querySelector('nav .logo').onclick = function () {
-    closeNavMenu();
-    setPage('about');
-  };
-  document.querySelector('nav .logo-right').onclick = function () {
-    closeNavMenu();
-    setPage('about');
-  };
-
-  document.addEventListener('click', function (e) {
-    if (!navEl || !navEl.classList.contains('nav-open')) return;
-    if (!navEl.contains(e.target)) closeNavMenu();
-  });
-
-  window.addEventListener('resize', function () {
-    if (window.innerWidth > 900) closeNavMenu();
-  });
-
+  document.querySelector('nav .logo').onclick = function () { setPage('about'); };
+  document.querySelector('nav .logo-right').onclick = function () { setPage('about'); };
   setPage('about');
 })();

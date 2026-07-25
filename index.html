@@ -47,116 +47,87 @@
     nav .nav-buttons { display: flex; gap: 8px; justify-content: center; flex: 2; }
     nav .logo-right { display: flex; align-items: center; justify-content: flex-end; flex: 1; cursor: pointer; }
     nav .logo-right img { height: 48px; object-fit: contain; object-position: center center; border-radius: 2px; display: block; transform: translateY(-4px); }
-    nav .nav-toggle { display: none; }
     nav button.nav-btn {
       background: transparent; color: rgba(255,255,255,0.9); border: none;
       border-radius: 999px; padding: 10px 24px; font-weight: 500; font-size: 15px;
-      cursor: pointer; font-family: inherit; transition: all 0.2s;
+      cursor: pointer; font-family: inherit; transition: background 0.2s, color 0.2s, font-weight 0.2s;
+      -webkit-tap-highlight-color: transparent;
     }
-    nav button.nav-btn:hover { background: var(--nav-highlight); color: var(--text-on-light); font-weight: 700; }
-    nav button.nav-btn.active { background: var(--nav-highlight); color: var(--text-on-light); font-weight: 800; }
+    /* Hover only on real pointer devices — avoids sticky white highlight after tap on phones */
+    @media (hover: hover) and (pointer: fine) {
+      nav button.nav-btn:hover:not(.active) {
+        background: rgba(206, 221, 226, 0.35);
+        color: white;
+        font-weight: 600;
+      }
+    }
+    nav button.nav-btn.active {
+      background: var(--nav-highlight);
+      color: var(--text-on-light);
+      font-weight: 800;
+    }
     #about-page, #participants-page, #team-page { display: none; }
     #about-page.active, #participants-page.active, #team-page.active { display: block; }
 
-    /* Mobile / tablet: hamburger menu below 900px */
+    /* Mobile / tablet: horizontally scrollable nav below 900px */
     @media (max-width: 900px) {
       nav {
-        padding: 8px 12px !important;
-        flex-wrap: wrap;
-        gap: 0;
-        justify-content: space-between;
+        padding: 6px 8px !important;
+        flex-wrap: nowrap;
+        gap: 4px;
+        justify-content: flex-start;
         align-items: center;
-        position: sticky;
       }
-      nav .logo { display: flex !important; flex: 1 1 auto; margin-right: 0; min-width: 0; }
+      nav .logo { display: flex !important; flex: 0 0 auto; margin-right: 0; min-width: 0; }
       nav .logo .logo-desktop { display: none !important; }
       nav .logo-right { display: none !important; }
-      nav .nav-toggle {
+      nav .nav-buttons {
+        flex: 1 1 auto;
         display: flex !important;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: 5px;
-        width: 44px;
-        height: 44px;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-evenly !important;
+        align-items: center !important;
+        gap: 2px !important;
+        min-width: 0;
+        width: auto;
         padding: 0;
         margin: 0;
-        border: none;
-        border-radius: 8px;
-        background: transparent;
-        cursor: pointer;
-        flex-shrink: 0;
-        -webkit-tap-highlight-color: transparent;
+        overflow-x: auto;
+        overflow-y: hidden;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        overscroll-behavior-x: contain;
       }
-      nav .nav-toggle span {
-        display: block;
-        width: 22px;
-        height: 2px;
-        background: #fff;
-        border-radius: 1px;
-        transition: transform 0.2s ease, opacity 0.2s ease;
-      }
-      nav.nav-open .nav-toggle span:nth-child(1) {
-        transform: translateY(7px) rotate(45deg);
-      }
-      nav.nav-open .nav-toggle span:nth-child(2) {
-        opacity: 0;
-      }
-      nav.nav-open .nav-toggle span:nth-child(3) {
-        transform: translateY(-7px) rotate(-45deg);
-      }
-      nav .nav-buttons {
-        display: none !important;
-        flex: 0 0 100%;
-        width: 100%;
-        flex-direction: column;
-        align-items: stretch;
-        justify-content: flex-start;
-        gap: 4px !important;
-        padding: 8px 0 4px;
-        margin: 0;
-        min-width: 0;
-      }
-      nav.nav-open .nav-buttons {
-        display: flex !important;
-      }
+      nav .nav-buttons::-webkit-scrollbar { display: none; }
       nav button.nav-btn {
-        flex: none !important;
-        width: 100% !important;
-        max-width: none !important;
+        flex: 0 0 auto !important;
+        width: auto !important;
         min-width: 0 !important;
-        height: auto !important;
-        min-height: 44px !important;
-        max-height: none !important;
-        border-radius: 10px !important;
-        padding: 12px 16px !important;
-        font-size: 15px !important;
-        line-height: 1.3 !important;
-        display: flex !important;
+        max-width: none !important;
+        height: 36px !important;
+        min-height: 36px !important;
+        max-height: 36px !important;
+        border-radius: 999px !important;
+        padding: 6px 8px !important;
+        font-size: 12px !important;
+        line-height: 1.15 !important;
+        white-space: nowrap !important;
+        display: inline-flex !important;
         align-items: center !important;
-        justify-content: flex-start !important;
-        text-align: left;
-        white-space: normal;
+        justify-content: center !important;
+        text-align: center;
         box-shadow: none !important;
         transform: none !important;
+        background: transparent !important;
+        color: rgba(255,255,255,0.9) !important;
+        font-weight: 500 !important;
       }
       nav button.nav-btn.active {
-        border-radius: 10px !important;
         background: var(--nav-highlight) !important;
         color: var(--text-on-light) !important;
         font-weight: 800 !important;
-        width: 100% !important;
-        min-width: 0 !important;
-        max-width: none !important;
-        height: auto !important;
-        min-height: 44px !important;
-        max-height: none !important;
-        padding: 12px 16px !important;
-        box-shadow: none !important;
-      }
-      nav button.nav-btn:active {
-        transform: none !important;
-        box-shadow: none !important;
+        padding: 6px 10px !important;
       }
     }
     .about-content { max-width: 1100px; margin: 0 auto; padding: 48px 32px 64px; }
@@ -997,9 +968,9 @@
     @media (max-width: 900px) {
       nav .logo .logo-mobile {
         display: block !important;
-        height: 32px !important;
+        height: 28px !important;
         width: auto !important;
-        max-width: 34vw !important;
+        max-width: 26vw !important;
         object-fit: contain !important;
         transform: none !important;
       }
@@ -1348,16 +1319,11 @@
       <img src="images/logo_english.png?v=10" class="logo-desktop" alt="FutureTime" />
       <img src="images/logo_english.png?v=10" class="logo-mobile" alt="FutureTime" />
     </div>
-    <button type="button" class="nav-toggle" aria-label="Open menu" aria-expanded="false">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
     <div class="nav-buttons">
-      <button data-page="about" class="nav-btn">About</button>
-      <button data-page="participants" class="nav-btn">Participants</button>
-      <button data-page="team" class="nav-btn">Meet the Team</button>
-      <button data-href="https://mashutkaru.github.io/Future-Time-Program/" class="nav-btn">Program</button>
+      <button type="button" data-page="about" class="nav-btn">About</button>
+      <button type="button" data-page="participants" class="nav-btn">Participants</button>
+      <button type="button" data-page="team" class="nav-btn">Meet the Team</button>
+      <button type="button" data-href="https://mashutkaru.github.io/Future-Time-Program/" class="nav-btn">Program</button>
     </div>
     <div class="logo-right">
       <img src="images/לוגו זמן עתיד.png?v=2" class="logo-desktop" alt="FutureTime" />
@@ -1371,6 +1337,6 @@
     <div id="team-page"></div>
   </main>
 
-  <script src="script.js?v=166"></script>
+  <script src="script.js?v=168"></script>
 </body>
 </html>
