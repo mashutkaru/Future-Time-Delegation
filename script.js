@@ -379,6 +379,49 @@
     });
   }
 
+  function buildAboutSectionFlipHtml(flipId, enHtml, jaHtml) {
+    return '<div class="about-section-flip" id="'+flipId+'" role="group" aria-label="Section language toggle">' +
+      '<div class="about-section-flip-inner">' +
+        '<div class="about-section-flip-face about-section-flip-front" lang="en">'+enHtml+'</div>' +
+        '<div class="about-section-flip-face about-section-flip-back" lang="ja">'+jaHtml+'</div>' +
+      '</div>' +
+      '<button type="button" class="about-section-flip-hint" data-hint-front="日本語" data-hint-back="English">' +
+        '<span class="about-section-flip-hint-label">日本語</span><span class="about-section-flip-hint-arrow" aria-hidden="true">→</span>' +
+      '</button>' +
+    '</div>';
+  }
+
+  function bindAboutSectionFlips(container) {
+    container.querySelectorAll('.about-section-flip').forEach(function (flipEl) {
+      if (flipEl.getAttribute('data-bound') === '1') return;
+      flipEl.setAttribute('data-bound', '1');
+      var hint = flipEl.querySelector('.about-section-flip-hint');
+      function updateFlipHint(flipped) {
+        if (!hint) return;
+        var label = hint.querySelector('.about-section-flip-hint-label');
+        var arrow = hint.querySelector('.about-section-flip-hint-arrow');
+        if (label && arrow) {
+          label.textContent = flipped ? hint.getAttribute('data-hint-back') : hint.getAttribute('data-hint-front');
+          arrow.textContent = flipped ? '←' : '→';
+          hint.classList.toggle('is-flipped', flipped);
+        }
+      }
+      function toggleFlip(e) {
+        if (e) {
+          e.preventDefault();
+          e.stopPropagation();
+        }
+        var flipped = flipEl.classList.toggle('is-flipped');
+        updateFlipHint(flipped);
+      }
+      if (hint) hint.addEventListener('click', toggleFlip);
+      flipEl.addEventListener('click', function (e) {
+        if (e.target.closest('.about-section-flip-hint, a')) return;
+        toggleFlip(e);
+      });
+    });
+  }
+
   function renderAboutPage(container, setPage) {
     var partners = ["Prime Minister's Office","Ministry of Welfare & Social Security","Ministry of Health","Ministry for Social Equality","Ministry of Finance","National Insurance Institute","Local Government Bodies","JDC Israel – Eshel","JDC Israel – Elka"];
     var goals = [
@@ -440,32 +483,34 @@
     var goalsEnHtml = goals.map(function(g){ return '<div style="'+goalBoxStyle+'"><div style="font-weight:800;font-size:15px;color:white;margin-bottom:6px">'+g.titleEn+'</div><div style="font-size:13.5px;color:rgba(255,255,255,0.95);line-height:1.6">'+g.descEn+'</div></div>'; }).join('');
     var goalsJaHtml = goals.map(function(g){ return '<div style="'+goalBoxStyle+'"><div style="font-weight:800;font-size:15px;color:white;margin-bottom:6px">'+g.titleJa+'</div><div style="font-size:13.5px;color:rgba(255,255,255,0.95);line-height:1.6">'+g.descJa+'</div></div>'; }).join('');
 
+    var delegationSectionEn = '<div style="font-weight:900;font-size:18px;letter-spacing:0.08em;margin-bottom:20px;text-align:center">DELEGATION OVERVIEW</div>'+delegationEnHtml;
+    var delegationSectionJa = '<div style="font-weight:900;font-size:18px;letter-spacing:0.08em;margin-bottom:20px;text-align:center">視察団概要</div>'+delegationJaHtml;
+    var backgroundSectionEn = '<div style="font-weight:900;font-size:18px;letter-spacing:0.08em;margin-bottom:20px;text-align:center">BACKGROUND</div>'+bgEn;
+    var backgroundSectionJa = '<div style="font-weight:900;font-size:18px;letter-spacing:0.08em;margin-bottom:20px;text-align:center">背景</div>'+bgJa;
+    var objectivesSectionEn =
+      '<div style="font-weight:900;font-size:20px;letter-spacing:0.06em;margin-bottom:24px;text-align:center">OBJECTIVES &amp; GOALS</div>' +
+      '<div style="font-weight:800;font-size:16px;margin-bottom:10px">Program Objective</div>' +
+      '<p style="margin:0 0 24px;font-size:14px;line-height:1.8;color:rgba(255,255,255,0.95)">To establish a network of <strong>29 senior leaders</strong> from diverse sectors, working together to promote optimal aging in Israel in the era of 100-year lives.</p>' +
+      '<div style="font-weight:800;font-size:16px;margin-bottom:12px">Program Goals</div>'+goalsEnHtml;
+    var objectivesSectionJa =
+      '<div style="font-weight:900;font-size:20px;letter-spacing:0.06em;margin-bottom:24px;text-align:center">目的及目標</div>' +
+      '<div style="font-weight:800;font-size:16px;margin-bottom:10px">プログラムの目的</div>' +
+      '<p style="margin:0 0 24px;font-size:14px;line-height:1.8;color:rgba(255,255,255,0.95)">多様な分野で活躍する29名のリーダーによるネットワークを形成し、100年時代におけるイスラエルの最適な高齢化(Optimal Aging)の推進を目指します。</p>' +
+      '<div style="font-weight:800;font-size:16px;margin-bottom:12px">プログラムの目標</div>'+goalsJaHtml;
+
     container.innerHTML = '<div style="min-height:100vh;background:'+P.pale+'">' +
       '<div class="about-banner" style="background:'+P.hero+';width:100%;overflow:hidden">' +
         '<div style="padding:48px 24px;text-align:center"><div style="display:flex;align-items:center;justify-content:center;gap:14px"><img src="images/just_the_round_logo.png" alt="Future Time" style="height:54px;width:auto;display:block" /><h1 style="margin:0;color:white;font-size:32px;font-weight:800;letter-spacing:0.02em">Future Time Program</h1></div></div>' +
       '</div>' +
       '<div class="about-content">' +
         '<div class="about-box" style="box-shadow:0 4px 24px rgba(0,0,0,0.15);margin-bottom:24px">' +
-          '<div class="about-grid">' +
-            '<div style="min-width:0;flex:1"><div style="font-weight:900;font-size:18px;letter-spacing:0.08em;margin-bottom:20px;text-align:center">DELEGATION OVERVIEW</div>'+delegationEnHtml+'</div>' +
-            '<div class="about-col-ja" style="min-width:0;flex:1;border-left:1px solid rgba(255,255,255,0.35);padding-left:24px"><div style="font-weight:900;font-size:18px;letter-spacing:0.08em;margin-bottom:20px;text-align:center">視察団概要</div>'+delegationJaHtml+'</div>' +
-          '</div>' +
+          buildAboutSectionFlipHtml('about-delegation-flip', delegationSectionEn, delegationSectionJa) +
         '</div>' +
         '<div class="about-box" style="box-shadow:0 4px 24px rgba(0,0,0,0.15);margin-bottom:24px">' +
-          '<div class="about-grid">' +
-            '<div style="min-width:0;flex:1"><div style="font-weight:900;font-size:18px;letter-spacing:0.08em;margin-bottom:20px;text-align:center">BACKGROUND</div>'+bgEn+'</div>' +
-            '<div class="about-col-ja" style="min-width:0;flex:1;border-left:1px solid rgba(255,255,255,0.35);padding-left:24px"><div style="font-weight:900;font-size:18px;letter-spacing:0.08em;margin-bottom:20px;text-align:center">背景</div>'+bgJa+'</div>' +
-          '</div>' +
+          buildAboutSectionFlipHtml('about-background-flip', backgroundSectionEn, backgroundSectionJa) +
         '</div>' +
         '<div class="about-box" style="box-shadow:0 4px 24px rgba(0,0,0,0.15)">' +
-          '<div class="about-grid" style="margin-bottom:28px">' +
-            '<div style="min-width:0;flex:1"><div style="font-weight:900;font-size:20px;letter-spacing:0.06em;margin-bottom:24px;text-align:center">OBJECTIVES &amp; GOALS</div><div style="font-weight:800;font-size:16px;margin-bottom:10px">Program Objective</div><p style="margin:0;font-size:14px;line-height:1.8;color:rgba(255,255,255,0.95)">To establish a network of <strong>29 senior leaders</strong> from diverse sectors, working together to promote optimal aging in Israel in the era of 100-year lives.</p></div>' +
-            '<div class="about-col-ja" style="min-width:0;flex:1;border-left:1px solid rgba(255,255,255,0.35);padding-left:24px"><div style="font-weight:900;font-size:20px;letter-spacing:0.06em;margin-bottom:24px;text-align:center">目的及目標</div><div style="font-weight:800;font-size:16px;margin-bottom:10px">プログラムの目的</div><p style="margin:0;font-size:14px;line-height:1.8;color:rgba(255,255,255,0.95)">多様な分野で活躍する29名のリーダーによるネットワークを形成し、100年時代におけるイスラエルの最適な高齢化(Optimal Aging)の推進を目指します。</p></div>' +
-          '</div>' +
-          '<div class="about-grid">' +
-            '<div style="min-width:0;flex:1"><div style="font-weight:800;font-size:16px;margin-bottom:12px">Program Goals</div>'+goalsEnHtml+'</div>' +
-            '<div class="about-col-ja" style="min-width:0;flex:1;border-left:1px solid rgba(255,255,255,0.35);padding-left:24px"><div style="font-weight:800;font-size:16px;margin-bottom:12px">プログラムの目標</div>'+goalsJaHtml+'</div>' +
-          '</div>' +
+          buildAboutSectionFlipHtml('about-objectives-flip', objectivesSectionEn, objectivesSectionJa) +
         '</div>' +
         '<section class="about-group-image" style="margin-top:36px">' +
           '<div style="background:'+P.dark+';border-radius:16px;padding:16px;box-shadow:0 4px 24px rgba(0,0,0,0.12)">' +
@@ -478,6 +523,7 @@
       '</div></div>';
 
     container.querySelector('#cta-participants').onclick = function () { setPage('participants'); };
+    bindAboutSectionFlips(container);
   }
 
   function renderMeetTheTeamPage(container, setPage) {
@@ -929,16 +975,60 @@
     scrollParticipantsAfterSearch(s, filtered);
   }
 
+  var navEl = document.querySelector('nav');
+  var navToggle = document.querySelector('.nav-toggle');
+
+  function closeNavMenu() {
+    if (!navEl) return;
+    navEl.classList.remove('nav-open');
+    if (navToggle) {
+      navToggle.setAttribute('aria-expanded', 'false');
+      navToggle.setAttribute('aria-label', 'Open menu');
+    }
+  }
+
+  function toggleNavMenu() {
+    if (!navEl) return;
+    var isOpen = navEl.classList.toggle('nav-open');
+    if (navToggle) {
+      navToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      navToggle.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
+    }
+  }
+
+  if (navToggle) {
+    navToggle.onclick = function (e) {
+      e.stopPropagation();
+      toggleNavMenu();
+    };
+  }
+
   document.querySelectorAll('.nav-btn').forEach(function(btn){
     btn.onclick = function () {
+      closeNavMenu();
       var href = btn.getAttribute('data-href');
       if (href) { window.open(href, '_blank', 'noopener'); return; }
       setPage(btn.getAttribute('data-page'));
     };
   });
 
-  document.querySelector('nav .logo').onclick = function () { setPage('about'); };
-  document.querySelector('nav .logo-right').onclick = function () { setPage('about'); };
+  document.querySelector('nav .logo').onclick = function () {
+    closeNavMenu();
+    setPage('about');
+  };
+  document.querySelector('nav .logo-right').onclick = function () {
+    closeNavMenu();
+    setPage('about');
+  };
+
+  document.addEventListener('click', function (e) {
+    if (!navEl || !navEl.classList.contains('nav-open')) return;
+    if (!navEl.contains(e.target)) closeNavMenu();
+  });
+
+  window.addEventListener('resize', function () {
+    if (window.innerWidth > 900) closeNavMenu();
+  });
 
   setPage('about');
 })();
