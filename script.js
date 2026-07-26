@@ -516,6 +516,7 @@
           '<div style="background:'+P.dark+';border-radius:16px;padding:16px;box-shadow:0 4px 24px rgba(0,0,0,0.12);display:flex;flex-direction:column;gap:16px">' +
             '<img src="'+PHOTO_DIR+'Group_image_1.jpeg?v=1" alt="Future Time group" style="width:100%;height:auto;display:block;border-radius:12px;object-fit:cover" loading="lazy" decoding="async"/>' +
             '<img src="'+PHOTO_DIR+'Group_image_2.jpeg?v=1" alt="Future Time group" style="width:100%;height:auto;display:block;border-radius:12px;object-fit:cover" loading="lazy" decoding="async"/>' +
+            '<img src="'+PHOTO_DIR+'Group_image_3.jpeg?v=2" alt="Future Time group" style="width:100%;height:auto;display:block;border-radius:12px;object-fit:cover" loading="lazy" decoding="async"/>' +
           '</div>' +
         '</section>' +
         '<section class="about-cta" style="margin-top:24px;text-align:center">' +
