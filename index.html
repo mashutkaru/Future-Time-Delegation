@@ -45,8 +45,10 @@
     nav .logo img { height: 64px; width: auto; max-width: none; flex-shrink: 0; object-fit: contain; border-radius: 2px; display: block; }
     nav .logo .logo-mobile, nav .logo-right .logo-mobile { display: none; }
     nav .nav-buttons { display: flex; gap: 8px; justify-content: center; flex: 2; }
-    nav .logo-right { display: flex; align-items: center; justify-content: flex-end; flex: 1; cursor: pointer; }
-    nav .logo-right img { height: 48px; object-fit: contain; object-position: center center; border-radius: 2px; display: block; transform: translateY(-4px); }
+    nav .logo-right { display: flex; align-items: center; justify-content: flex-end; flex: 1; gap: 0; cursor: default; }
+    nav .logo-right .partner-logo { display: block; width: auto; object-fit: contain; border-radius: 0; transform: none; }
+    nav .logo-right .partner-logo--ijac { height: 38px; margin-right: -8px; transform: translateX(6px); }
+    nav .logo-right .partner-logo--jiat { height: 40px; }
     nav button.nav-btn {
       background: transparent; color: rgba(255,255,255,0.9); border: none;
       border-radius: 999px; padding: 10px 24px; font-weight: 500; font-size: 15px;
@@ -66,8 +68,26 @@
       color: var(--text-on-light);
       font-weight: 800;
     }
-    #about-page, #participants-page, #team-page { display: none; }
-    #about-page.active, #participants-page.active, #team-page.active { display: block; }
+    #about-page, #participants-page, #team-page, #program-page { display: none; }
+    #about-page.active, #participants-page.active, #team-page.active, #program-page.active { display: block; }
+    #program-page.active {
+      display: block;
+      height: 100dvh;
+      min-height: 0;
+    }
+    #program-page .program-frame {
+      display: block;
+      width: 100%;
+      height: 100%;
+      border: 0;
+      background: #f2f5f8;
+    }
+    body.program-view {
+      overflow: hidden;
+    }
+    body.program-view > nav {
+      display: none !important;
+    }
 
     /* Mobile / tablet: horizontally scrollable nav below 900px */
     @media (max-width: 900px) {
@@ -155,9 +175,8 @@
       width: 100%;
       backface-visibility: hidden;
       -webkit-backface-visibility: hidden;
-      max-height: 640px;
-      overflow-y: auto;
-      -webkit-overflow-scrolling: touch;
+      max-height: none;
+      overflow: visible;
     }
     .about-section-flip-back {
       position: absolute;
@@ -602,6 +621,24 @@
     .team-page { min-height: 100vh; background: var(--teal-pale); }
     .team-content { max-width: 1440px; margin: 0 auto; padding: 48px 32px 64px; }
     .team-banner h1 { font-family: 'Inter', sans-serif; }
+    /* Meet the Team banner: logo — title — logo, always on one row */
+    .team-banner-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: nowrap;
+      gap: clamp(12px, 3vw, 32px);
+      width: 100%;
+    }
+    .team-banner-row h1 { flex: 0 1 auto; white-space: nowrap; }
+    .team-banner-row .partner-logo {
+      flex: 0 1 auto;
+      display: block;
+      width: auto;
+      min-width: 0;
+      height: clamp(22px, 4.2vw, 44px) !important;
+      object-fit: contain;
+    }
     .about-box .team-section-title {
       margin: 0 0 28px;
       text-align: center;
@@ -982,24 +1019,24 @@
       }
       .about-banner h1 { font-size: 24px !important; }
       .about-banner > div:first-child,
-      .team-banner > div:first-child { padding: 18px 16px !important; }
-      .about-banner > div:first-child img { height: 32px !important; width: auto !important; }
+      .team-banner > div:first-child { padding: 18px 16px !important; min-height: 68px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; }
+      .about-banner > div:first-child img:not(.partner-logo) { height: 32px !important; width: auto !important; }
+      .team-banner-row .partner-logo { display: none !important; }
       .about-content { padding: 20px 16px 40px !important; max-width: 100%; }
       #about-page .about-box, #about-page .about-grid > div { min-width: 0; }
       .about-box { padding: 24px 20px !important; }
       .about-box p { font-size: 15px !important; line-height: 1.75 !important; }
-      .about-section-flip-face { max-height: 520px; }
+      .about-section-flip-face { max-height: none; overflow: visible; }
       .about-section-flip-hint { margin-top: 20px !important; font-size: 12px !important; align-self: center !important; }
       .about-grid { display: flex !important; flex-direction: column !important; gap: 24px !important; }
       .about-grid .about-col-ja { border-left: none !important; border-top: 1px solid rgba(255,255,255,0.35) !important; padding-left: 0 !important; padding-top: 24px !important; }
       .about-cta button { width: 100%; max-width: 280px; padding: 14px 20px !important; font-size: 15px !important; }
-      .participants-header-wrap { padding: 4px 12px 4px !important; }
-      .participants-header-wrap > div > div:first-child { gap: 4px !important; padding: 10px 0 0 0 !important; }
-      .participants-header-wrap > div > div:first-child p:nth-of-type(2) { display: none !important; }
-      .participants-header-wrap > div > div:first-child p:first-of-type { padding-bottom: 6px !important; }
-      .participants-header-wrap > div { justify-content: center; text-align: center; gap: 4px !important; }
-      .participants-header-wrap h1 { font-size: 18px !important; flex-wrap: wrap; justify-content: center; margin: 0 !important; }
-      .participants-header-wrap p { font-size: 14px !important; text-align: center; margin: 0 !important; }
+      /* Match the About-page banner look on mobile */
+      .participants-header-wrap { padding: 18px 16px !important; min-height: 68px; box-sizing: border-box; }
+      .participants-header-wrap > div > div:first-child { gap: 6px !important; padding: 0 !important; align-items: center !important; justify-content: center !important; text-align: center !important; }
+      .participants-header-wrap > div > div:first-child p { display: none !important; }
+      .participants-header-wrap > div { justify-content: center; align-items: center; text-align: center; gap: 4px !important; }
+      .participants-header-wrap h1 { font-size: 24px !important; letter-spacing: 0.02em; flex-wrap: wrap; justify-content: center !important; text-align: center !important; margin: 0 !important; }
       /* stats-bar-wrap is absolute below header — reserve room so search is not covered */
       .participants-content { padding: 110px 16px 24px !important; }
       .stats-bar-wrap { padding: 10px 16px 10px !important; gap: 6px !important; top: 100% !important; margin-top: 6px !important; bottom: auto !important; left: 50% !important; transform: translateX(-50%) !important; display: grid !important; grid-template-columns: repeat(3, 1fr) !important; position: absolute !important; width: calc(100% - 32px) !important; max-width: 640px !important; box-sizing: border-box !important; }
@@ -1211,7 +1248,7 @@
       .stats-bar-wrap button > span:first-child span:last-child { font-size: 15px !important; }
       .about-banner h1 { font-size: 40px !important; }
       /* About banner top logo image (first img inside the first child div) */
-      .about-banner > div:first-child img { height: 64px !important; }
+      .about-banner > div:first-child img:not(.partner-logo) { height: 64px !important; }
       /* Keep sector labels on one line (so Health/Civil/etc fit) */
       .stats-bar-wrap button { white-space: nowrap !important; }
       .stats-bar-wrap button > span:last-child { white-space: nowrap !important; word-break: normal !important; }
@@ -1329,11 +1366,11 @@
       <button type="button" data-page="about" class="nav-btn">About</button>
       <button type="button" data-page="participants" class="nav-btn">Participants</button>
       <button type="button" data-page="team" class="nav-btn">Meet the Team</button>
-      <button type="button" data-href="https://mashutkaru.github.io/Future-Time-Program/" class="nav-btn">Program</button>
+      <button type="button" data-page="program" class="nav-btn">Program</button>
     </div>
-    <div class="logo-right">
-      <img src="images/לוגו זמן עתיד.png?v=2" class="logo-desktop" alt="FutureTime" />
-      <img src="images/לוגו זמן עתיד.png?v=2" class="logo-mobile" alt="FutureTime" />
+    <div class="logo-right" aria-label="Partners">
+      <img class="partner-logo partner-logo--ijac" src="program/assets/IJAC_white_logo.png" alt="IJAC" />
+      <img class="partner-logo partner-logo--jiat" src="program/assets/JIAT_white_letters.png" alt="Japan-Israel AgeTech" />
     </div>
   </nav>
 
@@ -1341,8 +1378,18 @@
     <div id="about-page" class="active"></div>
     <div id="participants-page"></div>
     <div id="team-page"></div>
+    <div id="program-page">
+      <iframe
+        class="program-frame"
+        title="Future Time Program"
+        data-src="program/index.html?embed=1"
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        allow="fullscreen"
+      ></iframe>
+    </div>
   </main>
 
-  <script src="script.js?v=170"></script>
+  <script src="script.js?v=176"></script>
 </body>
 </html>

@@ -396,6 +396,15 @@
       if (flipEl.getAttribute('data-bound') === '1') return;
       flipEl.setAttribute('data-bound', '1');
       var hint = flipEl.querySelector('.about-section-flip-hint');
+      var inner = flipEl.querySelector('.about-section-flip-inner');
+      var front = flipEl.querySelector('.about-section-flip-front');
+      var back = flipEl.querySelector('.about-section-flip-back');
+      function syncFlipHeight() {
+        if (!inner || !front || !back) return;
+        inner.style.minHeight = '';
+        var h = Math.max(front.scrollHeight, back.scrollHeight);
+        if (h > 0) inner.style.minHeight = h + 'px';
+      }
       function updateFlipHint(flipped) {
         if (!hint) return;
         var label = hint.querySelector('.about-section-flip-hint-label');
@@ -413,12 +422,15 @@
         }
         var flipped = flipEl.classList.toggle('is-flipped');
         updateFlipHint(flipped);
+        syncFlipHeight();
       }
       if (hint) hint.addEventListener('click', toggleFlip);
       flipEl.addEventListener('click', function (e) {
         if (e.target.closest('.about-section-flip-hint, a')) return;
         toggleFlip(e);
       });
+      requestAnimationFrame(syncFlipHeight);
+      window.addEventListener('resize', syncFlipHeight);
     });
   }
 
@@ -583,7 +595,7 @@
     var teamBoxStyle = 'box-shadow:0 4px 24px rgba(0,0,0,0.15);margin-bottom:24px';
     container.innerHTML = '<div style="min-height:100vh;background:'+P.pale+'">' +
       '<div class="about-banner team-banner" style="background:'+P.hero+';width:100%;overflow:hidden">' +
-        '<div style="padding:48px 24px;text-align:center"><h1 style="margin:0;color:white;font-size:32px;font-weight:800;letter-spacing:0.02em">Meet the Team</h1></div>' +
+        '<div style="padding:48px 24px;text-align:center"><div class="team-banner-row"><img class="partner-logo partner-logo--ijac" src="program/assets/IJAC_white_logo.png" alt="IJAC" /><h1 style="margin:0;color:white;font-size:32px;font-weight:800;letter-spacing:0.02em">Meet the Team</h1><img class="partner-logo partner-logo--jiat" src="program/assets/JIAT_white_letters.png" alt="Japan-Israel AgeTech" /></div></div>' +
       '</div>' +
       '<div class="about-content team-content">' +
         '<div class="about-box team-section-box" style="'+teamBoxStyle+'">' +
@@ -948,6 +960,19 @@
     document.body.scrollTop = 0;
   }
 
+  function updateSiteNavHeight() {
+    var nav = document.querySelector('nav');
+    if (!nav) return;
+    document.documentElement.style.setProperty('--site-nav-height', nav.offsetHeight + 'px');
+  }
+
+  function ensureProgramFrame() {
+    var frame = document.querySelector('#program-page .program-frame');
+    if (!frame) return;
+    var src = frame.getAttribute('data-src');
+    if (src && !frame.getAttribute('src')) frame.setAttribute('src', src);
+  }
+
   function setPage(page) {
     var pageChanged = state.page !== page;
     state.page = page;
@@ -961,9 +986,13 @@
     document.getElementById('about-page').classList.toggle('active', page==='about');
     document.getElementById('participants-page').classList.toggle('active', page==='participants');
     document.getElementById('team-page').classList.toggle('active', page==='team');
+    document.getElementById('program-page').classList.toggle('active', page==='program');
+    document.body.classList.toggle('program-view', page==='program');
+    updateSiteNavHeight();
     if (page === 'about') renderAboutPage(document.getElementById('about-page'), setPage);
     else if (page === 'participants') renderParticipantsPage(document.getElementById('participants-page'), state.activeSector, state.search, setActiveSector, setSearch);
     else if (page === 'team') renderMeetTheTeamPage(document.getElementById('team-page'), setPage);
+    else if (page === 'program') ensureProgramFrame();
     if (pageChanged) {
       scrollToTop();
       requestAnimationFrame(scrollToTop);
@@ -986,13 +1015,16 @@
   document.querySelectorAll('.nav-btn').forEach(function(btn){
     btn.onclick = function () {
       btn.blur();
-      var href = btn.getAttribute('data-href');
-      if (href) { window.open(href, '_blank', 'noopener'); return; }
       setPage(btn.getAttribute('data-page'));
     };
   });
 
   document.querySelector('nav .logo').onclick = function () { setPage('about'); };
-  document.querySelector('nav .logo-right').onclick = function () { setPage('about'); };
+  window.addEventListener('message', function (event) {
+    if (!event || !event.data || event.data.type !== 'future-time:go-about') return;
+    setPage('about');
+  });
+  window.addEventListener('resize', updateSiteNavHeight);
+  updateSiteNavHeight();
   setPage('about');
 })();
